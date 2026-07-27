@@ -358,23 +358,23 @@ h1,
   display: none;
 }
 
-/* Section wash — kept light so nebula bleeds through */
+/* Section wash — very light so nebula shows through clearly */
 .site-wave-bg main > section[class*="bg-white"],
 .site-wave-bg main section[class*="bg-white"]:not([class*="bg-white/"]),
 .site-wave-bg [data-hero] {
-  background-color: rgb(255 255 255 / 0.18) !important;
+  background-color: rgb(255 255 255 / 0.10) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .site-wave-bg main section[class*="bg-slate-50"] {
-  background-color: rgb(248 250 252 / 0.18) !important;
+  background-color: rgb(248 250 252 / 0.10) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .site-wave-bg footer[class*="bg-white"] {
-  background-color: rgb(255 255 255 / 0.30) !important;
+  background-color: rgb(255 255 255 / 0.22) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }

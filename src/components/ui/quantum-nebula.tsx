@@ -15,7 +15,7 @@ const COLOR_PURPLE = "#7924E8"; // Rich Purple
 const CFG = {
   countDesktop: 50_000,
   countMobile:  20_000,
-  baseSize: 0.018,        // grain size — small for a sandy-grain feel
+  baseSize: 0.024,        // slightly larger grains for better visibility on white
   boxSize:  8.0,          // wide enough to cover entire viewport
   noiseSpeed:    0.1,     // exactly as specified
   noiseScale:    1.2,
@@ -136,8 +136,8 @@ const FRAG = /* glsl */ `
     /* keep colour saturated — no white mixing on white bg */
     vec3 col = vColor;
 
-    /* final alpha: strong enough to be visible on #FFFFFF */
-    float alpha = clamp(strength * vAlpha * 1.4, 0.0, 0.88);
+    /* final alpha: boosted so grains are clearly visible on white */
+    float alpha = clamp(strength * vAlpha * 2.0, 0.0, 0.92);
     gl_FragColor = vec4(col, alpha);
   }
 `;
