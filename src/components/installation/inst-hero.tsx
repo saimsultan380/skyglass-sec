@@ -32,7 +32,7 @@ function HeroCopy() {
       </div>
 
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
-        <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-xs sm:text-sm lg:text-base text-black leading-relaxed">
+        <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-[11px] sm:text-sm lg:text-base text-black leading-relaxed">
           <p>
             Use this Sky Glass IPTV Installation Guide to set up the service on a compatible Firestick, Fire TV, Android TV, Android box, smartphone, tablet, Smart TV, Apple device or computer.
           </p>
