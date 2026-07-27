@@ -326,6 +326,13 @@ h1,
   background-color: #ffffff;
 }
 
+/* aurora-nebula-layer: fills the fixed background layer for QuantumNebula */
+.aurora-nebula-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 .site-wave-bg main {
   background: transparent;
 }
@@ -351,29 +358,30 @@ h1,
   display: none;
 }
 
-/* Light section wash — subtle so aurora still shows through */
+/* Section wash — kept light so nebula bleeds through */
 .site-wave-bg main > section[class*="bg-white"],
 .site-wave-bg main section[class*="bg-white"]:not([class*="bg-white/"]),
 .site-wave-bg [data-hero] {
-  background-color: rgb(255 255 255 / 0.28) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.site-wave-bg main section[class*="bg-slate-50"] {
-  background-color: rgb(248 250 252 / 0.25) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.site-wave-bg footer[class*="bg-white"] {
-  background-color: rgb(255 255 255 / 0.35) !important;
+  background-color: rgb(255 255 255 / 0.18) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
+.site-wave-bg main section[class*="bg-slate-50"] {
+  background-color: rgb(248 250 252 / 0.18) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-wave-bg footer[class*="bg-white"] {
+  background-color: rgb(255 255 255 / 0.30) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
 /*
-  Cards / boxes — same frosted glass as header, slightly stronger.
+  Cards / boxes — proper glassmorphism:
+  translucent white + strong blur + visible border + soft tinted shadow.
   Excludes buttons and gradient CTAs.
 */
 .site-wave-bg main [class*="rounded-[12px]"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
@@ -382,11 +390,13 @@ h1,
 .site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
 .site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
 .site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]) {
-  background-color: rgb(255 255 255 / 0.88) !important;
-  border-color: rgb(255 255 255 / 0.55) !important;
-  box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  background-color: rgb(255 255 255 / 0.58) !important;
+  border-color: rgb(255 255 255 / 0.70) !important;
+  box-shadow:
+    0 4px 24px rgb(23 107 255 / 0.07),
+    0 1px 0 rgb(255 255 255 / 0.90) inset;
+  backdrop-filter: blur(32px) saturate(1.4);
+  -webkit-backdrop-filter: blur(32px) saturate(1.4);
 }
 
 @supports (backdrop-filter: blur(0)) {
@@ -396,28 +406,28 @@ h1,
   .site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
   .site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
   .site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]) {
-    background-color: rgb(255 255 255 / 0.82) !important;
+    background-color: rgb(255 255 255 / 0.52) !important;
   }
 }
 
-/* Nested slate boxes inside cards */
+/* Nested slate boxes inside cards — glassy too */
 .site-wave-bg main [class*="rounded-[12px]"][class*="bg-slate-50"]:not(button),
 .site-wave-bg main [class*="rounded-xl"][class*="bg-slate-50"]:not(button),
 .site-wave-bg main [class*="rounded-lg"][class*="bg-slate-50"]:not(button),
 .site-wave-bg main [class*="rounded-2xl"][class*="bg-slate-50"]:not(button) {
-  background-color: rgb(248 250 252 / 0.75) !important;
-  border-color: rgb(255 255 255 / 0.5) !important;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background-color: rgb(248 250 252 / 0.52) !important;
+  border-color: rgb(255 255 255 / 0.65) !important;
+  backdrop-filter: blur(24px) saturate(1.3);
+  -webkit-backdrop-filter: blur(24px) saturate(1.3);
 }
 
-/* Form fields — glassy, not buttons */
+/* Form fields — glassy */
 .site-wave-bg main input[class*="bg-white"],
 .site-wave-bg main textarea[class*="bg-white"],
 .site-wave-bg main select[class*="bg-white"] {
-  background-color: rgb(255 255 255 / 0.88) !important;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background-color: rgb(255 255 255 / 0.72) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 @media (prefers-reduced-motion: reduce) {

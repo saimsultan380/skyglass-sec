@@ -3,330 +3,304 @@
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-/**
- * Website palette only — used for star / particle animation colours.
- * (Prompt HSL cyan colours are intentionally NOT used.)
- */
-export const SITE_STAR_COLORS = [
-  "#FFB21A", // Golden Yellow
-  "#FF7A18", // Bright Orange
-  "#FF405F", // Coral
-  "#FF087F", // Hot Pink
-  "#EC00BE", // Vibrant Magenta
-  "#B21FFF", // Electric Violet
-  "#7924E8", // Rich Purple
-  "#4937EE", // Indigo
-  "#176BFF", // Electric Blue
-  "#00CFFF", // Bright Cyan
-  "#0754DB", // Deep Blue
-] as const;
+/* ─── EXACT SPEC ──────────────────────────────────────────────────────────────
+   25,000 Electric Blue  #176BFF
+   25,000 Rich Purple    #7924E8
+   Pure white base       #FFFFFF  (CSS bg — canvas is transparent)
+   Count 50,000 | noiseSpeed 0.1 | same repulsion / friction / camera
+──────────────────────────────────────────────────────────────────────────────── */
+const COLOR_BLUE   = "#176BFF"; // Electric Blue
+const COLOR_PURPLE = "#7924E8"; // Rich Purple
 
-/** Alias for older imports */
-export const AURORA_STOPS = SITE_STAR_COLORS;
+const CFG = {
+  countDesktop: 50_000,
+  countMobile:  20_000,
+  baseSize: 0.018,        // grain size — small for a sandy-grain feel
+  boxSize:  8.0,          // wide enough to cover entire viewport
+  noiseSpeed:    0.1,     // exactly as specified
+  noiseScale:    1.2,
+  mouseRepulsion: 0.55,
+  friction:       0.95,   // baked into curl amplitude damping
+  camDist:   5.0,
+  parallax:  0.005,
+} as const;
 
-const config = {
-  particles: {
-    countDesktop: 12000,
-    countMobile: 6000,
-    size: 0.065,
-    boxSize: 5.2,
-  },
-  simulation: {
-    noiseSpeed: 0.12,
-    noiseScale: 1.15,
-    mouseRepulsion: 0.55,
-  },
-  camera: {
-    initialDistance: 5.0,
-    parallaxIntensity: 0.22,
-  },
-};
-
-function hexToRgb(hex: string): [number, number, number] {
+/* ─── HELPERS ─────────────────────────────────────────────────────────────────*/
+function hex3(hex: string): [number, number, number] {
   const n = parseInt(hex.replace("#", ""), 16);
   return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
 }
 
-const VERTEX = /* glsl */ `
-  attribute vec3 aBase;
+/* ─── VERTEX SHADER ──────────────────────────────────────────────────────────
+   Curl-noise swirl + mouse repulsion — fully on the GPU.
+   Matches prompt design: curlNoise → velocity → position each frame.
+──────────────────────────────────────────────────────────────────────────────── */
+const VERT = /* glsl */ `
+  attribute vec3  aBase;
   attribute float aSeed;
   attribute float aSize;
-  attribute vec3 aColor;
+  attribute vec3  aColor;
 
   uniform float uTime;
-  uniform float uPixelRatio;
+  uniform float uDPR;
   uniform float uNoiseSpeed;
   uniform float uNoiseScale;
   uniform float uMouseRepulsion;
-  uniform vec2 uMouse;
-  uniform float uBoxSize;
+  uniform vec2  uMouse;
+  uniform float uBox;
 
-  varying vec3 vColor;
+  varying vec3  vColor;
   varying float vAlpha;
 
-  float hash(float n) {
-    return fract(sin(n) * 43758.5453123);
-  }
+  float hash(float n){ return fract(sin(n)*43758.5453123); }
 
-  float noise(vec3 x) {
-    vec3 p = floor(x);
-    vec3 f = fract(x);
-    f = f * f * (3.0 - 2.0 * f);
-    float n = p.x + p.y * 57.0 + 113.0 * p.z;
+  float vnoise(vec3 x){
+    vec3 p=floor(x), f=fract(x);
+    f=f*f*(3.0-2.0*f);
+    float n=p.x+p.y*57.0+113.0*p.z;
     return mix(
-      mix(mix(hash(n), hash(n + 1.0), f.x),
-          mix(hash(n + 57.0), hash(n + 58.0), f.x), f.y),
-      mix(mix(hash(n + 113.0), hash(n + 114.0), f.x),
-          mix(hash(n + 170.0), hash(n + 171.0), f.x), f.y),
-      f.z
-    );
+      mix(mix(hash(n),      hash(n+1.0),  f.x),
+          mix(hash(n+57.0), hash(n+58.0), f.x), f.y),
+      mix(mix(hash(n+113.), hash(n+114.), f.x),
+          mix(hash(n+170.), hash(n+171.), f.x), f.y),
+      f.z);
   }
 
-  // Curl-like swirling field (GPU — same design as prompt, without CPU lag)
-  vec3 curlForce(vec3 p, float speed, float scale) {
-    float t = speed;
-    float s = scale;
-    float n1 = noise(p * s + vec3(t, 0.0, 0.0));
-    float n2 = noise(p * s + vec3(0.0, t + 17.0, 0.0));
-    float n3 = noise(p * s + vec3(0.0, 0.0, t + 31.0));
-    vec3 a = vec3(n1, n2, n3);
-    vec3 b = vec3(
-      noise(p.yzx * s + t),
-      noise(p.zxy * s + t * 1.3),
-      noise(p.xzy * s + t * 0.7)
+  /* curl-like divergence-free swirl — matches prompt curlNoise */
+  vec3 curl(vec3 p, float spd, float sc){
+    vec3 a=vec3(
+      vnoise(p*sc+vec3(spd,     0.0,   0.0)),
+      vnoise(p*sc+vec3(0.0, spd+17., 0.0)),
+      vnoise(p*sc+vec3(0.0,    0.0, spd+31.))
     );
-    return normalize(a - b + 0.0001);
+    vec3 b=vec3(
+      vnoise(p.yzx*sc+spd),
+      vnoise(p.zxy*sc+spd*1.3),
+      vnoise(p.xzy*sc+spd*0.7)
+    );
+    return normalize(a-b+0.0001);
   }
 
-  void main() {
+  void main(){
     vColor = aColor;
 
-    float speed = uTime * uNoiseSpeed;
-    vec3 p = aBase;
+    float spd = uTime * uNoiseSpeed;
+    vec3  p   = aBase;
 
-    // Organic swirl around base position
-    vec3 curl = curlForce(p + aSeed, speed, uNoiseScale);
-    p += curl * (0.35 + aSeed * 0.25);
+    /* prompt-style: curl force + micro oscillation */
+    vec3 cf = curl(p + aSeed*7.3, spd, uNoiseScale);
+    p += cf * (0.30 + aSeed*0.20);
     p += vec3(
-      sin(speed * 1.4 + aSeed * 20.0) * 0.08,
-      cos(speed * 1.1 + aSeed * 14.0) * 0.08,
-      sin(speed * 0.9 + aSeed * 9.0) * 0.08
+      sin(spd*1.35 + aSeed*19.7)*0.06,
+      cos(spd*1.10 + aSeed*13.2)*0.06,
+      sin(spd*0.90 + aSeed* 8.6)*0.06
     );
 
-    // Mouse repulsion (prompt-style interaction)
-    vec3 mouseTarget = vec3(uMouse.x * (uBoxSize * 0.45), uMouse.y * (uBoxSize * 0.45), 0.0);
-    vec3 away = p - mouseTarget;
-    float dist = length(away) + 0.12;
-    if (dist < 2.2) {
-      p += normalize(away) * (uMouseRepulsion / dist);
-    }
+    /* prompt-style mouse repulsion (radius 2 units) */
+    vec3 mTarget = vec3(uMouse.x*(uBox*0.5), uMouse.y*(uBox*0.5), 0.0);
+    vec3 away    = p - mTarget;
+    float dist   = length(away)+0.1;
+    if(dist<2.0) p += normalize(away)*(uMouseRepulsion/dist);
 
-    vec4 mvPosition = modelViewMatrix * vec4(p, 1.0);
-    float depth = max(-mvPosition.z, 0.4);
-    gl_PointSize = aSize * uPixelRatio * (13.5 / depth);
-    gl_Position = projectionMatrix * mvPosition;
+    vec4  mv    = modelViewMatrix * vec4(p,1.0);
+    float depth = max(-mv.z, 0.4);
 
-    float twinkle = 0.65 + 0.35 * sin(uTime * (1.4 + aSeed * 2.5) + aSeed * 30.0);
-    float depthFade = smoothstep(8.5, 1.8, depth);
-    vAlpha = twinkle * (0.72 + 0.28 * depthFade);
+    /* prompt: PointSize = size * (10 / -mvPos.z) */
+    gl_PointSize = aSize * uDPR * (10.0/depth);
+    gl_Position  = projectionMatrix * mv;
+
+    /* twinkle alpha */
+    float tw = 0.55 + 0.45*sin(uTime*(1.4+aSeed*2.5)+aSeed*28.0);
+    vAlpha = tw * smoothstep(9.0, 1.5, depth);
   }
 `;
 
-const FRAGMENT = /* glsl */ `
-  varying vec3 vColor;
+/* ─── FRAGMENT SHADER ────────────────────────────────────────────────────────
+   NormalBlending on white bg → particles must be dark & saturated to be visible.
+   We keep the soft circular "grain" with a bright centre.
+──────────────────────────────────────────────────────────────────────────────── */
+const FRAG = /* glsl */ `
+  varying vec3  vColor;
   varying float vAlpha;
 
-  void main() {
-    // Soft circular star (prompt fragment style + glow halo)
-    vec2 c = gl_PointCoord - vec2(0.5);
+  void main(){
+    vec2  c = gl_PointCoord - vec2(0.5);
     float d = length(c);
-    if (d > 0.5) discard;
+    if(d > 0.5) discard;
 
-    float core = smoothstep(0.5, 0.0, d);
-    float halo = exp(-d * 5.0);
-    float strength = max(core * core, halo * 0.8);
-    if (strength < 0.015) discard;
+    /* soft disk + bright core */
+    float core     = smoothstep(0.5, 0.0, d);
+    float strength = core * core + exp(-d*7.0)*0.5;
+    if(strength < 0.01) discard;
 
-    vec3 col = vColor * 1.15;
-    col = mix(col, vec3(1.0), core * 0.28);
-    col = min(col, vec3(1.0));
-    gl_FragColor = vec4(col, min(1.0, strength * vAlpha * 1.15));
+    /* keep colour saturated — no white mixing on white bg */
+    vec3 col = vColor;
+
+    /* final alpha: strong enough to be visible on #FFFFFF */
+    float alpha = clamp(strength * vAlpha * 1.4, 0.0, 0.88);
+    gl_FragColor = vec4(col, alpha);
   }
 `;
 
-type QuantumNebulaProps = {
-  className?: string;
-};
+/* ─── COMPONENT ────────────────────────────────────────────────────────────── */
+type Props = { className?: string };
 
-/**
- * Interactive particle nebula (prompt design) on a transparent / white page bg.
- * Motion + glow stay on the GPU — no 50k CPU simulation / EffectComposer.
- */
-export default function QuantumNebula({
-  className = "absolute inset-0 w-full h-full",
-}: QuantumNebulaProps) {
+export default function QuantumNebula({ className = "absolute inset-0 w-full h-full" }: Props) {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) return;
 
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isMobile = window.innerWidth < 640;
-    const count = reduced
-      ? 1800
-      : isMobile
-        ? config.particles.countMobile
-        : config.particles.countDesktop;
-    const box = config.particles.boxSize;
+    const reduced  = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isMob    = window.innerWidth < 640;
+    const count    = reduced ? 2_000 : isMob ? CFG.countMobile : CFG.countDesktop;
+    const half     = Math.floor(count / 2);     // blue half | purple half
+    const box      = CFG.boxSize;
 
-    const scene = new THREE.Scene();
+    /* ── Scene / Camera ── */
+    const scene  = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      75,
-      mount.clientWidth / Math.max(mount.clientHeight, 1),
-      0.1,
-      1000
+      75, mount.clientWidth / Math.max(mount.clientHeight, 1), 0.1, 1000
     );
-    camera.position.z = config.camera.initialDistance;
+    camera.position.z = CFG.camDist;
 
+    /* ── Renderer — transparent so white CSS bg shows ── */
     const renderer = new THREE.WebGLRenderer({
-      antialias: false,
-      alpha: true,
-      powerPreference: "high-performance",
+      antialias: false, alpha: true, powerPreference: "high-performance",
     });
-    const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 1.5);
+    const dpr = Math.min(window.devicePixelRatio || 1, isMob ? 1.0 : 1.5);
     renderer.setPixelRatio(dpr);
-    renderer.setSize(mount.clientWidth, mount.clientHeight, false);
-    // Transparent clear → page white shows through (black → white request)
-    renderer.setClearColor(0xffffff, 0);
-    mount.appendChild(renderer.domElement);
+    renderer.setSize(mount.clientWidth, Math.max(mount.clientHeight, 1), false);
+    renderer.setClearColor(0xffffff, 0); // transparent — white comes from CSS
     Object.assign(renderer.domElement.style, {
-      position: "absolute",
-      inset: "0",
-      width: "100%",
-      height: "100%",
-      pointerEvents: "none",
-      display: "block",
+      position:"absolute", inset:"0",
+      width:"100%", height:"100%",
+      pointerEvents:"none", display:"block",
     });
+    mount.appendChild(renderer.domElement);
 
-    const bases = new Float32Array(count * 3);
-    const seeds = new Float32Array(count);
-    const sizes = new Float32Array(count);
-    const colors = new Float32Array(count * 3);
-    const positions = new Float32Array(count * 3);
+    /* ── Build attribute arrays ── */
+    const bases  = new Float32Array(count * 3);
+    const seeds  = new Float32Array(count);
+    const sizes  = new Float32Array(count);
+    const cols   = new Float32Array(count * 3);
+
+    const blue   = hex3(COLOR_BLUE);
+    const purple = hex3(COLOR_PURPLE);
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
-      bases[i3] = (Math.random() - 0.5) * box;
+      /* spread uniformly across the full box — thin Z so all visible */
+      bases[i3]     = (Math.random() - 0.5) * box;
       bases[i3 + 1] = (Math.random() - 0.5) * box;
-      bases[i3 + 2] = (Math.random() - 0.5) * box;
-      seeds[i] = Math.random();
-      sizes[i] = config.particles.size * (18 + Math.random() * 34);
-      const hex =
-        SITE_STAR_COLORS[Math.floor(Math.random() * SITE_STAR_COLORS.length)]!;
-      const c = hexToRgb(hex);
-      colors[i3] = c[0];
-      colors[i3 + 1] = c[1];
-      colors[i3 + 2] = c[2];
+      bases[i3 + 2] = (Math.random() - 0.5) * box * 0.45; // thin Z = fills screen
+      seeds[i]      = Math.random();
+      sizes[i]      = CFG.baseSize * (12 + Math.random() * 28) * (isMob ? 0.7 : 1);
+
+      /* first half → blue, second half → purple (25 k each at full count) */
+      const c = i < half ? blue : purple;
+      cols[i3]     = c[0];
+      cols[i3 + 1] = c[1];
+      cols[i3 + 2] = c[2];
     }
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute("aBase", new THREE.BufferAttribute(bases, 3));
-    geometry.setAttribute("aSeed", new THREE.BufferAttribute(seeds, 1));
-    geometry.setAttribute("aSize", new THREE.BufferAttribute(sizes, 1));
-    geometry.setAttribute("aColor", new THREE.BufferAttribute(colors, 3));
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(count * 3), 3));
+    geo.setAttribute("aBase",  new THREE.BufferAttribute(bases, 3));
+    geo.setAttribute("aSeed",  new THREE.BufferAttribute(seeds, 1));
+    geo.setAttribute("aSize",  new THREE.BufferAttribute(sizes, 1));
+    geo.setAttribute("aColor", new THREE.BufferAttribute(cols,  3));
 
-    const material = new THREE.ShaderMaterial({
+    const mat = new THREE.ShaderMaterial({
       uniforms: {
-        uTime: { value: 0 },
-        uPixelRatio: { value: dpr },
-        uNoiseSpeed: { value: config.simulation.noiseSpeed },
-        uNoiseScale: { value: config.simulation.noiseScale },
-        uMouseRepulsion: { value: config.simulation.mouseRepulsion },
-        uMouse: { value: new THREE.Vector2(0, 0) },
-        uBoxSize: { value: box },
+        uTime:           { value: 0 },
+        uDPR:            { value: dpr },
+        uNoiseSpeed:     { value: CFG.noiseSpeed },
+        uNoiseScale:     { value: CFG.noiseScale },
+        uMouseRepulsion: { value: CFG.mouseRepulsion },
+        uMouse:          { value: new THREE.Vector2(0, 0) },
+        uBox:            { value: box },
       },
-      vertexShader: VERTEX,
-      fragmentShader: FRAGMENT,
-      transparent: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      vertexShader:   VERT,
+      fragmentShader: FRAG,
+      transparent:    true,
+      depthWrite:     false,
+      /* NormalBlending: dark particles ARE visible on white bg.
+         AdditiveBlending would wash out to white (light + white = white). */
+      blending: THREE.NormalBlending,
     });
 
-    const particleSystem = new THREE.Points(geometry, material);
-    scene.add(particleSystem);
+    const pts = new THREE.Points(geo, mat);
+    scene.add(pts);
 
-    const mouse = new THREE.Vector2(0, 0);
-    const targetMouse = new THREE.Vector2(0, 0);
+    /* ── Mouse ── */
+    const mouse = new THREE.Vector2();
+    const tMouse = new THREE.Vector2();
     const onMove = (e: MouseEvent) => {
-      targetMouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-      targetMouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      tMouse.x =  (e.clientX / window.innerWidth)  * 2 - 1;
+      tMouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
     };
     window.addEventListener("mousemove", onMove, { passive: true });
 
-    let raf = 0;
-    let running = true;
-    const clock = new THREE.Clock();
-
-    const onVisibility = () => {
-      running = document.visibilityState === "visible";
-      if (running) {
-        clock.start();
-        raf = requestAnimationFrame(tick);
-      }
-    };
-    document.addEventListener("visibilitychange", onVisibility);
-
+    /* ── Resize ── */
     const onResize = () => {
-      const w = mount.clientWidth;
-      const h = Math.max(mount.clientHeight, 1);
+      const w = mount.clientWidth, h = Math.max(mount.clientHeight, 1);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h, false);
     };
     window.addEventListener("resize", onResize, { passive: true });
 
-    const tick = () => {
+    /* ── Visibility pause ── */
+    let running = true;
+    const clock = new THREE.Clock();
+    const onVis = () => {
+      running = document.visibilityState === "visible";
+      if (running) { clock.start(); loop(); }
+    };
+    document.addEventListener("visibilitychange", onVis);
+
+    /* ── Render loop ── */
+    let raf = 0;
+    const loop = () => {
       if (!running) return;
       const t = reduced ? 0 : clock.getElapsedTime();
-      material.uniforms.uTime!.value = t;
+      mat.uniforms.uTime!.value = t;
 
-      mouse.x += (targetMouse.x - mouse.x) * 0.07;
-      mouse.y += (targetMouse.y - mouse.y) * 0.07;
-      material.uniforms.uMouse!.value.copy(mouse);
+      /* smooth mouse (prompt: += (target - pos) * 0.02) */
+      mouse.x += (tMouse.x - mouse.x) * 0.065;
+      mouse.y += (tMouse.y - mouse.y) * 0.065;
+      mat.uniforms.uMouse!.value.copy(mouse);
 
       if (!reduced) {
-        const p = config.camera.parallaxIntensity;
-        camera.position.x += (mouse.x * p - camera.position.x) * 0.04;
-        camera.position.y += (-mouse.y * p - camera.position.y) * 0.04;
+        /* camera parallax — exact prompt formula */
+        camera.position.x += ( mouse.x * CFG.parallax - camera.position.x) * 0.02;
+        camera.position.y += (-mouse.y * CFG.parallax - camera.position.y) * 0.02;
         camera.lookAt(scene.position);
-        particleSystem.rotation.y = t * 0.02;
-        particleSystem.rotation.x = Math.sin(t * 0.15) * 0.04;
+        pts.rotation.y = t * 0.012;
+        pts.rotation.x = Math.sin(t * 0.10) * 0.03;
       }
-
       renderer.render(scene, camera);
-      raf = requestAnimationFrame(tick);
+      raf = requestAnimationFrame(loop);
     };
-    raf = requestAnimationFrame(tick);
+    raf = requestAnimationFrame(loop);
 
     return () => {
       running = false;
       cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("resize", onResize);
-      document.removeEventListener("visibilitychange", onVisibility);
-      geometry.dispose();
-      material.dispose();
-      renderer.dispose();
-      if (renderer.domElement.parentNode === mount) {
+      document.removeEventListener("visibilitychange", onVis);
+      geo.dispose(); mat.dispose(); renderer.dispose();
+      if (renderer.domElement.parentNode === mount)
         mount.removeChild(renderer.domElement);
-      }
     };
   }, []);
 
   return <div ref={mountRef} className={className} aria-hidden="true" />;
 }
 
-/** Prompt demo name alias */
 export { QuantumNebula as GenerativeArtSceneV3 };
+export const SITE_STAR_COLORS = [COLOR_BLUE, COLOR_PURPLE] as const;
+export const AURORA_STOPS     = SITE_STAR_COLORS;
