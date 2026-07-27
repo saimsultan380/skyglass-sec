@@ -2,38 +2,51 @@
 
 import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
-import { KeyRound, ShieldAlert, Hourglass, CheckSquare } from "lucide-react";
+import { KeyRound, ShieldAlert, Hourglass } from "lucide-react";
 
-const credentialParameters = [
-  { name: "Username", desc: "Enter the username exactly as received." },
-  { name: "Password", desc: "Check all capital letters, numbers and symbols." },
-  { name: "Server URL", desc: "Enter the complete address." },
+const usernameChecks = [
+  "Uppercase letters",
+  "Lowercase letters",
+  "Numbers",
+  "Similar characters such as 0 and O",
 ];
 
-const loginRestrictions = [
-  "Add extra spaces",
-  "Remove http:// or https:// unless instructed",
+const serverUrlRules = [
+  "Remove the protocol",
+  "Change the domain",
+  "Remove a port number",
   "Add an unnecessary slash",
-  "Replace characters",
-  "Use an expired account",
+  "Replace punctuation",
 ];
+
+const profileNames = ["Main TV", "Firestick", "Living Room", "Bedroom", "IPTV Account"];
 
 const loadAssets = [
-  "Channel categories",
-  "Movie information",
-  "Television-series data",
-  "Programme-guide details",
+  "Live TV categories",
+  "Channel information",
+  "Movies",
+  "Series",
+  "Programme-guide data",
   "Channel logos",
-  "Artwork",
+  "Posters",
+  "Account information",
+];
+
+const loadFactors = [
+  "Device performance",
+  "Broadband connection",
+  "Account size",
+  "Player efficiency",
+  "Available storage",
 ];
 
 const WarningDot = () => (
-  <span className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#E01E26] mt-2" />
+  <span className="flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#E91E8C] mt-2" />
 );
 
 const Tick = () => (
   <svg
-    className="h-4 w-4 text-[#E01E26] shrink-0 mt-0.5"
+    className="h-4 w-4 text-[#E91E8C] shrink-0 mt-0.5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -50,113 +63,117 @@ export function InstSecureLogin() {
       className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch w-full">
-          
-          {/* LEFT COLUMN: Entering Your Secure Login (lg:col-span-7) */}
-          <FadeIn className="lg:col-span-7 rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full">
-            <div>
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
-                  <KeyRound className="h-4 w-4 stroke-[2]" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#12141F] leading-none">
-                  Entering Your Secure Login
-                </h3>
-              </div>
+        <FadeIn className="w-full max-w-4xl mb-12">
+          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
+            Entering Your Login{" "}
+            <span className="text-brand-gradient font-bold">Correctly</span>
+          </h2>
+        </FadeIn>
 
-              <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
-                Every active B1G IPTV subscription includes private account information.
-              </p>
-
-              {/* Login parameters grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
-                {credentialParameters.map((param, idx) => (
-                  <div key={idx} className="p-3.5 rounded-[12px] border border-slate-100 bg-slate-50/20">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                      {param.name}
-                    </span>
-                    <span className="text-xs font-semibold text-slate-800 leading-snug">
-                      {param.desc}
-                    </span>
-                  </div>
-                ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+          <FadeIn className="rounded-[12px] border border-slate-200 bg-white p-6">
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
+                <KeyRound className="h-4 w-4 stroke-[2]" />
               </div>
-
-              {/* Do not restrictions */}
-              <div className="border-t border-slate-100 pt-4 mb-6">
-                <h4 className="text-xs sm:text-sm font-bold text-[#E01E26] mb-3">
-                  Do not:
-                </h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {loginRestrictions.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <WarningDot />
-                      <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h3 className="text-base font-bold text-[#0B0E2C]">Username</h3>
             </div>
-
-            {/* Profile name card footer */}
-            <div className="border-t border-slate-100 pt-4 mt-6">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
-                Profile Name
-              </span>
-              <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-                Choose a clear name such as: <strong className="text-slate-800">B1G IPTV</strong>, <strong className="text-slate-800">Main TV</strong>, <strong className="text-slate-800">Living Room</strong>, or <strong className="text-slate-800">Firestick</strong>. The profile name does not affect the login.
-              </p>
-            </div>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-4 leading-relaxed">
+              Enter every character exactly as supplied. Check:
+            </p>
+            <ul className="space-y-2">
+              {usernameChecks.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <Tick />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800">{item}</span>
+                </li>
+              ))}
+            </ul>
           </FadeIn>
 
-          {/* RIGHT COLUMN: First Account Load (lg:col-span-5) */}
-          <FadeIn delay={0.1} className="lg:col-span-5 rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full">
-            <div>
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
-                  <Hourglass className="h-4 w-4 stroke-[2]" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#12141F] leading-none">
-                  First Account Load
-                </h3>
-              </div>
-
-              <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
-                The first login may take longer because the application needs to compile and load:
-              </p>
-
-              {/* Assets List */}
-              <ul className="space-y-3.5 mb-6">
-                {loadAssets.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <Tick />
-                    <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Warning notes */}
-            <div className="border-t border-slate-100 pt-4 mt-6 space-y-2">
-              <div className="flex items-start gap-2">
-                <ShieldAlert className="h-4 w-4 text-[#E01E26] shrink-0 mt-0.5" />
-                <p className="text-xs text-[#E01E26] font-semibold leading-relaxed">
-                  Avoid repeatedly closing the app while it is processing.
-                </p>
-              </div>
-              <p className="text-xs text-slate-500 font-semibold leading-relaxed pl-6.5">
-                If the account contains a large library, the first load may take several minutes.
-              </p>
-            </div>
+          <FadeIn delay={0.05} className="rounded-[12px] border border-slate-200 bg-white p-6">
+            <h3 className="text-base font-bold text-[#0B0E2C] mb-4">Password</h3>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
+              Do not add spaces before or after the password. Copying and pasting can sometimes add an invisible space.
+            </p>
           </FadeIn>
 
+          <FadeIn delay={0.1} className="rounded-[12px] border border-slate-200 bg-white p-6">
+            <h3 className="text-base font-bold text-[#0B0E2C] mb-4">Server URL</h3>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-4 leading-relaxed">
+              Enter the entire address. Do not:
+            </p>
+            <ul className="space-y-2">
+              {serverUrlRules.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <WarningDot />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+
+          <FadeIn delay={0.15} className="rounded-[12px] border border-slate-200 bg-white p-6">
+            <h3 className="text-base font-bold text-[#0B0E2C] mb-4">Profile Name</h3>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-4 leading-relaxed">
+              The profile name can be something simple:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {profileNames.map((name) => (
+                <span
+                  key={name}
+                  className="text-xs font-bold text-[#E91E8C] bg-pink-50 px-3 py-1 rounded-full border border-pink-100"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-slate-500 font-semibold mt-4 leading-relaxed">
+              The profile name does not change the login.
+            </p>
+          </FadeIn>
         </div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch w-full">
+          <FadeIn className="lg:col-span-7 rounded-[12px] border border-slate-200 bg-white p-6">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
+                <Hourglass className="h-4 w-4 stroke-[2]" />
+              </div>
+              <h3 className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-none">
+                What Happens During the First Load?
+              </h3>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
+              The initial login may take longer while the application downloads:
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+              {loadAssets.map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <Tick />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-3 leading-relaxed">
+              The time required depends on:
+            </p>
+            <ul className="space-y-2 mb-6">
+              {loadFactors.map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <Tick />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-slate-100 pt-4 flex items-start gap-2">
+              <ShieldAlert className="h-4 w-4 text-[#E91E8C] shrink-0 mt-0.5" />
+              <p className="text-xs text-[#E91E8C] font-semibold leading-relaxed">
+                Avoid repeatedly closing the application during the first load.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

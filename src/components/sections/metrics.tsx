@@ -12,7 +12,7 @@ export function Metrics() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Heading & Intro */}
           <AutoScrollReveal className="lg:col-span-5 flex flex-col items-start">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#E01E26] bg-red-50 px-3 py-1 rounded-full border border-red-100">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#E91E8C] bg-pink-50 px-3 py-1 rounded-full border border-pink-100">
               System Performance
             </span>
             <h2 className="text-h2 mt-4">

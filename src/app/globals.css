@@ -8,22 +8,27 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #12141f;
+    --foreground: #0b0e2c;
 
-    --brand-red-from: #e01e26;
-    --brand-red-via: #ee2830;
-    --brand-red-to: #b5121a;
-    --brand-navy: #12141f;
-    --brand-gray: #4a4a4a;
+    --grad-brand: linear-gradient(
+      90deg,
+      #ff6b2c 0%,
+      #e91e8c 32%,
+      #7b2fff 68%,
+      #2563eb 100%
+    );
+    --brand-accent: #e91e8c;
+    --brand-navy: #0b0e2c;
+    --brand-gray: #5c607a;
 
     --card: #ffffff;
-    --card-foreground: #12141f;
+    --card-foreground: #0b0e2c;
 
-    --primary: #e01e26;
+    --primary: #e91e8c;
     --primary-foreground: #ffffff;
 
     --border: #e5e7eb;
-    --ring: #e01e26;
+    --ring: #e91e8c;
   }
 
   html {
@@ -93,6 +98,13 @@
   opacity: 1 !important;
   transform: none !important;
   transition: none !important;
+}
+
+[data-hero] [data-hero-image],
+[data-hero] [data-hero-image] img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 /* Title containers stay visible — child word spans still animate via CSS */
@@ -173,15 +185,36 @@ h1,
   animation-delay: var(--hero-enter-delay, 0ms);
 }
 
-/* Red Highlighted Text Utility for H1, H2, and Section Titles */
-.text-brand-gradient {
-  background: linear-gradient(to right, #E01E26 0%, #FF5A5F 50%, #8E0A0F 100%);
+/* Brand gradient text for H1, H2, and section titles */
+.text-brand-gradient,
+.text-gradient-brand {
+  background-image: var(--grad-brand);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: inline;
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+/* Gradient button fill */
+.bg-gradient-brand {
+  background-image: var(--grad-brand);
+  color: #ffffff;
+}
+
+/* Outline button with gradient border */
+.border-gradient-brand {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    var(--grad-brand) border-box;
+  color: #0b0e2c;
+}
+.border-gradient-brand:hover {
+  background:
+    linear-gradient(#fdf2f8, #fdf2f8) padding-box,
+    var(--grad-brand) border-box;
 }
 
 /* Typography Tokens (Max Font Weight 700) */
@@ -191,7 +224,7 @@ h1,
   line-height: 1.18;
   font-weight: 700;
   letter-spacing: -0.025em;
-  color: #12141f;
+  color: #0b0e2c;
 }
 @media (min-width: 640px) {
   .text-h1-b1g {
@@ -200,12 +233,12 @@ h1,
 }
 @media (min-width: 1024px) {
   .text-h1-b1g {
-    font-size: 42px;
+    font-size: 38px;
   }
 }
 @media (min-width: 1280px) {
   .text-h1-b1g {
-    font-size: 46px;
+    font-size: 42px;
   }
 }
 
@@ -215,7 +248,7 @@ h1,
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.025em;
-  color: #12141f;
+  color: #0b0e2c;
 }
 @media (min-width: 640px) {
   .text-h2 {
@@ -232,7 +265,7 @@ h1,
   font-family: Geist, 'Geist Fallback', system-ui, -apple-system, sans-serif;
   font-size: 13px;
   line-height: 1.55;
-  color: #4a4a4a;
+  color: #5c607a;
 }
 @media (min-width: 640px) {
   .text-body {
@@ -278,6 +311,46 @@ h1,
   .shine-effect::after {
     animation: none;
     display: none;
+  }
+}
+
+/* ─── Site-wide wave background ───────────────────────────────────────────── */
+.site-wave-bg {
+  background-color: #ffffff;
+}
+
+.site-wave-bg main {
+  background: transparent;
+}
+
+.site-wave-bg .wave-bg-soft-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 50% at 50% 50%, rgba(233, 30, 140, 0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 15% 52%, rgba(255, 107, 44, 0.1) 0%, transparent 68%),
+    radial-gradient(ellipse 60% 40% at 85% 48%, rgba(37, 99, 235, 0.12) 0%, transparent 68%),
+    radial-gradient(ellipse 40% 30% at 50% 55%, rgba(123, 47, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.site-wave-bg main > section[class*="bg-white"],
+.site-wave-bg main section[class*="bg-white"]:not([class*="bg-white/"]),
+.site-wave-bg [data-hero] {
+  background-color: rgb(255 255 255 / 0.62) !important;
+}
+
+.site-wave-bg main section[class*="bg-slate-50"] {
+  background-color: rgb(248 250 252 / 0.58) !important;
+}
+
+.site-wave-bg footer[class*="bg-white"] {
+  background-color: rgb(255 255 255 / 0.72) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-bg-root canvas {
+    animation: none;
   }
 }
 

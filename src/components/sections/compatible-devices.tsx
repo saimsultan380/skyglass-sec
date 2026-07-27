@@ -15,45 +15,40 @@ import {
   ArrowRight,
   ShieldCheck,
   Globe,
-  Settings,
-  Flame,
 } from "lucide-react";
 
 const officialDevices = [
-  { name: "Android Smart TVs", icon: Tv },
-  { name: "Android TV boxes", icon: Monitor },
   { name: "Amazon Firestick", icon: Cast },
   { name: "Fire TV", icon: Tv },
+  { name: "Android Smart TVs", icon: Tv },
+  { name: "Android TV boxes", icon: Monitor },
+  { name: "Google TV devices", icon: Cast },
+  { name: "NVIDIA Shield", icon: Cpu },
   { name: "Android smartphones", icon: Smartphone },
   { name: "Android tablets", icon: Tablet },
-  { name: "Selected Google TV devices", icon: Cast },
-  { name: "NVIDIA Shield", icon: Cpu },
 ];
 
 const alternativeDevices = [
   { name: "Samsung Smart TVs", icon: Tv },
   { name: "LG Smart TVs", icon: Tv },
-  { name: "Windows PCs", icon: Monitor },
-  { name: "Mac computers", icon: Laptop },
+  { name: "Sony televisions", icon: Tv },
+  { name: "Hisense televisions", icon: Tv },
+  { name: "TCL televisions", icon: Tv },
+  { name: "Apple TV", icon: Cast },
   { name: "iPhone", icon: Smartphone },
   { name: "iPad", icon: Tablet },
-  { name: "Apple TV", icon: Cast },
-  { name: "Other compatible Smart TVs", icon: Tv },
+  { name: "Windows PCs", icon: Monitor },
+  { name: "Mac computers", icon: Laptop },
+  { name: "MAG devices", icon: Cpu },
+  { name: "Enigma2 receivers", icon: Monitor },
+  { name: "Other compatible IPTV hardware", icon: Cpu },
 ];
 
-const loginMethods = ["Xtream Codes API", "M3U playlist URL"];
-
-const compatibleApps = [
-  "IBO Player",
-  "SmartOne IPTV",
-  "CR7 Player",
-  "VU IPTV Player",
-  "Other supported players",
-];
+const loginMethods = ["Xtream Codes login", "M3U playlist", "Portal information"];
 
 const Tick = () => (
   <svg
-    className="h-4 w-4 text-[#E01E26] shrink-0 mt-0.5"
+    className="h-4 w-4 text-[#E91E8C] shrink-0 mt-0.5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -71,31 +66,33 @@ export function CompatibleDevices() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         
-        {/* ── Section Heading & Intro ── */}
         <FadeIn className="w-full max-w-4xl mb-10">
-          <h2 className="text-h2 font-bold tracking-tight text-[#12141F]">
-            Compatible <span className="text-brand-gradient font-bold">Devices</span>
+          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
+            Devices Supported by{" "}
+            <span className="text-brand-gradient font-bold">Sky Glass IPTV</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-[#4A4A4A] leading-relaxed">
-            The official B1G Player app is designed for Android and Fire TV platforms.
+          <p className="mt-4 text-sm sm:text-base text-[#5C607A] leading-relaxed">
+            Sky Glass IPTV is compatible with a broad range of televisions, streaming devices, smartphones, tablets and computers.
           </p>
         </FadeIn>
 
-        {/* ── Main Devices Row: Level Heights ── */}
         <FadeIn className="w-full mb-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full">
             
-            {/* LEFT CARD: Officially Supported Devices */}
             <div className="rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full">
               <div>
                 <div className="flex items-center gap-2.5 mb-6">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
                     <ShieldCheck className="h-4 w-4 stroke-[2]" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#12141F] leading-none">
-                    Officially Supported Devices
+                  <h3 className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-none">
+                    Dedicated App Devices
                   </h3>
                 </div>
+
+                <p className="text-xs sm:text-sm text-slate-500 mb-4 font-semibold leading-relaxed">
+                  The dedicated Android application is intended for:
+                </p>
 
                 <div className="grid grid-cols-2 gap-3 w-full">
                   {officialDevices.map((device, idx) => {
@@ -107,7 +104,7 @@ export function CompatibleDevices() {
                         data-delay={String((idx % 2) * 100)}
                         className="flex items-center gap-3 p-3 rounded-[12px] border border-slate-100 bg-white"
                       >
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
+                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
                           <Icon className="h-4 w-4 stroke-[2]" />
                         </div>
                         <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
@@ -121,28 +118,26 @@ export function CompatibleDevices() {
 
               <div className="border-t border-slate-100 pt-4 mt-6">
                 <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-                  These devices support direct installation of the official B1G Player client app.
+                  These devices support direct installation of the dedicated Sky Glass IPTV app.
                 </p>
               </div>
             </div>
 
-            {/* RIGHT CARD: Alternative Device Support */}
             <div className="rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full">
               <div>
                 <div className="flex items-center gap-2.5 mb-4">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
                     <Globe className="h-4 w-4 stroke-[2]" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#12141F] leading-none">
-                    Alternative Device Support
+                  <h3 className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-none">
+                    Alternative-Player Devices
                   </h3>
                 </div>
                 
                 <p className="text-xs sm:text-sm text-slate-500 mb-4 font-semibold leading-relaxed">
-                  A B1G IPTV subscription may also be used through compatible players on:
+                  A compatible third-party application may be used on:
                 </p>
 
-                {/* Alt Devices Grid */}
                 <div className="grid grid-cols-2 gap-3 w-full mb-6">
                   {alternativeDevices.map((device, idx) => {
                     const Icon = device.icon;
@@ -153,7 +148,7 @@ export function CompatibleDevices() {
                         data-delay={String((idx % 2) * 100)}
                         className="flex items-center gap-3 p-3.5 rounded-[12px] border border-slate-100 bg-white"
                       >
-                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
+                        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
                           <Icon className="h-4 w-4 stroke-[2]" />
                         </div>
                         <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
@@ -164,49 +159,27 @@ export function CompatibleDevices() {
                   })}
                 </div>
 
-                {/* Split Row for Login Methods & Compatible Apps */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
-                  {/* Login Methods */}
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-[#12141F] mb-3">
-                      Supported login methods:
-                    </h4>
-                    <ul className="space-y-2">
-                      {loginMethods.map((method, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <Tick />
-                          <span className="text-xs font-semibold text-slate-800 leading-relaxed">
-                            {method}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Compatible Apps */}
-                  <div>
-                    <h4 className="text-xs sm:text-sm font-bold text-[#12141F] mb-3">
-                      Compatible applications:
-                    </h4>
-                    <ul className="space-y-2">
-                      {compatibleApps.map((app, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <Tick />
-                          <span className="text-xs font-semibold text-slate-800 leading-relaxed">
-                            {app}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="pt-4 border-t border-slate-100">
+                  <h4 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-3">
+                    Alternative applications may support:
+                  </h4>
+                  <ul className="space-y-2">
+                    {loginMethods.map((method, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <Tick />
+                        <span className="text-xs font-semibold text-slate-800 leading-relaxed">
+                          {method}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
               </div>
 
-              {/* Disclaimer footer */}
               <div className="border-t border-slate-100 pt-4 mt-6">
                 <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-                  Third-party application fees are separate from the B1G IPTV subscription.
+                  Some third-party applications charge their own activation fee. That payment is separate from the IPTV subscription.
                 </p>
               </div>
             </div>
@@ -214,20 +187,19 @@ export function CompatibleDevices() {
           </div>
         </FadeIn>
 
-        {/* ── Footer / View Setup Instructions CTA Card ── */}
         <FadeIn className="w-full">
           <div className="w-full rounded-[12px] border border-slate-200 bg-white p-5 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <p className="text-xs sm:text-sm text-[#4A4A4A] leading-relaxed max-w-2xl">
-              Access the guide below to review configuration tutorials and links for installing the relevant players.
+            <p className="text-xs sm:text-sm text-[#5C607A] leading-relaxed max-w-2xl">
+              Review configuration tutorials and setup instructions for installing the relevant players on your preferred device.
             </p>
 
-            <Link href="/b1g-player-installation-guide/" className="shrink-0 w-full md:w-auto">
+            <Link href="/sky-glass-iptv-installation-guide/" className="shrink-0 w-full md:w-auto">
               <Button
                 variant="primary"
                 size="lg"
-                className="w-full md:w-auto rounded-[12px] bg-gradient-to-r from-[#E01E26] via-[#EE2830] to-[#B5121A] text-white px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-semibold"
+                className="w-full md:w-auto rounded-[12px] bg-gradient-brand text-white px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-semibold"
               >
-                <span>View setup instructions for supported devices</span>
+                <span>View compatible devices</span>
                 <ArrowRight className="ml-2 h-4 w-4 stroke-[2.5]" />
               </Button>
             </Link>

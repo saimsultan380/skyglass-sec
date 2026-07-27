@@ -3,14 +3,19 @@ import { B1GHeader } from "@/components/sections/b1g-header";
 import { B1GHeroSection } from "@/components/sections/b1g-hero-section";
 import { WhatIsB1GPlayer } from "@/components/sections/what-is-b1g-player";
 import { WhyUKViewers } from "@/components/sections/why-uk-viewers";
+import { StartWatchingSteps } from "@/components/sections/steps";
+import { UkCoverage } from "@/components/sections/uk-coverage";
 import { LiveCategories } from "@/components/sections/live-categories";
-import { B1GPricing } from "@/components/sections/pricing";
 import { WhatIsIncluded } from "@/components/sections/what-is-included";
+import { B1GPricing } from "@/components/sections/pricing";
 import { CompatibleDevices } from "@/components/sections/compatible-devices";
 import { DownloadApp } from "@/components/sections/download-app";
-import { MoreDevices } from "@/components/sections/more-devices";
-import { StartWatchingSteps } from "@/components/sections/steps";
+import { QuickActivation } from "@/components/sections/quick-activation";
 import { PlaybackTips } from "@/components/sections/playback-tips";
+import { MoreDevices } from "@/components/sections/more-devices";
+import { CustomerSupport } from "@/components/sections/customer-support";
+import { IptvVsTraditional } from "@/components/sections/iptv-vs-traditional";
+import { TrialSection, PlanChecklist } from "@/components/sections/trial-section";
 import { B1GFAQ } from "@/components/sections/faq";
 import { B1GCTABanner } from "@/components/sections/cta-banner";
 import { B1GFooter } from "@/components/sections/footer";
@@ -27,21 +32,27 @@ export const metadata = buildPageMetadata({
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen">
       <B1GHeader />
       <BreadcrumbJsonLd items={[...page.breadcrumbs]} />
 
       <B1GHeroSection />
       <WhatIsB1GPlayer />
       <WhyUKViewers />
+      <StartWatchingSteps />
+      <UkCoverage />
       <LiveCategories />
-      <B1GPricing />
       <WhatIsIncluded />
+      <B1GPricing />
       <CompatibleDevices />
       <DownloadApp />
-      <MoreDevices />
-      <StartWatchingSteps />
+      <QuickActivation />
       <PlaybackTips />
+      <MoreDevices />
+      <CustomerSupport />
+      <IptvVsTraditional />
+      <TrialSection />
+      <PlanChecklist />
       <B1GFAQ />
       <B1GCTABanner />
       <B1GFooter />

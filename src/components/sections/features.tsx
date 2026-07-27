@@ -49,7 +49,7 @@ export function Features() {
     <section id="features" className="py-20 md:py-28 bg-slate-50/60 border-y border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AutoScrollReveal className="flex flex-col items-center text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#E01E26] bg-red-50 px-3 py-1 rounded-full border border-red-100">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#E91E8C] bg-pink-50 px-3 py-1 rounded-full border border-pink-100">
             Core Specifications
           </span>
           <h2 className="text-h2 mt-4 max-w-2xl">
@@ -70,7 +70,7 @@ export function Features() {
             return (
               <Card key={idx} hoverable className="flex flex-col justify-between">
                 <CardHeader>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-r from-[#E01E26] to-[#B5121A] text-white mb-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-brand text-white mb-4">
                     <Icon className="h-5 w-5" />
                   </div>
                   <CardTitle>{rule.title}</CardTitle>

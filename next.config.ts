@@ -16,57 +16,87 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Old route slugs → client-approved canonical URLs
+      // Legacy B1G route slugs → Sky Glass canonical URLs
+      {
+        source: "/b1g-iptv-subscription",
+        destination: "/sky-glass-iptv-subscription/",
+        permanent: true,
+      },
+      {
+        source: "/b1g-iptv-subscription/",
+        destination: "/sky-glass-iptv-subscription/",
+        permanent: true,
+      },
+      {
+        source: "/b1g-player-installation-guide",
+        destination: "/sky-glass-iptv-installation-guide/",
+        permanent: true,
+      },
+      {
+        source: "/b1g-player-installation-guide/",
+        destination: "/sky-glass-iptv-installation-guide/",
+        permanent: true,
+      },
+      {
+        source: "/b1g-player-reseller",
+        destination: "/sky-glass-iptv-reseller/",
+        permanent: true,
+      },
+      {
+        source: "/b1g-player-reseller/",
+        destination: "/sky-glass-iptv-reseller/",
+        permanent: true,
+      },
+
+      // Short legacy paths → canonical pages
       {
         source: "/subscription-plan",
-        destination: "/b1g-iptv-subscription/",
+        destination: "/sky-glass-iptv-subscription/",
         permanent: true,
       },
       {
         source: "/subscription-plan/",
-        destination: "/b1g-iptv-subscription/",
+        destination: "/sky-glass-iptv-subscription/",
         permanent: true,
       },
       {
         source: "/installation-guide",
-        destination: "/b1g-player-installation-guide/",
+        destination: "/sky-glass-iptv-installation-guide/",
         permanent: true,
       },
       {
         source: "/installation-guide/",
-        destination: "/b1g-player-installation-guide/",
+        destination: "/sky-glass-iptv-installation-guide/",
         permanent: true,
       },
       {
         source: "/reseller-panel",
-        destination: "/b1g-player-reseller/",
+        destination: "/sky-glass-iptv-reseller/",
         permanent: true,
       },
       {
         source: "/reseller-panel/",
-        destination: "/b1g-player-reseller/",
+        destination: "/sky-glass-iptv-reseller/",
         permanent: true,
       },
-
-      // Legacy / broken paths → canonical pages
       {
         source: "/setup-instructions",
-        destination: "/b1g-player-installation-guide/",
+        destination: "/sky-glass-iptv-installation-guide/",
         permanent: true,
       },
       {
         source: "/setup-instructions/",
-        destination: "/b1g-player-installation-guide/",
+        destination: "/sky-glass-iptv-installation-guide/",
         permanent: true,
       },
       {
         source: "/compare-plans",
-        destination: "/b1g-iptv-subscription/",
+        destination: "/sky-glass-iptv-subscription/",
         permanent: true,
       },
       {
         source: "/compare-plans/",
-        destination: "/b1g-iptv-subscription/",
+        destination: "/sky-glass-iptv-subscription/",
         permanent: true,
       },
     ];

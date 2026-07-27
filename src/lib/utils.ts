@@ -3,7 +3,7 @@ import { extendTailwindMerge } from "tailwind-merge";
 
 /**
  * Protect custom typography tokens from being treated as text-color utilities.
- * Without this, cn("text-h1-b1g", "text-[#12141F]") drops text-h1-b1g (font-size).
+ * Without this, cn("text-h1-b1g", "text-[#0B0E2C]") drops text-h1-b1g (font-size).
  */
 const twMerge = extendTailwindMerge({
   extend: {

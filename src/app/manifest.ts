@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "B1G Player",
-    short_name: "B1G Player",
+    name: "Sky Glass IPTV",
+    short_name: "Sky Glass IPTV",
     description:
-      "Official B1G Player IPTV app for B1G IPTV subscriptions on Firestick and Android devices.",
+      "Choose Sky Glass IPTV for live TV, movies and sports in the UK. Compare flexible plans, request a 24-hour trial and get setup support.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
-    theme_color: "#E01E26",
+    theme_color: "#E91E8C",
     id: "/",
     scope: "/",
     lang: "en-GB",

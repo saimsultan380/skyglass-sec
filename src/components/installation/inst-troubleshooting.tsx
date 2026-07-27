@@ -2,12 +2,7 @@
 
 import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
-import {
-  AlertTriangle,
-  RefreshCw,
-  AlertCircle,
-  HelpCircle,
-} from "lucide-react";
+import { AlertTriangle, RefreshCw, AlertCircle } from "lucide-react";
 
 interface TroubleshootingItem {
   title: string;
@@ -19,99 +14,111 @@ const troubleshootList: TroubleshootingItem[] = [
   {
     title: "Downloader Code Does Not Work",
     checks: [
-      "The code is entered as 4172090",
+      "Check that the code is 2245820",
       "Downloader has internet access",
-      "The code has not changed",
-      "The device date and time are correct",
+      "The device clock is correct",
+      "You installed the genuine AFTVnews application",
+      "The network is not blocking the address",
+      "The code has not been updated",
     ],
-    footerText: "Contact support for the current download route.",
+    footerText: "Contact support for the current route when the problem continues.",
   },
   {
-    title: "App Will Not Install",
+    title: "The App Will Not Install",
     checks: [
-      "Available storage is sufficient",
-      "Installation permissions are enabled",
-      "Device is compatible",
-      "APK has downloaded completely",
+      "Free device storage",
+      "External-installation permission",
+      "Device compatibility",
+      "Completed download",
+      "Existing app version",
+      "Android software version",
     ],
+    footerText: "Restart the device and try again using the official download route.",
   },
   {
-    title: "Login Is Incorrect",
+    title: "Login Information Is Rejected",
     checks: [
-      "Check username, password and server URL",
-      "Remove accidental spaces before/after",
-      "Copy and paste details where possible",
+      "Username",
+      "Password",
+      "Capitalisation",
+      "Server URL",
+      "Extra spaces",
+      "Expiry date",
+      "Account status",
     ],
+    footerText: "Enter the details manually when copy and paste repeatedly fails.",
   },
   {
-    title: "Content Does Not Load",
+    title: "Categories Do Not Load",
     checks: [
-      "Try restarting the app",
-      "Try restarting the device",
-      "Try restarting the router",
-      "Check that the subscription is active",
-      "Wait longer for the first library load",
-    ],
-  },
-  {
-    title: "Buffering Issues",
-    checks: [
-      "Use Ethernet instead of Wi-Fi",
-      "Ensure strong Wi-Fi signal",
-      "Close background downloads",
-      "Select a lower-quality stream",
-      "Restart the router",
-    ],
-  },
-  {
-    title: "EPG Is Missing",
-    checks: [
-      "Allow time for guide details to load",
-      "Refresh the EPG from app settings",
+      "Waiting longer",
+      "Restarting the application",
+      "Restarting the device",
+      "Restarting the router",
+      "Checking the internet connection",
+      "Confirming that the account is active",
+      "Removing and re-adding the profile",
     ],
   },
   {
-    title: "One Channel Does Not Work",
+    title: "Buffering and Playback Problems",
     checks: [
-      "Test another channel",
-      "If only one source is affected, the issue may be temporary",
+      "Ethernet instead of Wi-Fi",
+      "Moving closer to the router",
+      "Restarting the broadband equipment",
+      "Closing downloads",
+      "Disconnecting unused devices",
+      "Selecting a lower-quality source",
+      "Testing another channel",
+      "Clearing temporary player data",
+      "Restarting the app",
     ],
+    footerText: "If one channel fails but others work, the issue may affect only that source.",
   },
   {
-    title: "Whole Account Does Not Work",
+    title: "EPG Does Not Display",
     checks: [
-      "Check whether subscription has expired",
-      "Contact support with your order reference",
+      "Refresh the EPG",
+      "Update the playlist",
+      "Restart the player",
+      "Check the device date and time",
+      "Wait for synchronisation",
     ],
-    footerText: "Do not post private details publicly.",
+    footerText: "Not every channel provides complete guide information.",
   },
   {
-    title: "Third-Party Player Requests Payment",
+    title: "Third-Party Player Asks for Payment",
     checks: [
-      "Alternative application activation charges are separate from B1G IPTV",
+      "The fee is paid to the player developer",
+      "It does not activate the IPTV subscription",
+      "It does not extend the account",
+      "It may be a one-time or recurring charge",
     ],
+    footerText: "Confirm compatibility before purchasing a player licence.",
   },
 ];
 
 const updateSteps = [
-  "Confirm the subscription is active.",
-  "Keep the login details available.",
-  "Check whether the existing app must be removed.",
-  "Avoid unofficial update links.",
-  "Allow the app to finish installing.",
+  "Save the login information",
+  "Confirm that the account is active",
+  "Check whether the old app must be removed",
+  "Avoid unofficial update links",
+  "Allow installation to complete",
+  "Restart the device afterwards",
 ];
 
 const reinstallTriggers = [
+  "Failed update",
   "Device reset",
   "App corruption",
-  "Failed update",
-  "Storage issue",
-  "Fire TV software change",
+  "Storage problem",
+  "Repeated crashes",
+  "Operating-system change",
 ];
 
 const Tick = () => (
   <svg
-    className="h-4 w-4 text-[#E01E26] shrink-0 mt-0.5"
+    className="h-4 w-4 text-[#E91E8C] shrink-0 mt-0.5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -128,37 +135,36 @@ export function InstTroubleshooting() {
       className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        
-        {/* Section Heading */}
         <FadeIn className="w-full max-w-4xl mb-12">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
               <AlertTriangle className="h-4 w-4 stroke-[2]" />
             </div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-[#E01E26]">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#E91E8C]">
               Problem Solver
             </h3>
           </div>
-          <h2 className="text-h2 font-bold tracking-tight text-[#12141F]">
-            Common Installation <span className="text-brand-gradient font-bold">Problems</span>
+          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
+            Installation{" "}
+            <span className="text-brand-gradient font-bold">Troubleshooting</span>
           </h2>
         </FadeIn>
 
-        {/* Troubleshooting Grid */}
         <FadeIn className="w-full mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch w-full">
-            {troubleshootList.map((item, idx) => (
+            {troubleshootList.map((item) => (
               <div
-                key={idx}
+                key={item.title}
                 className="rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full hover:border-slate-300 transition-colors"
               >
                 <div>
-                  <h3 className="text-xs sm:text-sm font-bold text-[#12141F] mb-4">
+                  <h3 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-4">
                     {item.title}
                   </h3>
+                  <p className="text-xs text-slate-400 font-semibold mb-2">Try:</p>
                   <ul className="space-y-2 mb-4">
-                    {item.checks.map((check, checkIdx) => (
-                      <li key={checkIdx} className="flex items-start gap-2">
+                    {item.checks.map((check) => (
+                      <li key={check} className="flex items-start gap-2">
                         <Tick />
                         <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
                           {check}
@@ -169,8 +175,8 @@ export function InstTroubleshooting() {
                 </div>
                 {item.footerText && (
                   <div className="border-t border-slate-100 pt-3 mt-3 flex items-start gap-2">
-                    <AlertCircle className="h-4 w-4 text-[#E01E26] shrink-0 mt-0.5" />
-                    <p className="text-xs text-[#E01E26] font-semibold leading-relaxed">
+                    <AlertCircle className="h-4 w-4 text-[#E91E8C] shrink-0 mt-0.5" />
+                    <p className="text-xs text-[#E91E8C] font-semibold leading-relaxed">
                       {item.footerText}
                     </p>
                   </div>
@@ -180,75 +186,60 @@ export function InstTroubleshooting() {
           </div>
         </FadeIn>
 
-        {/* Update & Reinstall Double Column */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full">
-          
-          {/* Updating B1G Player */}
-          <FadeIn className="rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full">
-            <div>
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
-                  <RefreshCw className="h-4 w-4 stroke-[2]" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#12141F] leading-none">
-                  Updating B1G Player
-                </h3>
+          <FadeIn className="rounded-[12px] border border-slate-200 bg-white p-6">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
+                <RefreshCw className="h-4 w-4 stroke-[2]" />
               </div>
-
-              <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
-                Use the approved official download method when a newer version becomes available. Before updating:
-              </p>
-
-              <ul className="space-y-3 mb-6">
-                {updateSteps.map((step, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <Tick />
-                    <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
-                      {step}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-none">
+                Updating the App
+              </h3>
             </div>
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
+              Use the approved download route when a newer version becomes available. Before updating:
+            </p>
+            <ul className="space-y-3">
+              {updateSteps.map((step) => (
+                <li key={step} className="flex items-start gap-2.5">
+                  <Tick />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
+                    {step}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </FadeIn>
 
-          {/* Reinstalling the App */}
-          <FadeIn delay={0.1} className="rounded-[12px] border border-slate-200 bg-white p-6 flex flex-col justify-between h-full">
-            <div>
-              <div className="flex items-center gap-2.5 mb-5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
-                  <RefreshCw className="h-4 w-4 stroke-[2]" />
-                </div>
-                <h3 className="text-base sm:text-lg font-bold text-[#12141F] leading-none">
-                  Reinstalling the App
-                </h3>
+          <FadeIn delay={0.1} className="rounded-[12px] border border-slate-200 bg-white p-6">
+            <div className="flex items-center gap-2.5 mb-5">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
+                <RefreshCw className="h-4 w-4 stroke-[2]" />
               </div>
-
-              <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
-                Reinstallation may be needed after:
-              </p>
-
-              <ul className="space-y-3 mb-6">
-                {reinstallTriggers.map((step, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <Tick />
-                    <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
-                      {step}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-none">
+                Reinstalling the Application
+              </h3>
             </div>
-
-            <div className="border-t border-slate-100 pt-4 mt-6">
+            <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-5 leading-relaxed">
+              Reinstallation may help after:
+            </p>
+            <ul className="space-y-3 mb-6">
+              {reinstallTriggers.map((step) => (
+                <li key={step} className="flex items-start gap-2.5">
+                  <Tick />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">
+                    {step}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-slate-100 pt-4">
               <p className="text-xs text-slate-500 font-semibold leading-relaxed">
-                Keep your account details before deleting the app. After reinstalling, enter the same active login information unless support provides updated details.
+                Keep the username, password and server address before deleting the app. Use the same active account information after reinstalling unless support has issued new details.
               </p>
             </div>
           </FadeIn>
-
         </div>
-
       </div>
     </section>
   );

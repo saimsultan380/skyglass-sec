@@ -11,44 +11,54 @@ interface FAQItem {
 
 const faqList: FAQItem[] = [
   {
-    question: "What is B1G Player?",
-    answer: "B1G Player is the official IPTV application used with an active B1G IPTV subscription on compatible Android and Fire TV devices.",
+    question: "What is Sky Glass IPTV?",
+    answer:
+      "Sky Glass IPTV is an internet-based subscription service that provides access to available live television and on-demand categories through compatible applications.",
   },
   {
-    question: "Does the app come with the subscription?",
-    answer: "Yes. Access to the official player is included with each active subscription.",
+    question: "How many live channels are available?",
+    answer:
+      "Current package information lists more than 22,000 live channels. Counts may change as categories and sources are updated.",
   },
   {
-    question: "What does a B1G IPTV subscription include?",
-    answer: "It may include more than 35,000 live channels, 50,000+ movies, 10,000+ television series, sports, EPG, Catch-Up and customer support.",
+    question: "How large is the on-demand library?",
+    answer:
+      "The current service information lists more than 100,000 movies and television-series entries.",
   },
   {
-    question: "Which devices support the official app?",
-    answer: "The app supports compatible Android Smart TVs, Android boxes, Firestick, Fire TV, Android phones and tablets.",
-  },
-  {
-    question: "Can I use the subscription on Samsung or LG?",
-    answer: "Yes. Install a compatible third-party player and enter the information supplied after activation.",
+    question: "Which devices can I use?",
+    answer:
+      "Supported devices include Firestick, Fire TV, Android TV, Smart TVs, Apple devices, Windows, Mac, smartphones, tablets and selected IPTV hardware.",
   },
   {
     question: "Is there a free trial?",
-    answer: "A trial may be requested before purchasing. Availability may depend on current demand and support capacity.",
+    answer:
+      "A 24-hour trial may be requested before purchasing, subject to current availability.",
   },
   {
-    question: "Does the service support 4K?",
-    answer: "Selected streams may be available in 4K where supported. Actual quality depends on the source, device and connection.",
+    question: "How quickly will I receive my login?",
+    answer:
+      "Most accounts are prepared after payment and order information have been confirmed. Exact activation time may vary.",
   },
   {
-    question: "How quickly is the subscription activated?",
-    answer: "Most accounts are activated after the order has been confirmed and the required customer information has been received.",
+    question: "Does every stream play in 4K?",
+    answer:
+      "No. Only selected sources may be available in 4K. Playback also depends on the device, screen and connection.",
   },
   {
-    question: "Where can I get setup help?",
-    answer: "Visit the Installation Guide or contact the support team.",
+    question: "Can I use the account on several devices?",
+    answer:
+      "This depends on the connection allowance included with the selected plan.",
   },
   {
-    question: "Can businesses resell B1G IPTV?",
-    answer: "Yes. Eligible businesses can apply through the reseller page.",
+    question: "Do third-party players cost extra?",
+    answer:
+      "Some alternative applications charge a separate activation or purchase fee.",
+  },
+  {
+    question: "Where can I get help?",
+    answer:
+      "Use the Installation Guide or contact the support team with your device and account information.",
   },
 ];
 
@@ -59,7 +69,6 @@ export function B1GFAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Split FAQs into two columns for desktop layout
   const midIndex = Math.ceil(faqList.length / 2);
   const leftColFaqs = faqList.slice(0, midIndex);
   const rightColFaqs = faqList.slice(midIndex);
@@ -77,12 +86,12 @@ export function B1GFAQ() {
           onClick={() => toggleFAQ(absoluteIndex)}
           className="w-full flex items-center justify-between text-left p-5 gap-4 hover:bg-slate-50/50 transition-colors focus:outline-none"
         >
-          <span className="text-sm sm:text-base font-bold text-[#12141F] leading-snug">
+          <span className="text-sm sm:text-base font-bold text-[#0B0E2C] leading-snug">
             {item.question}
           </span>
           <span
             className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-colors duration-200 ${
-              isOpen ? "bg-red-50 text-[#E01E26]" : "bg-slate-50 text-slate-400"
+              isOpen ? "bg-pink-50 text-[#E91E8C]" : "bg-slate-50 text-slate-400"
             }`}
           >
             {isOpen ? (
@@ -93,10 +102,9 @@ export function B1GFAQ() {
           </span>
         </button>
 
-        {/* Answer Expandable Area */}
         <div
           className={`transition-all duration-300 ease-in-out overflow-hidden ${
-            isOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"
+            isOpen ? "max-h-[280px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="px-5 pb-5 pt-0 border-t border-slate-100/50 mt-1">
@@ -116,31 +124,27 @@ export function B1GFAQ() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         
-        {/* ── Section Heading & Intro ── */}
         <FadeIn className="w-full max-w-4xl mb-12">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-[#E01E26] shrink-0">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
               <HelpCircle className="h-4 w-4 stroke-[2]" />
             </div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-[#E01E26]">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[#E91E8C]">
               Support Center
             </h3>
           </div>
-          <h2 className="text-h2 font-bold tracking-tight text-[#12141F]">
+          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
             Frequently Asked <span className="text-brand-gradient font-bold">Questions</span>
           </h2>
         </FadeIn>
 
-        {/* ── Accordion List Layout: 2 Columns on Large Screens ── */}
         <FadeIn className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full">
             
-            {/* Left Column FAQs */}
             <div className="flex flex-col gap-4 w-full">
               {leftColFaqs.map((faq, idx) => renderFaqItem(faq, idx))}
             </div>
 
-            {/* Right Column FAQs */}
             <div className="flex flex-col gap-4 w-full">
               {rightColFaqs.map((faq, idx) => renderFaqItem(faq, idx + midIndex))}
             </div>

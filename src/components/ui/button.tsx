@@ -11,11 +11,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gradient-to-r from-[#E01E26] via-[#EE2830] to-[#B5121A] text-white shine-effect",
+          "bg-gradient-brand text-white shine-effect",
         secondary:
           "bg-slate-100 text-slate-900 border border-slate-200",
         outline:
-          "border-2 border-[#E01E26] bg-white text-[#12141F]",
+          "border-gradient-brand",
         ghost:
           "text-slate-700 hover:text-slate-950",
       },

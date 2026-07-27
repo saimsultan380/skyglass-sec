@@ -3,20 +3,20 @@ import type { Metadata } from "next";
 /** Canonical production origin — always non-www, no trailing slash on origin. */
 export const SITE_ORIGIN = "https://b1gplayer.uk";
 
-export const SITE_NAME = "B1G Player";
+export const SITE_NAME = "Sky Glass IPTV";
 
 export const SITE_TITLE =
-  "B1G Player – Official IPTV App & B1G IPTV Subscription";
+  "Sky Glass IPTV – Premium IPTV Subscription for Live TV";
 
 export const SITE_DESCRIPTION =
-  "B1G Player is the official app for B1G IPTV subscriptions. Access live TV, sports, movies and series on supported Firestick and Android devices.";
+  "Choose Sky Glass IPTV for live TV, movies and sports in the UK. Compare flexible plans, request a 24-hour trial and get setup support.";
 
 /** Canonical route paths (always trailing slash except homepage `/`). */
 export const ROUTES = {
   home: "/",
-  subscription: "/b1g-iptv-subscription/",
-  installation: "/b1g-player-installation-guide/",
-  reseller: "/b1g-player-reseller/",
+  subscription: "/sky-glass-iptv-subscription/",
+  installation: "/sky-glass-iptv-installation-guide/",
+  reseller: "/sky-glass-iptv-reseller/",
   contact: "/contact/",
 } as const;
 
@@ -122,7 +122,7 @@ export function buildPageMetadata({
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} – Official IPTV App`,
+          alt: `${SITE_NAME} – Premium IPTV Subscription`,
         },
       ],
     },
@@ -151,9 +151,9 @@ export const SITE_PAGES = [
   },
   {
     path: ROUTES.subscription,
-    title: "B1G Player Subscription UK – B1G IPTV Plans & Trial",
+    title: "Sky Glass IPTV Subscription UK – Plans, Prices & Trial",
     description:
-      "Compare B1G Player plans with a B1G IPTV subscription. Choose 1, 3, 6 or 12 months, get instant activation and receive setup support in the UK.",
+      "Compare Sky Glass IPTV subscription plans for 1, 3, 6 or 12 months. View prices, app access and supported devices, then request a 24-hour trial.",
     changeFrequency: "weekly" as const,
     priority: 0.9,
     breadcrumbs: [
@@ -163,9 +163,9 @@ export const SITE_PAGES = [
   },
   {
     path: ROUTES.installation,
-    title: "B1G Player Installation Guide – Firestick & Android",
+    title: "Install Sky Glass IPTV – Firestick, Android & Smart TV",
     description:
-      "Install B1G Player on Firestick, Android TV, phones and tablets using Downloader code 4172090, then sign in with your B1G IPTV subscription details.",
+      "Install Sky Glass IPTV on Firestick, Android TV, Smart TVs, phones and computers using Downloader code 2245820 with step-by-step guidance.",
     changeFrequency: "monthly" as const,
     priority: 0.8,
     breadcrumbs: [
@@ -175,9 +175,9 @@ export const SITE_PAGES = [
   },
   {
     path: ROUTES.reseller,
-    title: "B1G Player Reseller UK – Panel, Credits & IPTV Plans",
+    title: "Sky Glass IPTV Reseller UK – Panel, Credits & Packages",
     description:
-      "Join the B1G Player reseller programme in the UK. Manage B1G IPTV subscriptions, customer accounts and credits through one organised reseller panel.",
+      "Join the Sky Glass IPTV reseller programme in the UK. Create subscriptions, manage credits and renew customer accounts through one reseller panel.",
     changeFrequency: "monthly" as const,
     priority: 0.8,
     breadcrumbs: [
@@ -187,14 +187,14 @@ export const SITE_PAGES = [
   },
   {
     path: ROUTES.contact,
-    title: "Contact B1G Player – Free Trial, Setup & Subscription Help",
+    title: "Contact Sky Glass IPTV – Trial, Setup & Subscription Help",
     description:
-      "Contact B1G Player for a free trial, B1G IPTV subscription advice, Firestick and Android setup help, renewals and reseller enquiries in the UK.",
+      "Contact Sky Glass IPTV for a 24-hour trial, plan advice, app installation, login help, renewals, connection support and UK reseller enquiries.",
     changeFrequency: "monthly" as const,
     priority: 0.7,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
-      { name: "Contact Us", path: ROUTES.contact },
+      { name: "Contact", path: ROUTES.contact },
     ],
   },
 ] as const;

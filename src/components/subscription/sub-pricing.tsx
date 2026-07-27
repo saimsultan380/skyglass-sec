@@ -15,54 +15,56 @@ interface PricingPlan {
   features: string[];
 }
 
-const getFeaturesForMonths = (monthsText: string) => [
-  `${monthsText} of account access`,
-  "More than 35,000 live television channels",
-  "More than 50,000 movies",
-  "More than 10,000 television series",
+const sharedFeatures = [
+  "22,000+ listed live channels",
+  "100,000+ movies and series",
   "Sports and entertainment categories",
-  "Electronic Programme Guide",
-  "Catch-Up where available",
-  "HD, Full HD and 4K streams where supported",
-  "Official B1G Player App",
-  "Private username, password and server URL",
-  "Instant activation",
-  "UK customer assistance",
+  "Dedicated app information",
+  "EPG where available",
+  "Catch-Up on supported channels",
+  "HD, Full HD and 4K where available",
+  "Customer assistance",
 ];
+
+function planFeatures(months: number): string[] {
+  const accessLabel =
+    months === 1 ? "1 month of account access" : `${months} months of account access`;
+  return [accessLabel, ...sharedFeatures];
+}
 
 const pricingPlans: PricingPlan[] = [
   {
     id: "1-month",
-    name: "1 Month",
-    price: "£10",
-    description: "A flexible monthly option for new customers or viewers who prefer short-term access.",
+    name: "1-Month Plan",
+    price: "£12",
+    description: "A flexible monthly package for new customers and viewers who prefer short-term access.",
     ctaText: "Buy 1 Month",
-    features: getFeaturesForMonths("1 month"),
+    features: planFeatures(1),
   },
   {
     id: "3-months",
-    name: "3 Months",
-    price: "£20",
-    description: "Suitable for viewers who want a shorter subscription without renewing every month.",
+    name: "3-Month Plan",
+    price: "£22",
+    description: "A lower average monthly price without choosing a long subscription.",
     ctaText: "Buy 3 Months",
-    features: getFeaturesForMonths("3 months"),
+    features: planFeatures(3),
   },
   {
     id: "6-months",
-    name: "6 Months",
+    name: "6-Month Plan",
     price: "£30",
-    description: "A mid-length option for viewers looking for a balance between flexibility and value.",
+    description: "A popular mid-length option for regular viewing.",
     ctaText: "Buy 6 Months",
-    features: getFeaturesForMonths("6 months"),
+    features: planFeatures(6),
   },
   {
     id: "12-months",
-    name: "12 Months + 1 Month Free",
+    name: "12-Month Plan",
     price: "£45",
-    description: "A longer-term package for regular viewers.",
-    ctaText: "Buy 12 Months + 1 Month Free",
+    description: "The strongest overall value and lowest average monthly cost.",
+    ctaText: "Buy 12 Months",
     isRecommended: true,
-    features: getFeaturesForMonths("13 months"),
+    features: planFeatures(12),
   },
 ];
 
@@ -73,16 +75,13 @@ export function SubPricing() {
       className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        
-        {/* Section Title */}
         <FadeIn className="w-full max-w-4xl mb-12">
-          <h2 className="text-h2 font-bold tracking-tight text-[#12141F]">
-            Official B1G IPTV{" "}
-            <span className="text-brand-gradient font-bold">Subscription Plans</span>
+          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
+            Current Sky Glass IPTV{" "}
+            <span className="text-brand-gradient font-bold">Plans</span>
           </h2>
         </FadeIn>
 
-        {/* Pricing Cards Grid */}
         <FadeIn className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
             {pricingPlans.map((plan) => (
@@ -90,50 +89,45 @@ export function SubPricing() {
                 key={plan.id}
                 className={`relative flex flex-col justify-between rounded-[12px] border bg-white p-6 transition-all duration-200 ${
                   plan.isRecommended
-                    ? "border-[#E01E26] ring-1 ring-[#E01E26]"
+                    ? "border-[#E91E8C] ring-1 ring-[#E91E8C]"
                     : "border-slate-200"
                 }`}
               >
-                {/* Recommended Badge */}
                 {plan.isRecommended && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-[#E01E26] to-[#EE2830] text-[10px] font-bold text-white uppercase tracking-wider">
-                    Recommended
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-brand text-[10px] font-bold text-white uppercase tracking-wider">
+                    Best Value
                   </span>
                 )}
 
                 <div>
-                  {/* Plan Name */}
                   <div className="flex items-center gap-2 mb-2">
                     <Calendar
                       className={`h-4 w-4 shrink-0 ${
-                        plan.isRecommended ? "text-[#E01E26]" : "text-slate-400"
+                        plan.isRecommended ? "text-[#E91E8C]" : "text-slate-400"
                       }`}
                     />
-                    <h3 className="text-sm font-bold text-[#12141F] tracking-wide uppercase">
+                    <h3 className="text-sm font-bold text-[#0B0E2C] tracking-wide">
                       {plan.name}
                     </h3>
                   </div>
 
-                  {/* Plan Price */}
                   <div className="flex items-baseline gap-1.5 mb-3">
-                    <span className="font-heading text-[42px] leading-none sm:text-3xl font-extrabold text-[#12141F] tracking-tight">
+                    <span className="font-heading text-[42px] leading-none sm:text-3xl font-extrabold text-[#0B0E2C] tracking-tight">
                       {plan.price}
                     </span>
                   </div>
 
-                  {/* Plan Description */}
                   <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed mb-6">
                     {plan.description}
                   </p>
 
-                  {/* Features List */}
                   <ul className="space-y-3 mb-8 border-t border-slate-100 pt-5">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
                         <span
                           className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${
                             plan.isRecommended
-                              ? "bg-red-50 text-[#E01E26]"
+                              ? "bg-pink-50 text-[#E91E8C]"
                               : "bg-slate-50 text-slate-400"
                           }`}
                         >
@@ -147,20 +141,17 @@ export function SubPricing() {
                   </ul>
                 </div>
 
-                {/* CTA Button — red on all plans */}
                 <Button
                   variant="primary"
                   size="lg"
-                  className="w-full rounded-[12px] py-3.5 text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#E01E26] via-[#EE2830] to-[#B5121A] text-white hover:opacity-95 shadow-none border-0"
+                  className="w-full rounded-[12px] py-3.5 text-xs sm:text-sm font-semibold bg-gradient-brand text-white hover:opacity-95 shadow-none border-0"
                 >
                   {plan.ctaText}
                 </Button>
-
               </div>
             ))}
           </div>
         </FadeIn>
-
       </div>
     </section>
   );

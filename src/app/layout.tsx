@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ScrollReveal } from "@/components/animation/scroll-reveal";
+import { WaveBackground } from "@/components/animation/wave-background";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   SITE_DESCRIPTION,
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
   keywords: [
-    "B1G Player",
-    "B1G IPTV",
-    "IPTV app",
-    "Firestick IPTV",
-    "Android TV IPTV",
-    "UK IPTV",
+    "Sky Glass IPTV",
+    "Sky Glass IPTV Subscription",
+    "Sky Glass IPTV App",
+    "IPTV UK",
+    "IPTV subscription UK",
+    "IPTV service UK",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
   other: {
-    "msapplication-TileColor": "#E01E26",
+    "msapplication-TileColor": "#E91E8C",
     "msapplication-TileImage": "/icons/icon-192.png",
   },
 };
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#12141F" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B0E2C" },
   ],
   colorScheme: "light",
 };
@@ -118,7 +119,8 @@ export default function RootLayout({
       className="h-full antialiased light"
       style={{ colorScheme: "light" }}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#12141F] selection:bg-[#E01E26] selection:text-white font-sans">
+      <body className="site-wave-bg min-h-full flex flex-col text-[#0B0E2C] selection:bg-[#E91E8C] selection:text-white font-sans">
+        <WaveBackground />
         <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <ScrollReveal />
         {children}
