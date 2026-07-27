@@ -12,12 +12,12 @@ const buttonVariants = cva(
       variant: {
         primary:
           "bg-gradient-brand text-white shine-effect",
-        secondary:
-          "bg-slate-100 text-slate-900 border border-slate-200",
         outline:
-          "border-gradient-brand",
+          "border-gradient-brand text-[#0B0E2C]",
+        secondary:
+          "border border-white/50 bg-white/65 text-[#0B0E2C] shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-[28px] supports-[backdrop-filter]:bg-white/55",
         ghost:
-          "text-slate-700 hover:text-slate-950",
+          "text-slate-700 hover:text-slate-950 border border-transparent bg-transparent",
       },
       size: {
         default: "h-11 px-5 py-2.5 rounded-[12px]",

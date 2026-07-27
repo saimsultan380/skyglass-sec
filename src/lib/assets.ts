@@ -1,5 +1,5 @@
 /** Shared static asset paths */
-export const HERO_IMAGE = "/hero.png";
+export const HERO_IMAGE = "/hero.PNG";
 export const HERO_IMAGE_WIDTH = 744;
 export const HERO_IMAGE_HEIGHT = 335;
 export const HERO_IMAGE_ALT =

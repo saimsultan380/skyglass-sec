@@ -18,7 +18,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-slate-200 bg-white p-6",
+        "rounded-2xl border border-white/50 bg-white/65 shadow-[0_10px_36px_rgb(0,0,0,0.06)] backdrop-blur-[28px] supports-[backdrop-filter]:bg-white/55 p-6",
         hoverable && [
           "transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
           "hover:-translate-y-1 hover:border-slate-300",

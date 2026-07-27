@@ -59,7 +59,7 @@ export default function NotFound() {
             <Link href={ROUTES.contact} className="w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="w-full h-[48px] rounded-[12px] px-8 text-sm font-semibold border-2 border-slate-200 text-[#0B0E2C] hover:bg-slate-50"
+                className="w-full h-[48px] rounded-[12px] px-8 text-sm font-semibold"
               >
                 Contact subscription support
               </Button>
