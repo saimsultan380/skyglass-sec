@@ -349,8 +349,8 @@ h1,
 }
 
 /*
-  Keep top/bottom nearly pure white like the reference,
-  leave the mid band open so the aurora ribbon stays vivid.
+  Match reference: solid white at top ~35 % and bottom ~30 %.
+  Coloured ribbon is revealed only in the central band.
 */
 .site-wave-bg .wave-bg-soft-glow {
   position: absolute;
@@ -359,12 +359,13 @@ h1,
     linear-gradient(
       to bottom,
       #ffffff 0%,
-      #ffffff 3%,
-      rgba(255, 255, 255, 0.35) 12%,
-      rgba(255, 255, 255, 0) 24%,
-      rgba(255, 255, 255, 0) 76%,
-      rgba(255, 255, 255, 0.35) 88%,
-      #ffffff 97%,
+      #ffffff 26%,
+      rgba(255, 255, 255, 0.70) 34%,
+      rgba(255, 255, 255, 0.10) 44%,
+      rgba(255, 255, 255, 0)    50%,
+      rgba(255, 255, 255, 0.10) 62%,
+      rgba(255, 255, 255, 0.65) 72%,
+      #ffffff 82%,
       #ffffff 100%
     );
   pointer-events: none;
@@ -376,12 +377,13 @@ h1,
       linear-gradient(
         to bottom,
         #ffffff 0%,
-        #ffffff 18%,
-        rgba(255, 255, 255, 0.55) 32%,
-        rgba(255, 255, 255, 0) 42%,
-        rgba(255, 255, 255, 0) 58%,
-        rgba(255, 255, 255, 0.55) 68%,
-        #ffffff 82%,
+        #ffffff 22%,
+        rgba(255, 255, 255, 0.75) 32%,
+        rgba(255, 255, 255, 0.08) 42%,
+        rgba(255, 255, 255, 0)    50%,
+        rgba(255, 255, 255, 0.08) 60%,
+        rgba(255, 255, 255, 0.72) 70%,
+        #ffffff 80%,
         #ffffff 100%
       );
   }

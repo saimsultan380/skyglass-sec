@@ -2,39 +2,29 @@
 
 import { useEffect, useRef } from "react";
 
-/** Reference palette — orange → pink → violet → blue → cyan */
+/* ─── Palette ── orange → hot-pink → magenta → violet → electric-blue → cyan ─ */
 const RIBBON = [
-  { t: 0.0, color: [255, 176, 70] },
-  { t: 0.12, color: [255, 110, 55] },
-  { t: 0.28, color: [255, 45, 120] },
-  { t: 0.42, color: [220, 40, 170] },
-  { t: 0.55, color: [140, 55, 245] },
-  { t: 0.7, color: [70, 90, 255] },
-  { t: 0.85, color: [40, 160, 255] },
-  { t: 1.0, color: [70, 220, 255] },
-] as const;
+  { t: 0.00, color: [255, 130,  20] as [number,number,number] }, // orange
+  { t: 0.10, color: [255,  70,  70] as [number,number,number] }, // orange-red
+  { t: 0.22, color: [255,  25, 130] as [number,number,number] }, // hot pink
+  { t: 0.36, color: [240,  20, 175] as [number,number,number] }, // deep pink
+  { t: 0.50, color: [195,  40, 240] as [number,number,number] }, // magenta-violet
+  { t: 0.63, color: [110,  70, 255] as [number,number,number] }, // violet-blue
+  { t: 0.76, color: [ 40, 130, 255] as [number,number,number] }, // electric blue
+  { t: 0.88, color: [  0, 190, 255] as [number,number,number] }, // sky blue
+  { t: 1.00, color: [ 30, 240, 255] as [number,number,number] }, // cyan
+];
 
 type Particle = {
-  t: number;
-  off: number;
-  r: number;
-  baseAlpha: number;
-  twinkle: number;
-  twinkleSpeed: number;
-  drift: number;
-  filament: number;
+  t: number; off: number; r: number; baseAlpha: number;
+  twinkle: number; twinkleSpeed: number; drift: number; filament: number;
 };
-
 type Bokeh = {
-  t: number;
-  off: number;
-  r: number;
-  alpha: number;
-  color: [number, number, number];
-  phase: number;
-  speed: number;
+  t: number; off: number; r: number; alpha: number;
+  color: [number,number,number]; phase: number; speed: number;
 };
 
+/* ── helpers ─────────────────────────────────────────────────────────────── */
 function lerpColor(t: number): [number, number, number] {
   const x = Math.min(1, Math.max(0, t));
   let i = 0;
@@ -49,11 +39,11 @@ function lerpColor(t: number): [number, number, number] {
     a.color[2] + (b.color[2] - a.color[2]) * u,
   ];
 }
-
-function rgba(c: [number, number, number], a: number) {
-  return `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a})`;
+function rgba(c: [number,number,number], a: number) {
+  return `rgba(${c[0]|0},${c[1]|0},${c[2]|0},${a.toFixed(3)})`;
 }
 
+/* ── Canvas component ────────────────────────────────────────────────────── */
 function AuroraCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -64,139 +54,141 @@ function AuroraCanvas() {
     if (!ctx) return;
 
     let raf = 0;
-    let w = 0;
-    let h = 0;
-    let time = 0;
+    let w = 0, h = 0, time = 0;
     let particles: Particle[] = [];
     let bokehs: Bokeh[] = [];
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    /** Gentle horizontal wave — width-based amp so mobile stays a line like desktop */
+    /* ── Wave spine: strong diagonal bottom-left → top-right ── */
     const waveY = (t: number, phase: number) => {
-      const base = h * 0.48;
-      const isMobile = w < 640;
-      const amp = isMobile
-        ? Math.min(w * 0.12, 42)
-        : Math.min(w * 0.055, h * 0.14, 130);
+      // diagonal base: left side at ~68 % height, right side at ~30 % height
+      const diag = h * (0.68 - t * 0.38);
+      const isMob = w < 640;
+      // amplitude is intentionally modest so the ribbon stays thin & sharp
+      const amp = isMob
+        ? Math.min(w * 0.07, 28)
+        : Math.min(w * 0.038, h * 0.09, 72);
       return (
-        base +
-        Math.sin(t * Math.PI * 2.05 + phase) * amp +
-        Math.sin(t * Math.PI * 3.7 + phase * 1.4) * amp * 0.38 +
-        Math.sin(t * Math.PI * 6.2 + phase * 0.6) * amp * 0.14
+        diag
+        + Math.sin(t * Math.PI * 2.15 + phase)         * amp
+        + Math.sin(t * Math.PI * 3.85 + phase * 1.35)  * amp * 0.32
+        + Math.sin(t * Math.PI * 6.40 + phase * 0.62)  * amp * 0.11
       );
     };
 
+    /* t-parallel unit normal → place things offset from the spine */
     const wavePoint = (t: number, phase: number, off: number) => {
       const x = t * w;
       const y = waveY(t, phase);
-      const d = 0.0025;
+      const d = 0.002;
       const y2 = waveY(Math.min(1, t + d), phase);
-      const dx = d * w;
-      const dy = y2 - y;
+      const dx = d * w, dy = y2 - y;
       const len = Math.hypot(dx, dy) || 1;
       return { x: x + (-dy / len) * off, y: y + (dx / len) * off };
     };
 
+    /* ── Particle + bokeh pool ─────────────────────────────── */
     const init = () => {
-      const isMobile = w < 640;
-      // Same line structure as desktop — fixed px spacing keeps a tight horizontal ribbon
-      const filamentCount = isMobile ? 11 : 12;
-      const perFilament = isMobile ? 72 : 75;
-      const spacing = isMobile ? 6.5 : 9;
+      const isMob = w < 640;
+      const filamentCount = isMob ? 12 : 14;
+      const perFilament  = isMob ? 80 : 90;
+      const spacing      = isMob ? 5.5 : 8;
 
       particles = [];
       for (let f = 0; f < filamentCount; f++) {
         const filamentOff = (f - (filamentCount - 1) / 2) * spacing;
         for (let i = 0; i < perFilament; i++) {
-          const t = i / (perFilament - 1) + (Math.random() - 0.5) * 0.01;
+          const t = i / (perFilament - 1) + (Math.random() - 0.5) * 0.012;
           particles.push({
-            t: Math.min(1, Math.max(0, t)),
-            off: filamentOff + (Math.random() - 0.5) * spacing * 0.7,
-            r: Math.random() < 0.15 ? 1.4 + Math.random() * 1.5 : 0.4 + Math.random() * 1.0,
-            baseAlpha: 0.5 + Math.random() * 0.5,
-            twinkle: Math.random() * Math.PI * 2,
-            twinkleSpeed: 0.012 + Math.random() * 0.028,
-            drift: (Math.random() - 0.5) * 0.00018,
-            filament: f,
+            t:           Math.min(1, Math.max(0, t)),
+            off:         filamentOff + (Math.random() - 0.5) * spacing * 0.65,
+            r:           Math.random() < 0.18
+                           ? 1.5 + Math.random() * 1.8
+                           : 0.4 + Math.random() * 1.0,
+            baseAlpha:   0.55 + Math.random() * 0.45,
+            twinkle:     Math.random() * Math.PI * 2,
+            twinkleSpeed:0.014 + Math.random() * 0.030,
+            drift:       (Math.random() - 0.5) * 0.00016,
+            filament:    f,
           });
         }
       }
 
-      // Sparse outer sparkles — keep close to the line on mobile
-      const extras = isMobile ? 60 : 140;
-      const extraSpread = isMobile ? Math.min(h * 0.08, 55) : h * 0.28;
+      // sparse outer sparkles
+      const extras      = isMob ?  70 : 160;
+      const extraSpread = isMob ? Math.min(h * 0.09, 60) : h * 0.30;
       for (let i = 0; i < extras; i++) {
         particles.push({
-          t: Math.random(),
-          off: (Math.random() - 0.5) * extraSpread,
-          r: 0.4 + Math.random() * 1.2,
-          baseAlpha: 0.2 + Math.random() * 0.35,
-          twinkle: Math.random() * Math.PI * 2,
-          twinkleSpeed: 0.01 + Math.random() * 0.025,
-          drift: (Math.random() - 0.5) * 0.00022,
-          filament: -1,
+          t:           Math.random(),
+          off:         (Math.random() - 0.5) * extraSpread,
+          r:           0.35 + Math.random() * 1.3,
+          baseAlpha:   0.18 + Math.random() * 0.38,
+          twinkle:     Math.random() * Math.PI * 2,
+          twinkleSpeed:0.010 + Math.random() * 0.026,
+          drift:       (Math.random() - 0.5) * 0.00020,
+          filament:    -1,
         });
       }
 
-      const bokehSpread = isMobile ? Math.min(h * 0.1, 70) : h * 0.32;
-      bokehs = Array.from({ length: isMobile ? 12 : 22 }, () => {
+      const bokehSpread = isMob ? Math.min(h * 0.11, 75) : h * 0.34;
+      bokehs = Array.from({ length: isMob ? 14 : 26 }, () => {
         const t = Math.random();
         const local = lerpColor(t);
-        const white = Math.random() > 0.55;
+        // Keep bokeh coloured — white blobs < 10 % chance to avoid oval artifacts
+        const white = Math.random() > 0.90;
         return {
           t,
-          off: (Math.random() - 0.5) * bokehSpread,
-          r: isMobile ? 18 + Math.random() * 42 : 34 + Math.random() * 130,
-          alpha: 0.07 + Math.random() * 0.14,
-          color: white
-            ? ([255, 255, 255] as [number, number, number])
-            : local,
+          off:   (Math.random() - 0.5) * bokehSpread,
+          r:     isMob ? 20 + Math.random() * 50 : 40 + Math.random() * 150,
+          alpha: 0.04 + Math.random() * 0.07,   // much lower — no visible blobs
+          color: white ? [255,255,255] as [number,number,number] : local,
           phase: Math.random() * Math.PI * 2,
-          speed: 0.0035 + Math.random() * 0.007,
+          speed: 0.003 + Math.random() * 0.006,
         };
       });
     };
 
+    /* ── Resize ────────────────────────────────────────────── */
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       w = window.innerWidth;
       h = window.innerHeight;
-      canvas.width = Math.floor(w * dpr);
+      canvas.width  = Math.floor(w * dpr);
       canvas.height = Math.floor(h * dpr);
-      canvas.style.width = `${w}px`;
+      canvas.style.width  = `${w}px`;
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       init();
     };
 
+    /* ── Wide soft glow band ───────────────────────────────── */
     const drawRibbon = (phase: number) => {
-      const isMobile = w < 640;
-      const steps = isMobile ? 32 : 36;
-      const softR = isMobile
-        ? Math.min(h * 0.22, w * 0.48)
-        : h * (0.42 + 0.1);
-      const coreR = isMobile ? Math.min(h * 0.09, w * 0.22) : h * 0.18;
+      const isMob = w < 640;
+      const steps  = isMob ? 34 : 40;
+      const softR  = isMob
+        ? Math.min(h * 0.26, w * 0.52)
+        : h * 0.52;
+      const coreR  = isMob ? Math.min(h * 0.10, w * 0.24) : h * 0.20;
 
-      // Wide soft glow band
+      // wide atmospheric halo
       for (let i = 0; i <= steps; i++) {
         const t = i / steps;
         const p = wavePoint(t, phase, 0);
         const c = lerpColor(t);
-        const radius = softR * (0.9 + Math.sin(t * Math.PI) * 0.12);
-
+        const radius = softR * (0.88 + Math.sin(t * Math.PI) * 0.13);
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
-        g.addColorStop(0, rgba(c, isMobile ? 0.55 : 0.62));
-        g.addColorStop(0.3, rgba(c, 0.3));
+        g.addColorStop(0,    rgba(c, isMob ? 0.60 : 0.68));
+        g.addColorStop(0.28, rgba(c, 0.32));
         g.addColorStop(0.55, rgba(c, 0.12));
-        g.addColorStop(0.8, rgba(c, 0.04));
-        g.addColorStop(1, rgba(c, 0));
+        g.addColorStop(0.80, rgba(c, 0.04));
+        g.addColorStop(1,    rgba(c, 0));
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // Saturated luminous core
+      // saturated luminous core
       ctx.save();
       ctx.globalCompositeOperation = "lighter";
       for (let i = 0; i <= steps; i++) {
@@ -204,59 +196,47 @@ function AuroraCanvas() {
         const p = wavePoint(t, phase, 0);
         const c = lerpColor(t);
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, coreR);
-        g.addColorStop(0, rgba(c, 0.42));
-        g.addColorStop(0.45, rgba(c, 0.16));
-        g.addColorStop(1, rgba(c, 0));
+        g.addColorStop(0,    rgba(c, 0.50));
+        g.addColorStop(0.40, rgba(c, 0.20));
+        g.addColorStop(1,    rgba(c, 0));
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(p.x, p.y, coreR, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // White hotspots (esp. purple → blue zone)
-      const hotR = isMobile ? Math.min(h * 0.06, 40) : h * 0.12;
-      for (const t of [0.48, 0.58, 0.72, 0.82]) {
-        const pulse = 0.55 + 0.45 * Math.sin(time * 0.0009 + t * 8);
-        const p = wavePoint(t, phase, Math.sin(time * 0.0007 + t) * (isMobile ? 4 : 8));
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, hotR);
-        g.addColorStop(0, `rgba(255,255,255,${0.28 * pulse})`);
-        g.addColorStop(0.5, `rgba(255,255,255,${0.08 * pulse})`);
-        g.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, hotR, 0, Math.PI * 2);
-        ctx.fill();
-      }
       ctx.restore();
     };
 
+    /* ── Bokeh blobs ───────────────────────────────────────── */
     const drawBokeh = (phase: number) => {
       for (const b of bokehs) {
         if (!reduced) b.phase += b.speed;
-        const sway = Math.sin(b.phase) * 12;
-        const lift = Math.cos(b.phase * 0.65) * 18;
-        const pt = wavePoint(b.t, phase, b.off);
-        const x = pt.x + sway;
-        const y = pt.y + lift;
+        const sway = Math.sin(b.phase) * 14;
+        const lift = Math.cos(b.phase * 0.62) * 20;
+        const pt   = wavePoint(b.t, phase, b.off);
+        const x = pt.x + sway, y = pt.y + lift;
 
         const g = ctx.createRadialGradient(x, y, 0, x, y, b.r);
-        g.addColorStop(0, rgba(b.color, b.alpha));
-        g.addColorStop(0.4, rgba(b.color, b.alpha * 0.4));
-        g.addColorStop(1, rgba(b.color, 0));
+        g.addColorStop(0,   rgba(b.color, b.alpha));
+        g.addColorStop(0.4, rgba(b.color, b.alpha * 0.38));
+        g.addColorStop(1,   rgba(b.color, 0));
         ctx.fillStyle = g;
         ctx.beginPath();
         ctx.arc(x, y, b.r, 0, Math.PI * 2);
         ctx.fill();
 
-        if (b.r > 36) {
+        // inner rim highlight on large blobs
+        if (b.r > 38) {
           ctx.beginPath();
-          ctx.arc(x - b.r * 0.18, y - b.r * 0.18, b.r * 0.2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${b.alpha * 0.5})`;
+          ctx.arc(x - b.r * 0.18, y - b.r * 0.18, b.r * 0.22, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,255,255,${(b.alpha * 0.55).toFixed(3)})`;
           ctx.fill();
         }
       }
     };
 
+    /* ── Particles + neural-web lines ─────────────────────── */
     const drawParticles = (phase: number) => {
       type Pos = { x: number; y: number; a: number; r: number; filament: number };
       const positions: Pos[] = new Array(particles.length);
@@ -270,18 +250,12 @@ function AuroraCanvas() {
           p.twinkle += p.twinkleSpeed;
         }
         const pulse = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(p.twinkle));
-        const pt = wavePoint(p.t, phase, p.off);
-        positions[i] = {
-          x: pt.x,
-          y: pt.y,
-          a: Math.min(1, p.baseAlpha * pulse),
-          r: p.r,
-          filament: p.filament,
-        };
+        const pt    = wavePoint(p.t, phase, p.off);
+        positions[i] = { x: pt.x, y: pt.y, a: Math.min(1, p.baseAlpha * pulse), r: p.r, filament: p.filament };
       }
 
-      // Fine constellation / neural web along filaments
-      ctx.lineWidth = 0.45;
+      /* neural-web lines — same filament + cross-filament */
+      ctx.lineWidth = 0.40;
       const byFilament = new Map<number, Pos[]>();
       for (const p of positions) {
         if (p.filament < 0) continue;
@@ -297,92 +271,60 @@ function AuroraCanvas() {
           let links = 0;
           for (let j = i + 1; j < list.length && links < 3; j++) {
             const b = list[j]!;
-            if (b.x - a.x > 38) break;
+            if (b.x - a.x > 36) break;
             const dist = Math.hypot(a.x - b.x, a.y - b.y);
-            if (dist < 38) {
-              const alpha = (1 - dist / 38) * 0.32 * Math.min(a.a, b.a);
-              ctx.strokeStyle = `rgba(255,255,255,${alpha})`;
-              ctx.beginPath();
-              ctx.moveTo(a.x, a.y);
-              ctx.lineTo(b.x, b.y);
-              ctx.stroke();
+            if (dist < 36) {
+              const alpha = (1 - dist / 36) * 0.30 * Math.min(a.a, b.a);
+              ctx.strokeStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
               links++;
             }
           }
-          // Cross-link to neighboring filament occasionally
-          if (i % 5 === 0 && a.filament >= 0) {
-            const neighbor = byFilament.get(a.filament + 1);
-            if (neighbor) {
-              let best: Pos | null = null;
-              let bestD = 30;
-              for (const n of neighbor) {
+          // occasional cross-filament link
+          if (i % 5 === 0) {
+            const nb = byFilament.get(a.filament + 1);
+            if (nb) {
+              let best: Pos | null = null, bestD = 28;
+              for (const n of nb) {
                 const d = Math.hypot(a.x - n.x, a.y - n.y);
-                if (d < bestD) {
-                  bestD = d;
-                  best = n;
-                }
+                if (d < bestD) { bestD = d; best = n; }
               }
               if (best) {
-                ctx.strokeStyle = `rgba(255,255,255,${0.12 * a.a})`;
-                ctx.beginPath();
-                ctx.moveTo(a.x, a.y);
-                ctx.lineTo(best.x, best.y);
-                ctx.stroke();
+                ctx.strokeStyle = `rgba(255,255,255,${(0.10 * a.a).toFixed(3)})`;
+                ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(best.x, best.y); ctx.stroke();
               }
             }
           }
         }
       }
 
-      // Sparkle dots (no per-dot shadowBlur — cheaper + sharper like reference)
+      /* sparkle dots */
       ctx.save();
       ctx.globalCompositeOperation = "lighter";
       for (const p of positions) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${p.a * 0.95})`;
+        ctx.fillStyle = `rgba(255,255,255,${(p.a * 0.95).toFixed(3)})`;
         ctx.fill();
         if (p.r > 1.4) {
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r * 2.2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${p.a * 0.18})`;
+          ctx.arc(p.x, p.y, p.r * 2.4, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,255,255,${(p.a * 0.16).toFixed(3)})`;
           ctx.fill();
         }
       }
       ctx.restore();
     };
 
-    const drawSeams = (phase: number) => {
-      if (reduced) return;
-      const isMobile = w < 640;
-      const seams = [0.26, 0.42, 0.58, 0.74];
-      const seamH = isMobile ? Math.min(h * 0.07, 48) : h * 0.16;
-      ctx.save();
-      ctx.globalCompositeOperation = "lighter";
-      for (let s = 0; s < seams.length; s++) {
-        const t = seams[s]!;
-        const pulse = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(time * 0.0011 + s * 1.8));
-        const p = wavePoint(t, phase, Math.sin(time * 0.0008 + s) * (isMobile ? 3 : 6));
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, seamH);
-        g.addColorStop(0, `rgba(255,255,255,${0.38 * pulse})`);
-        g.addColorStop(0.35, `rgba(255,255,255,${0.12 * pulse})`);
-        g.addColorStop(1, "rgba(255,255,255,0)");
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.ellipse(p.x, p.y, isMobile ? 6 : 12, seamH, -0.35 + s * 0.15, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.restore();
-    };
+    /* seam hotspots removed — were causing visible white oval artifacts */
 
+    /* ── Paint loop ────────────────────────────────────────── */
     const paint = () => {
       ctx.clearRect(0, 0, w, h);
-      const phase = reduced ? 0.4 : time * 0.00028;
-
+      const phase = reduced ? 0.4 : time * 0.00027;
       drawRibbon(phase);
       drawBokeh(phase);
       drawParticles(phase);
-      drawSeams(phase);
     };
 
     resize();
@@ -396,7 +338,7 @@ function AuroraCanvas() {
     let last = performance.now();
     const loop = (now: number) => {
       time += now - last;
-      last = now;
+      last  = now;
       paint();
       raf = requestAnimationFrame(loop);
     };
@@ -411,6 +353,7 @@ function AuroraCanvas() {
   return <canvas ref={canvasRef} className="aurora-particles" />;
 }
 
+/* ── Public export ──────────────────────────────────────────────────────── */
 export function WaveBackground() {
   return (
     <div
