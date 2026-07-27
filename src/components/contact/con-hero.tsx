@@ -47,26 +47,28 @@ function HeroCopy() {
 
 function HeroCTAs() {
   return (
-    <div className="flex flex-row items-center gap-2 sm:gap-4 w-full">
-      <Link href="#contact-form" className="flex-1 sm:flex-initial">
+    <div className="flex flex-col lg:flex-col xl:flex-row items-stretch xl:items-center gap-2 sm:gap-3 w-full max-w-full min-w-0">
+      <Link href="#contact-form" className="w-full xl:w-auto min-w-0">
         <Button
           variant="primary"
           size="lg"
-          className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap shine-effect"
+          className="w-full xl:w-auto rounded-[12px] bg-gradient-brand text-white px-4 sm:px-5 lg:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold shine-effect"
         >
-          <MessageSquare className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-5 sm:w-5 shrink-0 stroke-[2.5]" />
-          <span>Send Your Enquiry</span>
+          <MessageSquare className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 stroke-[2.5]" />
+          <span className="hidden xl:inline">Send Your Enquiry</span>
+          <span className="inline xl:hidden">Send Enquiry</span>
         </Button>
       </Link>
 
-      <Link href="/sky-glass-iptv-subscription/" className="flex-1 sm:flex-initial">
+      <Link href="/sky-glass-iptv-subscription/" className="w-full xl:w-auto min-w-0">
         <Button
           variant="outline"
           size="lg"
-          className="w-full sm:w-auto rounded-[12px] border-gradient-brand px-5 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap"
+          className="w-full xl:w-auto rounded-[12px] border-gradient-brand px-4 sm:px-5 lg:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold"
         >
-          <CreditCard className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-5 sm:w-5 text-[#E91E8C] shrink-0 stroke-[2.5]" />
-          <span>View Subscription Plans</span>
+          <CreditCard className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#E91E8C] shrink-0 stroke-[2.5]" />
+          <span className="hidden xl:inline">View Subscription Plans</span>
+          <span className="inline xl:hidden">View Plans</span>
         </Button>
       </Link>
     </div>
