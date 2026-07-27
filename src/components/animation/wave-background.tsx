@@ -71,15 +71,18 @@ function AuroraCanvas() {
     let bokehs: Bokeh[] = [];
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    /** Organic mid-band wave — tall vertical sweep */
+    /** Gentle horizontal wave — width-based amp so mobile stays a line like desktop */
     const waveY = (t: number, phase: number) => {
       const base = h * 0.48;
-      const amp = Math.min(h * 0.22, 180);
+      const isMobile = w < 640;
+      const amp = isMobile
+        ? Math.min(w * 0.12, 42)
+        : Math.min(w * 0.055, h * 0.14, 130);
       return (
         base +
         Math.sin(t * Math.PI * 2.05 + phase) * amp +
-        Math.sin(t * Math.PI * 3.7 + phase * 1.4) * amp * 0.42 +
-        Math.sin(t * Math.PI * 6.2 + phase * 0.6) * amp * 0.18
+        Math.sin(t * Math.PI * 3.7 + phase * 1.4) * amp * 0.38 +
+        Math.sin(t * Math.PI * 6.2 + phase * 0.6) * amp * 0.14
       );
     };
 
@@ -96,20 +99,21 @@ function AuroraCanvas() {
 
     const init = () => {
       const isMobile = w < 640;
-      const filamentCount = isMobile ? 9 : 12;
-      const perFilament = isMobile ? 55 : 75;
-      const spacing = h * (isMobile ? 0.026 : 0.022);
+      // Same line structure as desktop — fixed px spacing keeps a tight horizontal ribbon
+      const filamentCount = isMobile ? 11 : 12;
+      const perFilament = isMobile ? 72 : 75;
+      const spacing = isMobile ? 6.5 : 9;
 
       particles = [];
       for (let f = 0; f < filamentCount; f++) {
         const filamentOff = (f - (filamentCount - 1) / 2) * spacing;
         for (let i = 0; i < perFilament; i++) {
-          const t = i / (perFilament - 1) + (Math.random() - 0.5) * 0.012;
+          const t = i / (perFilament - 1) + (Math.random() - 0.5) * 0.01;
           particles.push({
             t: Math.min(1, Math.max(0, t)),
-            off: filamentOff + (Math.random() - 0.5) * spacing * 0.9,
-            r: Math.random() < 0.15 ? 1.6 + Math.random() * 1.8 : 0.45 + Math.random() * 1.1,
-            baseAlpha: 0.45 + Math.random() * 0.55,
+            off: filamentOff + (Math.random() - 0.5) * spacing * 0.7,
+            r: Math.random() < 0.15 ? 1.4 + Math.random() * 1.5 : 0.4 + Math.random() * 1.0,
+            baseAlpha: 0.5 + Math.random() * 0.5,
             twinkle: Math.random() * Math.PI * 2,
             twinkleSpeed: 0.012 + Math.random() * 0.028,
             drift: (Math.random() - 0.5) * 0.00018,
@@ -118,14 +122,15 @@ function AuroraCanvas() {
         }
       }
 
-      // Extra loose sparkles around the band
-      const extras = isMobile ? 80 : 140;
+      // Sparse outer sparkles — keep close to the line on mobile
+      const extras = isMobile ? 60 : 140;
+      const extraSpread = isMobile ? Math.min(h * 0.08, 55) : h * 0.28;
       for (let i = 0; i < extras; i++) {
         particles.push({
           t: Math.random(),
-          off: (Math.random() - 0.5) * h * 0.4,
-          r: 0.4 + Math.random() * 1.4,
-          baseAlpha: 0.2 + Math.random() * 0.4,
+          off: (Math.random() - 0.5) * extraSpread,
+          r: 0.4 + Math.random() * 1.2,
+          baseAlpha: 0.2 + Math.random() * 0.35,
           twinkle: Math.random() * Math.PI * 2,
           twinkleSpeed: 0.01 + Math.random() * 0.025,
           drift: (Math.random() - 0.5) * 0.00022,
@@ -133,14 +138,15 @@ function AuroraCanvas() {
         });
       }
 
-      bokehs = Array.from({ length: isMobile ? 14 : 22 }, () => {
+      const bokehSpread = isMobile ? Math.min(h * 0.1, 70) : h * 0.32;
+      bokehs = Array.from({ length: isMobile ? 12 : 22 }, () => {
         const t = Math.random();
         const local = lerpColor(t);
         const white = Math.random() > 0.55;
         return {
           t,
-          off: (Math.random() - 0.5) * h * 0.42,
-          r: 34 + Math.random() * (isMobile ? 90 : 130),
+          off: (Math.random() - 0.5) * bokehSpread,
+          r: isMobile ? 18 + Math.random() * 42 : 34 + Math.random() * 130,
           alpha: 0.07 + Math.random() * 0.14,
           color: white
             ? ([255, 255, 255] as [number, number, number])
@@ -164,17 +170,23 @@ function AuroraCanvas() {
     };
 
     const drawRibbon = (phase: number) => {
-      // Wide soft glow band (heavy blur feel via large radials)
-      const steps = 36;
+      const isMobile = w < 640;
+      const steps = isMobile ? 32 : 36;
+      const softR = isMobile
+        ? Math.min(h * 0.22, w * 0.48)
+        : h * (0.42 + 0.1);
+      const coreR = isMobile ? Math.min(h * 0.09, w * 0.22) : h * 0.18;
+
+      // Wide soft glow band
       for (let i = 0; i <= steps; i++) {
         const t = i / steps;
         const p = wavePoint(t, phase, 0);
         const c = lerpColor(t);
-        const radius = h * (0.42 + Math.sin(t * Math.PI) * 0.1);
+        const radius = softR * (0.9 + Math.sin(t * Math.PI) * 0.12);
 
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
-        g.addColorStop(0, rgba(c, 0.62));
-        g.addColorStop(0.3, rgba(c, 0.32));
+        g.addColorStop(0, rgba(c, isMobile ? 0.55 : 0.62));
+        g.addColorStop(0.3, rgba(c, 0.3));
         g.addColorStop(0.55, rgba(c, 0.12));
         g.addColorStop(0.8, rgba(c, 0.04));
         g.addColorStop(1, rgba(c, 0));
@@ -191,28 +203,28 @@ function AuroraCanvas() {
         const t = i / steps;
         const p = wavePoint(t, phase, 0);
         const c = lerpColor(t);
-        const radius = h * 0.18;
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, coreR);
         g.addColorStop(0, rgba(c, 0.42));
         g.addColorStop(0.45, rgba(c, 0.16));
         g.addColorStop(1, rgba(c, 0));
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, coreR, 0, Math.PI * 2);
         ctx.fill();
       }
 
       // White hotspots (esp. purple → blue zone)
+      const hotR = isMobile ? Math.min(h * 0.06, 40) : h * 0.12;
       for (const t of [0.48, 0.58, 0.72, 0.82]) {
         const pulse = 0.55 + 0.45 * Math.sin(time * 0.0009 + t * 8);
-        const p = wavePoint(t, phase, Math.sin(time * 0.0007 + t) * 8);
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, h * 0.12);
+        const p = wavePoint(t, phase, Math.sin(time * 0.0007 + t) * (isMobile ? 4 : 8));
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, hotR);
         g.addColorStop(0, `rgba(255,255,255,${0.28 * pulse})`);
         g.addColorStop(0.5, `rgba(255,255,255,${0.08 * pulse})`);
         g.addColorStop(1, "rgba(255,255,255,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, h * 0.12, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, hotR, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.restore();
@@ -342,20 +354,22 @@ function AuroraCanvas() {
 
     const drawSeams = (phase: number) => {
       if (reduced) return;
+      const isMobile = w < 640;
       const seams = [0.26, 0.42, 0.58, 0.74];
+      const seamH = isMobile ? Math.min(h * 0.07, 48) : h * 0.16;
       ctx.save();
       ctx.globalCompositeOperation = "lighter";
       for (let s = 0; s < seams.length; s++) {
         const t = seams[s]!;
         const pulse = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(time * 0.0011 + s * 1.8));
-        const p = wavePoint(t, phase, Math.sin(time * 0.0008 + s) * 6);
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, h * 0.16);
+        const p = wavePoint(t, phase, Math.sin(time * 0.0008 + s) * (isMobile ? 3 : 6));
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, seamH);
         g.addColorStop(0, `rgba(255,255,255,${0.38 * pulse})`);
         g.addColorStop(0.35, `rgba(255,255,255,${0.12 * pulse})`);
         g.addColorStop(1, "rgba(255,255,255,0)");
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.ellipse(p.x, p.y, 12, h * 0.16, -0.35 + s * 0.15, 0, Math.PI * 2);
+        ctx.ellipse(p.x, p.y, isMobile ? 6 : 12, seamH, -0.35 + s * 0.15, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.restore();
