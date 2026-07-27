@@ -340,53 +340,15 @@ h1,
   background: #ffffff;
 }
 
-.aurora-particles {
+.aurora-nebula-layer {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+  opacity: 1;
 }
 
-/*
-  Match reference: solid white at top ~35 % and bottom ~30 %.
-  Coloured ribbon is revealed only in the central band.
-*/
+/* Soft white edge fade only — no coloured page tint */
 .site-wave-bg .wave-bg-soft-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      #ffffff 0%,
-      #ffffff 26%,
-      rgba(255, 255, 255, 0.70) 34%,
-      rgba(255, 255, 255, 0.10) 44%,
-      rgba(255, 255, 255, 0)    50%,
-      rgba(255, 255, 255, 0.10) 62%,
-      rgba(255, 255, 255, 0.65) 72%,
-      #ffffff 82%,
-      #ffffff 100%
-    );
-  pointer-events: none;
-}
-
-@media (max-width: 640px) {
-  .site-wave-bg .wave-bg-soft-glow {
-    background:
-      linear-gradient(
-        to bottom,
-        #ffffff 0%,
-        #ffffff 22%,
-        rgba(255, 255, 255, 0.75) 32%,
-        rgba(255, 255, 255, 0.08) 42%,
-        rgba(255, 255, 255, 0)    50%,
-        rgba(255, 255, 255, 0.08) 60%,
-        rgba(255, 255, 255, 0.72) 70%,
-        #ffffff 80%,
-        #ffffff 100%
-      );
-  }
+  display: none;
 }
 
 /* Light section wash — subtle so aurora still shows through */
@@ -408,6 +370,54 @@ h1,
   background-color: rgb(255 255 255 / 0.35) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+/*
+  Cards / boxes — same frosted glass as header, slightly stronger.
+  Excludes buttons and gradient CTAs.
+*/
+.site-wave-bg main [class*="rounded-[12px]"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+.site-wave-bg main [class*="rounded-2xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+.site-wave-bg main [class*="rounded-xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+.site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+.site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+.site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]) {
+  background-color: rgb(255 255 255 / 0.88) !important;
+  border-color: rgb(255 255 255 / 0.55) !important;
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.05);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+
+@supports (backdrop-filter: blur(0)) {
+  .site-wave-bg main [class*="rounded-[12px]"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+  .site-wave-bg main [class*="rounded-2xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+  .site-wave-bg main [class*="rounded-xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+  .site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+  .site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
+  .site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]) {
+    background-color: rgb(255 255 255 / 0.82) !important;
+  }
+}
+
+/* Nested slate boxes inside cards */
+.site-wave-bg main [class*="rounded-[12px]"][class*="bg-slate-50"]:not(button),
+.site-wave-bg main [class*="rounded-xl"][class*="bg-slate-50"]:not(button),
+.site-wave-bg main [class*="rounded-lg"][class*="bg-slate-50"]:not(button),
+.site-wave-bg main [class*="rounded-2xl"][class*="bg-slate-50"]:not(button) {
+  background-color: rgb(248 250 252 / 0.75) !important;
+  border-color: rgb(255 255 255 / 0.5) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Form fields — glassy, not buttons */
+.site-wave-bg main input[class*="bg-white"],
+.site-wave-bg main textarea[class*="bg-white"],
+.site-wave-bg main select[class*="bg-white"] {
+  background-color: rgb(255 255 255 / 0.88) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 @media (prefers-reduced-motion: reduce) {
