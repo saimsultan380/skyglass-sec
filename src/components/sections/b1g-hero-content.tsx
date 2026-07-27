@@ -32,7 +32,7 @@ export function B1GHeroContent({ showFullBodyCopy = true }: B1GHeroContentProps)
 
       {/* Body copy — fade/slide in on load */}
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-[90%] sm:w-full sm:max-w-xl lg:max-w-[34rem]">
-        <div className="mt-3 sm:mt-6 space-y-2 sm:space-y-4 text-[11px] sm:text-sm lg:text-base text-black leading-[1.5] sm:leading-relaxed">
+        <div className="mt-3 sm:mt-6 space-y-2 sm:space-y-4 text-[10px] sm:text-sm lg:text-base text-black leading-[1.5] sm:leading-relaxed">
           <p>
             Enjoy flexible television and on-demand entertainment with Sky Glass IPTV, a UK-focused service designed for viewers who want straightforward setup, broad device support and access to live and on-demand categories.
           </p>

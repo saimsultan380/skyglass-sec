@@ -321,7 +321,7 @@ h1,
   }
 }
 
-/* ─── Site-wide wave background ───────────────────────────────────────────── */
+/* ─── Site-wide aurora / particle-wave background ─────────────────────────── */
 .site-wave-bg {
   background-color: #ffffff;
 }
@@ -330,20 +330,61 @@ h1,
   background: transparent;
 }
 
+.aurora-bg-root {
+  background-color: #ffffff;
+}
+
+.aurora-base {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+}
+
+.aurora-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/*
+  Keep top/bottom nearly pure white like the reference,
+  leave the mid band open so the aurora ribbon stays vivid.
+*/
 .site-wave-bg .wave-bg-soft-glow {
   position: absolute;
   inset: 0;
   background:
     linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.72) 0%,
-      rgba(255, 255, 255, 0.4) 14%,
-      rgba(255, 255, 255, 0.12) 32%,
-      rgba(255, 255, 255, 0.08) 50%,
-      rgba(255, 255, 255, 0.18) 78%,
-      rgba(255, 255, 255, 0.55) 100%
+      #ffffff 0%,
+      #ffffff 3%,
+      rgba(255, 255, 255, 0.35) 12%,
+      rgba(255, 255, 255, 0) 24%,
+      rgba(255, 255, 255, 0) 76%,
+      rgba(255, 255, 255, 0.35) 88%,
+      #ffffff 97%,
+      #ffffff 100%
     );
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .site-wave-bg .wave-bg-soft-glow {
+    background:
+      linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 4%,
+        rgba(255, 255, 255, 0.3) 14%,
+        rgba(255, 255, 255, 0) 26%,
+        rgba(255, 255, 255, 0) 74%,
+        rgba(255, 255, 255, 0.3) 86%,
+        #ffffff 96%,
+        #ffffff 100%
+      );
+  }
 }
 
 /* Shared frosted-glass recipe (matches header) */
