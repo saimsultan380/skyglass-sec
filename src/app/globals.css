@@ -389,96 +389,25 @@ h1,
   }
 }
 
-/* Shared frosted-glass recipe (matches header) */
+/* Light section wash — subtle so aurora still shows through */
 .site-wave-bg main > section[class*="bg-white"],
 .site-wave-bg main section[class*="bg-white"]:not([class*="bg-white/"]),
 .site-wave-bg [data-hero] {
-  background-color: rgb(255 255 255 / 0.62) !important;
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-}
-
-/*
-  Pull hero frost under the sticky header so the wave doesn't show as a
-  separate saturated band above the floating nav (top-3 / top-4 inset).
-*/
-.site-wave-bg [data-hero] {
-  margin-top: -5.5rem;
-  padding-top: 5.5rem;
-}
-
-@media (min-width: 640px) {
-  .site-wave-bg [data-hero] {
-    margin-top: -6.25rem;
-    padding-top: 6.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .site-wave-bg [data-hero] {
-    margin-top: -7.25rem;
-    padding-top: 7.25rem;
-  }
+  background-color: rgb(255 255 255 / 0.28) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-wave-bg main section[class*="bg-slate-50"] {
-  background-color: rgb(248 250 252 / 0.58) !important;
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  background-color: rgb(248 250 252 / 0.25) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-wave-bg footer[class*="bg-white"] {
-  background-color: rgb(255 255 255 / 0.7) !important;
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-}
-
-/*
-  Glass cards / boxes — same look as header glass surface:
-  border-white/40 · bg-white/70 · backdrop-blur-xl · soft shadow
-*/
-.site-wave-bg main [class*="rounded-[12px]"][class*="bg-white"]:not([class*="bg-white/"]),
-.site-wave-bg main [class*="rounded-2xl"][class*="bg-white"]:not([class*="bg-white/"]),
-.site-wave-bg main [class*="rounded-xl"][class*="bg-white"]:not([class*="bg-white/"]),
-.site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]),
-.site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]),
-.site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]) {
-  background-color: rgb(255 255 255 / 0.68) !important;
-  border-color: rgb(255 255 255 / 0.55) !important;
-  box-shadow: 0 10px 36px rgb(0 0 0 / 0.06);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-}
-
-@supports (backdrop-filter: blur(0)) {
-  .site-wave-bg main [class*="rounded-[12px]"][class*="bg-white"]:not([class*="bg-white/"]),
-  .site-wave-bg main [class*="rounded-2xl"][class*="bg-white"]:not([class*="bg-white/"]),
-  .site-wave-bg main [class*="rounded-xl"][class*="bg-white"]:not([class*="bg-white/"]),
-  .site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]),
-  .site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]),
-  .site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]) {
-    background-color: rgb(255 255 255 / 0.58) !important;
-  }
-}
-
-/* Inner nested boxes (slate fills inside cards) */
-.site-wave-bg main [class*="rounded-[12px]"][class*="bg-slate-50"],
-.site-wave-bg main [class*="rounded-xl"][class*="bg-slate-50"],
-.site-wave-bg main [class*="rounded-lg"][class*="bg-slate-50"],
-.site-wave-bg main [class*="rounded-2xl"][class*="bg-slate-50"] {
-  background-color: rgb(248 250 252 / 0.55) !important;
-  border-color: rgb(255 255 255 / 0.45) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-/* FAQ / accordion panels & form fields sitting on white */
-.site-wave-bg main input[class*="bg-white"],
-.site-wave-bg main textarea[class*="bg-white"],
-.site-wave-bg main select[class*="bg-white"] {
-  background-color: rgb(255 255 255 / 0.68) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background-color: rgb(255 255 255 / 0.35) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 @media (prefers-reduced-motion: reduce) {
