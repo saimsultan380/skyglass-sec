@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ScrollReveal } from "@/components/animation/scroll-reveal";
 import SynthesisBackground from "@/components/animation/synthesis-background";
+import { ButtonFeedback } from "@/components/ui/button-feedback";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   SITE_DESCRIPTION,
@@ -121,6 +122,7 @@ export default function RootLayout({
     >
       <body className="site-wave-bg relative min-h-full flex flex-col text-[#0B0E2C] selection:bg-[#E91E8C] selection:text-white font-sans">
         <SynthesisBackground />
+        <ButtonFeedback />
         <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <ScrollReveal />
         {children}
