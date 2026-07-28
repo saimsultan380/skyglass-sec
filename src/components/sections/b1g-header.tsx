@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/lib/seo";
+import { LOGO_IMAGE } from "@/lib/assets";
 
 const navLinks = [
   { name: "Sky Glass IPTV", href: ROUTES.home },
@@ -51,7 +52,7 @@ export function B1GHeader() {
         <Link href={ROUTES.home} className="flex items-center shrink-0 group">
           <div className="relative h-11 w-[156px] flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.02]">
             <Image
-              src="/logo-transparent.PNG"
+              src={LOGO_IMAGE}
               alt="Sky Glass IPTV Logo"
               width={156}
               height={44}
@@ -93,7 +94,7 @@ export function B1GHeader() {
             <Link href={ROUTES.home} className="flex items-center group">
               <div className="relative h-9 w-[130px] flex items-center justify-center transition-transform duration-300 group-active:scale-[1.02]">
                 <Image
-                  src="/logo-transparent.PNG"
+                  src={LOGO_IMAGE}
                   alt="Sky Glass IPTV Logo"
                   width={130}
                   height={36}

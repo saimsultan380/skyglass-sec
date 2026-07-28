@@ -552,4 +552,9 @@ h1,
   span:not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *):not(.text-h1-b1g *):not(.text-h2 *):not(.font-heading):not(.text-brand-gradient) {
     font-size: 14px !important;
   }
+
+  .hero-description-copy p {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+  }
 }

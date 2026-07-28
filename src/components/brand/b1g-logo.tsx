@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { LOGO_IMAGE } from "@/lib/assets";
 
 interface B1GLogoProps {
   className?: string;
@@ -17,7 +18,7 @@ export function B1GLogo({ className, size = "md" }: B1GLogoProps) {
   return (
     <div className={cn("relative flex items-center select-none", heightMap[size], className)}>
       <Image
-        src="/logo-transparent.PNG"
+        src={LOGO_IMAGE}
         alt="Sky Glass IPTV Logo"
         width={200}
         height={56}

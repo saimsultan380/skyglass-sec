@@ -25,7 +25,7 @@ export default function SynthesisBackground({
       <div 
         className="absolute inset-0 md:hidden"
         style={{
-          backgroundImage: 'url(/website-bg-image.jpeg)',
+          backgroundImage: 'url(/hero-bg-image.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -37,7 +37,7 @@ export default function SynthesisBackground({
       <div 
         className="hidden md:block absolute inset-0"
         style={{
-          backgroundImage: 'url(/desktop_bg_landscape.png)',
+          backgroundImage: 'url(/desktop_bg_landscape.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
