@@ -42,11 +42,12 @@ export function B1GHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 w-full px-3 sm:px-6 lg:px-8 max-w-[1280px] mx-auto pt-3 sm:pt-4"
+      className="sticky top-0 z-50 w-full pt-3 sm:pt-4"
     >
-      <div
-        className={`hidden lg:flex h-[84px] w-full items-center justify-between rounded-[12px] px-8 overflow-hidden ${glassSurface}`}
-      >
+      <div className="w-full max-w-[1280px] mx-auto px-3 sm:px-6 lg:px-8">
+        <div
+          className={`hidden lg:flex h-[84px] w-full items-center justify-between rounded-[12px] px-8 overflow-hidden ${glassSurface}`}
+        >
         <Link href={ROUTES.home} className="flex items-center shrink-0 group">
           <div className="relative h-11 w-[156px] flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.02]">
             <Image
@@ -156,6 +157,7 @@ export function B1GHeader() {
             )}
           </AnimatePresence>
         </div>
+      </div>
       </div>
     </header>
   );
