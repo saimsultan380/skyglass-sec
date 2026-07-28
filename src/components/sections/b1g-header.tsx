@@ -18,7 +18,7 @@ const navLinks = [
 
 /** Shared frosted-glass surface — desktop header + mobile navbar use the exact same look */
 const glassSurface =
-  "border border-white/40 bg-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/55";
+  "border border-white/55 bg-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-[24px] supports-[backdrop-filter]:bg-white/80";
 
 export function B1GHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ export function B1GHeader() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-3 sm:top-4 z-50 w-full px-3 sm:px-6 lg:px-8 max-w-[1280px] mx-auto"
+      className="sticky top-0 z-50 w-full px-3 sm:px-6 lg:px-8 max-w-[1280px] mx-auto pt-3 sm:pt-4"
     >
       <div
         className={`hidden lg:flex h-[84px] w-full items-center justify-between rounded-[12px] px-8 overflow-hidden ${glassSurface}`}

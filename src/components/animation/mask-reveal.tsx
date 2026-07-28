@@ -92,8 +92,10 @@ export function MaskReveal({
   const delayMs = Math.round(delay * 1000);
   const staggerMs = Math.round(stagger * 1000);
 
+  const Tag = (Component || "h1") as any;
+
   return (
-    <Component
+    <Tag
       className={cn("w-full", className)}
       data-no-reveal
     >
@@ -131,6 +133,6 @@ export function MaskReveal({
           </span>
         ))}
       </div>
-    </Component>
+    </Tag>
   );
 }

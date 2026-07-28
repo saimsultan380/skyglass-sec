@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ScrollReveal } from "@/components/animation/scroll-reveal";
-import { WaveBackground } from "@/components/animation/wave-background";
+import SynthesisBackground from "@/components/animation/synthesis-background";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   SITE_DESCRIPTION,
@@ -120,7 +120,7 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
     >
       <body className="site-wave-bg min-h-full flex flex-col text-[#0B0E2C] selection:bg-[#E91E8C] selection:text-white font-sans">
-        <WaveBackground />
+        <SynthesisBackground />
         <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <ScrollReveal />
         {children}
