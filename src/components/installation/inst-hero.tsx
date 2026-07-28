@@ -107,7 +107,7 @@ function TrustRow() {
 export function InstHero() {
   return (
     <div className="relative bg-white text-[#0B0E2C] flex flex-col pb-8 sm:pb-12" data-hero>
-      <main className="flex-1 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-14">
+      <div className="flex-1 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-14">
         <div className="hidden lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-10 lg:items-center">
           <div className="lg:col-span-7 flex flex-col items-start min-w-0">
             <HeroCopy />
@@ -137,7 +137,7 @@ export function InstHero() {
             <TrustRow />
           </FadeIn>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
