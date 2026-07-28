@@ -56,30 +56,32 @@ export function B1GHeroContent({ showFullBodyCopy = true }: B1GHeroContentProps)
 
 export function B1GHeroCTAs({ className }: { className?: string }) {
   return (
-    <div className={`flex flex-row items-center gap-2 sm:gap-4 w-full ${className || ""}`}>
-      <Link href="/contact/" className="flex-1 sm:flex-initial">
-        <Button
-          variant="primary"
-          size="lg"
-          className="w-full rounded-[12px] bg-gradient-brand text-white px-3 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap"
-        >
-          <Tv className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-5 sm:w-5 shrink-0 stroke-[2.5]" />
-          <span className="hidden sm:inline">Request a 24-hour trial</span>
-          <span className="inline sm:hidden">24-hour trial</span>
-        </Button>
-      </Link>
+    <FadeIn delay={0.32} duration={0.45} yOffset={16} className="w-full">
+      <div className={`flex flex-row items-center gap-2 sm:gap-4 w-full ${className || ""}`}>
+        <Link href="/contact/" className="flex-1 sm:flex-initial">
+          <Button
+            variant="primary"
+            size="lg"
+            className="w-full rounded-[12px] bg-gradient-brand text-white px-3 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap"
+          >
+            <Tv className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-5 sm:w-5 shrink-0 stroke-[2.5]" />
+            <span className="hidden sm:inline">Request a 24-hour trial</span>
+            <span className="inline sm:hidden">24-hour trial</span>
+          </Button>
+        </Link>
 
-      <Link href="#pricing" className="flex-1 sm:flex-initial">
-        <Button
-          variant="outline"
-          size="lg"
-          className="w-full rounded-[12px] border-gradient-brand px-3 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap"
-        >
-          <Calendar className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-5 sm:w-5 text-[#E91E8C] shrink-0 stroke-[2.5]" />
-          <span className="hidden sm:inline">View Subscription Plans</span>
-          <span className="inline sm:hidden">View Plans</span>
-        </Button>
-      </Link>
-    </div>
+        <Link href="#pricing" className="flex-1 sm:flex-initial">
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full rounded-[12px] border-gradient-brand px-3 sm:px-7 py-3 sm:py-3.5 text-xs sm:text-sm lg:text-base font-semibold whitespace-nowrap"
+          >
+            <Calendar className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-5 sm:w-5 text-[#E91E8C] shrink-0 stroke-[2.5]" />
+            <span className="hidden sm:inline">View Subscription Plans</span>
+            <span className="inline sm:hidden">View Plans</span>
+          </Button>
+        </Link>
+      </div>
+    </FadeIn>
   );
 }

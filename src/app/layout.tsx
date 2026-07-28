@@ -119,7 +119,7 @@ export default function RootLayout({
       className="h-full antialiased light"
       style={{ colorScheme: "light" }}
     >
-      <body className="site-wave-bg min-h-full flex flex-col text-[#0B0E2C] selection:bg-[#E91E8C] selection:text-white font-sans">
+      <body className="site-wave-bg relative min-h-full flex flex-col text-[#0B0E2C] selection:bg-[#E91E8C] selection:text-white font-sans">
         <SynthesisBackground />
         <JsonLd data={[organizationJsonLd, websiteJsonLd]} />
         <ScrollReveal />

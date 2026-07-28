@@ -93,20 +93,6 @@
 [data-reveal][data-delay="250"] { transition-delay: 0.18s; }
 [data-reveal][data-delay="300"] { transition-delay: 0.20s; }
 
-/* Hero section content stays visible on load (images, copy, CTAs) */
-[data-hero] [data-reveal] {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: none !important;
-}
-
-[data-hero] [data-hero-image],
-[data-hero] [data-hero-image] img {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-}
-
 /* Title containers stay visible — child word spans still animate via CSS */
 h1,
 .text-h1-b1g,

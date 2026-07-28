@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { FadeIn } from "@/components/animation/fade-in";
 import {
   HERO_IMAGE,
   HERO_IMAGE_ALT,
@@ -11,7 +12,7 @@ import {
 
 export function B1GHeroMockup() {
   return (
-    <div className="w-full" data-no-reveal data-hero-image>
+    <FadeIn delay={0.25} duration={0.5} yOffset={18} className="w-full">
       <div className="relative w-full max-w-2xl mx-auto lg:max-w-none py-2 flex items-center justify-center">
         <div className="relative w-full">
           <Image
@@ -25,6 +26,6 @@ export function B1GHeroMockup() {
           />
         </div>
       </div>
-    </div>
+    </FadeIn>
   );
 }
