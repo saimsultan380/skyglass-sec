@@ -456,8 +456,9 @@ h1,
     font-size: 14px !important;
   }
 
+  .hero-description-copy,
   .hero-description-copy p {
-    font-size: 12.5px !important;
-    line-height: 1.55 !important;
+    font-size: 11px !important;
+    line-height: 1.48 !important;
   }
 }
