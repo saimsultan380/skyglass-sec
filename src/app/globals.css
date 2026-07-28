@@ -348,7 +348,7 @@ h1,
 /* Standard glass layer across main & top header area — exact same intensity on all sections */
 .site-wave-bg main {
   position: relative;
-  background-color: rgb(255 255 255 / 0.80) !important;
+  background-color: rgb(255 255 255 / 0.75) !important;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
@@ -375,7 +375,7 @@ h1,
 }
 
 .site-wave-bg footer[class*="bg-white"] {
-  background-color: rgb(255 255 255 / 0.80) !important;
+  background-color: rgb(255 255 255 / 0.75) !important;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
@@ -391,7 +391,7 @@ h1,
 .site-wave-bg main [class*="rounded-full"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
 .site-wave-bg main [class*="rounded-lg"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]),
 .site-wave-bg main [class*="rounded-3xl"][class*="bg-white"]:not([class*="bg-white/"]):not(button):not([role="button"]) {
-  background-color: rgb(255 255 255 / 0.85) !important;
+  background-color: rgb(255 255 255 / 0.80) !important;
   border-color: rgb(255 255 255 / 0.90) !important;
   box-shadow:
     0 4px 24px rgb(23 107 255 / 0.07),
@@ -532,6 +532,13 @@ h1,
   .particle-wave-container::before,
   .particle-wave-container::after {
     animation: none !important;
+  }
+}
+
+/* Hide particle effects on mobile - use static image instead */
+@media (max-width: 767px) {
+  .particle-wave-container {
+    display: none !important;
   }
 }
 

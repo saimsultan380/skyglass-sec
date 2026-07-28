@@ -18,7 +18,7 @@ const navLinks = [
 
 /** Shared frosted-glass surface — desktop header + mobile navbar use the exact same look */
 const glassSurface =
-  "border border-white/55 bg-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-[24px] supports-[backdrop-filter]:bg-white/80";
+  "border border-white/55 bg-white/75 shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-[24px] supports-[backdrop-filter]:bg-white/75";
 
 export function B1GHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
