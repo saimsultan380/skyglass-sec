@@ -1,86 +1,107 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
+import { Button } from "@/components/ui/button";
+import { Section, SectionHeading } from "@/components/ui/section-bits";
+import { Headphones } from "lucide-react";
+import { ROUTES } from "@/lib/seo";
+import { DOWNLOADER_CODE, DOWNLOADER_APP } from "@/lib/site";
 
 interface StepItem {
   number: string;
   title: string;
-  description: string;
+  paragraphs: readonly string[];
 }
 
-const stepsList: StepItem[] = [
+const stepsList: readonly StepItem[] = [
   {
     number: "01",
     title: "Choose a Plan",
-    description: "Select 1 month, 3 months, 6 months or 12 months.",
+    paragraphs: [
+      "Select one, three, six or twelve months and confirm the number of connections required.",
+    ],
   },
   {
     number: "02",
-    title: "Complete Your Order",
-    description: "Provide the information required to process the account.",
+    title: "Confirm Your Device",
+    paragraphs: ["Tell support which device you intend to use."],
   },
   {
     number: "03",
-    title: "Receive Your Login",
-    description: "After confirmation, receive your username, password and server address.",
+    title: "Install the Application",
+    paragraphs: [
+      `Firestick and compatible Android customers should install ${DOWNLOADER_APP} and enter code ${DOWNLOADER_CODE}.`,
+      "Smart TV customers should install CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV from the relevant television app store.",
+    ],
   },
   {
     number: "04",
-    title: "Install the Correct Application",
-    description: "Use the dedicated app on supported Firestick and Android devices or choose a compatible alternative player.",
+    title: "Contact Support",
+    paragraphs: [
+      "After installation, contact support and provide your device and application details.",
+    ],
   },
   {
     number: "05",
-    title: "Add Your Account",
-    description: "Enter the supplied information and allow the content categories to load.",
+    title: "Receive Your Login",
+    paragraphs: [
+      "Support will supply or configure the login details needed for the selected player.",
+    ],
   },
 ];
 
 export function SubActivationSteps() {
   return (
-    <section
-      id="activation-steps"
-      className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <FadeIn className="w-full max-w-4xl mb-12">
-          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
-            How Subscription{" "}
-            <span className="text-brand-gradient font-bold">Activation Works</span>
-          </h2>
-        </FadeIn>
+    <Section id="activation-steps">
+      <SectionHeading title="How Activation" highlight="Works" />
 
-        <FadeIn className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch w-full relative">
-            {stepsList.map((step, idx) => (
-              <div key={step.number} className="relative flex flex-col justify-between h-full">
-                {idx < 4 && (
-                  <div className="hidden lg:block absolute top-12 left-[calc(100%-1rem)] w-8 border-t-2 border-dashed border-slate-200 z-10" />
-                )}
+      <FadeIn className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch w-full relative">
+          {stepsList.map((step, idx) => (
+            <div key={step.number} className="relative flex flex-col justify-between h-full">
+              {idx < stepsList.length - 1 && (
+                <div className="hidden lg:block absolute top-12 left-[calc(100%-1rem)] w-8 border-t-2 border-dashed border-slate-200 z-10" />
+              )}
 
-                <div className="rounded-[12px] border border-slate-200 bg-white p-5 flex flex-col justify-between flex-1 relative z-20">
-                  <div>
-                    <span className="text-4xl font-extrabold text-[#E91E8C]/10 mb-3 block leading-none select-none font-heading">
-                      {step.number}
-                    </span>
-                    <h3 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-1.5 leading-snug">
-                      Step {idx + 1} – {step.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
-                      {step.description}
-                    </p>
+              <div className="rounded-[12px] border border-slate-200 bg-white p-5 flex flex-col justify-between flex-1 relative z-20">
+                <div>
+                  <span className="text-4xl font-extrabold text-[#E91E8C]/10 mb-3 block leading-none select-none font-heading">
+                    {step.number}
+                  </span>
+                  <h3 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-1.5 leading-snug">
+                    Step {idx + 1} – {step.title}
+                  </h3>
+                  <div className="space-y-2">
+                    {step.paragraphs.map((line) => (
+                      <p
+                        key={line}
+                        className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed"
+                      >
+                        {line}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          <p className="mt-8 text-xs sm:text-sm text-[#5C607A] leading-relaxed max-w-4xl">
-            Most orders can be prepared quickly, although activation time can vary during busy periods or when information is incomplete.
-          </p>
-        </FadeIn>
-      </div>
-    </section>
+        <div className="mt-8">
+          <Link href={`${ROUTES.contact}?enquiry=login`}>
+            <Button
+              variant="primary"
+              size="lg"
+              className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-6 py-3.5 text-xs sm:text-sm font-semibold"
+            >
+              <Headphones className="mr-2 h-4 w-4 shrink-0 stroke-[2.5]" />
+              <span>Contact Support for Login Details</span>
+            </Button>
+          </Link>
+        </div>
+      </FadeIn>
+    </Section>
   );
 }

@@ -30,10 +30,10 @@ export default function SynthesisBackground({
       />
 
       {/* Desktop background image - covers entire site */}
-      <div 
+      <div
         className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/desktop_bg_landscape.webp)',
+          backgroundImage: "url(/dekstop-bg-image.jpeg)",
           opacity: 1.0,
         }}
       />

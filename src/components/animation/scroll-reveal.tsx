@@ -23,8 +23,8 @@ export function ScrollReveal() {
       // Hero above-the-fold — always visible, never wait on scroll
       if (el.closest("[data-hero]")) return true;
       // Never animate hero titles
-      if (el.matches("h1, .text-h1-b1g")) return true;
-      if (el.closest("h1, .text-h1-b1g")) return true;
+      if (el.matches("h1, .text-h1-skyglass")) return true;
+      if (el.closest("h1, .text-h1-skyglass")) return true;
       return false;
     };
 

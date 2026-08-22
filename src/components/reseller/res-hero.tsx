@@ -2,11 +2,19 @@
 
 import React from "react";
 import Link from "next/link";
-import { B1GHeroMockup } from "@/components/sections/b1g-hero-mockup";
+import { SkyglassHeroMockup } from "@/components/sections/skyglass-hero-mockup";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
-import { Users, MessageSquare, Coins, Headphones, Smartphone } from "lucide-react";
+import {
+  Users,
+  MessageSquare,
+  Coins,
+  Headphones,
+  Smartphone,
+} from "lucide-react";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { ROUTES } from "@/lib/seo";
+import { RESELLER_MINIMUM_CREDITS } from "@/lib/site";
 
 const trustItems = [
   { label: "Credit-Based Panel", icon: Coins },
@@ -22,25 +30,30 @@ function HeroCopy() {
         <MaskReveal
           trigger="mount"
           as="h1"
-          className="text-h1-b1g leading-[1.15] font-bold tracking-tight max-w-none"
+          className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Sky Glass IPTV Reseller UK –" },
-            { text: "Panel, Credits", className: "text-brand-gradient font-bold" },
-            { text: "& Customer Management" },
+            { text: "Sky Glass IPTV Reseller Panel" },
+            {
+              text: "for UK Businesses",
+              className: "text-brand-gradient font-bold",
+            },
           ]}
         />
       </div>
 
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
-        <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-[11px] sm:text-sm lg:text-base text-black leading-relaxed">
+        <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Start or expand an IPTV subscription business through the Sky Glass IPTV Reseller Panel.
+            Manage customer accounts, subscriptions, activations, credits,
+            renewals and expiry dates through one web-based reseller panel.
           </p>
           <p>
-            Approved resellers can use a credit-based dashboard to create customer accounts, choose subscription durations, monitor expiry dates, process eligible renewals and provide installation information.
-          </p>
-          <p>
-            The programme is intended for individuals and businesses that can market responsibly, handle customer payments and provide first-line assistance.
+            The current reseller programme begins with a minimum purchase of{" "}
+            <span className="font-extrabold text-[#E91E8C]">
+              {RESELLER_MINIMUM_CREDITS} credits
+            </span>
+            . Under the current standard structure, one credit represents one
+            month of service.
           </p>
         </div>
       </FadeIn>
@@ -50,28 +63,36 @@ function HeroCopy() {
 
 function HeroCTAs() {
   return (
-    <div className="flex flex-col lg:flex-col xl:flex-row items-stretch xl:items-center gap-2 sm:gap-3 w-full max-w-full min-w-0">
-      <Link href="#reseller-packages" className="w-full xl:w-auto min-w-0">
+    <div className="flex w-full max-w-full min-w-0 flex-col items-stretch gap-2 sm:gap-3 lg:flex-col xl:flex-row xl:items-center">
+      <Link
+        href={`${ROUTES.contact}?enquiry=reseller`}
+        className="w-full min-w-0 xl:w-auto"
+      >
         <Button
           variant="primary"
           size="lg"
-          className="w-full xl:w-auto rounded-[12px] bg-gradient-brand text-white px-4 sm:px-5 lg:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold shine-effect"
+          className="bg-gradient-brand shine-effect w-full rounded-[12px] px-4 py-3 text-xs font-semibold text-white sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
-          <Users className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 stroke-[2.5]" />
-          <span className="hidden xl:inline">Apply for reseller access</span>
-          <span className="inline xl:hidden">Apply for Access</span>
+          <Users className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] sm:mr-2 sm:h-4 sm:w-4" />
+          <span className="hidden xl:inline">Request Reseller Information</span>
+          <span className="inline xl:hidden">Reseller Info</span>
         </Button>
       </Link>
 
-      <Link href="/contact/" className="w-full xl:w-auto min-w-0">
+      <Link
+        href={`${ROUTES.contact}?enquiry=reseller`}
+        className="w-full min-w-0 xl:w-auto"
+      >
         <Button
           variant="outline"
           size="lg"
-          className="w-full xl:w-auto rounded-[12px] border-gradient-brand px-4 sm:px-5 lg:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold"
+          className="border-gradient-brand w-full rounded-[12px] px-4 py-3 text-xs font-semibold sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
-          <MessageSquare className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#E91E8C] shrink-0 stroke-[2.5]" />
-          <span className="hidden xl:inline">Contact the Reseller Team</span>
-          <span className="inline xl:hidden">Contact Team</span>
+          <MessageSquare className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] text-[#E91E8C] sm:mr-2 sm:h-4 sm:w-4" />
+          <span className="hidden xl:inline">
+            Ask for a Panel Demonstration
+          </span>
+          <span className="inline xl:hidden">Panel Demo</span>
         </Button>
       </Link>
     </div>
@@ -80,19 +101,19 @@ function HeroCTAs() {
 
 function TrustRow() {
   return (
-    <div className="w-full rounded-2xl sm:rounded-full border border-slate-200 bg-white p-3 sm:p-4">
-      <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-slate-200/90 text-center items-center">
+    <div className="w-full rounded-2xl border border-slate-200 bg-white p-3 sm:rounded-full sm:p-4">
+      <div className="grid grid-cols-2 items-center divide-x divide-y divide-slate-200/90 text-center sm:grid-cols-4 sm:divide-y-0">
         {trustItems.map((item) => {
           const Icon = item.icon;
           return (
             <div
               key={item.label}
-              className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 px-1 sm:px-3 py-2 sm:py-0"
+              className="flex flex-col items-center justify-center gap-1.5 px-1 py-2 sm:flex-row sm:gap-2 sm:px-3 sm:py-0"
             >
-              <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-pink-50 text-[#E91E8C]">
-                <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 stroke-[2.5]" />
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-pink-50 text-[#E91E8C] sm:h-8 sm:w-8">
+                <Icon className="h-3.5 w-3.5 stroke-[2.5] sm:h-4 sm:w-4" />
               </div>
-              <span className="text-xs lg:text-sm font-semibold text-slate-800 tracking-tight leading-tight">
+              <span className="text-xs leading-tight font-semibold tracking-tight text-slate-800 lg:text-sm">
                 {item.label}
               </span>
             </div>
@@ -105,34 +126,41 @@ function TrustRow() {
 
 export function ResHero() {
   return (
-    <div className="relative bg-white text-[#0B0E2C] flex flex-col pb-8 sm:pb-12" data-hero>
-      <div className="flex-1 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-14">
-        <div className="hidden lg:grid lg:grid-cols-12 lg:gap-8 xl:gap-10 lg:items-center">
-          <div className="lg:col-span-7 flex flex-col items-start min-w-0">
+    <div
+      className="relative flex flex-col bg-white pb-8 text-[#0B0E2C] sm:pb-12"
+      data-hero
+    >
+      <div className="mx-auto w-full max-w-7xl flex-1 px-4 pt-8 sm:px-6 sm:pt-12 lg:px-8 lg:pt-14">
+        <div className="hidden lg:grid lg:grid-cols-12 lg:items-center lg:gap-8 xl:gap-10">
+          <div className="flex min-w-0 flex-col items-start lg:col-span-7">
             <HeroCopy />
             <FadeIn delay={0.15} duration={0.4} className="mt-8 w-full">
               <HeroCTAs />
             </FadeIn>
-            <FadeIn delay={0.25} duration={0.4} className="mt-10 w-full max-w-2xl">
+            <FadeIn
+              delay={0.25}
+              duration={0.4}
+              className="mt-10 w-full max-w-2xl"
+            >
               <TrustRow />
             </FadeIn>
           </div>
           <div className="lg:col-span-5">
-            <B1GHeroMockup />
+            <SkyglassHeroMockup />
           </div>
         </div>
 
-        <div className="flex lg:hidden flex-col items-center gap-6 text-left">
+        <div className="flex flex-col items-center gap-6 text-left lg:hidden">
           <div className="w-full">
             <HeroCopy />
           </div>
-          <div className="w-full my-2">
-            <B1GHeroMockup />
+          <div className="my-2 w-full">
+            <SkyglassHeroMockup />
           </div>
           <FadeIn delay={0.15} duration={0.35} className="w-full">
             <HeroCTAs />
           </FadeIn>
-          <FadeIn delay={0.2} duration={0.35} className="w-full mt-2">
+          <FadeIn delay={0.2} duration={0.35} className="mt-2 w-full">
             <TrustRow />
           </FadeIn>
         </div>

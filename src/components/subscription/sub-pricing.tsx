@@ -4,6 +4,7 @@ import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Calendar, Check } from "lucide-react";
+import { buildWhatsAppHref } from "@/lib/site";
 
 interface PricingPlan {
   id: string;
@@ -12,59 +13,50 @@ interface PricingPlan {
   description: string;
   ctaText: string;
   isRecommended?: boolean;
-  features: string[];
 }
 
+/** Identical on every plan — only the term, price and description change. */
 const sharedFeatures = [
-  "22,000+ listed live channels",
-  "100,000+ movies and series",
-  "Sports and entertainment categories",
-  "Dedicated app information",
-  "EPG where available",
-  "Catch-Up on supported channels",
-  "HD, Full HD and 4K where available",
-  "Customer assistance",
-];
-
-function planFeatures(months: number): string[] {
-  const accessLabel =
-    months === 1 ? "1 month of account access" : `${months} months of account access`;
-  return [accessLabel, ...sharedFeatures];
-}
+  "22,000+ live channel entries",
+  "100,000+ films and series",
+  "EPG and selected Catch-Up",
+  "SD, HD and Full HD",
+  "4K on selected streams",
+  "Supported-device installation",
+  "Login details from support",
+  "Customer support",
+] as const;
 
 const pricingPlans: PricingPlan[] = [
   {
     id: "1-month",
-    name: "1-Month Plan",
+    name: "1 Month",
     price: "£12",
-    description: "A flexible monthly package for new customers and viewers who prefer short-term access.",
-    ctaText: "Buy 1 Month",
-    features: planFeatures(1),
+    description: "Choose one month if you want the lowest initial payment.",
+    ctaText: "Get 1 Month",
   },
   {
     id: "3-months",
-    name: "3-Month Plan",
+    name: "3 Months",
     price: "£22",
-    description: "A lower average monthly price without choosing a long subscription.",
-    ctaText: "Buy 3 Months",
-    features: planFeatures(3),
+    description:
+      "Choose three months for a longer period without committing to six or twelve months.",
+    ctaText: "Get 3 Months",
   },
   {
     id: "6-months",
-    name: "6-Month Plan",
+    name: "6 Months",
     price: "£30",
-    description: "A popular mid-length option for regular viewing.",
-    ctaText: "Buy 6 Months",
-    features: planFeatures(6),
+    description: "Choose six months for a lower equivalent monthly cost.",
+    ctaText: "Get 6 Months",
   },
   {
     id: "12-months",
-    name: "12-Month Plan",
+    name: "12 Months",
     price: "£45",
-    description: "The strongest overall value and lowest average monthly cost.",
-    ctaText: "Buy 12 Months",
+    description: "Choose twelve months for the lowest equivalent monthly price.",
+    ctaText: "Get 12 Months",
     isRecommended: true,
-    features: planFeatures(12),
   },
 ];
 
@@ -77,16 +69,18 @@ export function SubPricing() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <FadeIn className="w-full max-w-4xl mb-12">
           <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
-            Current Sky Glass IPTV{" "}
-            <span className="text-brand-gradient font-bold">Plans</span>
+            Sky Glass IPTV{" "}
+            <span className="text-brand-gradient font-bold">Subscription Plans</span>
           </h2>
         </FadeIn>
 
         <FadeIn className="w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
-            {pricingPlans.map((plan) => (
+            {pricingPlans.map((plan, index) => (
               <div
                 key={plan.id}
+                data-reveal
+                data-delay={String(index * 100)}
                 className={`relative flex flex-col justify-between rounded-[12px] border bg-white p-6 transition-all duration-200 ${
                   plan.isRecommended
                     ? "border-[#E91E8C] ring-1 ring-[#E91E8C]"
@@ -122,10 +116,10 @@ export function SubPricing() {
                   </p>
 
                   <ul className="space-y-3 mb-8 border-t border-slate-100 pt-5">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5">
+                    {sharedFeatures.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5">
                         <span
-                          className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${
+                          className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full mt-0.5 ${
                             plan.isRecommended
                               ? "bg-pink-50 text-[#E91E8C]"
                               : "bg-slate-50 text-slate-400"
@@ -141,13 +135,15 @@ export function SubPricing() {
                   </ul>
                 </div>
 
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="w-full rounded-[12px] py-3.5 text-xs sm:text-sm font-semibold bg-gradient-brand text-white hover:opacity-95 shadow-none border-0"
-                >
-                  {plan.ctaText}
-                </Button>
+                <a target="_blank" rel="noopener noreferrer" href={buildWhatsAppHref({ plan: `${plan.name} (${plan.price})`, page: "Subscription plans", intent: `I want the ${plan.name} for ${plan.price}.` })}>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    className="w-full rounded-[12px] py-3.5 text-xs sm:text-sm font-semibold bg-gradient-brand text-white hover:opacity-95 shadow-none border-0"
+                  >
+                    {plan.ctaText}
+                  </Button>
+                </a>
               </div>
             ))}
           </div>

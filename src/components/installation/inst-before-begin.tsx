@@ -5,26 +5,26 @@ import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, AlertTriangle } from "lucide-react";
+import { ROUTES } from "@/lib/seo";
 
 const prepareList = [
-  "Active subscription or trial",
-  "Compatible device",
-  "Stable broadband connection",
+  "An active subscription or eligible trial",
+  "A supported device",
+  "A stable internet connection",
+  "Access to the device’s app store",
+  "Approximately 25 Mbps for HD",
+  "Around 50 Mbps for supported 4K",
+  "Enough free device storage",
+  "Your order information",
+];
+
+const neverShareList = [
   "Username",
   "Password",
   "Server URL",
-  "Available storage",
-  "Access to device settings",
-];
-
-const doNotList = [
-  "Change capitalisation",
-  "Add spaces",
-  "Shorten the server address",
-  "Remove http:// or https://",
-  "Share your account publicly",
-  "Enter your login into unknown websites",
-  "Install an APK from an unverified source",
+  "M3U link",
+  "MAC address",
+  "Device key",
 ];
 
 const Tick = () => (
@@ -54,11 +54,11 @@ export function InstBeforeBegin() {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <FadeIn>
               <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C] mb-4">
-                What You Need Before{" "}
-                <span className="text-brand-gradient font-bold">Installation</span>
+                Before You{" "}
+                <span className="text-brand-gradient font-bold">Start</span>
               </h2>
               <p className="text-sm sm:text-base text-slate-500 font-semibold leading-relaxed mb-6">
-                Prepare:
+                Have these ready:
               </p>
 
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-6 w-full">
@@ -72,15 +72,12 @@ export function InstBeforeBegin() {
                 ))}
               </ul>
 
-              <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-6 leading-relaxed">
-                Enter the account information exactly as supplied.
-              </p>
-
               <div className="border-t border-slate-100 pt-6 w-full">
                 <p className="text-xs sm:text-sm text-slate-500 font-semibold mb-4 leading-relaxed">
-                  Customers without an account should visit the Subscription Plans page.
+                  Customers without an account should visit the Subscription
+                  Plans page.
                 </p>
-                <Link href="/sky-glass-iptv-subscription/">
+                <Link href={ROUTES.subscription}>
                   <Button
                     variant="primary"
                     className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-5 py-3 text-xs sm:text-sm font-semibold"
@@ -100,13 +97,13 @@ export function InstBeforeBegin() {
                   <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0">
                     <AlertTriangle className="h-4 w-4 stroke-[2]" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-[#E91E8C] leading-none">
-                    Do not:
+                  <h3 className="text-base sm:text-lg font-bold text-[#E91E8C] leading-snug">
+                    Never publish or share:
                   </h3>
                 </div>
 
                 <ul className="space-y-3.5">
-                  {doNotList.map((item) => (
+                  {neverShareList.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <WarningDot />
                       <span className="text-xs sm:text-sm font-semibold text-slate-800 leading-snug">

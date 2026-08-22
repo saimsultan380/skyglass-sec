@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { B1GHeader } from "@/components/sections/b1g-header";
-import { B1GFooter } from "@/components/sections/footer";
+import { SkyglassHeader } from "@/components/sections/skyglass-header";
+import { SkyglassFooter } from "@/components/sections/footer";
 import { Button } from "@/components/ui/button";
 import { ROUTES, SITE_NAME } from "@/lib/seo";
 
@@ -25,33 +25,36 @@ const helpfulLinks = [
   { name: "Sky Glass IPTV", href: ROUTES.home },
   { name: "Subscription Plans", href: ROUTES.subscription },
   { name: "Installation Guide", href: ROUTES.installation },
+  { name: "Supported Devices", href: ROUTES.devices },
   { name: "Reseller Panel", href: ROUTES.reseller },
+  { name: "Reviews", href: ROUTES.reviews },
+  { name: "About", href: ROUTES.about },
   { name: "Contact", href: ROUTES.contact },
 ];
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen flex flex-col">
-      <B1GHeader />
+    <main className="flex min-h-screen flex-col">
+      <SkyglassHeader />
 
-      <section className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-        <div className="mx-auto max-w-2xl w-full text-center">
-          <p className="text-sm font-bold tracking-widest uppercase text-[#E91E8C] mb-4">
+      <section className="flex flex-1 items-center justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="mx-auto w-full max-w-2xl text-center">
+          <p className="mb-4 text-sm font-bold tracking-widest text-[#E91E8C] uppercase">
             Error 404
           </p>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B0E2C] tracking-tight mb-4">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-[#0B0E2C] sm:text-4xl lg:text-5xl">
             Page not found
           </h1>
-          <p className="text-sm sm:text-base text-slate-500 font-semibold leading-relaxed mb-10 max-w-lg mx-auto">
+          <p className="mx-auto mb-10 max-w-lg text-sm leading-relaxed font-semibold text-slate-500 sm:text-base">
             The page you are looking for does not exist, was moved, or the URL
             may be mistyped. Use the links below to continue.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-12">
+          <div className="mb-12 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <Link href={ROUTES.home} className="w-full sm:w-auto">
               <Button
                 variant="primary"
-                className="w-full h-[48px] rounded-[12px] px-8 text-sm font-semibold bg-gradient-brand text-white"
+                className="bg-gradient-brand h-[48px] w-full rounded-[12px] px-8 text-sm font-semibold text-white"
               >
                 Back to Home
               </Button>
@@ -59,7 +62,7 @@ export default function NotFound() {
             <Link href={ROUTES.contact} className="w-full sm:w-auto">
               <Button
                 variant="outline"
-                className="w-full h-[48px] rounded-[12px] px-8 text-sm font-semibold"
+                className="h-[48px] w-full rounded-[12px] px-8 text-sm font-semibold"
               >
                 Contact subscription support
               </Button>
@@ -72,7 +75,7 @@ export default function NotFound() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-semibold text-slate-600 hover:text-[#E91E8C] transition-colors"
+                    className="text-sm font-semibold text-slate-600 transition-colors hover:text-[#E91E8C]"
                   >
                     {link.name}
                   </Link>
@@ -83,7 +86,7 @@ export default function NotFound() {
         </div>
       </section>
 
-      <B1GFooter />
+      <SkyglassFooter />
     </main>
   );
 }

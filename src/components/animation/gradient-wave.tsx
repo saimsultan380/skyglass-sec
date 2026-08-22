@@ -1,5 +1,6 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-this-alias -- canvas animation helpers */
 import { useEffect, useRef } from "react";
 
 function normalizeColor(hexCode: number): number[] {

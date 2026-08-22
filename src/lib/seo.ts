@@ -1,23 +1,36 @@
 import type { Metadata } from "next";
 
 /** Canonical production origin — always non-www, no trailing slash on origin. */
-export const SITE_ORIGIN = "https://b1gplayer.uk";
+export const SITE_ORIGIN = "https://skyglass-iptv.com";
 
 export const SITE_NAME = "Sky Glass IPTV";
 
 export const SITE_TITLE =
-  "Sky Glass IPTV – Premium IPTV Subscription for Live TV";
+  "Sky Glass IPTV UK – 22,000+ Channels & Plans from £12";
 
 export const SITE_DESCRIPTION =
-  "Choose Sky Glass IPTV for live TV, movies and sports in the UK. Compare flexible plans, request a 24-hour trial and get setup support.";
+  "Choose Sky Glass IPTV UK with 22,000+ live channels, 100,000+ movies and series, EPG, selected Catch-Up and supported 4K. Plans start from £12.";
 
-/** Canonical route paths (always trailing slash except homepage `/`). */
+/**
+ * Canonical route paths (always trailing slash).
+ *
+ * Homepage and commercial pages keep the live dated WordPress URLs as finals.
+ * Remaining pages use the evergreen slugs from updated-content.md.
+ * `/` is rewritten to serve the app root; the public home URL is ROUTES.home.
+ */
 export const ROUTES = {
-  home: "/",
-  subscription: "/sky-glass-iptv-subscription/",
-  installation: "/sky-glass-iptv-installation-guide/",
-  reseller: "/sky-glass-iptv-reseller/",
-  contact: "/contact/",
+  home: "/sky-glass-iptv-uk-2026/",
+  subscription: "/sky-glass-iptv-subscription-plans-uk-2026/",
+  installation: "/sky-glass-iptv-installation-guide-uk-15-08-2026/",
+  devices: "/sky-glass-iptv-supported-devices/",
+  reviews: "/sky-glass-iptv-reviews/",
+  reseller: "/iptv-reseller-uk-22-08-2026/",
+  contact: "/sky-glass-iptv-contact-2026/",
+  about: "/about/",
+  terms: "/terms-and-conditions/",
+  privacy: "/privacy-policy/",
+  refunds: "/refund-policy/",
+  dmca: "/dmca-policy/",
 } as const;
 
 /**
@@ -50,9 +63,10 @@ function hasFileExtension(pathname: string): boolean {
   return /\.[a-z0-9]+$/i.test(last);
 }
 
-/** Ensure path is absolute pathname with trailing slash (except `/` and file URLs). */
+/** Ensure path is absolute pathname with trailing slash (except file URLs). */
 export function canonicalPath(path: string): string {
-  if (!path || path === "/") return "/";
+  // Bare `/` is an internal app route; the public homepage URL is dated.
+  if (!path || path === "/") return ROUTES.home;
   const trimmed = path.startsWith("/") ? path : `/${path}`;
   const withoutQuery = trimmed.split("?")[0]?.split("#")[0] ?? trimmed;
   if (hasFileExtension(withoutQuery)) {
@@ -64,10 +78,10 @@ export function canonicalPath(path: string): string {
 }
 
 /** Absolute canonical URL (non-www + trailing slash on page paths). */
-export function absoluteUrl(path: string = "/"): string {
+export function absoluteUrl(path: string = ROUTES.home): string {
   const origin = getSiteOrigin();
   const pathname = canonicalPath(path);
-  return pathname === "/" ? `${origin}/` : `${origin}${pathname}`;
+  return `${origin}${pathname}`;
 }
 
 export type BreadcrumbItem = {
@@ -75,7 +89,7 @@ export type BreadcrumbItem = {
   path: string;
 };
 
-export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+export function buildBreadcrumbJsonLd(items: readonly BreadcrumbItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -100,9 +114,10 @@ export function buildPageMetadata({
   title,
   description,
   path,
-  absoluteTitle = true,
+  absoluteTitle = false,
 }: PageSeoInput): Metadata {
   const pathname = canonicalPath(path);
+  const url = absoluteUrl(pathname);
 
   return {
     title: absoluteTitle ? { absolute: title } : title,
@@ -113,7 +128,7 @@ export function buildPageMetadata({
     openGraph: {
       type: "website",
       locale: "en_GB",
-      url: pathname,
+      url,
       siteName: SITE_NAME,
       title,
       description,
@@ -122,7 +137,7 @@ export function buildPageMetadata({
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} – Premium IPTV Subscription`,
+          alt: `${SITE_NAME} – Official IPTV App`,
         },
       ],
     },
@@ -132,69 +147,157 @@ export function buildPageMetadata({
       description,
       images: ["/og-image.png"],
     },
-    robots: {
-      index: true,
-      follow: true,
-    },
   };
 }
 
-/** Indexed marketing routes used by sitemap + internal SEO checks. */
-export const SITE_PAGES = [
+export type SitePage = {
+  title: string;
+  description: string;
+  path: string;
+  breadcrumbs: readonly BreadcrumbItem[];
+  changeFrequency: "weekly" | "monthly" | "yearly";
+  priority: number;
+};
+
+export const SITE_PAGES: readonly SitePage[] = [
   {
-    path: ROUTES.home,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    changeFrequency: "weekly" as const,
-    priority: 1,
+    path: ROUTES.home,
     breadcrumbs: [{ name: "Home", path: ROUTES.home }],
+    changeFrequency: "weekly",
+    priority: 1,
   },
   {
-    path: ROUTES.subscription,
-    title: "Sky Glass IPTV Subscription UK – Plans, Prices & Trial",
+    title: "Sky Glass IPTV Subscription UK – Plans from £12",
     description:
-      "Compare Sky Glass IPTV subscription plans for 1, 3, 6 or 12 months. View prices, app access and supported devices, then request a 24-hour trial.",
-    changeFrequency: "weekly" as const,
-    priority: 0.9,
+      "Compare Sky Glass IPTV subscription plans for 1, 3, 6 or 12 months. Prices start from £12 with 22,000+ channels, 100,000+ VOD and setup help.",
+    path: ROUTES.subscription,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
       { name: "Subscription Plans", path: ROUTES.subscription },
     ],
+    changeFrequency: "weekly",
+    priority: 0.9,
   },
   {
-    path: ROUTES.installation,
-    title: "Install Sky Glass IPTV – Firestick, Android & Smart TV",
+    title: "Sky Glass IPTV Installation Guide – Firestick, TV & Mobile",
     description:
-      "Install Sky Glass IPTV on Firestick, Android TV, Smart TVs, phones and computers using Downloader code 2245820 with step-by-step guidance.",
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
+      "Install Sky Glass IPTV on Firestick, Android TV, Smart TV, Apple devices, Windows and more. Follow clear setup and troubleshooting steps.",
+    path: ROUTES.installation,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
       { name: "Installation Guide", path: ROUTES.installation },
     ],
+    changeFrequency: "monthly",
+    priority: 0.9,
   },
   {
-    path: ROUTES.reseller,
-    title: "Sky Glass IPTV Reseller UK – Panel, Credits & Packages",
+    title: "Sky Glass IPTV Supported Devices – Check Compatibility",
     description:
-      "Join the Sky Glass IPTV reseller programme in the UK. Create subscriptions, manage credits and renew customer accounts through one reseller panel.",
-    changeFrequency: "monthly" as const,
+      "Check Sky Glass IPTV compatibility for Firestick, Android TV, Samsung, LG, Apple TV, iPhone, Windows, Mac, MAG, Formuler and other devices.",
+    path: ROUTES.devices,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Supported Devices", path: ROUTES.devices },
+    ],
+    changeFrequency: "monthly",
     priority: 0.8,
+  },
+  {
+    title: "Sky Glass IPTV Reseller Panel UK – 120-Credit Entry",
+    description:
+      "Start with the Sky Glass IPTV reseller panel in the UK. Manage accounts, activations, renewals and credits, with a current minimum of 120 credits.",
+    path: ROUTES.reseller,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
       { name: "Reseller Panel", path: ROUTES.reseller },
     ],
+    changeFrequency: "monthly",
+    priority: 0.8,
   },
   {
-    path: ROUTES.contact,
-    title: "Contact Sky Glass IPTV – Trial, Setup & Subscription Help",
+    title: "Sky Glass IPTV Reviews UK – Verified Customer Feedback",
     description:
-      "Contact Sky Glass IPTV for a 24-hour trial, plan advice, app installation, login help, renewals, connection support and UK reseller enquiries.",
-    changeFrequency: "monthly" as const,
+      "Read verified Sky Glass IPTV reviews from UK customers. Compare feedback by device, subscription length, setup experience, streaming and support.",
+    path: ROUTES.reviews,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Reviews", path: ROUTES.reviews },
+    ],
+    changeFrequency: "monthly",
     priority: 0.7,
+  },
+  {
+    title: "Contact Sky Glass IPTV UK – Free 24-Hour Trial & Support",
+    description:
+      "Contact Sky Glass IPTV UK for plan questions, device checks, installation support, billing help or an eligible free 24-hour IPTV trial.",
+    path: ROUTES.contact,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
       { name: "Contact", path: ROUTES.contact },
     ],
+    changeFrequency: "monthly",
+    priority: 0.8,
   },
-] as const;
+  {
+    title: "About Sky Glass IPTV UK – Service, Devices & Support",
+    description:
+      "Learn about Sky Glass IPTV UK, including subscription plans, supported devices, installation guidance, customer support and service standards.",
+    path: ROUTES.about,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "About", path: ROUTES.about },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.5,
+  },
+  {
+    title: "Sky Glass IPTV Terms & Conditions – UK Subscription Rules",
+    description:
+      "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",
+    path: ROUTES.terms,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Terms & Conditions", path: ROUTES.terms },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    title: "Sky Glass IPTV Privacy Policy – Data, Cookies & Rights",
+    description:
+      "Read the Sky Glass IPTV privacy policy covering personal data, cookies, payment records, lawful processing, retention, security and your UK GDPR rights.",
+    path: ROUTES.privacy,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Privacy Policy", path: ROUTES.privacy },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    title: "Sky Glass IPTV Refund Policy – Eligibility & Requests",
+    description:
+      "Read the Sky Glass IPTV refund policy, including cancellation rights, seven-day technical review eligibility, exclusions and how to submit a request.",
+    path: ROUTES.refunds,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Refund Policy", path: ROUTES.refunds },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    title: "Sky Glass IPTV DMCA Policy – Copyright Notices",
+    description:
+      "Read the Sky Glass IPTV DMCA policy and learn how to submit a valid copyright notice, what information is required and how counter-notices work.",
+    path: ROUTES.dmca,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "DMCA Policy", path: ROUTES.dmca },
+    ],
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+];

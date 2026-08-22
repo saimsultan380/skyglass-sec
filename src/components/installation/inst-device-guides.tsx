@@ -1,14 +1,17 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
-import { FadeIn } from "@/components/animation/fade-in";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   HERO_IMAGE,
   HERO_IMAGE_ALT,
   HERO_IMAGE_HEIGHT,
   HERO_IMAGE_WIDTH,
 } from "@/lib/assets";
+import { ROUTES } from "@/lib/seo";
+import { DOWNLOADER_CODE } from "@/lib/site";
 import {
   Tv,
   Monitor,
@@ -20,6 +23,9 @@ import {
   AlertTriangle,
   ChevronRight,
   Box,
+  Headphones,
+  Satellite,
+  Radio,
 } from "lucide-react";
 
 interface DeviceGuide {
@@ -33,46 +39,61 @@ interface DeviceGuide {
   notes?: string[];
 }
 
-const DOWNLOADER_CODE = "2245820";
-
 const deviceGuidesList: DeviceGuide[] = [
   {
     id: "firestick",
-    name: "Amazon Firestick",
+    name: "Firestick",
     icon: Cast,
-    title: "Install Sky Glass IPTV on Amazon Firestick",
-    subtitle: "Follow these steps to install the dedicated app on Firestick or Fire TV using Downloader.",
+    title: "Install Sky Glass IPTV on Firestick",
+    subtitle:
+      "Install Downloader by AFTVnews, allow the installation permission and enter the Downloader code.",
     showDownloaderCode: true,
     steps: [
       {
-        title: "Step 1 – Find Downloader",
+        title: "Step 1 – Install Downloader by AFTVnews",
         description:
-          "From the Firestick home screen: Select Find. Open Search. Type Downloader. Select Downloader by AFTVnews. Choose Get or Download. Wait for the installation. Open Downloader.",
+          "Open Find or Search from the Firestick home screen. Search for Downloader by AFTVnews. Select it from the official Amazon Appstore. Choose Download or Get. Open Downloader after installation.",
       },
       {
         title: "Step 2 – Enable Installation Permission",
         description:
-          "Open a route similar to: Settings → My Fire TV → Developer Options → Install Unknown Apps. Select Downloader and enable permission. If Developer Options are hidden: Open Settings, select My Fire TV, choose About, highlight the Fire TV device name and press the select button repeatedly until the developer-options message appears. Return to My Fire TV and open Developer Options. Menu names can differ between Fire TV versions.",
+          "Open Settings. Select My Fire TV. Open Developer Options. Select Install Unknown Apps. Allow the permission for Downloader.",
       },
       {
-        title: "Step 3 – Enter the Code",
-        description:
-          "Open Downloader and enter: 2245820. Choose Go. Confirm that the destination page shows the correct app information. Do not continue when the page displays unrelated branding, opens repeated redirects, requests unnecessary personal information, asks you to install unrelated applications, or downloads an unexpected file type.",
+        title: "Step 3 – Enter Downloader Code",
+        description: `Open Downloader. Select the code or URL field. Enter ${DOWNLOADER_CODE}. Select Go. Wait for the application file to download. Select Install. Choose Open after installation.`,
       },
       {
-        title: "Step 4 – Install the APK",
+        title: "Step 4 – Contact Support",
         description:
-          "After the download: Select Install. Wait for installation to complete. Select Done or Open. Return to Downloader. Delete the downloaded APK if you want to recover storage. Deleting the APK after installation does not remove the app.",
+          "After the Sky Glass IPTV app is installed, contact support. Support will provide the username, password and server address needed to sign in.",
+      },
+    ],
+    notes: [
+      "If Developer Options is hidden: open Settings > My Fire TV > About, highlight your Firestick device name and press the select button repeatedly until the developer message appears, then return to the previous menu.",
+    ],
+  },
+  {
+    id: "fire-tv-cube",
+    name: "Fire TV Cube",
+    icon: Box,
+    title: "Install Sky Glass IPTV on Fire TV Cube",
+    subtitle:
+      "The Fire TV Cube uses the same Amazon Appstore and Downloader route as the Firestick.",
+    showDownloaderCode: true,
+    steps: [
+      { title: "Open the Amazon Appstore", description: "Install Downloader by AFTVnews." },
+      {
+        title: "Allow Installation",
+        description: "Permit Downloader to install the required application.",
       },
       {
-        title: "Step 5 – Move the App",
-        description:
-          "Open your Firestick application list. Highlight the new app. Press the remote menu button. Select Move or Move to Front. Place it near the beginning of the app list.",
+        title: "Enter the Code",
+        description: `Enter code ${DOWNLOADER_CODE}. Download and install the app.`,
       },
       {
-        title: "Step 6 – Enter Your Account",
-        description:
-          "Open the app and enter your username, password and server URL. Save the profile and wait for the first account load.",
+        title: "Contact Support",
+        description: "Open the application, then contact support for your account credentials.",
       },
     ],
   },
@@ -80,55 +101,81 @@ const deviceGuidesList: DeviceGuide[] = [
     id: "android-tv",
     name: "Android TV",
     icon: Tv,
-    title: "Install on Android TV",
+    title: "Install Sky Glass IPTV on Android TV",
     subtitle:
-      "The same dedicated Android application can be installed on compatible Android TV devices.",
+      "Android TV devices install Downloader from the Google Play Store.",
     showDownloaderCode: true,
     steps: [
-      { title: "Install Downloader", description: "Open the Google Play Store. Search for Downloader. Install it." },
-      { title: "Enable External Installation", description: "Open the device security settings. Allow Downloader to install external apps." },
-      { title: "Enter Code and Install", description: "Open Downloader. Enter code 2245820. Download the APK. Install the application." },
-      { title: "Sign In", description: "Open it. Enter the subscription login. After installation, you can remove Downloader's external-installation permission." },
+      {
+        title: "Install Downloader",
+        description:
+          "Open the Google Play Store. Search for Downloader by AFTVnews. Install and open Downloader.",
+      },
+      {
+        title: "Allow App Installation",
+        description: "Permit app installation for Downloader where required.",
+      },
+      {
+        title: "Download and Install",
+        description: `Enter code ${DOWNLOADER_CODE}. Download the Sky Glass IPTV application. Select Install.`,
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Open the application, then contact support for your username, password and server URL.",
+      },
     ],
   },
   {
     id: "google-tv",
     name: "Google TV",
     icon: Tv,
-    title: "Google TV Installation",
-    subtitle:
-      "Google TV devices use a similar process to Android TV. Compatible hardware may include Chromecast with Google TV and selected televisions using the Google TV interface.",
+    title: "Install Sky Glass IPTV on Google TV",
+    subtitle: "Google TV devices follow the same Google Play route as Android TV.",
     showDownloaderCode: true,
     steps: [
-      { title: "Install Downloader", description: "Install Downloader from the app store." },
-      { title: "Enable Permission", description: "Enable permission for external installation." },
-      { title: "Download and Install", description: "Enter code 2245820. Download the approved APK. Install the app." },
-      { title: "Add Your Account", description: "Open it. Add your username, password and server URL. The exact menu route depends on the device manufacturer and software version." },
+      {
+        title: "Install Downloader",
+        description:
+          "Open the Google Play Store on the Google TV device. Install Downloader by AFTVnews. Open Downloader.",
+      },
+      {
+        title: "Enter the Code",
+        description: `Enter ${DOWNLOADER_CODE}. Download and install the application.`,
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Open the installed app, then contact support to receive your login details.",
+      },
     ],
   },
   {
     id: "android-box",
-    name: "Android Box & Shield",
+    name: "Android TV Box",
     icon: Box,
-    title: "Android Box and NVIDIA Shield Setup",
+    title: "Install on an Android TV Box",
     subtitle:
-      "Android streaming boxes and NVIDIA Shield devices can normally use the dedicated APK.",
+      "This method applies to many Android boxes, Nvidia Shield, Xiaomi Mi Box and similar devices.",
     showDownloaderCode: true,
     steps: [
       {
-        title: "Before Installation",
+        title: "Install Downloader",
         description:
-          "Check available storage. Update the operating system where appropriate. Confirm that the device allows APK installation. Remove an incomplete older installation if necessary.",
+          "Open the Google Play Store. Install Downloader by AFTVnews.",
       },
       {
-        title: "Install via Downloader",
-        description:
-          "Follow the Android TV Downloader method: install Downloader, enable external app installation, enter code 2245820, download and install the APK.",
+        title: "Download the Application",
+        description: `Open Downloader and enter ${DOWNLOADER_CODE}. Download the application. Select Install.`,
       },
       {
-        title: "Enter Account Details",
+        title: "Contact Support",
         description:
-          "Open the app and enter the account details supplied after activation.",
+          "Open the app after installation. Contact support with your device model and order information.",
+      },
+      {
+        title: "Sign In",
+        description: "Enter the login details supplied by support.",
       },
     ],
   },
@@ -136,94 +183,203 @@ const deviceGuidesList: DeviceGuide[] = [
     id: "android-phone",
     name: "Android Phone & Tablet",
     icon: Smartphone,
-    title: "Android Phone and Tablet Installation",
-    subtitle: "Install the dedicated app directly on Android mobile devices.",
+    title: "Install on an Android Phone or Tablet",
+    subtitle: "Install the application through Downloader where it is available.",
+    showDownloaderCode: true,
     steps: [
-      { title: "Download the APK", description: "Open the official direct address (http://aftv.news/2245820). Download the APK." },
-      { title: "Allow Installation", description: "Open the completed download. Allow installation from the browser or file manager. Select Install." },
-      { title: "Enter Account", description: "Open the application. Enter the account username, password and full server address. Save the account. Wait for the content to load." },
+      {
+        title: "Install Downloader",
+        description:
+          "Open the Google Play Store. Search for Downloader by AFTVnews. Install Downloader if available for your device.",
+      },
+      {
+        title: "Download and Install",
+        description: `Open the application. Enter code ${DOWNLOADER_CODE}. Download and install the Sky Glass IPTV app.`,
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Open the application, then contact support for your account login.",
+      },
     ],
     notes: [
-      "Android may display a warning because the app is installed outside the Play Store. Continue only when the APK came from the approved route.",
-      "Remove the browser's external-installation permission after setup when it is no longer needed.",
+      "If Downloader is not available for the phone or tablet model, contact support for the appropriate installation link.",
     ],
   },
   {
     id: "samsung-tv",
     name: "Samsung Smart TV",
     icon: Tv,
-    title: "Samsung Smart TV Setup",
+    title: "Set Up Sky Glass IPTV on Samsung Smart TV",
     subtitle:
-      "Samsung televisions do not normally support an Android APK. Use a compatible IPTV player from the Samsung App Store.",
+      "Samsung Smart TVs use a compatible application from the Samsung Smart Hub rather than an Android APK. Install whichever of CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV is available.",
     steps: [
       {
-        title: "Install a Compatible Player",
-        description:
-          "Open the Samsung App Store. Search for a compatible player. Potential applications may include IBO Player, SmartOne IPTV, CR7 Player or other compatible Xtream Codes players.",
+        title: "Open the Samsung Smart Hub",
+        description: "Search for one of the supported players.",
       },
       {
-        title: "Enter Account Details",
-        description:
-          "Open it. Choose Xtream Codes or the supported playlist method. Enter the username, password and server URL. Add a profile name. Save the account.",
+        title: "Install the Player",
+        description: "Install and open the selected application.",
       },
       {
-        title: "Load Content",
+        title: "Record the Device Details",
         description:
-          "Restart the player if requested. Wait for the categories to load.",
+          "Record the MAC address and device key shown on screen.",
       },
-    ],
-    notes: [
-      "Player availability depends on television model, operating system, country and App Store region.",
-      "A separate player activation fee may apply.",
+      {
+        title: "Contact Support",
+        description:
+          "Contact support and send the details privately. Support will provide or configure the required account information.",
+      },
+      {
+        title: "Refresh the Player",
+        description: "Restart or refresh the player after configuration.",
+      },
     ],
   },
   {
     id: "lg-tv",
     name: "LG Smart TV",
     icon: Tv,
-    title: "LG Smart TV Setup",
-    subtitle: "LG televisions use applications from the LG Content Store.",
+    title: "Set Up Sky Glass IPTV on LG Smart TV",
+    subtitle:
+      "LG Smart TVs normally use an application from the LG Content Store. Available players may include CR7 Player, IBO Player, SmartOne IPTV and HOT IPTV.",
     steps: [
       {
-        title: "Install a Player",
-        description:
-          "Open the LG Content Store. Search for an IPTV player. Possible applications may include IBO Player, SmartOne IPTV, CR7 Player or other compatible players.",
+        title: "Open the LG Content Store",
+        description: "Search for one of the supported IPTV players.",
       },
       {
-        title: "Configure Login",
-        description:
-          "Open it. Select Xtream Codes or M3U. Enter the account details. Save the profile.",
+        title: "Install the Player",
+        description: "Install and open the selected player.",
       },
       {
-        title: "Load Categories",
-        description: "Restart the application. Allow the categories to load.",
+        title: "Note the Device Details",
+        description: "Note the MAC address and device key.",
       },
-    ],
-    notes: [
-      "Do not purchase a third-party player until you have confirmed that it supports your television and login method.",
+      {
+        title: "Contact Support",
+        description:
+          "Contact support with those details. Support will provide or configure the playlist information.",
+      },
+      {
+        title: "Refresh the Application",
+        description: "Refresh or restart the application.",
+      },
     ],
   },
   {
     id: "sony-tv",
-    name: "Sony, Hisense & TCL",
+    name: "Sony Smart TV",
     icon: Monitor,
-    title: "Sony, Hisense and TCL Television Setup",
-    subtitle: "The installation method depends on the operating system.",
+    title: "Set Up on Sony Smart TV",
+    subtitle: "The method depends on whether the television uses Android TV or Google TV.",
+    showDownloaderCode: true,
     steps: [
       {
         title: "Android TV or Google TV Models",
-        description:
-          "Use the dedicated APK through Downloader where compatible. Follow the Android TV or Google TV installation steps above.",
+        description: `Open Google Play. Install Downloader by AFTVnews. Enter code ${DOWNLOADER_CODE}. Download and install the Sky Glass IPTV app.`,
       },
       {
-        title: "Non-Android Models",
-        description:
-          "Use an IPTV player available in the television's app store.",
+        title: "Contact Support",
+        description: "Open the application, then contact support for login details.",
+      },
+    ],
+    notes: [
+      "If it does not use Android or Google TV, check its app store for CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.",
+    ],
+  },
+  {
+    id: "hisense-tv",
+    name: "Hisense Smart TV",
+    icon: Monitor,
+    title: "Set Up on Hisense Smart TV",
+    subtitle:
+      "Hisense televisions may use Google TV, Android TV, VIDAA or another operating system.",
+    showDownloaderCode: true,
+    steps: [
+      {
+        title: "Android or Google TV Models",
+        description: `Install Downloader by AFTVnews. Enter code ${DOWNLOADER_CODE}. Download and install the application. Contact support for login details.`,
       },
       {
-        title: "Before Installing",
+        title: "VIDAA Models",
         description:
-          "Check: television model, operating system, app-store availability, login compatibility and player activation cost.",
+          "Open the VIDAA app store. Search for CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV. Install whichever supported player is available. Send its MAC address and device key to support.",
+      },
+    ],
+  },
+  {
+    id: "tcl-tv",
+    name: "TCL Smart TV",
+    icon: Monitor,
+    title: "Set Up on TCL Smart TV",
+    subtitle: "TCL models may use Android TV, Google TV or Roku TV.",
+    showDownloaderCode: true,
+    steps: [
+      {
+        title: "Android or Google TV Models",
+        description: `Install Downloader by AFTVnews from Google Play. Enter code ${DOWNLOADER_CODE}. Install the application.`,
+      },
+      {
+        title: "Contact Support",
+        description: "Contact support for login details.",
+      },
+    ],
+    notes: [
+      "For Roku TV models, contact support before ordering because app availability varies.",
+    ],
+  },
+  {
+    id: "philips-tv",
+    name: "Philips Smart TV",
+    icon: Monitor,
+    title: "Set Up on Philips Smart TV",
+    subtitle: "Philips Android and Google TV models use the Downloader route.",
+    showDownloaderCode: true,
+    steps: [
+      {
+        title: "Install Downloader",
+        description: "Open Google Play. Install Downloader by AFTVnews.",
+      },
+      {
+        title: "Install the Application",
+        description: `Enter code ${DOWNLOADER_CODE}. Install and open the Sky Glass IPTV application.`,
+      },
+      {
+        title: "Contact Support",
+        description: "Contact support for the account login.",
+      },
+    ],
+    notes: [
+      "For non-Android models, check the television app store for CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.",
+    ],
+  },
+  {
+    id: "ios-devices",
+    name: "iPhone & iPad",
+    icon: Tablet,
+    title: "Set Up on iPhone or iPad",
+    subtitle: "Apple devices do not install Android APK files.",
+    steps: [
+      {
+        title: "Install a Compatible Player",
+        description:
+          "Open the Apple App Store. Install a compatible IPTV player recommended by support.",
+      },
+      {
+        title: "Choose the Login Method",
+        description: "Open the player. Select Xtream Codes or M3U login.",
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Contact support for the required username, password, server URL or playlist. Enter the supplied details.",
+      },
+      {
+        title: "Load the Catalogue",
+        description: "Save the profile and allow the catalogue to load.",
       },
     ],
   },
@@ -231,103 +387,222 @@ const deviceGuidesList: DeviceGuide[] = [
     id: "apple-tv",
     name: "Apple TV",
     icon: Cast,
-    title: "Apple TV Installation",
-    subtitle: "Apple TV cannot install the Android APK. Use a compatible tvOS application from the Apple App Store.",
+    title: "Set Up on Apple TV",
+    subtitle: "Apple TV uses a compatible tvOS player from the App Store.",
     steps: [
       {
-        title: "Install a Player",
+        title: "Install a Compatible Player",
         description:
-          "Open the App Store. Install a compatible application. Potential options may include IBO Player Pro, VU IPTV Player or another compatible Xtream Codes player.",
+          "Open the tvOS App Store. Install a compatible IPTV player. Open the application.",
       },
       {
-        title: "Add Your Account",
-        description:
-          "Open the player. Select the supported login method. Enter the username, password and server URL. Save the account. Wait for loading to finish.",
+        title: "Choose the Login Method",
+        description: "Choose Xtream Codes or M3U login.",
       },
+      {
+        title: "Contact Support",
+        description:
+          "Contact support for your account information. Enter the supplied details.",
+      },
+      { title: "Refresh the Profile", description: "Save and refresh the profile." },
     ],
-  },
-  {
-    id: "ios-devices",
-    name: "iPhone & iPad",
-    icon: Tablet,
-    title: "iPhone and iPad Setup",
-    subtitle: "Use a compatible player from the iOS App Store.",
-    steps: [
-      {
-        title: "Install a Player",
-        description:
-          "Possible applications may include iPlayTV AIO, IBO Player Pro, VU IPTV Player or another compatible application.",
-      },
-      {
-        title: "Configure Account",
-        description:
-          "After installation: Select Xtream Codes or the supported playlist type. Enter the login information. Add a profile name. Save the account. Allow the categories to load.",
-      },
-    ],
-    notes: ["Some applications charge a purchase or activation fee."],
   },
   {
     id: "windows-pc",
-    name: "Windows PC",
+    name: "Windows",
     icon: Monitor,
-    title: "Windows PC Setup",
-    subtitle: "Install a compatible application from the Microsoft Store or a trusted developer source.",
+    title: "Set Up on Windows",
+    subtitle:
+      "Install a trusted compatible IPTV application that accepts Xtream Codes or an M3U playlist.",
     steps: [
-      { title: "Install the Player", description: "Install the selected player from the Microsoft Store or a trusted developer source." },
-      { title: "Configure Login", description: "Open it. Choose Xtream Codes or M3U. Enter the username, password and server address. Save the profile. Wait for synchronisation." },
+      {
+        title: "Install the Player",
+        description: "Install a trusted compatible IPTV application. Open the player.",
+      },
+      {
+        title: "Choose the Login Method",
+        description: "Choose Xtream Codes or M3U.",
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Contact support for your login information. Enter the username, password and server URL supplied.",
+      },
+      {
+        title: "Load the Catalogue",
+        description: "Save the account. Allow the categories and EPG to load.",
+      },
     ],
-    notes: ["Avoid modified software and unknown download directories."],
   },
   {
     id: "mac-computer",
     name: "Mac",
     icon: Laptop,
-    title: "Mac Installation",
-    subtitle: "Mac users can install a compatible application from the Mac App Store or another trusted developer.",
+    title: "Set Up on Mac",
+    subtitle:
+      "Install a compatible macOS IPTV player from the App Store or its verified developer website.",
     steps: [
-      { title: "Install the Player", description: "Install a compatible application from the Mac App Store or a trusted developer." },
-      { title: "Add Your Account", description: "Open the player. Choose the supported login method. Enter the username, password and full server address. Save the account. Wait for the initial load." },
+      {
+        title: "Install the Player",
+        description:
+          "Install a compatible macOS IPTV player from the App Store or its verified developer website. Open the application.",
+      },
+      {
+        title: "Choose the Login Method",
+        description: "Select Xtream Codes or M3U login.",
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Contact support for the correct account details. Enter and save the supplied information.",
+      },
+      { title: "Refresh the Catalogue", description: "Refresh the catalogue." },
     ],
-    notes: ["App availability varies by macOS version and country."],
   },
   {
     id: "mag-device",
-    name: "MAG Device",
+    name: "MAG Box",
     icon: Box,
-    title: "MAG Device Setup",
-    subtitle: "MAG devices may use portal information rather than a standard Android application.",
+    title: "Set Up on MAG Box",
+    subtitle: "MAG devices use portal information rather than an Android application.",
     steps: [
       {
-        title: "Required Information",
+        title: "Find the MAC Address",
         description:
-          "The setup process may require: device MAC address, portal URL and network connection.",
+          "Open the MAG device settings. Find the device MAC address.",
       },
       {
-        title: "Portal Assignment",
+        title: "Contact Support",
         description:
-          "Restart after portal assignment. Only provide the device information through a verified support channel.",
+          "Contact support and provide the MAC address privately. Support will supply the portal URL or complete the required activation.",
+      },
+      {
+        title: "Enter the Portal",
+        description:
+          "Enter the portal URL if instructed. Restart the MAG box.",
       },
     ],
-    notes: ["Do not post the MAC address publicly."],
+  },
+  {
+    id: "formuler",
+    name: "Formuler & MYTVOnline",
+    icon: Satellite,
+    title: "Set Up on Formuler and MYTVOnline",
+    subtitle: "Formuler receivers use MYTVOnline with a portal or Xtream Codes login.",
+    steps: [
+      {
+        title: "Open MYTVOnline",
+        description:
+          "Choose the portal or Xtream Codes login option recommended by support.",
+      },
+      {
+        title: "Note the Device Details",
+        description: "Note the device ID or MAC address if displayed.",
+      },
+      {
+        title: "Contact Support",
+        description:
+          "Contact support with the device information. Enter the supplied portal or account details.",
+      },
+      { title: "Connect", description: "Save and connect." },
+    ],
+  },
+  {
+    id: "enigma2",
+    name: "Enigma2",
+    icon: Radio,
+    title: "Set Up on Enigma2",
+    subtitle: "Enigma2 installation varies by image and receiver.",
+    steps: [
+      {
+        title: "Send Your Receiver Details",
+        description:
+          "Send support the full receiver model and installed Enigma2 image.",
+      },
+      {
+        title: "Confirm the Method",
+        description:
+          "Support will confirm whether M3U, Xtream Codes, portal or another supported method is required.",
+      },
+      {
+        title: "Apply the Configuration",
+        description:
+          "Follow the supplied configuration instructions. Restart the receiver after setup.",
+      },
+    ],
+  },
+  {
+    id: "roku",
+    name: "Roku",
+    icon: Tv,
+    title: "Set Up on Roku",
+    subtitle: "Roku app availability varies by model and country.",
+    steps: [
+      {
+        title: "Check the Channel Store",
+        description:
+          "Check the Roku Channel Store for a compatible IPTV player.",
+      },
+      {
+        title: "Contact Support First",
+        description: "Contact support before purchasing a longer plan.",
+      },
+      {
+        title: "Confirm the Login Method",
+        description:
+          "Provide the Roku model and available player name. Follow the login method confirmed by support.",
+      },
+    ],
+  },
+  {
+    id: "sky-glass-tv",
+    name: "Sky Glass Television",
+    icon: Tv,
+    title: "Use Sky Glass IPTV on a Sky Glass Television",
+    subtitle:
+      "A Sky Glass television normally does not allow direct installation of an Android APK. Connect a compatible Firestick, Fire TV or Android streaming device through HDMI, then follow these steps.",
+    showDownloaderCode: true,
+    steps: [
+      {
+        title: "Install Downloader",
+        description: "Install Downloader by AFTVnews.",
+      },
+      {
+        title: "Install the Application",
+        description: `Enter code ${DOWNLOADER_CODE}. Install the Sky Glass IPTV application.`,
+      },
+      {
+        title: "Contact Support",
+        description: "Contact support for login details.",
+      },
+    ],
   },
 ];
 
+function subscribeToHash(onChange: () => void) {
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
+}
+
+const readHash = () => window.location.hash.replace("#", "");
+const serverHash = () => "";
+
 export function InstDeviceGuides() {
-  const [activeTab, setActiveTab] = useState("firestick");
+  const [selectedTab, setSelectedTab] = useState<string | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    if (hash && deviceGuidesList.some((guide) => guide.id === hash)) {
-      setActiveTab(hash);
-    }
-  }, []);
+  // Deep links like /…installation-guide/#samsung-tv open the matching device.
+  const hash = useSyncExternalStore(subscribeToHash, readHash, serverHash);
+  const hashTab = deviceGuidesList.some((guide) => guide.id === hash)
+    ? hash
+    : null;
 
+  const activeTab = selectedTab ?? hashTab ?? "firestick";
   const activeGuide =
-    deviceGuidesList.find((g) => g.id === activeTab) || deviceGuidesList[0];
+    deviceGuidesList.find((g) => g.id === activeTab) ?? deviceGuidesList[0];
 
   const handleTabClick = (id: string) => {
-    setActiveTab(id);
+    setSelectedTab(id);
     setTimeout(() => {
       if (contentRef.current) {
         const yOffset = -80;
@@ -454,6 +729,19 @@ export function InstDeviceGuides() {
                   </li>
                 ))}
               </ol>
+
+              <div className="mt-8">
+                <Link href={ROUTES.contact} className="w-full sm:w-auto inline-block">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto rounded-[12px] border-gradient-brand px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-semibold"
+                  >
+                    <Headphones className="mr-2 h-4 w-4 text-[#E91E8C] shrink-0 stroke-[2.5]" />
+                    <span>Contact Support for Login Details</span>
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             {activeGuide.notes && activeGuide.notes.length > 0 && (

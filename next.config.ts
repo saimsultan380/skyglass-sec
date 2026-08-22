@@ -1,103 +1,43 @@
 import type { NextConfig } from "next";
+import { LEGACY_REDIRECTS } from "./src/lib/redirects";
 
-const CANONICAL_ORIGIN = "https://b1gplayer.uk";
+/**
+ * `src/proxy.ts` performs the legacy and www redirects, because Proxy runs
+ * before Next's `trailingSlash` normalisation and therefore resolves every old
+ * URL in a single 301. These `redirects()` entries are a fallback for any
+ * environment where Proxy does not execute.
+ */
+function buildLegacyRedirects() {
+  return Object.entries(LEGACY_REDIRECTS).flatMap(([source, destination]) => {
+    // Bare `/` has no trailing-slash twin; `${source}/` would become `//`.
+    if (source === "/") {
+      return [{ source, destination, permanent: true }];
+    }
+    return [
+      { source, destination, permanent: true },
+      { source: `${source}/`, destination, permanent: true },
+    ];
+  });
+}
 
 const nextConfig: NextConfig = {
   // Enforce trailing slashes site-wide (routes, Link, and metadata canonicals)
   trailingSlash: true,
 
   async redirects() {
+    return buildLegacyRedirects();
+  },
+
+  // Public home URL is /sky-glass-iptv-uk-2026/; serve app/page.tsx underneath.
+  async rewrites() {
     return [
-      // WWW → non-WWW (permanent). Covers all routes including dynamic paths.
       {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.b1gplayer.uk" }],
-        destination: `${CANONICAL_ORIGIN}/:path*`,
-        permanent: true,
-      },
-
-      // Legacy B1G route slugs → Sky Glass canonical URLs
-      {
-        source: "/b1g-iptv-subscription",
-        destination: "/sky-glass-iptv-subscription/",
-        permanent: true,
+        source: "/sky-glass-iptv-uk-2026",
+        destination: "/",
       },
       {
-        source: "/b1g-iptv-subscription/",
-        destination: "/sky-glass-iptv-subscription/",
-        permanent: true,
-      },
-      {
-        source: "/b1g-player-installation-guide",
-        destination: "/sky-glass-iptv-installation-guide/",
-        permanent: true,
-      },
-      {
-        source: "/b1g-player-installation-guide/",
-        destination: "/sky-glass-iptv-installation-guide/",
-        permanent: true,
-      },
-      {
-        source: "/b1g-player-reseller",
-        destination: "/sky-glass-iptv-reseller/",
-        permanent: true,
-      },
-      {
-        source: "/b1g-player-reseller/",
-        destination: "/sky-glass-iptv-reseller/",
-        permanent: true,
-      },
-
-      // Short legacy paths → canonical pages
-      {
-        source: "/subscription-plan",
-        destination: "/sky-glass-iptv-subscription/",
-        permanent: true,
-      },
-      {
-        source: "/subscription-plan/",
-        destination: "/sky-glass-iptv-subscription/",
-        permanent: true,
-      },
-      {
-        source: "/installation-guide",
-        destination: "/sky-glass-iptv-installation-guide/",
-        permanent: true,
-      },
-      {
-        source: "/installation-guide/",
-        destination: "/sky-glass-iptv-installation-guide/",
-        permanent: true,
-      },
-      {
-        source: "/reseller-panel",
-        destination: "/sky-glass-iptv-reseller/",
-        permanent: true,
-      },
-      {
-        source: "/reseller-panel/",
-        destination: "/sky-glass-iptv-reseller/",
-        permanent: true,
-      },
-      {
-        source: "/setup-instructions",
-        destination: "/sky-glass-iptv-installation-guide/",
-        permanent: true,
-      },
-      {
-        source: "/setup-instructions/",
-        destination: "/sky-glass-iptv-installation-guide/",
-        permanent: true,
-      },
-      {
-        source: "/compare-plans",
-        destination: "/sky-glass-iptv-subscription/",
-        permanent: true,
-      },
-      {
-        source: "/compare-plans/",
-        destination: "/sky-glass-iptv-subscription/",
-        permanent: true,
+        source: "/sky-glass-iptv-uk-2026/",
+        destination: "/",
       },
     ];
   },

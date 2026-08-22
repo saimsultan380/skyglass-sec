@@ -2,108 +2,116 @@
 
 import React from "react";
 import Link from "next/link";
-import { B1GLogo } from "@/components/brand/b1g-logo";
+import { SkyglassLogo } from "@/components/brand/skyglass-logo";
 import { ROUTES } from "@/lib/seo";
+import { INDEPENDENCE_NOTICE } from "@/lib/site";
 
 const linkClass =
   "text-xs sm:text-sm text-slate-700 hover:text-[#E91E8C] font-semibold transition-colors";
 
-export function B1GFooter() {
+const navigationLinks = [
+  { name: "Sky Glass IPTV", href: ROUTES.home },
+  { name: "Subscription Plans", href: ROUTES.subscription },
+  { name: "Installation Guide", href: ROUTES.installation },
+  { name: "Supported Devices", href: ROUTES.devices },
+  { name: "Reseller Panel", href: ROUTES.reseller },
+  { name: "Reviews", href: ROUTES.reviews },
+  { name: "About", href: ROUTES.about },
+];
+
+const supportLinks = [
+  { name: "Contact support for login details", href: ROUTES.contact },
+  { name: "Request a 24-hour trial", href: `${ROUTES.contact}?enquiry=trial` },
+  {
+    name: "Install the app on Firestick",
+    href: `${ROUTES.installation}#firestick`,
+  },
+  {
+    name: "Compare subscription plans",
+    href: `${ROUTES.subscription}#compare-plans`,
+  },
+  { name: "Check device compatibility", href: ROUTES.devices },
+  {
+    name: "Renew an existing account",
+    href: `${ROUTES.contact}?enquiry=renewal`,
+  },
+  { name: "Apply for reseller access", href: ROUTES.reseller },
+];
+
+const legalLinks = [
+  { name: "Terms and Conditions", href: ROUTES.terms },
+  { name: "Privacy Policy", href: ROUTES.privacy },
+  { name: "Refund Policy", href: ROUTES.refunds },
+  { name: "DMCA Policy", href: ROUTES.dmca },
+];
+
+export function SkyglassFooter() {
   return (
-    <footer className="w-full bg-white/80 backdrop-blur-md border-t border-slate-200/80 py-12 sm:py-16 text-slate-700">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-200/60">
-          <div className="md:col-span-6 flex flex-col items-start gap-4">
-            <B1GLogo size="md" />
-            <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed max-w-sm">
-              Sky Glass IPTV is a UK-focused IPTV subscription service for live TV, movies and sports, with flexible plans, app access and setup support.
+    <footer className="w-full border-t border-slate-200/80 bg-white/80 py-12 text-slate-700 backdrop-blur-md sm:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 border-b border-slate-200/60 pb-10 md:grid-cols-12">
+          <div className="flex flex-col items-start gap-4 md:col-span-4">
+            <SkyglassLogo size="md" />
+            <p className="max-w-sm text-xs leading-relaxed font-medium text-slate-600 sm:text-sm">
+              Sky Glass IPTV is an internet-delivered television service for UK
+              viewers, with live channels, films and series, installation
+              guidance and customer support.
             </p>
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-gradient mb-4 block">
+            <h4 className="text-brand-gradient mb-4 block text-xs font-bold tracking-wider uppercase sm:text-sm">
               Navigation
             </h4>
             <ul className="space-y-3">
-              <li>
-                <Link href={ROUTES.home} className={linkClass}>
-                  Sky Glass IPTV
-                </Link>
-              </li>
-              <li>
-                <Link href={ROUTES.subscription} className={linkClass}>
-                  Subscription Plans
-                </Link>
-              </li>
-              <li>
-                <Link href={ROUTES.installation} className={linkClass}>
-                  Installation Guide
-                </Link>
-              </li>
-              <li>
-                <Link href={ROUTES.reseller} className={linkClass}>
-                  Reseller Panel
-                </Link>
-              </li>
-              <li>
-                <Link href="/#compatible-devices" className={linkClass}>
-                  View compatible devices
-                </Link>
-              </li>
+              {navigationLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-gradient mb-4 block">
+            <h4 className="text-brand-gradient mb-4 block text-xs font-bold tracking-wider uppercase sm:text-sm">
               Support
             </h4>
             <ul className="space-y-3">
-              <li>
-                <Link href={`${ROUTES.installation}#firestick`} className={linkClass}>
-                  Install the app on Firestick
-                </Link>
-              </li>
-              <li>
-                <Link href={ROUTES.contact} className={linkClass}>
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href={`${ROUTES.contact}?enquiry=trial`} className={linkClass}>
-                  Request a 24-hour trial
-                </Link>
-              </li>
-              <li>
-                <Link href={`${ROUTES.subscription}#compare-plans`} className={linkClass}>
-                  Compare IPTV subscription plans
-                </Link>
-              </li>
-              <li>
-                <Link href={ROUTES.installation} className={linkClass}>
-                  Read the complete installation guide
-                </Link>
-              </li>
-              <li>
-                <Link href={`${ROUTES.contact}?enquiry=renewal`} className={linkClass}>
-                  Renew an existing account
-                </Link>
-              </li>
-              <li>
-                <Link href={ROUTES.reseller} className={linkClass}>
-                  Apply for reseller access
-                </Link>
-              </li>
+              {supportLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <h4 className="text-brand-gradient mb-4 block text-xs font-bold tracking-wider uppercase sm:text-sm">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="flex flex-col items-start justify-between gap-6 pt-8 md:flex-row md:items-center">
           <div className="space-y-3">
-            <p className="text-xs text-slate-600 font-semibold">
+            <p className="text-xs font-semibold text-slate-600">
               © {new Date().getFullYear()} Sky Glass IPTV. All rights reserved.
             </p>
-            <p className="text-[11px] text-slate-500 leading-relaxed max-w-4xl">
-              Sky Glass IPTV is an independent brand and is not affiliated with, endorsed by or connected to Sky UK Limited, Sky Group or the Sky Glass television product. Third-party names and trademarks belong to their respective owners. Customers should only access content that the service is authorised to provide and that they are legally entitled to view.
+            <p className="max-w-4xl text-[11px] leading-relaxed text-slate-500">
+              {INDEPENDENCE_NOTICE}
             </p>
           </div>
         </div>

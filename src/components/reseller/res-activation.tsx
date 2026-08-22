@@ -4,7 +4,9 @@ import React from "react";
 import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Section, SectionHeading } from "@/components/ui/section-bits";
+import { Headphones } from "lucide-react";
+import { ROUTES } from "@/lib/seo";
 
 interface StepItem {
   number: string;
@@ -12,94 +14,75 @@ interface StepItem {
   description: string;
 }
 
-const stepsList: StepItem[] = [
+const stepsList: readonly StepItem[] = [
   {
     number: "01",
-    title: "Submit Your Information",
-    description:
-      "Provide: full name, business name, country, customer market, expected monthly activations, preferred package and previous reseller experience.",
+    title: "Request Programme Information",
+    description: "Ask for current pricing, terms and panel features.",
   },
   {
     number: "02",
-    title: "Review the Terms",
+    title: "Review the Panel",
     description:
-      "Confirm: credit quantity, package price, credit usage, refund policy, top-up rules, support responsibilities and supported countries.",
+      "Request an explanation or demonstration of account creation, credits, renewals and expiry tracking.",
   },
   {
     number: "03",
-    title: "Choose a Package",
-    description: "Select a quantity based on realistic customer demand.",
+    title: "Purchase Credits",
+    description:
+      "Accept the reseller agreement and purchase the minimum available balance.",
   },
   {
     number: "04",
-    title: "Receive Panel Access",
-    description: "After approval and confirmation, receive the private reseller login.",
+    title: "Receive Panel Login Details",
+    description:
+      "Support will provide the account credentials needed to access the reseller panel.",
   },
   {
     number: "05",
-    title: "Learn the Dashboard",
+    title: "Manage Customers",
     description:
-      "Review account creation, renewal, expiry tracking and credit usage.",
-  },
-  {
-    number: "06",
-    title: "Begin Activating Customers",
-    description:
-      "Create accounts only after confirming the customer's plan, device and payment.",
+      "Create subscriptions, monitor expiry dates and manage renewals through the panel.",
   },
 ];
 
 export function ResActivation() {
   return (
-    <section
-      id="reseller-activation"
-      className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <FadeIn className="w-full max-w-4xl mb-12">
-          <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C] font-heading">
-            How to{" "}
-            <span className="text-brand-gradient font-bold">Apply</span>
-          </h2>
-        </FadeIn>
+    <Section id="reseller-activation">
+      <SectionHeading title="How to Become a" highlight="Reseller" />
 
-        <FadeIn className="w-full mb-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch w-full">
-            {stepsList.map((step, idx) => (
-              <div key={step.number} className="relative flex flex-col h-full">
-                <div className="rounded-[12px] border border-slate-200 bg-white p-5 flex flex-col flex-1">
-                  <span className="text-4xl font-extrabold text-[#E91E8C]/10 mb-3 block leading-none select-none font-heading">
-                    {step.number}
-                  </span>
-                  <h3 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-1.5 leading-snug">
-                    Step {idx + 1} – {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+      <FadeIn className="w-full mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch w-full">
+          {stepsList.map((step, idx) => (
+            <div key={step.number} className="relative flex flex-col h-full">
+              <div className="rounded-[12px] border border-slate-200 bg-white p-5 flex flex-col flex-1">
+                <span className="text-4xl font-extrabold text-[#E91E8C]/10 mb-3 block leading-none select-none font-heading">
+                  {step.number}
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-1.5 leading-snug">
+                  Step {idx + 1} – {step.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
+                  {step.description}
+                </p>
               </div>
-            ))}
-          </div>
-        </FadeIn>
+            </div>
+          ))}
+        </div>
+      </FadeIn>
 
-        <FadeIn className="w-full">
-          <div className="w-full rounded-[12px] border border-slate-200 bg-white p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-            <p className="text-xs sm:text-sm text-[#5C607A] font-semibold leading-relaxed">
-              Review customer subscription plans before choosing a reseller package.
-            </p>
-            <Link href="/sky-glass-iptv-subscription/" className="shrink-0 w-full sm:w-auto">
-              <Button
-                variant="primary"
-                className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-5 py-3 text-xs sm:text-sm font-semibold"
-              >
-                <span>View Subscription Plans</span>
-                <ArrowRight className="ml-2 h-4 w-4 stroke-[2.5]" />
-              </Button>
-            </Link>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
+      <FadeIn className="w-full">
+        <Link href={`${ROUTES.contact}?enquiry=reseller`}>
+          <Button
+            variant="primary"
+            size="lg"
+            className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-6 py-3.5 text-xs sm:text-sm font-semibold"
+          >
+            <Headphones className="mr-2 h-4 w-4 shrink-0 stroke-[2.5]" />
+            <span>Contact Support for Reseller Login Details</span>
+          </Button>
+        </Link>
+      </FadeIn>
+    </Section>
   );
 }
