@@ -23,7 +23,7 @@ export function SkyglassCTABanner() {
       trustItems={[
         { label: "Plans from £12", icon: "calendar" },
         { label: "Guided Installation", icon: "wrench" },
-        { label: "EPG and Selected Catch-Up", icon: "clock" },
+        { label: "EPG & Catch-Up", icon: "clock" },
         { label: "Customer Support", icon: "headphones" },
       ]}
     />

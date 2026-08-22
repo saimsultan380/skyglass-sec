@@ -12,7 +12,7 @@ import { FadeIn } from "@/components/animation/fade-in";
 const trustItems = [
   { label: "Plans from £12", icon: CalendarDays },
   { label: "Guided Installation", icon: Download },
-  { label: "EPG and Selected Catch-Up", icon: CalendarClock },
+  { label: "EPG & Catch-Up", icon: CalendarClock },
   { label: "Customer Support", icon: Headphones },
 ];
 
@@ -31,7 +31,7 @@ export function SkyglassTrustRow() {
                 <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-pink-50 text-[#E91E8C] sm:h-9 sm:w-9">
                   <Icon className="h-4 w-4 stroke-[2.5] sm:h-5 sm:w-5" />
                 </div>
-                <span className="text-xs leading-tight font-semibold tracking-tight text-slate-800 sm:text-xs lg:text-sm">
+                <span className="whitespace-nowrap text-[11px] leading-tight font-semibold tracking-tight text-slate-800 sm:text-xs lg:text-sm">
                   {item.label}
                 </span>
               </div>

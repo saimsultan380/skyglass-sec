@@ -19,7 +19,7 @@ import { ROUTES } from "@/lib/seo";
 const trustItems = [
   { label: "Plans from £12", icon: ShieldCheck },
   { label: "Guided Installation", icon: Download },
-  { label: "EPG and Selected Catch-Up", icon: CalendarClock },
+  { label: "EPG & Catch-Up", icon: CalendarClock },
   { label: "Customer Support", icon: Headphones },
 ];
 
