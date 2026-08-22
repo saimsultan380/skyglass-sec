@@ -2,8 +2,8 @@ import { DOWNLOADER_CODE, LEGAL_LAST_UPDATED } from "@/lib/site";
 import type { LegalDocument } from "./legal-types";
 
 export const REFUND_DOCUMENT: LegalDocument = {
-  title: "Refund",
-  highlight: "Policy",
+  title: "Sky Glass IPTV Refund Policy –",
+  highlight: "Eligibility, Cancellations & Requests",
   lastUpdated: LEGAL_LAST_UPDATED,
   intro: [
     "This policy explains how cancellation and refund requests are handled for Sky Glass IPTV subscriptions.",

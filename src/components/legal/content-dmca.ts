@@ -7,8 +7,8 @@ import {
 import type { LegalDocument } from "./legal-types";
 
 export const DMCA_DOCUMENT: LegalDocument = {
-  title: "DMCA and Copyright",
-  highlight: "Policy",
+  title: "Sky Glass IPTV DMCA Policy –",
+  highlight: "Copyright Notices & Counter-Notices",
   lastUpdated: LEGAL_LAST_UPDATED,
   intro: [
     "Sky Glass IPTV respects intellectual-property rights and reviews sufficiently detailed copyright complaints concerning material located on or controlled through skyglass-iptv.com.",

@@ -253,7 +253,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.5,
   },
   {
-    title: "Sky Glass IPTV Terms & Conditions – UK Subscription Rules",
+    title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",
     description:
       "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",
     path: ROUTES.terms,

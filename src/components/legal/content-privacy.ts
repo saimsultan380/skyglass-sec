@@ -7,8 +7,8 @@ import {
 import type { LegalDocument } from "./legal-types";
 
 export const PRIVACY_DOCUMENT: LegalDocument = {
-  title: "Privacy",
-  highlight: "Policy",
+  title: "Sky Glass IPTV Privacy Policy –",
+  highlight: "Personal Data, Cookies & Your Rights",
   lastUpdated: LEGAL_LAST_UPDATED,
   meta: [
     {

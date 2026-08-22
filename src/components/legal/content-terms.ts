@@ -8,8 +8,8 @@ import {
 import type { LegalDocument } from "./legal-types";
 
 export const TERMS_DOCUMENT: LegalDocument = {
-  title: "Terms and",
-  highlight: "Conditions",
+  title: "Sky Glass IPTV Terms & Conditions –",
+  highlight: "Subscriptions, Payments & Acceptable Use",
   lastUpdated: LEGAL_LAST_UPDATED,
   numbered: true,
   meta: [
