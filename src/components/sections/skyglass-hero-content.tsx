@@ -26,11 +26,9 @@ export function SkyglassHeroContent({
           parts={[
             { text: "Sky Glass IPTV UK –" },
             {
-              text: "Live TV, Sports, Films & Series",
+              text: "Premium IPTV Subscription for Live TV, Movies & Sports",
               className: "text-brand-gradient font-bold",
             },
-            { text: "from" },
-            { text: "£12", className: "text-brand-gradient font-bold" },
           ]}
         />
       </div>

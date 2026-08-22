@@ -32,9 +32,9 @@ function HeroCopy() {
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Devices That Work with" },
+            { text: "Sky Glass IPTV Supported Devices –" },
             {
-              text: "Sky Glass IPTV",
+              text: "Firestick, Smart TV, Android, Apple & More",
               className: "text-brand-gradient font-bold",
             },
           ]}

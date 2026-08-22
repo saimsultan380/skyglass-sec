@@ -6,7 +6,7 @@ export const SITE_ORIGIN = "https://skyglass-iptv.com";
 export const SITE_NAME = "Sky Glass IPTV";
 
 export const SITE_TITLE =
-  "Sky Glass IPTV UK – 22,000+ Channels & Plans from £12";
+  "Sky Glass IPTV UK – Premium IPTV Subscription for Live TV";
 
 export const SITE_DESCRIPTION =
   "Choose Sky Glass IPTV UK with 22,000+ live channels, 100,000+ movies and series, EPG, selected Catch-Up and supported 4K. Plans start from £12.";
@@ -169,7 +169,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 1,
   },
   {
-    title: "Sky Glass IPTV Subscription UK – Plans from £12",
+    title: "Sky Glass IPTV Subscription UK – Plans, Prices & Trial",
     description:
       "Compare Sky Glass IPTV subscription plans for 1, 3, 6 or 12 months. Prices start from £12 with 22,000+ channels, 100,000+ VOD and setup help.",
     path: ROUTES.subscription,
@@ -181,7 +181,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.9,
   },
   {
-    title: "Sky Glass IPTV Installation Guide – Firestick, TV & Mobile",
+    title: "Install Sky Glass IPTV – Firestick, Android & Smart TV",
     description:
       "Install Sky Glass IPTV on Firestick, Android TV, Smart TV, Apple devices, Windows and more. Follow clear setup and troubleshooting steps.",
     path: ROUTES.installation,
@@ -193,7 +193,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.9,
   },
   {
-    title: "Sky Glass IPTV Supported Devices – Check Compatibility",
+    title: "Sky Glass IPTV Supported Devices – Firestick, TV & Mobile",
     description:
       "Check Sky Glass IPTV compatibility for Firestick, Android TV, Samsung, LG, Apple TV, iPhone, Windows, Mac, MAG, Formuler and other devices.",
     path: ROUTES.devices,
@@ -205,7 +205,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
-    title: "Sky Glass IPTV Reseller Panel UK – 120-Credit Entry",
+    title: "Sky Glass IPTV Reseller UK – Panel, Credits & Packages",
     description:
       "Start with the Sky Glass IPTV reseller panel in the UK. Manage accounts, activations, renewals and credits, with a current minimum of 120 credits.",
     path: ROUTES.reseller,
@@ -217,7 +217,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
-    title: "Sky Glass IPTV Reviews UK – Verified Customer Feedback",
+    title: "Sky Glass IPTV Reviews UK – Customer Feedback",
     description:
       "Read verified Sky Glass IPTV reviews from UK customers. Compare feedback by device, subscription length, setup experience, streaming and support.",
     path: ROUTES.reviews,
@@ -229,7 +229,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.7,
   },
   {
-    title: "Contact Sky Glass IPTV UK – Free 24-Hour Trial & Support",
+    title: "Contact Sky Glass IPTV – Trial, Setup & Subscription Help",
     description:
       "Contact Sky Glass IPTV UK for plan questions, device checks, installation support, billing help or an eligible free 24-hour IPTV trial.",
     path: ROUTES.contact,
@@ -241,7 +241,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
-    title: "About Sky Glass IPTV UK – Service, Devices & Support",
+    title: "About Sky Glass IPTV – UK Service, Setup & Support",
     description:
       "Learn about Sky Glass IPTV UK, including subscription plans, supported devices, installation guidance, customer support and service standards.",
     path: ROUTES.about,

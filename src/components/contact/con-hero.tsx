@@ -31,9 +31,9 @@ function HeroCopy() {
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Contact Sky Glass IPTV and" },
+            { text: "Contact Sky Glass IPTV –" },
             {
-              text: "Request a 24-Hour Trial",
+              text: "Trial, Installation, Renewal & Reseller Support",
               className: "text-brand-gradient font-bold",
             },
           ]}
