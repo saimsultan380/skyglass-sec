@@ -42,17 +42,22 @@ export function SkyglassHeroContent({
       >
         <div className="hero-description-copy mt-2.5 space-y-2 text-[11px] leading-[1.45] font-medium text-slate-800 sm:mt-6 sm:space-y-4 sm:text-sm sm:leading-relaxed lg:text-base">
           <p>
-            Watch live television and explore an extensive on-demand library on
-            your preferred compatible device. Sky Glass IPTV includes 22,000+
-            live channel entries, 100,000+ films and series, an Electronic
-            Programme Guide, selected Catch-Up and HD, Full HD and 4K streams
-            where available.
+            Watch live television, sports, films and TV series through a
+            flexible Sky Glass IPTV subscription created for UK viewers. Explore
+            22,000+ live channel entries and 100,000+ on-demand films and series
+            across entertainment, sports, news, family and international
+            categories. EPG information, selected Catch-Up and HD, Full HD and
+            supported 4K streams are available where provided.
           </p>
 
           <p className={showFullBodyCopy ? "block" : "hidden sm:block"}>
-            Choose a plan from £12 and receive the application guidance and
-            login details needed for Firestick, Fire TV, Android TV, Smart TVs,
-            Apple devices, Windows, Mac and other supported platforms.
+            Choose a plan from £12 and use Sky Glass IPTV on Firestick, Fire TV,
+            Android TV, compatible Smart TVs, Apple devices, Windows, Mac and
+            other supported platforms. Install the recommended application, then
+            contact support to receive your login details and setup guidance. If
+            you found us by searching for Skyglass IPTV or IPTV Sky Glass, you
+            can compare the same UK subscription plans, check device
+            compatibility and request an eligible 24-hour trial.
           </p>
         </div>
       </FadeIn>
