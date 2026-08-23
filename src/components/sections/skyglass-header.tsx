@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/lib/seo";
+import { WHATSAPP_SUBSCRIPTION_HREF } from "@/lib/site";
 import { LOGO_IMAGE } from "@/lib/assets";
 import { cn } from "@/lib/utils";
 
@@ -93,14 +94,18 @@ export function SkyglassHeader() {
           </nav>
 
           <div className="flex shrink-0 items-center">
-            <Link href={ROUTES.subscription}>
+            <a
+              href={WHATSAPP_SUBSCRIPTION_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="primary"
                 className="bg-gradient-brand h-[44px] rounded-[12px] px-6 text-sm font-semibold whitespace-nowrap text-white"
               >
                 Get Started
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -168,8 +173,10 @@ export function SkyglassHeader() {
                     </nav>
 
                     <div className="pt-2">
-                      <Link
-                        href={ROUTES.subscription}
+                      <a
+                        href={WHATSAPP_SUBSCRIPTION_HREF}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <Button
@@ -178,7 +185,7 @@ export function SkyglassHeader() {
                         >
                           Get Started
                         </Button>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </motion.div>

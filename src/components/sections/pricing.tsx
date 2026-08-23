@@ -188,9 +188,9 @@ export function SkyglassPricing() {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={buildWhatsAppHref({
-                        plan: `${plan.name} (${plan.price})`,
-                        page: "Homepage pricing",
-                        intent: `I want the ${plan.name} for ${plan.price}.`,
+                        intent: "subscription",
+                        plan: plan.name,
+                        price: plan.price,
                       })}
                     >
                       <Button

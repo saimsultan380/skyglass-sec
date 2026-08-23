@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { SkyglassLogo } from "@/components/brand/skyglass-logo";
 import { ROUTES } from "@/lib/seo";
-import { INDEPENDENCE_NOTICE } from "@/lib/site";
+import { INDEPENDENCE_NOTICE, WHATSAPP_TRIAL_HREF } from "@/lib/site";
 
 const linkClass =
   "text-xs sm:text-sm text-slate-700 hover:text-[#E91E8C] font-semibold transition-colors";
@@ -21,7 +21,11 @@ const navigationLinks = [
 
 const supportLinks = [
   { name: "Contact support for login details", href: ROUTES.contact },
-  { name: "Request a 24-hour trial", href: `${ROUTES.contact}?enquiry=trial` },
+  {
+    name: "Request a 24-hour trial",
+    href: WHATSAPP_TRIAL_HREF,
+    external: true,
+  },
   {
     name: "Install the app on Firestick",
     href: `${ROUTES.installation}#firestick`,
@@ -81,9 +85,20 @@ export function SkyglassFooter() {
             <ul className="space-y-3">
               {supportLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className={linkClass}>
-                    {link.name}
-                  </Link>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link href={link.href} className={linkClass}>
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

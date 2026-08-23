@@ -1,23 +1,15 @@
 "use client";
 
 import React from "react";
-import { buildWhatsAppHref, SITE_DOMAIN } from "@/lib/site";
-import { usePathname } from "next/navigation";
+import { WHATSAPP_SUBSCRIPTION_HREF, SITE_DOMAIN } from "@/lib/site";
 
 /**
- * Fixed WhatsApp action on the right edge. Prefills a message that names
- * skyglass-iptv.com so support can see which website the customer came from.
+ * Fixed WhatsApp action on the right edge. Prefills a short subscription message.
  */
 export function WhatsAppFloat() {
-  const pathname = usePathname() || "/";
-  const href = buildWhatsAppHref({
-    page: pathname,
-    intent: "I need help from the website chat button.",
-  });
-
   return (
     <a
-      href={href}
+      href={WHATSAPP_SUBSCRIPTION_HREF}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Chat on WhatsApp via ${SITE_DOMAIN}`}

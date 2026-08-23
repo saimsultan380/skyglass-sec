@@ -34,30 +34,39 @@ export const INDEPENDENCE_NOTICE =
 /** Reseller programme entry requirement. */
 export const RESELLER_MINIMUM_CREDITS = 120;
 
-/** Build a WhatsApp deep link that names this website so support can see the source. */
+/** Short WhatsApp prefills used across CTAs. */
+export type WhatsAppIntent = "trial" | "subscription";
+
+/**
+ * Build a WhatsApp deep link with a short prefilled message:
+ * - Skyglass-iptv free trial
+ * - Skyglass-iptv subscription
+ * - Skyglass-iptv subscription - 1 Month £12 (when plan/price given)
+ */
 export function buildWhatsAppHref(options?: {
+  intent?: WhatsAppIntent;
+  /** Plan name, e.g. "1 Month" or "1-Month Plan" */
   plan?: string;
-  page?: string;
-  intent?: string;
+  /** Plan price, e.g. "£12" */
+  price?: string;
 }): string {
-  const lines = [
-    `Hello Sky Glass IPTV support,`,
-    ``,
-    `I am contacting you from ${SITE_DOMAIN} (${SITE_URL}).`,
-  ];
+  const intent = options?.intent ?? "subscription";
+  let message: string;
 
-  if (options?.page) {
-    lines.push(`Page: ${options.page}`);
-  }
-  if (options?.plan) {
-    lines.push(`Plan of interest: ${options.plan}`);
-  }
-  if (options?.intent) {
-    lines.push(`Request: ${options.intent}`);
+  if (intent === "trial") {
+    message = "Skyglass-iptv free trial";
+  } else if (options?.plan && options?.price) {
+    message = `Skyglass-iptv subscription - ${options.plan} ${options.price}`;
+  } else if (options?.plan) {
+    message = `Skyglass-iptv subscription - ${options.plan}`;
   } else {
-    lines.push(`Request: I would like help with a subscription / trial.`);
+    message = "Skyglass-iptv subscription";
   }
 
-  const text = encodeURIComponent(lines.join("\n"));
-  return `https://wa.me/${CONTACT_WHATSAPP_NUMBER}?text=${text}`;
+  return `https://wa.me/${CONTACT_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+export const WHATSAPP_TRIAL_HREF = buildWhatsAppHref({ intent: "trial" });
+export const WHATSAPP_SUBSCRIPTION_HREF = buildWhatsAppHref({
+  intent: "subscription",
+});

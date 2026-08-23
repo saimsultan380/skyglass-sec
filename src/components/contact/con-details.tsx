@@ -9,7 +9,7 @@ import {
   CONTACT_EMAIL_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_HREF,
-  CONTACT_WHATSAPP_HREF,
+  WHATSAPP_SUBSCRIPTION_HREF,
 } from "@/lib/site";
 
 const contactMethods = [
@@ -17,7 +17,7 @@ const contactMethods = [
     icon: MessageCircle,
     label: "WhatsApp",
     value: CONTACT_PHONE,
-    href: CONTACT_WHATSAPP_HREF,
+    href: WHATSAPP_SUBSCRIPTION_HREF,
   },
   {
     icon: Phone,

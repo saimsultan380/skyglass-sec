@@ -14,7 +14,7 @@ import {
   CalendarClock,
 } from "lucide-react";
 import { MaskReveal } from "@/components/animation/mask-reveal";
-import { ROUTES } from "@/lib/seo";
+import { WHATSAPP_TRIAL_HREF } from "@/lib/site";
 
 const trustItems = [
   { label: "Plans from £12", icon: ShieldCheck },
@@ -75,8 +75,10 @@ function HeroCTAs() {
         </Button>
       </Link>
 
-      <Link
-        href={`${ROUTES.contact}?enquiry=trial`}
+      <a
+        href={WHATSAPP_TRIAL_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full min-w-0 xl:w-auto"
       >
         <Button
@@ -88,7 +90,7 @@ function HeroCTAs() {
           <span className="hidden xl:inline">Request a 24-Hour Trial</span>
           <span className="inline xl:hidden">24-Hour Trial</span>
         </Button>
-      </Link>
+      </a>
     </div>
   );
 }

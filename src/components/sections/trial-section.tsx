@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +12,7 @@ import {
   TickList,
 } from "@/components/ui/section-bits";
 import { Clock } from "lucide-react";
-import { ROUTES } from "@/lib/seo";
+import { WHATSAPP_TRIAL_HREF } from "@/lib/site";
 
 const trialChecks = [
   "Device compatibility",
@@ -45,7 +44,11 @@ export function TrialSection() {
             </Footnote>
           </div>
           <div className="mt-6">
-            <Link href={`${ROUTES.contact}?enquiry=trial`}>
+            <a
+              href={WHATSAPP_TRIAL_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="primary"
                 size="lg"
@@ -53,7 +56,7 @@ export function TrialSection() {
               >
                 Request a 24-Hour Trial
               </Button>
-            </Link>
+            </a>
           </div>
         </Card>
       </FadeIn>

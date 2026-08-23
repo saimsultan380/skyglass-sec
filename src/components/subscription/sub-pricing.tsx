@@ -135,7 +135,15 @@ export function SubPricing() {
                   </ul>
                 </div>
 
-                <a target="_blank" rel="noopener noreferrer" href={buildWhatsAppHref({ plan: `${plan.name} (${plan.price})`, page: "Subscription plans", intent: `I want the ${plan.name} for ${plan.price}.` })}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={buildWhatsAppHref({
+                    intent: "subscription",
+                    plan: plan.name,
+                    price: plan.price,
+                  })}
+                >
                   <Button
                     variant="primary"
                     size="lg"

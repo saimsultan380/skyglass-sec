@@ -14,6 +14,8 @@ import {
   Wrench,
 } from "lucide-react";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { WHATSAPP_TRIAL_HREF } from "@/lib/site";
+import { ROUTES } from "@/lib/seo";
 
 const trustItems = [
   { label: "Trial Requests", icon: CheckCircle2 },
@@ -55,8 +57,10 @@ function HeroCopy() {
 function HeroCTAs() {
   return (
     <div className="flex w-full max-w-full min-w-0 flex-col items-stretch gap-2 sm:gap-3 lg:flex-col xl:flex-row xl:items-center">
-      <Link
-        href="?enquiry=trial#contact-form"
+      <a
+        href={WHATSAPP_TRIAL_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full min-w-0 xl:w-auto"
       >
         <Button
@@ -68,10 +72,10 @@ function HeroCTAs() {
           <span className="hidden xl:inline">Request a 24-Hour Trial</span>
           <span className="inline xl:hidden">24-Hour Trial</span>
         </Button>
-      </Link>
+      </a>
 
       <Link
-        href="/sky-glass-iptv-subscription-uk/"
+        href={ROUTES.subscription}
         className="w-full min-w-0 xl:w-auto"
       >
         <Button

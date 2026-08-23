@@ -6,7 +6,7 @@ import { MaskReveal } from "@/components/animation/mask-reveal";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Tv, Calendar } from "lucide-react";
-import { ROUTES } from "@/lib/seo";
+import { WHATSAPP_TRIAL_HREF } from "@/lib/site";
 
 interface SkyglassHeroContentProps {
   showFullBodyCopy?: boolean;
@@ -83,8 +83,10 @@ export function SkyglassHeroCTAs({ className }: { className?: string }) {
           </Button>
         </Link>
 
-        <Link
-          href={`${ROUTES.contact}?enquiry=trial`}
+        <a
+          href={WHATSAPP_TRIAL_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 sm:flex-initial"
         >
           <Button
@@ -96,7 +98,7 @@ export function SkyglassHeroCTAs({ className }: { className?: string }) {
             <span className="hidden sm:inline">Request a 24-Hour Trial</span>
             <span className="inline sm:hidden">24-Hour Trial</span>
           </Button>
-        </Link>
+        </a>
       </div>
     </FadeIn>
   );
