@@ -12,11 +12,17 @@ import { buildPageMetadata, ROUTES, SITE_PAGES } from "@/lib/seo";
 
 const page = SITE_PAGES.find((p) => p.path === ROUTES.reviews)!;
 
-export const metadata = buildPageMetadata({
-  title: page.title,
-  description: page.description,
-  path: page.path,
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: page.title,
+    description: page.description,
+    path: page.path,
+  }),
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 const reviewFaqs = [
   {

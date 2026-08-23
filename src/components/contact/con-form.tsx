@@ -62,14 +62,14 @@ const selectClass =
   "w-full rounded-[12px] border border-slate-200 bg-white px-4 py-3 text-xs sm:text-sm font-semibold text-[#0B0E2C] focus:outline-none focus:border-[#E91E8C] focus:ring-1 focus:ring-[#E91E8C] appearance-none";
 const labelClass = "text-xs sm:text-sm font-bold text-[#0B0E2C] mb-1.5";
 
-function ContactFormFields() {
-  const searchParams = useSearchParams();
-  const requestedEnquiry =
-    ENQUIRY_PARAM_MAP[searchParams.get("enquiry")?.toLowerCase() ?? ""];
-
+function ContactFormFields({
+  defaultEnquiry,
+}: {
+  defaultEnquiry?: (typeof enquiryTypes)[number];
+}) {
   const [formData, setFormData] = useState({
     ...initialState,
-    ...(requestedEnquiry ? { enquiryType: requestedEnquiry } : {}),
+    ...(defaultEnquiry ? { enquiryType: defaultEnquiry } : {}),
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -291,6 +291,14 @@ function ContactFormFields() {
   );
 }
 
+function ContactFormWithParams() {
+  const searchParams = useSearchParams();
+  const requestedEnquiry =
+    ENQUIRY_PARAM_MAP[searchParams.get("enquiry")?.toLowerCase() ?? ""];
+
+  return <ContactFormFields defaultEnquiry={requestedEnquiry} />;
+}
+
 export function ConForm() {
   return (
     <section
@@ -307,12 +315,9 @@ export function ConForm() {
           </h2>
         </FadeIn>
 
-        <Suspense
-          fallback={
-            <div className="w-full rounded-[12px] border border-slate-200 bg-white p-6 sm:p-10 min-h-[640px]" />
-          }
-        >
-          <ContactFormFields />
+        {/* Fallback renders the full form so SSR HTML includes inputs. */}
+        <Suspense fallback={<ContactFormFields />}>
+          <ContactFormWithParams />
         </Suspense>
       </div>
     </section>

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: `${SITE_NAME} – Official IPTV App`,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.png"],
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
@@ -95,7 +95,7 @@ const organizationJsonLd = {
   name: SITE_NAME,
   url: homeUrl,
   logo: absoluteUrl("/icons/icon-512.png"),
-  image: absoluteUrl("/og-image.png"),
+  image: absoluteUrl("/opengraph-image.png"),
   description: SITE_DESCRIPTION,
 };
 

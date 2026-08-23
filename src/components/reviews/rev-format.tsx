@@ -8,7 +8,7 @@ import {
   SectionHeading,
   TickList,
 } from "@/components/ui/section-bits";
-import { AlertCircle, BadgeCheck, Quote } from "lucide-react";
+import { AlertCircle, BadgeCheck, Clock } from "lucide-react";
 
 const requiredFields = [
   "Device: Firestick, Smart TV, Android, Apple, Windows or other",
@@ -27,20 +27,24 @@ export function RevFormat() {
         eyebrowIcon={BadgeCheck}
         title="Verified Customer"
         highlight="Reviews"
-        intro={["Use this format for every genuine review:"]}
+        intro={[
+          "Genuine customer reviews will appear here once they are verified and published with permission. No review or AggregateRating markup is used until then.",
+        ]}
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch w-full mb-6">
         <FadeIn className="h-full">
           <Card className="h-full flex flex-col">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-pink-50 text-[#E91E8C] shrink-0 mb-4">
-              <Quote className="h-4 w-4 stroke-[2]" />
+              <Clock className="h-4 w-4 stroke-[2]" />
             </div>
             <p className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-snug mb-3">
-              “[Genuine Review Heading]”
+              Reviews coming soon
             </p>
             <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
-              “[Customer’s genuine feedback, published with permission.]”
+              We only publish permission-based feedback tied to a real order,
+              with device, plan and date context. Check back shortly, or contact
+              support if you would like to share your experience.
             </p>
           </Card>
         </FadeIn>

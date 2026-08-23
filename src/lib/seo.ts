@@ -134,7 +134,7 @@ export function buildPageMetadata({
       description,
       images: [
         {
-          url: "/og-image.png",
+          url: "/opengraph-image.png",
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} – Official IPTV App`,
@@ -145,7 +145,7 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-image.png"],
+      images: ["/opengraph-image.png"],
     },
   };
 }
@@ -157,6 +157,8 @@ export type SitePage = {
   breadcrumbs: readonly BreadcrumbItem[];
   changeFrequency: "weekly" | "monthly" | "yearly";
   priority: number;
+  /** When false, omit from sitemap (e.g. temporarily noindex pages). */
+  includeInSitemap?: boolean;
 };
 
 export const SITE_PAGES: readonly SitePage[] = [
@@ -219,7 +221,7 @@ export const SITE_PAGES: readonly SitePage[] = [
   {
     title: "Sky Glass IPTV Reviews UK – Customer Feedback",
     description:
-      "Read verified Sky Glass IPTV reviews from UK customers. Compare feedback by device, subscription length, setup experience, streaming and support.",
+      "Sky Glass IPTV customer reviews will be published here once verified. Check back for feedback by device, plan and setup experience.",
     path: ROUTES.reviews,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
@@ -227,6 +229,7 @@ export const SITE_PAGES: readonly SitePage[] = [
     ],
     changeFrequency: "monthly",
     priority: 0.7,
+    includeInSitemap: false,
   },
   {
     title: "Contact Sky Glass IPTV – Trial, Setup & Subscription Help",

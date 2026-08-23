@@ -52,6 +52,21 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/contact": ROUTES.contact,
   "/contact-us": ROUTES.contact,
   "/for-sky-glass-iptv-contact-us": ROUTES.contact,
+
+  // → About
+  "/about-us": ROUTES.about,
+
+  // → Legal / policy aliases
+  "/refund-cancellation-policy": ROUTES.refunds,
+  "/terms-of-service": ROUTES.terms,
+  "/cookie-policy": ROUTES.privacy,
+  "/content-and-copyright-policy": ROUTES.dmca,
+
+  // → Installation aliases
+  "/iptv-firestick-guide": ROUTES.installation,
+
+  // → Reseller aliases
+  "/sky-glass-iptv-reseller-panel-uk-2026": ROUTES.reseller,
 };
 
 /** Returns the canonical destination for a legacy path, or null. */

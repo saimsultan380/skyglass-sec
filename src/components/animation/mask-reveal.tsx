@@ -39,6 +39,7 @@ function toWords(text: string, className?: string): WordToken[] {
 /**
  * GPU-friendly CSS skew mask reveal — no Framer Motion.
  * Transform-only (translate + skew); overflow clip handles the reveal.
+ * Literal spaces sit between word spans so heading textContent stays readable.
  */
 export function MaskReveal({
   text,
@@ -51,7 +52,7 @@ export function MaskReveal({
   as: Component = "h1",
   trigger = "inView",
 }: MaskRevealProps) {
-  const rootRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLSpanElement>(null);
   const [active, setActive] = useState(false);
 
   const words: WordToken[] = parts?.length
@@ -95,14 +96,11 @@ export function MaskReveal({
   const Tag = (Component || "h1") as React.ElementType;
 
   return (
-    <Tag
-      className={cn("w-full", className)}
-      data-no-reveal
-    >
-      <div
+    <Tag className={cn("w-full", className)} data-no-reveal>
+      <span
         ref={rootRef}
         className={cn(
-          "mask-reveal flex w-full flex-wrap gap-x-[0.25em] gap-y-[0.1em]",
+          "mask-reveal inline-block w-full",
           active && "mask-reveal--active"
         )}
         style={
@@ -112,27 +110,27 @@ export function MaskReveal({
         }
       >
         {words.map((token, index) => (
-          <span
-            key={`${token.word}-${index}`}
-            className="mask-reveal__clip inline-block overflow-hidden py-[0.05em] px-[0.02em] -my-[0.05em] -mx-[0.02em]"
-          >
-            <span
-              className={cn(
-                "mask-reveal__word",
-                wordClassName,
-                token.className
-              )}
-              style={
-                {
-                  "--mask-delay": `${delayMs + index * staggerMs}ms`,
-                } as React.CSSProperties
-              }
-            >
-              {token.word}
+          <React.Fragment key={`${token.word}-${index}`}>
+            {index > 0 ? " " : null}
+            <span className="mask-reveal__clip inline-block overflow-hidden py-[0.05em] px-[0.02em] -my-[0.05em] -mx-[0.02em]">
+              <span
+                className={cn(
+                  "mask-reveal__word",
+                  wordClassName,
+                  token.className
+                )}
+                style={
+                  {
+                    "--mask-delay": `${delayMs + index * staggerMs}ms`,
+                  } as React.CSSProperties
+                }
+              >
+                {token.word}
+              </span>
             </span>
-          </span>
+          </React.Fragment>
         ))}
-      </div>
+      </span>
     </Tag>
   );
 }

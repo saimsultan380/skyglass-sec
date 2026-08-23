@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { SkyglassHeroMockup } from "@/components/sections/skyglass-hero-mockup";
 import { FadeIn } from "@/components/animation/fade-in";
 import { MaskReveal } from "@/components/animation/mask-reveal";
+import { HeroLayout } from "@/components/sections/hero-layout";
 import { Button } from "@/components/ui/button";
 import {
   BadgeCheck,
@@ -44,12 +44,14 @@ function HeroCopy() {
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
         <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Read customer feedback with useful context about the device,
-            application, subscription length, installation and customer-support
-            experience.
+            Verified customer reviews will be published here with useful context
+            about the device, application, subscription length, installation and
+            customer-support experience.
           </p>
           <p>
-            Reviews should be connected to genuine trials or completed orders.
+            Until genuine, permission-based reviews are ready, this page stays
+            offline for search engines. You can still contact support to share
+            feedback.
           </p>
         </div>
       </FadeIn>
@@ -119,45 +121,18 @@ function TrustRow() {
 
 export function RevHero() {
   return (
-    <div
-      className="relative flex flex-col bg-white pb-8 text-[#0B0E2C] sm:pb-12"
-      data-hero
-    >
-      <div className="mx-auto w-full max-w-7xl flex-1 px-4 pt-8 sm:px-6 sm:pt-12 lg:px-8 lg:pt-14">
-        <div className="hidden lg:grid lg:grid-cols-12 lg:items-center lg:gap-8 xl:gap-10">
-          <div className="flex min-w-0 flex-col items-start lg:col-span-7">
-            <HeroCopy />
-            <FadeIn delay={0.15} duration={0.4} className="mt-8 w-full">
-              <HeroCTAs />
-            </FadeIn>
-            <FadeIn
-              delay={0.25}
-              duration={0.4}
-              className="mt-10 w-full max-w-2xl"
-            >
-              <TrustRow />
-            </FadeIn>
-          </div>
-          <div className="lg:col-span-5">
-            <SkyglassHeroMockup />
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center gap-6 text-left lg:hidden">
-          <div className="w-full">
-            <HeroCopy />
-          </div>
-          <div className="my-2 w-full">
-            <SkyglassHeroMockup />
-          </div>
-          <FadeIn delay={0.15} duration={0.35} className="w-full">
-            <HeroCTAs />
-          </FadeIn>
-          <FadeIn delay={0.2} duration={0.35} className="mt-2 w-full">
-            <TrustRow />
-          </FadeIn>
-        </div>
-      </div>
-    </div>
+    <HeroLayout
+      copy={<HeroCopy />}
+      ctas={
+        <FadeIn delay={0.15} duration={0.4} className="w-full">
+          <HeroCTAs />
+        </FadeIn>
+      }
+      trust={
+        <FadeIn delay={0.25} duration={0.4} className="w-full">
+          <TrustRow />
+        </FadeIn>
+      }
+    />
   );
 }

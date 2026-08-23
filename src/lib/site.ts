@@ -24,8 +24,10 @@ export const SMART_TV_PLAYERS = [
 ] as const;
 
 export const LEGAL_LAST_UPDATED = "22 August 2026";
-export const LEGAL_OPERATOR_NAME = "[LEGAL OPERATOR NAME]";
-export const BUSINESS_ADDRESS = "[BUSINESS ADDRESS]";
+/** Trading name used publicly; replace with registered legal entity after review. */
+export const LEGAL_OPERATOR_NAME = "Sky Glass IPTV";
+/** Correspondence contact until a registered business address is confirmed. */
+export const BUSINESS_ADDRESS = `UK correspondence via ${CONTACT_EMAIL} or WhatsApp ${CONTACT_PHONE}`;
 export const LEGAL_WEBSITE = SITE_DOMAIN;
 
 export const INDEPENDENCE_NOTICE =
