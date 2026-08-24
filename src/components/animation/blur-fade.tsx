@@ -22,20 +22,20 @@ export function BlurFade({
   children,
   delay = 0,
   className,
-  yOffset = 24,
-  blur = 12,
+  yOffset = 18,
+  blur = 6,
 }: BlurFadeProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, filter: `blur(${blur}px)`, y: yOffset }}
+      initial={{ opacity: 0, filter: blur ? `blur(${blur}px)` : "none", y: yOffset }}
       whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "0px 0px 80px 0px" }}
       transition={{
-        duration: 0.7,
+        duration: 0.5,
         delay,
         ease: [0.21, 0.47, 0.32, 0.98],
       }}
-      className={cn("will-change-[opacity,transform,filter]", className)}
+      className={cn("will-change-[opacity,transform]", className)}
     >
       {children}
     </motion.div>

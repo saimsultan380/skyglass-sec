@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 
 /**
  * ScrollReveal — Global Intersection Observer
- * Auto-marks content elements and toggles .revealed on scroll.
- * Reveals once (no exit flicker) for smoother scrolling.
- * Skips heroes, titles, and [data-no-reveal].
+ * Smoothly reveals section cards and headings on scroll.
+ * Uses hardware-accelerated translate + opacity (no blur filter).
+ * Skips heroes, titles, interactive controls, overflow containers, and [data-no-reveal].
  */
 export function ScrollReveal() {
   const pathname = usePathname();
@@ -25,6 +25,25 @@ export function ScrollReveal() {
       // Never animate hero titles
       if (el.matches("h1, .text-h1-skyglass")) return true;
       if (el.closest("h1, .text-h1-skyglass")) return true;
+      // Never animate elements inside overflow scroll containers (e.g. device sidebar)
+      if (
+        el.closest(
+          '[class*="overflow-y-auto"], [class*="overflow-x-auto"], [class*="overflow-auto"]'
+        )
+      ) {
+        return true;
+      }
+      // Never animate individual interactive controls, links or form fields
+      if (
+        el.matches(
+          'button, a, input, select, textarea, [role="button"], [role="tab"], svg, path'
+        )
+      ) {
+        return true;
+      }
+      if (el.closest('button, [role="tablist"]')) {
+        return true;
+      }
       return false;
     };
 
@@ -80,67 +99,43 @@ export function ScrollReveal() {
     const autoMark = () => {
       const root = document.body;
 
+      // Mark top-level content cards
       root
         .querySelectorAll<HTMLElement>("section div, footer div")
         .forEach((el) => {
-          if (isContentCard(el)) mark(el, undefined, { allowNested: true });
+          if (isContentCard(el)) {
+            mark(el);
+          }
         });
 
+      // Mark standalone section headings that aren't inside an already-marked card
       root
         .querySelectorAll<HTMLElement>(
-          "section h2, section h3, section h4, footer h3, footer h4"
+          "section h2, section h3, footer h3"
         )
         .forEach((el) => {
           const insideReveal = Boolean(
             el.parentElement?.closest("[data-reveal]")
           );
-          mark(el, undefined, { allowNested: insideReveal });
+          if (!insideReveal) {
+            mark(el);
+          }
         });
 
-      root
-        .querySelectorAll<HTMLElement>("section p, footer p")
-        .forEach((el) => {
-          const insideReveal = Boolean(
-            el.parentElement?.closest("[data-reveal]")
-          );
-          mark(el, undefined, { allowNested: insideReveal });
-        });
-
-      root
-        .querySelectorAll<HTMLElement>("section li, footer li")
-        .forEach((el, i) => {
-          mark(el, (i % 6) * 40, { allowNested: true });
-        });
-
-      root
-        .querySelectorAll<HTMLElement>("section button, footer button")
-        .forEach((el, i) => {
-          mark(el, (i % 4) * 40, { allowNested: true });
-        });
-
-      // Section images only — never hero images
-      root.querySelectorAll<HTMLElement>("section img").forEach((el) => {
-        if (el.closest("[data-hero]")) return;
-        const wrap = el.parentElement;
-        if (wrap instanceof HTMLElement) mark(wrap, 40, { allowNested: true });
-      });
-
-      root.querySelectorAll<HTMLElement>("footer a").forEach((el) => {
-        mark(el);
-      });
-
+      // Stagger child cards inside grids
       root
         .querySelectorAll<HTMLElement>(
-          "section ul, section ol, section .grid, footer ul"
+          "section .grid"
         )
         .forEach((parent) => {
+          if (parent.closest("[data-reveal]")) return;
           const kids = Array.from(parent.children).filter(
             (n): n is HTMLElement =>
               n instanceof HTMLElement && n.hasAttribute("data-reveal")
           );
           kids.forEach((kid, i) => {
             if (!kid.hasAttribute("data-delay")) {
-              mark(kid, (i % 8) * 40, { allowNested: true });
+              mark(kid, (i % 6) * 40, { allowNested: true });
             }
           });
         });
@@ -172,8 +167,8 @@ export function ScrollReveal() {
         });
       },
       {
-        threshold: 0.05,
-        rootMargin: "80px 0px -5% 0px",
+        threshold: 0,
+        rootMargin: "80px 0px 80px 0px",
       }
     );
 
@@ -186,21 +181,22 @@ export function ScrollReveal() {
       debounce = setTimeout(() => {
         autoMark();
         observeAll();
-      }, 60);
+        revealInView();
+      }, 50);
     });
 
     mo.observe(document.body, { childList: true, subtree: true });
 
     // Immediately reveal anything already in (or near) the viewport
     const revealInView = () => {
-      const vh = window.innerHeight || 0;
+      const vh = window.innerHeight || 800;
       document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
         if (shouldSkip(el)) {
           el.classList.add("revealed");
           return;
         }
         const rect = el.getBoundingClientRect();
-        if (rect.top < vh * 1.05 && rect.bottom > -40) {
+        if (rect.top < vh + 100 && rect.bottom > -100) {
           el.classList.add("revealed");
         }
       });
@@ -209,8 +205,28 @@ export function ScrollReveal() {
     revealInView();
     requestAnimationFrame(revealInView);
 
+    // Fast scroll listener to ensure immediate reveal without lag
+    let scrollRaf = 0;
+    const onScrollOrResize = () => {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = 0;
+        revealInView();
+      });
+    };
+
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize, { passive: true });
+
+    // Fallback timer: ensure all visible elements are revealed
+    const fallbackTimer = setTimeout(revealInView, 300);
+
     return () => {
       if (debounce) clearTimeout(debounce);
+      clearTimeout(fallbackTimer);
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
       mo.disconnect();
       observer?.disconnect();
     };

@@ -86,19 +86,16 @@
 ────────────────────────────────────────────────────────────────────────────── */
 [data-reveal] {
   opacity: 0;
-  filter: blur(8px);
-  transform: translate3d(0, 24px, 0);
+  transform: translate3d(0, 16px, 0);
   transition:
-    opacity 0.55s cubic-bezier(0.21, 0.47, 0.32, 0.98),
-    filter 0.55s cubic-bezier(0.21, 0.47, 0.32, 0.98),
-    transform 0.55s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+    opacity 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98),
+    transform 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98);
   transition-delay: 0s;
   backface-visibility: hidden;
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
 }
 [data-reveal].revealed {
   opacity: 1;
-  filter: blur(0px);
   transform: translate3d(0, 0, 0);
   will-change: auto;
 }

@@ -622,7 +622,10 @@ export function InstDeviceGuides() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
-          <div className="lg:col-span-4 flex flex-col gap-6 bg-white border border-slate-200 rounded-[12px] p-6 lg:sticky lg:top-24 max-h-[80vh] overflow-y-auto">
+          <div
+            data-no-reveal
+            className="lg:col-span-4 flex flex-col gap-6 bg-white border border-slate-200 rounded-[12px] p-6 lg:sticky lg:top-24 max-h-[80vh] overflow-y-auto"
+          >
             <div>
               <span className="text-[11px] font-bold text-[#E91E8C] uppercase tracking-wider block mb-1">
                 Installation Guide
@@ -677,6 +680,7 @@ export function InstDeviceGuides() {
           <div
             id={activeGuide.id}
             ref={contentRef}
+            data-no-reveal
             className="lg:col-span-8 rounded-[12px] border border-slate-200 bg-white p-6 sm:p-8 flex flex-col justify-between min-h-[600px] relative scroll-mt-24"
           >
             <div>

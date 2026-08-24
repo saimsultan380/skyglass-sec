@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { ICONS, type IconName } from "@/components/ui/icon-registry";
 
@@ -44,7 +43,10 @@ export function CtaSection({
       className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 w-full">
-        <FadeIn className="w-full rounded-[12px] border border-slate-200 bg-white p-6 sm:p-12 text-center flex flex-col items-center">
+        <div
+          data-reveal
+          className="w-full rounded-[12px] border border-slate-200 bg-white p-6 sm:p-12 text-center flex flex-col items-center"
+        >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0B0E2C] max-w-2xl font-heading mb-4">
             {title}
             {highlight ? (
@@ -112,7 +114,7 @@ export function CtaSection({
               </div>
             </div>
           ) : null}
-        </FadeIn>
+        </div>
       </div>
     </section>
   );

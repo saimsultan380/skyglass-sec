@@ -82,10 +82,17 @@ export function MaskReveal({
           io.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "40px 0px" }
+      { threshold: 0, rootMargin: "80px 0px" }
     );
 
     io.observe(el);
+
+    // Immediate check if already in viewport
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight + 80 && rect.bottom > -80) {
+      setActive(true);
+    }
+
     return () => io.disconnect();
   }, [trigger]);
 
