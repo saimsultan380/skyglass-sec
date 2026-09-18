@@ -87,7 +87,7 @@ export function SubPricing() {
         </FadeIn>
 
         <FadeIn className="mb-8 flex w-full justify-center">
-          <div className="inline-flex rounded-[12px] border border-slate-200 bg-slate-50 p-1">
+          <div className="inline-flex rounded-[12px] bg-slate-50/80 p-1">
             <button
               type="button"
               onClick={() => setTier("standard")}
@@ -121,10 +121,8 @@ export function SubPricing() {
                   key={plan.id}
                   data-reveal
                   data-delay={String(index * 100)}
-                  className={`relative flex flex-col justify-between rounded-[12px] border bg-white p-6 transition-all duration-200 ${
-                    plan.isRecommended
-                      ? "border-[#E91E8C] ring-1 ring-[#E91E8C]"
-                      : "border-slate-200"
+                  className={`iphone-glass-card relative flex flex-col justify-between p-6 transition-all duration-200 ${
+                    plan.isRecommended ? "iphone-glass-card--accent" : ""
                   }`}
                 >
                   {plan.isRecommended && (
@@ -207,7 +205,7 @@ export function SubPricing() {
           </FadeIn>
         ) : (
           <FadeIn className="w-full">
-            <div className="rounded-[12px] border border-slate-200 bg-white p-6 sm:p-8">
+            <div className="iphone-glass-card p-6 sm:p-8">
               <h3 className="mb-3 text-lg font-bold text-[#0B0E2C]">
                 Premium Package Options
               </h3>

@@ -115,7 +115,7 @@ export function SkyglassPricing() {
         </FadeIn>
 
         <FadeIn className="mb-8 flex w-full justify-center">
-          <div className="inline-flex rounded-[12px] border border-slate-200 bg-slate-50 p-1">
+          <div className="inline-flex rounded-[12px] bg-slate-50/80 p-1">
             <button
               type="button"
               onClick={() => setTier("standard")}
@@ -152,14 +152,12 @@ export function SkyglassPricing() {
                       key={plan.id}
                       data-reveal
                       data-delay={String(i * 100)}
-                      className={`relative flex h-full flex-col justify-between rounded-[12px] border bg-white p-6 transition-all duration-200 ${
-                        plan.recommended
-                          ? "border-[#E91E8C]"
-                          : "border-slate-200"
+                      className={`iphone-glass-card relative flex h-full flex-col justify-between p-6 transition-all duration-200 ${
+                        plan.recommended ? "iphone-glass-card--accent" : ""
                       }`}
                     >
                       {plan.recommended && (
-                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-[#E91E8C] bg-white px-3.5 py-0.5 text-[10px] font-bold tracking-wider text-[#E91E8C] uppercase select-none">
+                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#E91E8C] px-3.5 py-0.5 text-[10px] font-bold tracking-wider text-white uppercase select-none">
                           Best Value
                         </span>
                       )}
@@ -239,7 +237,7 @@ export function SkyglassPricing() {
             </FadeIn>
 
             <FadeIn className="w-full">
-              <div className="flex w-full flex-col items-start justify-between gap-6 rounded-[12px] border border-slate-200 bg-white p-5 sm:p-7 md:flex-row md:items-center">
+              <div className="iphone-glass-card flex w-full flex-col items-start justify-between gap-6 p-5 sm:p-7 md:flex-row md:items-center">
                 <p className="max-w-2xl text-xs leading-relaxed text-[#5C607A] sm:text-sm">
                   These prices cover one simultaneous connection and are paid
                   upfront for the selected period. Additional connections are
@@ -264,7 +262,7 @@ export function SkyglassPricing() {
           </>
         ) : (
           <FadeIn className="w-full">
-            <div className="rounded-[12px] border border-slate-200 bg-white p-6 sm:p-8">
+            <div className="iphone-glass-card p-6 sm:p-8">
               <h3 className="mb-3 text-lg font-bold text-[#0B0E2C]">Premium</h3>
               <p className="mb-6 max-w-3xl text-xs leading-relaxed font-semibold text-slate-700 sm:text-sm">
                 Contact us for the current Premium package details and price.

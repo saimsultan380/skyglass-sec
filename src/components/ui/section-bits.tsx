@@ -104,7 +104,7 @@ export function SectionHeading({
   );
 }
 
-/** Bordered card matching the site-wide glass card treatment. */
+/** Bordered card matching the site-wide iPhone liquid-glass treatment. */
 export function Card({
   className,
   children,
@@ -113,14 +113,7 @@ export function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className={cn(
-        "rounded-[12px] border border-slate-200 bg-white p-6",
-        className
-      )}
-    >
-      {children}
-    </div>
+    <div className={cn("iphone-glass-card p-6", className)}>{children}</div>
   );
 }
 

@@ -96,14 +96,14 @@ function HeroCTAs() {
 
 function TrustRow() {
   return (
-    <div className="w-full sm:rounded-full sm:border sm:border-slate-200 sm:bg-white sm:p-4">
-      <div className="grid grid-cols-2 gap-2 text-center sm:grid-cols-4 sm:items-center sm:gap-0 sm:divide-x sm:divide-slate-200/90">
+    <div className="iphone-glass-pill w-full sm:rounded-full sm:p-4">
+      <div className="grid grid-cols-2 gap-2 text-center sm:grid-cols-4 sm:items-center sm:gap-0 sm:divide-x sm:divide-white/25">
         {trustItems.map((item) => {
           const Icon = item.icon;
           return (
             <div
               key={item.label}
-              className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-slate-200/40 bg-white/40 px-1 py-2.5 backdrop-blur-[2px] sm:flex-row sm:gap-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-3 sm:py-0 sm:backdrop-blur-none"
+              className="flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/25 px-1 py-2.5 sm:flex-row sm:gap-2 sm:rounded-none sm:bg-transparent sm:px-3 sm:py-0"
             >
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-pink-50/80 text-[#E91E8C] sm:h-8 sm:w-8 sm:bg-pink-50">
                 <Icon className="h-3.5 w-3.5 stroke-[2.5] sm:h-4 sm:w-4" />

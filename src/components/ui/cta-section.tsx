@@ -45,7 +45,7 @@ export function CtaSection({
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 w-full">
         <div
           data-reveal
-          className="w-full rounded-[12px] border border-slate-200 bg-white p-6 sm:p-12 text-center flex flex-col items-center"
+          className="iphone-glass-card w-full p-6 sm:p-12 text-center flex flex-col items-center"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0B0E2C] max-w-2xl font-heading mb-4">
             {title}

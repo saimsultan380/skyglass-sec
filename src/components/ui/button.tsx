@@ -11,13 +11,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-gradient-brand text-white shine-effect",
+          "bg-gradient-brand text-white shine-effect border-0",
         outline:
-          "border-gradient-brand text-[#0B0E2C]",
+          "border-gradient-brand text-[#0B0E2C] border-0",
         secondary:
-          "border border-white/50 bg-white/65 text-[#0B0E2C] shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-[28px] supports-[backdrop-filter]:bg-white/55",
+          "border-0 bg-white/65 text-[#0B0E2C] shadow-[0_8px_30px_rgb(0,0,0,0.04)] backdrop-blur-[28px] supports-[backdrop-filter]:bg-white/55",
         ghost:
-          "text-slate-700 hover:text-slate-950 border border-transparent bg-transparent",
+          "text-slate-700 hover:text-slate-950 border-0 bg-transparent",
       },
       size: {
         default: "h-11 px-5 py-2.5 rounded-[12px]",

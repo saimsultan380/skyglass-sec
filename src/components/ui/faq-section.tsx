@@ -47,7 +47,7 @@ export function FaqSection({
         key={absoluteIndex}
         data-reveal
         data-delay={String((absoluteIndex % 3) * 50)}
-        className="rounded-[12px] border border-slate-200 bg-white overflow-hidden transition-all duration-200 select-none"
+        className="iphone-glass-card overflow-hidden transition-all duration-200 select-none"
       >
         <button
           onClick={() => toggleFAQ(absoluteIndex)}
