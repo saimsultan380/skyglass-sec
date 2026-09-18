@@ -3,13 +3,12 @@
 import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Section, SectionHeading } from "@/components/ui/section-bits";
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import {
   CONTACT_EMAIL,
   CONTACT_EMAIL_HREF,
   CONTACT_PHONE,
-  CONTACT_PHONE_HREF,
-  WHATSAPP_SUBSCRIPTION_HREF,
+  CONTACT_WHATSAPP_HREF,
 } from "@/lib/site";
 
 const contactMethods = [
@@ -17,13 +16,7 @@ const contactMethods = [
     icon: MessageCircle,
     label: "WhatsApp",
     value: CONTACT_PHONE,
-    href: WHATSAPP_SUBSCRIPTION_HREF,
-  },
-  {
-    icon: Phone,
-    label: "Telephone",
-    value: CONTACT_PHONE,
-    href: CONTACT_PHONE_HREF,
+    href: CONTACT_WHATSAPP_HREF,
   },
   {
     icon: Mail,
@@ -36,9 +29,15 @@ const contactMethods = [
 export function ConDetails() {
   return (
     <Section id="contact-details">
-      <SectionHeading title="Contact" highlight="Details" />
+      <SectionHeading
+        title="SkyGlass"
+        highlight="Contact Details"
+        intro={[
+          "For an existing enquiry, continue in the same conversation so we can see the account details and previous troubleshooting.",
+        ]}
+      />
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch w-full max-w-3xl">
         {contactMethods.map((method, index) => {
           const Icon = method.icon;
           return (

@@ -1,66 +1,52 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
-import { Button } from "@/components/ui/button";
 import { Section, SectionHeading } from "@/components/ui/section-bits";
-import { Headphones } from "lucide-react";
-import { ROUTES } from "@/lib/seo";
-import { DOWNLOADER_CODE, DOWNLOADER_APP } from "@/lib/site";
 
-interface StepItem {
-  number: string;
-  title: string;
-  paragraphs: readonly string[];
-}
-
-const stepsList: readonly StepItem[] = [
+const stepsList = [
   {
     number: "01",
-    title: "Choose a Plan",
-    paragraphs: [
-      "Select one, three, six or twelve months and confirm the number of connections required.",
-    ],
+    title: "Choose Standard or ask about Premium",
+    body: "Select your preferred duration and connection allowance.",
   },
   {
     number: "02",
-    title: "Confirm Your Device",
-    paragraphs: ["Tell support which device you intend to use."],
+    title: "Confirm your device",
+    body: "Tell us the model and player you intend to use.",
   },
   {
     number: "03",
-    title: "Install the Application",
-    paragraphs: [
-      `Firestick and compatible Android customers should install ${DOWNLOADER_APP} and enter code ${DOWNLOADER_CODE}.`,
-      "Smart TV customers should install CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV from the relevant television app store.",
-    ],
+    title: "Complete payment",
+    body: "Use one of the available payment methods.",
   },
   {
     number: "04",
-    title: "Contact Support",
-    paragraphs: [
-      "After installation, contact support and provide your device and application details.",
-    ],
+    title: "Receive your account details",
+    body: "We activate subscriptions within two hours of payment and send your login through WhatsApp.",
   },
   {
     number: "05",
-    title: "Receive Your Login",
-    paragraphs: [
-      "Support will supply or configure the login details needed for the selected player.",
-    ],
+    title: "Complete setup",
+    body: "Follow the installation guide or ask our team for assistance. In our supplied app, the login screen requires your username and password only.",
   },
-];
+] as const;
 
 export function SubActivationSteps() {
   return (
     <Section id="activation-steps">
-      <SectionHeading title="How Activation" highlight="Works" />
+      <SectionHeading
+        title="Buy and Activate Your"
+        highlight="Subscription"
+      />
 
       <FadeIn className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-stretch w-full relative">
           {stepsList.map((step, idx) => (
-            <div key={step.number} className="relative flex flex-col justify-between h-full">
+            <div
+              key={step.number}
+              className="relative flex flex-col justify-between h-full"
+            >
               {idx < stepsList.length - 1 && (
                 <div className="hidden lg:block absolute top-12 left-[calc(100%-1rem)] w-8 border-t-2 border-dashed border-slate-200 z-10" />
               )}
@@ -73,33 +59,13 @@ export function SubActivationSteps() {
                   <h3 className="text-xs sm:text-sm font-bold text-[#0B0E2C] mb-1.5 leading-snug">
                     Step {idx + 1} – {step.title}
                   </h3>
-                  <div className="space-y-2">
-                    {step.paragraphs.map((line) => (
-                      <p
-                        key={line}
-                        className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed"
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
+                  <p className="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed">
+                    {step.body}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8">
-          <Link href={`${ROUTES.contact}?enquiry=login`}>
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-6 py-3.5 text-xs sm:text-sm font-semibold"
-            >
-              <Headphones className="mr-2 h-4 w-4 shrink-0 stroke-[2.5]" />
-              <span>Contact Support for Login Details</span>
-            </Button>
-          </Link>
         </div>
       </FadeIn>
     </Section>

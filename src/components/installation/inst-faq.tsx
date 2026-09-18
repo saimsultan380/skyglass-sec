@@ -6,28 +6,18 @@ import { DOWNLOADER_CODE } from "@/lib/site";
 
 const faqList: readonly FaqItem[] = [
   {
-    question: "What is the Downloader code?",
-    answer: `The current code is ${DOWNLOADER_CODE}.`,
+    question: "What is the Sky Glass APK?",
+    answer: `The APK is the Android installation file used to install our supplied app. Downloader code ${DOWNLOADER_CODE} provides the download route for compatible devices.`,
   },
   {
-    question: "Where do I receive my login details?",
+    question: "Can I use my official Sky account?",
     answer:
-      "Install the appropriate app first, then use the Contact Support for Login Details CTA.",
+      "No. This account belongs to the independent IPTV service supplied through this website. Official Sky apps and Sky customer accounts are separate.",
   },
   {
-    question: "Can I use Downloader on Samsung or LG?",
+    question: "Where do I get my username and password?",
     answer:
-      "Samsung and LG generally use compatible television apps such as CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.",
-  },
-  {
-    question: `Can I use code ${DOWNLOADER_CODE} on Apple devices?`,
-    answer:
-      "No. Apple devices use compatible applications from the Apple App Store.",
-  },
-  {
-    question: "What should I send support?",
-    answer:
-      "Send: device brand and model, installed app name, order information, MAC address or device key where relevant, and the exact setup problem, if any.",
+      "Contact us through WhatsApp for trial access or subscription activation. We send the login details and guide you through setup.",
   },
 ];
 
@@ -35,8 +25,8 @@ export function InstFAQ() {
   return (
     <FaqSection
       eyebrow="Installation Help"
-      title="Installation"
-      highlight="FAQs"
+      title="Sky Glass App"
+      highlight="Questions"
       items={faqList}
     />
   );

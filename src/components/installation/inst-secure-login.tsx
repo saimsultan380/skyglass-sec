@@ -2,26 +2,28 @@
 
 import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
-import { KeyRound, Link2, Radio } from "lucide-react";
+import { KeyRound, Smartphone } from "lucide-react";
 
 const loginMethods = [
   {
+    icon: Smartphone,
+    title: "Using Our Supplied App",
+    lead: "Enter the username and password we send through WhatsApp. You do not need to enter a server address in this app.",
+    items: [
+      "Copy the details carefully and check for accidental spaces",
+      "Downloading the app alone does not create an active viewing account",
+    ],
+  },
+  {
     icon: KeyRound,
-    title: "Xtream Codes",
-    lead: "Normally requires:",
-    items: ["Username", "Password", "Server URL"],
-  },
-  {
-    icon: Link2,
-    title: "M3U Playlist",
-    lead: "Normally requires one playlist URL supplied by support.",
-    items: [],
-  },
-  {
-    icon: Radio,
-    title: "Portal Login",
-    lead: "Commonly used on MAG, Formuler and other portal devices. It may require:",
-    items: ["Device MAC address", "Portal URL", "Device key"],
+    title: "Using Another Xtream-Compatible Player",
+    lead: "You can use an alternative supported player. Its account screen may ask for:",
+    items: [
+      "A name for the account or playlist",
+      "Your username",
+      "Your password",
+      "A server URL",
+    ],
   },
 ];
 
@@ -46,15 +48,21 @@ export function InstSecureLogin() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <FadeIn className="w-full max-w-4xl mb-12">
           <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
-            Xtream Codes, M3U and Portal Login{" "}
-            <span className="text-brand-gradient font-bold">Explained</span>
+            Sign In to Your{" "}
+            <span className="text-brand-gradient font-bold">
+              Sky Glass Account
+            </span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-[#5C607A] leading-relaxed">
-            Support will confirm which method is suitable for your device.
+            Ask support for the connection details required by your player. The
+            extra server field in a third-party app does not change the
+            username-and-password-only login in our supplied app. Apple devices
+            and computers require a player designed for their operating system;
+            the Android APK is not their installation method.
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch w-full">
           {loginMethods.map((method, index) => {
             const Icon = method.icon;
             return (

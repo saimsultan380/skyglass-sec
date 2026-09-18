@@ -6,10 +6,10 @@ export const SITE_ORIGIN = "https://skyglass-iptv.com";
 export const SITE_NAME = "Sky Glass IPTV";
 
 export const SITE_TITLE =
-  "Sky Glass IPTV UK – Premium IPTV Subscription for Live TV";
+  "Sky Glass IPTV | 22,000+ Channels & 24-Hour Free Trial";
 
 export const SITE_DESCRIPTION =
-  "Choose Sky Glass IPTV UK with 22,000+ live channels, 100,000+ movies and series, EPG, selected Catch-Up and supported 4K. Plans start from £12.";
+  "Explore Sky Glass IPTV for UK viewers: live TV, films and series, plans from £12, a 24-hour free trial and WhatsApp setup on compatible devices.";
 
 /**
  * Canonical route paths (always trailing slash).
@@ -171,9 +171,9 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 1,
   },
   {
-    title: "Sky Glass IPTV Subscription UK – Plans, Prices & Trial",
+    title: "Sky Glass Subscription | Buy 1–12 Month Plans from £12",
     description:
-      "Compare Sky Glass IPTV subscription plans for 1, 3, 6 or 12 months. Prices start from £12 with 22,000+ channels, 100,000+ VOD and setup help.",
+      "Compare Sky Glass subscription packages from £12. Check Standard prices, request Premium options and choose extra connections with manual renewal.",
     path: ROUTES.subscription,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
@@ -183,9 +183,9 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.9,
   },
   {
-    title: "Install Sky Glass IPTV – Firestick, Android & Smart TV",
+    title: "Sky Glass App Download | APK for Firestick & Android",
     description:
-      "Install Sky Glass IPTV on Firestick, Android TV, Smart TV, Apple devices, Windows and more. Follow clear setup and troubleshooting steps.",
+      "Install the Sky Glass app with Downloader code 9557305. Follow Android and Firestick steps, connect your account or set up a Smart TV player.",
     path: ROUTES.installation,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
@@ -207,9 +207,9 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
-    title: "Sky Glass IPTV Reseller UK – Panel, Credits & Packages",
+    title: "Sky Glass IPTV Reseller Panel | Credits Never Expire",
     description:
-      "Start with the Sky Glass IPTV reseller panel in the UK. Manage accounts, activations, renewals and credits, with a current minimum of 120 credits.",
+      "Explore the Sky Glass IPTV reseller panel, non-expiring credits and package options. Get wholesale pricing, trial limits and setup help on WhatsApp.",
     path: ROUTES.reseller,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
@@ -232,9 +232,9 @@ export const SITE_PAGES: readonly SitePage[] = [
     includeInSitemap: false,
   },
   {
-    title: "Contact Sky Glass IPTV – Trial, Setup & Subscription Help",
+    title: "Sky Glass Support | Contact Us on WhatsApp 24/7",
     description:
-      "Contact Sky Glass IPTV UK for plan questions, device checks, installation support, billing help or an eligible free 24-hour IPTV trial.",
+      "Contact Sky Glass support on WhatsApp for account access, setup, payments and renewals. Support is available 24 hours a day; we reply as soon as possible.",
     path: ROUTES.contact,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },

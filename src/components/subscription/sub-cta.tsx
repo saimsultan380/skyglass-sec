@@ -2,24 +2,24 @@
 
 import React from "react";
 import { CtaSection } from "@/components/ui/cta-section";
-import { ROUTES } from "@/lib/seo";
+import { CONTACT_WHATSAPP_HREF } from "@/lib/site";
 
 export function SubCTA() {
   return (
     <CtaSection
       id="cta"
-      title="Choose Your"
-      highlight="Subscription"
-      body="Confirm your device, choose your preferred term and install the recommended application."
+      title="Buy a Subscription on"
+      highlight="WhatsApp"
+      body="Choose Standard or ask about Premium, confirm your device and connections, then complete payment. We activate within two hours and send your login through WhatsApp."
       primary={{
-        label: "Choose a Subscription",
-        href: "#pricing-plans",
-        icon: "creditCard",
+        label: "Buy a Subscription on WhatsApp",
+        href: CONTACT_WHATSAPP_HREF,
+        icon: "messageSquare",
       }}
       secondary={{
-        label: "Contact Support for Login Details",
-        href: `${ROUTES.contact}?enquiry=login`,
-        icon: "headphones",
+        label: "View Packages",
+        href: "#pricing-plans",
+        icon: "creditCard",
       }}
     />
   );

@@ -1,6 +1,6 @@
 /** Shared service facts referenced across multiple pages. */
 
-export const DOWNLOADER_CODE = "3824652";
+export const DOWNLOADER_CODE = "9557305";
 export const DOWNLOADER_APP = "Downloader by AFTVnews";
 
 export const CONTACT_PHONE = "+44 7450 620840";
@@ -31,7 +31,7 @@ export const BUSINESS_ADDRESS = `UK correspondence via ${CONTACT_EMAIL} or Whats
 export const LEGAL_WEBSITE = SITE_DOMAIN;
 
 export const INDEPENDENCE_NOTICE =
-  "Sky Glass IPTV is an independent service. This website is not affiliated with, endorsed by or operated by Sky UK Limited or the manufacturer of the Sky Glass television. Third-party names and trademarks belong to their respective owners.";
+  "Sky Glass IPTV is provided independently through Skyglass-iptv.com. It is not affiliated with, endorsed by or operated by Sky or the official Sky Glass television service. Third-party names and trademarks belong to their respective owners.";
 
 /** Reseller programme entry requirement. */
 export const RESELLER_MINIMUM_CREDITS = 120;

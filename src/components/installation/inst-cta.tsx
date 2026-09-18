@@ -3,18 +3,19 @@
 import React from "react";
 import { CtaSection } from "@/components/ui/cta-section";
 import { ROUTES } from "@/lib/seo";
+import { CONTACT_WHATSAPP_HREF } from "@/lib/site";
 
 export function InstCTA() {
   return (
     <CtaSection
       id="cta"
-      title="Complete Your"
-      highlight="Installation"
-      body="Install the correct application for your device, then contact support for the account credentials."
+      title="Contact"
+      highlight="Installation Support"
+      body="Your trial or subscription login details and setup assistance are provided through WhatsApp."
       primary={{
-        label: "Contact Support for Login Details",
-        href: `${ROUTES.contact}?enquiry=login`,
-        icon: "headphones",
+        label: "Contact Installation Support",
+        href: CONTACT_WHATSAPP_HREF,
+        icon: "messageSquare",
       }}
       secondary={{
         label: "View Subscription Plans",

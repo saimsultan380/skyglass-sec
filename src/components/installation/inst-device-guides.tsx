@@ -50,23 +50,23 @@ const deviceGuidesList: DeviceGuide[] = [
     showDownloaderCode: true,
     steps: [
       {
-        title: "Step 1 – Install Downloader by AFTVnews",
+        title: "Step 1 ΓÇô Install Downloader by AFTVnews",
         description:
           "Open Find or Search from the Firestick home screen. Search for Downloader by AFTVnews. Select it from the official Amazon Appstore. Choose Download or Get. Open Downloader after installation.",
       },
       {
-        title: "Step 2 – Enable Installation Permission",
+        title: "Step 2 ΓÇô Enable Installation Permission",
         description:
           "Open Settings. Select My Fire TV. Open Developer Options. Select Install Unknown Apps. Allow the permission for Downloader.",
       },
       {
-        title: "Step 3 – Enter Downloader Code",
+        title: "Step 3 ΓÇô Enter Downloader Code",
         description: `Open Downloader. Select the code or URL field. Enter ${DOWNLOADER_CODE}. Select Go. Wait for the application file to download. Select Install. Choose Open after installation.`,
       },
       {
-        title: "Step 4 – Contact Support",
+        title: "Step 4 ΓÇô Contact Support",
         description:
-          "After the Sky Glass IPTV app is installed, contact support. Support will provide the username, password and server address needed to sign in.",
+          "After the Sky Glass IPTV app is installed, contact support on WhatsApp. Sign in with the username and password supplied — you do not need a server address in our supplied app.",
       },
     ],
     notes: [
@@ -591,7 +591,7 @@ export function InstDeviceGuides() {
   const [selectedTab, setSelectedTab] = useState<string | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Deep links like /…installation-guide/#samsung-tv open the matching device.
+  // Deep links like /ΓÇªinstallation-guide/#samsung-tv open the matching device.
   const hash = useSyncExternalStore(subscribeToHash, readHash, serverHash);
   const hashTab = deviceGuidesList.some((guide) => guide.id === hash)
     ? hash
@@ -618,7 +618,7 @@ export function InstDeviceGuides() {
   return (
     <section
       id="device-guides"
-      className="w-full py-12 sm:py-20 bg-slate-50/50 border-t border-slate-200"
+      className="w-full py-12 sm:py-20 bg-white border-t border-slate-200"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">

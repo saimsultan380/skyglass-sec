@@ -7,24 +7,24 @@ import { ROUTES } from "@/lib/seo";
 export function SkyglassCTABanner() {
   return (
     <CtaSection
-      title="Choose Your"
-      highlight="Sky Glass IPTV Plan"
-      body="Compare the four subscription periods, confirm your device and choose the plan that matches your requirements."
+      title="Choose a"
+      highlight="Subscription"
+      body="Compare Standard packages from £12, ask about Premium options, or message us with a question about your device and setup."
       primary={{
-        label: "View Plans from £12",
-        href: "#pricing",
+        label: "Choose a Subscription",
+        href: ROUTES.subscription,
         icon: "calendar",
       }}
       secondary={{
-        label: "Contact Support for Login Details",
-        href: `${ROUTES.contact}?enquiry=login`,
+        label: "Ask a Question",
+        href: ROUTES.contact,
         icon: "headphones",
       }}
       trustItems={[
-        { label: "Plans from £12", icon: "calendar" },
-        { label: "Guided Installation", icon: "wrench" },
-        { label: "EPG & Catch-Up", icon: "clock" },
-        { label: "Customer Support", icon: "headphones" },
+        { label: "24-Hour Free Trial", icon: "clock" },
+        { label: "2-Hour Activation", icon: "zap" },
+        { label: "WhatsApp Setup", icon: "messageSquare" },
+        { label: "Manual Renewals", icon: "creditCard" },
       ]}
     />
   );

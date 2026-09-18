@@ -5,32 +5,24 @@ import { FaqSection, type FaqItem } from "@/components/ui/faq-section";
 
 const faqList: readonly FaqItem[] = [
   {
-    question: "Is one credit equal to one month?",
+    question: "Is the reseller login the same as a viewing account?",
     answer:
-      "That is the current standard structure. Confirm the latest written terms before purchasing.",
+      "No. Your panel login is used to manage accounts and credits. Customer viewing accounts have their own login details.",
   },
   {
-    question: "Is there a recurring panel fee?",
+    question: "Can I choose my customer prices?",
     answer:
-      "Confirm current panel-access terms in writing before payment.",
+      "You set your retail prices within the reseller agreement. Ask us for the wholesale credit cost so you can work out the price of each package you offer.",
   },
   {
-    question: "Can I choose my own retail prices?",
-    answer: "Yes, subject to applicable law and the reseller agreement.",
-  },
-  {
-    question: "Are earnings guaranteed?",
-    answer: "No.",
-  },
-  {
-    question: "Who supports reseller customers?",
+    question: "Can I purchase more credits later?",
     answer:
-      "The reseller is normally the customer’s first point of contact. Supplier support may assist with panel or underlying technical issues.",
+      "Yes. Contact support to request an additional credit purchase and confirm the current price.",
   },
   {
-    question: "Can unused credits be refunded?",
+    question: "Does every panel include sub-reseller creation?",
     answer:
-      "Only where the reseller agreement or applicable law allows it.",
+      "No. This depends on the panel. Tell us that you need sub-reseller access when requesting your quote.",
   },
 ];
 
@@ -39,7 +31,7 @@ export function ResFAQ() {
     <FaqSection
       eyebrow="Reseller Help"
       title="Reseller"
-      highlight="FAQs"
+      highlight="Questions"
       items={faqList}
     />
   );

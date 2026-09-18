@@ -1,12 +1,17 @@
 import React from "react";
 import { SkyglassHeader } from "@/components/sections/skyglass-header";
 import { SubHero } from "@/components/subscription/sub-hero";
-import { SubCompare } from "@/components/subscription/sub-compare";
 import { SubPricing } from "@/components/subscription/sub-pricing";
 import { SubFeatures } from "@/components/subscription/sub-features";
+import {
+  SubConnections,
+  SubPlayerCosts,
+  SubPayments,
+  SubRenewals,
+  SubTrialBlock,
+  SubRefundNote,
+} from "@/components/subscription/sub-extra-sections";
 import { SubActivationSteps } from "@/components/subscription/sub-activation-steps";
-import { SubNotIncluded } from "@/components/subscription/sub-not-included";
-import { SubPlanChoice } from "@/components/subscription/sub-plan-choice";
 import { SubFAQ } from "@/components/subscription/sub-faq";
 import { SubCTA } from "@/components/subscription/sub-cta";
 import { SkyglassFooter } from "@/components/sections/footer";
@@ -19,6 +24,7 @@ export const metadata = buildPageMetadata({
   title: page.title,
   description: page.description,
   path: page.path,
+  absoluteTitle: true,
 });
 
 export default function SubscriptionPlansPage() {
@@ -28,12 +34,15 @@ export default function SubscriptionPlansPage() {
       <BreadcrumbJsonLd items={[...page.breadcrumbs]} />
 
       <SubHero />
-      <SubCompare />
       <SubPricing />
       <SubFeatures />
+      <SubConnections />
+      <SubPlayerCosts />
+      <SubPayments />
       <SubActivationSteps />
-      <SubNotIncluded />
-      <SubPlanChoice />
+      <SubRenewals />
+      <SubTrialBlock />
+      <SubRefundNote />
       <SubFAQ />
       <SubCTA />
       <SkyglassFooter />

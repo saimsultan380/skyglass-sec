@@ -6,7 +6,6 @@ import { SkyglassPricing } from "@/components/sections/pricing";
 import { LiveCategories } from "@/components/sections/live-categories";
 import { CompatibleDevices } from "@/components/sections/compatible-devices";
 import { StartWatchingSteps } from "@/components/sections/steps";
-import { PlaybackTips } from "@/components/sections/playback-tips";
 import { TrialSection } from "@/components/sections/trial-section";
 import { SkyglassFAQ } from "@/components/sections/faq";
 import { SkyglassCTABanner } from "@/components/sections/cta-banner";
@@ -20,6 +19,7 @@ export const metadata = buildPageMetadata({
   title: page.title,
   description: page.description,
   path: page.path,
+  absoluteTitle: true,
 });
 
 export default function HomePage() {
@@ -33,9 +33,8 @@ export default function HomePage() {
       <SkyglassPricing />
       <LiveCategories />
       <CompatibleDevices />
-      <StartWatchingSteps />
-      <PlaybackTips />
       <TrialSection />
+      <StartWatchingSteps />
       <SkyglassFAQ />
       <SkyglassCTABanner />
       <SkyglassFooter />

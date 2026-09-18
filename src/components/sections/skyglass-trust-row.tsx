@@ -2,18 +2,18 @@
 
 import React from "react";
 import {
-  CalendarDays,
-  Download,
-  CalendarClock,
-  Headphones,
+  Clock,
+  MessageSquare,
+  RefreshCw,
+  Zap,
 } from "lucide-react";
 import { FadeIn } from "@/components/animation/fade-in";
 
 const trustItems = [
-  { label: "Plans from £12", icon: CalendarDays },
-  { label: "Guided Installation", icon: Download },
-  { label: "EPG & Catch-Up", icon: CalendarClock },
-  { label: "Customer Support", icon: Headphones },
+  { label: "24-Hour Free Trial", icon: Clock },
+  { label: "2-Hour Activation", icon: Zap },
+  { label: "WhatsApp Setup", icon: MessageSquare },
+  { label: "Manual Renewals", icon: RefreshCw },
 ];
 
 export function SkyglassTrustRow() {

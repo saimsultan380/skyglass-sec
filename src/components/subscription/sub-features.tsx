@@ -26,27 +26,32 @@ const inclusions: readonly Inclusion[] = [
   {
     title: "Live TV and On-Demand Entertainment",
     icon: MonitorPlay,
-    body: "Access the available live television categories and 100,000+ film and television-series entries during your subscription period.",
+    body: "The Standard package provides access to 22,000+ live channel entries and 100,000+ on-demand film and series entries across the available categories.",
   },
   {
-    title: "EPG and Catch-Up",
+    title: "TV Guide and Catch-Up",
     icon: CalendarClock,
-    body: "The Electronic Programme Guide displays schedule information where suitable data is available. Catch-Up is provided on selected channels.",
+    body: "TV guide information where EPG data is available, plus Catch-Up on selected channels.",
   },
   {
     title: "Supported Picture Qualities",
     icon: Sparkles,
-    body: "Available streams can include SD, HD and Full HD. Selected entries may be available in 4K where the source, device and internet connection support it.",
+    body: "SD, HD, Full HD and selected 4K streams, depending on the source, device and internet connection.",
   },
   {
-    title: "Device Installation Guidance",
+    title: "Device Setup Assistance",
     icon: Download,
-    body: "Setup instructions are available for Firestick, Fire TV, Android, Google TV, Samsung, LG, Apple devices, Windows, Mac and supported IPTV boxes.",
+    body: "Account login details and device setup assistance through WhatsApp, with guidance for Android, Firestick, Smart TVs and other supported players.",
   },
   {
     title: "Login Details from Support",
     icon: KeyRound,
-    body: "Once the required application is installed, contact support to receive the username, password, server address, M3U information or portal details required by your device.",
+    body: "In our supplied app, the login screen requires your username and password only. Other Xtream-compatible players may also need a server URL.",
+  },
+  {
+    title: "Account Support",
+    icon: Headphones,
+    body: "Support for account access and service enquiries. Catalogue availability can change—ask us to check important channels or titles before ordering.",
   },
 ];
 
@@ -54,8 +59,11 @@ export function SubFeatures() {
   return (
     <Section id="features">
       <SectionHeading
-        title="What Every Subscription"
+        title="What Your Subscription"
         highlight="Includes"
+        intro={[
+          "Standard durations share the same core package features. The subscription length changes how long your account remains active.",
+        ]}
       />
 
       <FadeIn className="w-full mb-8">

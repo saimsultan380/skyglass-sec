@@ -3,6 +3,7 @@
 import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
 import { AlertTriangle } from "lucide-react";
+import { DOWNLOADER_CODE } from "@/lib/site";
 
 type TroubleshootingRow = {
   problem: string;
@@ -11,46 +12,37 @@ type TroubleshootingRow = {
 
 const rows: TroubleshootingRow[] = [
   {
-    problem: "Login rejected",
+    problem: "Downloader cannot open the download",
+    checks: `Check your internet connection and confirm that you entered ${DOWNLOADER_CODE} correctly`,
+  },
+  {
+    problem: "Installation is blocked",
+    checks: "Check whether Downloader has permission to install apps",
+  },
+  {
+    problem: "The app will not install",
     checks:
-      "Re-enter the username, password and server address without spaces",
+      "Check available storage and send support your device model and software version",
   },
   {
-    problem: "No categories appear",
+    problem: "Username or password is rejected",
     checks:
-      "Check internet access and allow the initial loading process to finish",
+      "Re-enter the supplied details without extra spaces and ask support to check account status",
   },
   {
-    problem: "EPG is empty",
-    checks: "Refresh EPG data and wait for the update",
+    problem: "The app opens but categories are empty",
+    checks:
+      "Confirm that your trial or subscription is active, then refresh the player",
   },
   {
-    problem: "Frequent buffering",
-    checks: "Test internet speed, Wi-Fi signal and another available entry",
+    problem: "Playback stops after using another device",
+    checks:
+      "Log out of the previous device and check your account’s connection allowance",
   },
   {
-    problem: "App closes",
-    checks: "Restart the device, clear the app cache and check storage",
-  },
-  {
-    problem: "Connection not allowed",
-    checks: "Confirm that purchased connection limits are not exceeded",
-  },
-  {
-    problem: "APK will not install",
-    checks: "Confirm the device uses Android and allows installation",
-  },
-  {
-    problem: "Smart TV player is empty",
-    checks: "Recheck the MAC address and device key sent to support",
-  },
-  {
-    problem: "Password fails",
-    checks: "Check similar characters such as O/0 and I/l",
-  },
-  {
-    problem: "Account expired",
-    checks: "Contact support to check renewal options",
+    problem: "A stream buffers or fails",
+    checks:
+      "Try another entry, restart the app and tell support whether the issue affects one stream or several",
   },
 ];
 
@@ -71,8 +63,15 @@ export function InstTroubleshooting() {
             </h3>
           </div>
           <h2 className="text-h2 font-bold tracking-tight text-[#0B0E2C]">
-            <span className="text-brand-gradient font-bold">Troubleshooting</span>
+            Fix Download, Login and{" "}
+            <span className="text-brand-gradient font-bold">
+              Playback Problems
+            </span>
           </h2>
+          <p className="mt-4 text-sm sm:text-base text-[#5C607A] leading-relaxed">
+            When requesting help, include the device model, app name, exact
+            error and a screenshot with private credentials hidden.
+          </p>
         </FadeIn>
 
         <FadeIn className="w-full">

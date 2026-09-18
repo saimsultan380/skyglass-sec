@@ -4,7 +4,10 @@ import { ConHero } from "@/components/contact/con-hero";
 import { ConDetails } from "@/components/contact/con-details";
 import { ConLoginDetails } from "@/components/contact/con-login-details";
 import { ConTrial } from "@/components/contact/con-trial";
-import { ConForm } from "@/components/contact/con-form";
+import {
+  ConInstallHelp,
+  ConRenewalsHelp,
+} from "@/components/contact/con-extra-sections";
 import { ConFAQ } from "@/components/contact/con-faq";
 import { ConCTA } from "@/components/contact/con-cta";
 import { SkyglassFooter } from "@/components/sections/footer";
@@ -17,6 +20,7 @@ export const metadata = buildPageMetadata({
   title: page.title,
   description: page.description,
   path: page.path,
+  absoluteTitle: true,
 });
 
 export default function ContactPage() {
@@ -29,7 +33,8 @@ export default function ContactPage() {
       <ConDetails />
       <ConLoginDetails />
       <ConTrial />
-      <ConForm />
+      <ConInstallHelp />
+      <ConRenewalsHelp />
       <ConFAQ />
       <ConCTA />
       <SkyglassFooter />

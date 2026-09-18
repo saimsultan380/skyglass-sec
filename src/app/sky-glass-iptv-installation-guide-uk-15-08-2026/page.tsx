@@ -17,6 +17,7 @@ export const metadata = buildPageMetadata({
   title: page.title,
   description: page.description,
   path: page.path,
+  absoluteTitle: true,
 });
 
 export default function InstallationGuidePage() {

@@ -1,1636 +1,531 @@
-Meta Title: Sky Glass IPTV UK – 22,000+ Channels & Plans from £12
-Meta Description: Choose Sky Glass IPTV UK with 22,000+ live channels, 100,000+ movies and series, EPG, selected Catch-Up and supported 4K. Plans start from £12.
-URL: /
-Primary Keyword: Sky Glass IPTV
-Supporting Keywords: Skyglass IPTV, Sky Glass IPTV UK, IPTV UK, Sky Glass IPTV subscription
-Canonical: https://skyglass-iptv.com/
-Hero Section
-Eyebrow: Flexible IPTV Subscription for UK Viewers
-Sky Glass IPTV UK – Live TV, Sports, Films & Series from £12
-Watch live television and explore an extensive on-demand library on your preferred compatible device. Sky Glass IPTV includes 22,000+ live channel entries, 100,000+ films and series, an Electronic Programme Guide, selected Catch-Up and HD, Full HD and 4K streams where available.
-Choose a plan from £12 and receive the application guidance and login details needed for Firestick, Fire TV, Android TV, Smart TVs, Apple devices, Windows, Mac and other supported platforms.
-Primary CTA: View Subscription Plans
-Secondary CTA: Request a 24-Hour Trial
-Trust Line: Plans from £12 • Guided Installation • EPG and Selected Catch-Up • Customer Support
-The catalogue changes as sources are updated. Individual channels, events, titles and picture resolutions are not permanently guaranteed.
-What You Get with Sky Glass IPTV
-Sky Glass IPTV is an internet-delivered television service for customers who want live TV, sports categories, films, television series and international entertainment available through one compatible IPTV application.
-You do not need a satellite dish or an engineer appointment. You need a supported device, a stable internet connection and the login details supplied by our support team.
-Every standard subscription includes:
-22,000+ live channel entries across available UK and international categories
-100,000+ films and television-series entries
-Sports, entertainment, news, documentary, children’s and international categories
-Electronic Programme Guide information on supported channels
-Catch-Up on selected channels
-SD, HD and Full HD streams
-4K streams where available
-Login details for a supported IPTV application
-Installation guidance for your chosen device
-Help with activation and common setup problems
-The name is sometimes written as Skyglass IPTV. Both versions refer to the same service available through this website.
-Sky Glass IPTV Subscription Plans
-Choose how long you want access. Every plan includes the same standard catalogue and service features. Only the subscription period and total price change.
-1-Month Plan — £12
-A short commitment for customers who want one month of access.
-22,000+ live channels
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-Supported 4K streams
-Device setup guidance
-Login details from support
-Customer support
-One month of access
-CTA: Choose 1 Month
-3-Month Plan — £22
-A practical option for customers who want more than one month without choosing a long subscription.
-22,000+ live channels
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-Supported 4K streams
-Device setup guidance
-Login details from support
-Customer support
-Three months of access
-CTA: Choose 3 Months
-6-Month Plan — £30
-Six months of access with a lower equivalent monthly cost.
-22,000+ live channels
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-Supported 4K streams
-Device setup guidance
-Login details from support
-Customer support
-Six months of access
-CTA: Choose 6 Months
-12-Month Plan — £45
-The lowest equivalent monthly price across the standard subscription plans.
-22,000+ live channels
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-Supported 4K streams
-Device setup guidance
-Login details from support
-Customer support
-Twelve months of access
-CTA: Choose 12 Months
-All prices are paid upfront for the selected period. Confirm the required number of simultaneous connections before ordering.
-Live Television Organised into Clear Categories
-Browse available entertainment, sports, news, documentary, music, children’s and international categories without searching through one unorganised list.
-The Electronic Programme Guide displays programme information when suitable schedule data is available. Compatible IPTV apps can also provide favourites, recently watched entries and category filtering.
-Live listings may be added, changed or removed as the catalogue is updated. If one category is particularly important to you, request a trial or contact support to check current availability before purchasing a longer plan.
-Films, Movies and Complete Television Series
-The on-demand library contains 100,000+ film and series entries across action, comedy, drama, documentary, family, crime, thriller, animation and international categories.
-Compatible applications separate movies from episodic television, display available seasons and make it easier to continue browsing the on-demand library.
-Titles, languages, subtitles, audio tracks and picture quality vary between individual entries. The catalogue is updated regularly, but a specific title or release cannot be permanently guaranteed.
-Watch Sky Glass IPTV on Popular Devices
-Firestick and Fire TV
-Open the Amazon Appstore and install Downloader by AFTVnews. Enter Downloader code 3824652, download the Sky Glass IPTV application and select Install.
-After installation, contact support to receive your username, password and server address.
-CTA: Contact Support for Login Details
-Android TV, Google TV and Android Devices
-Open the Google Play Store and install Downloader by AFTVnews. Enter code 3824652 inside Downloader, download the application and complete the installation.
-Contact support after installation for the login details required to activate your account.
-CTA: Contact Support for Login Details
-Samsung and LG Smart TVs
-Install one of these supported players from your television’s app store:
-CR7 Player
-IBO Player
-SmartOne IPTV
-HOT IPTV
-Open the selected player and contact support with the MAC address and device key displayed by the application. Support will provide or configure the required account details.
-CTA: Contact Support for Login Details
-iPhone, iPad and Apple TV
-Install a compatible IPTV player from Apple’s App Store. Open the application and contact support for the Xtream Codes or M3U details required by the player.
-CTA: Contact Support for Login Details
-Windows and Mac
-Install a compatible desktop IPTV player that accepts Xtream Codes or an M3U playlist. Contact support to receive the appropriate login format.
-CTA: Contact Support for Login Details
-MAG, Formuler and Enigma2 Devices
-Portal-based devices may require a MAC address, portal URL or device-specific configuration. Send your exact device model to support before activation.
-CTA: Contact Support for Login Details
-Start in Three Steps
+check this is the content update it relevent pages proper dont skip any text in them.
+check meta title and description set as it same
 
-1. Confirm Your Device
-   Tell support which television, streaming stick, phone, tablet, computer or IPTV box you intend to use.
-2. Choose a Subscription
-   Select one, three, six or twelve months and confirm how many simultaneous connections you need.
-3. Install and Receive Your Login
-   Follow the relevant installation method. After the application is installed, contact support to receive the login details required for your device.
-   CTA: Read the Installation Guide
-   What Determines Streaming Quality?
-   Streaming quality depends on your broadband speed, Wi-Fi signal, device performance, selected stream and other activity on your home network.
-   For a practical starting point, aim for:
-   At least 25 Mbps available to the device for HD viewing
-   Around 50 Mbps or more for supported 4K viewing
-   A 5 GHz Wi-Fi or wired Ethernet connection where possible
-   Enough free storage for the selected application
-   Current device software
-   The latest supported version of the IPTV player
-   No internet-delivered television service can guarantee uninterrupted playback under every network condition. If buffering occurs, support can help identify whether the cause is the device, application, login, local network or selected source.
-   Request a 24-Hour Trial
-   A 24-hour trial may be available to eligible new customers. Use the trial to check:
-   Device compatibility
-   Broadband performance
-   Application navigation
-   Current live and on-demand categories
-   EPG availability
-   Selected Catch-Up
-   Available picture quality
-   Trial availability is subject to eligibility, service capacity and current demand.
-   CTA: Request a 24-Hour Trial
-   Frequently Asked Questions
-   Do I need a Sky Glass television?
-   No. Sky Glass IPTV works through supported streaming devices and IPTV players. A Sky Glass television may require an external compatible Firestick or Android device.
-   What is the Sky Glass IPTV Downloader code?
-   The current Downloader code is 3824652.
-   Where do I get my login details?
-   Install the relevant application first, then contact support. Support will provide the username, password, server address, M3U link or portal information required by your device.
-   Which Smart TV players can I use?
-   Supported options include CR7 Player, IBO Player, SmartOne IPTV and HOT IPTV, subject to availability in your television’s app store.
-   Is every channel available in 4K?
-   No. Picture quality depends on the selected entry and source. 4K is available only on selected supported streams.
-   Is Catch-Up available on every channel?
-   No. Catch-Up is available on selected channels only.
-   Can I watch on more than one device?
-   The account may be configured on compatible devices, but simultaneous viewing depends on the number of connections purchased.
-   Is a VPN required?
-   A VPN is not required for every customer. An overloaded VPN can also reduce streaming speed.
-   Is a free trial guaranteed?
-   No. Trial access is subject to availability and eligibility.
-   Choose Your Sky Glass IPTV Plan
-   Compare the four subscription periods, confirm your device and choose the plan that matches your requirements.
-   Primary CTA: View Plans from £12
-   Secondary CTA: Contact Support for Login Details
-   Footer Independence Notice: Sky Glass IPTV is an independent service. This website is not affiliated with, endorsed by or operated by Sky UK Limited or the manufacturer of the Sky Glass television. Third-party names and trademarks belong to their respective owners.
+(Replace your five draft titles with these:
 
-Meta Title: Sky Glass IPTV Installation Guide – Firestick, TV & Mobile
-Meta Description: Install Sky Glass IPTV on Firestick, Android TV, Smart TV, Apple devices, Windows and more. Follow clear setup and troubleshooting steps.
-URL Slug: /sky-glass-iptv-installation-guide/
-Primary Keyword: Sky Glass IPTV installation guide
-Supporting Keywords: Install Sky Glass IPTV, Skyglass IPTV setup, IPTV installation Firestick, Downloader code 3824652
-Sky Glass IPTV Installation Guide for Every Supported Device
-This guide explains how to install Sky Glass IPTV on Firestick, Fire TV, Android, Smart TVs, Apple devices, Windows, Mac and supported IPTV boxes.
-For compatible Firestick and Android devices, install Downloader by AFTVnews and enter code 3824652.
-Your login details will be provided by support after the required application is installed.
-Primary CTA: Contact Support for Login Details
-Before You Start
-Have these ready:
-An active subscription or eligible trial
-A supported device
-A stable internet connection
-Access to the device’s app store
-Approximately 25 Mbps for HD
-Around 50 Mbps for supported 4K
-Enough free device storage
-Your order information
-Never publish or share your username, password, server URL, M3U link, MAC address or device key.
-Install Sky Glass IPTV on Firestick
-Step 1: Install Downloader by AFTVnews
-Open Find or Search from the Firestick home screen.
-Search for Downloader by AFTVnews.
-Select it from the official Amazon Appstore.
-Choose Download or Get.
-Open Downloader after installation.
-Step 2: Enable Installation Permission
-Open Settings.
-Select My Fire TV.
-Open Developer Options.
-Select Install Unknown Apps.
-Allow the permission for Downloader.
-If Developer Options is hidden:
-Open Settings > My Fire TV > About.
-Highlight your Firestick device name.
-Press the select button repeatedly until the developer message appears.
-Return to the previous menu.
-Step 3: Enter Downloader Code 3824652
-Open Downloader.
-Select the code or URL field.
-Enter 3824652.
-Select Go.
-Wait for the application file to download.
-Select Install.
-Choose Open after installation.
-Step 4: Contact Support
-After the Sky Glass IPTV app is installed, contact support. Support will provide the username, password and server address needed to sign in.
-CTA: Contact Support for Login Details
-Install Sky Glass IPTV on Fire TV Cube
-Open the Amazon Appstore.
-Install Downloader by AFTVnews.
-Permit Downloader to install the required application.
-Enter code 3824652.
-Download and install the app.
-Open the application.
-Contact support for your account credentials.
-CTA: Contact Support for Login Details
-Install Sky Glass IPTV on Android TV
-Open the Google Play Store.
-Search for Downloader by AFTVnews.
-Install and open Downloader.
-Permit app installation for Downloader where required.
-Enter code 3824652.
-Download the Sky Glass IPTV application.
-Select Install.
-Open the application.
-Contact support for your username, password and server URL.
-CTA: Contact Support for Login Details
-Install on Google TV
-Open the Google Play Store on the Google TV device.
-Install Downloader by AFTVnews.
-Open Downloader.
-Enter 3824652.
-Download and install the application.
-Open the installed app.
-Contact support to receive your login details.
-CTA: Contact Support for Login Details
-Install on an Android TV Box
-This method applies to many Android boxes, Nvidia Shield, Xiaomi Mi Box and similar devices.
-Open the Google Play Store.
-Install Downloader by AFTVnews.
-Open Downloader and enter 3824652.
-Download the application.
-Select Install.
-Open the app after installation.
-Contact support with your device model and order information.
-Enter the login details supplied by support.
-CTA: Contact Support for Login Details
-Install on an Android Phone or Tablet
-Open the Google Play Store.
-Search for Downloader by AFTVnews.
-Install Downloader if available for your device.
-Open the application.
-Enter code 3824652.
-Download and install the Sky Glass IPTV app.
-Open the application.
-Contact support for your account login.
-If Downloader is not available for the phone or tablet model, contact support for the appropriate installation link.
-CTA: Contact Support for Login Details
-Set Up Sky Glass IPTV on Samsung Smart TV
-Samsung Smart TVs use a compatible application from the Samsung Smart Hub rather than an Android APK.
-Install whichever of these players is available:
+1. Homepage
+   Sky Glass IPTV | 22,000+ Channels & 24-Hour Free Trial
+   This gives customers two specific reasons to investigate the service. UK targeting remains clear through your description, page content and GBP pricing.
+2. Installation guide
+   Sky Glass App Download | APK for Firestick & Android
+   This directly matches your app, download and device keywords. Keep code 9557305 in the meta description and installation instructions.
+3. Subscription plans
+   Sky Glass Subscription | Buy 1–12 Month Plans from £12
+   This makes the purchasing intent explicit and shows both the available commitment range and starting price.
+4. Reseller panel
+   Sky Glass IPTV Reseller Panel | Credits Never Expire
+   This replaces the generic “Credits & Packages” ending with a benefit you confirmed.
+5. Contact and support
+   Sky Glass Support | Contact Us on WhatsApp 24/7
+   This tells customers where and when they can contact you, without promising an immediate reply.
+   Use these as the complete HTML title values. Your existing H1s can remain as drafted, and the meta descriptions already support these titles.
+   They keep the five purposes clear: viewing service → app installation → purchase → wholesale access → support. Google recommends descriptive, concise, distinct titles; it may truncate or rewrite the displayed title depending on the result and available space. Google’s title guidance⁠
+
+)
+
+Below is the corrected five-page copy, with natural headings, separate page purposes, updated service details and complete metadata.
+I’ve retained your published Standard subscription prices⁠ and 120-credit reseller starting point⁠. Premium, additional connections and reseller prices are available by WhatsApp quote.
+For the homepage and subscription page: use a Standard / Premium switch, with Standard selected initially. The two sections below provide the wording for each tab.
+
+1. HOMEPAGE
+   SEO title: Sky Glass IPTV | Live TV, Films & Series
+   Meta description: Explore Sky Glass IPTV for UK viewers: live TV, films and series, plans from £12, a 24-hour free trial and WhatsApp setup on compatible devices.
+   URL and canonical: https://skyglass-iptv.com/⁠
+   Sky Glass IPTV for Live TV, Sports, Films and Series
+   Watch live television and on-demand entertainment through a compatible app on your television, streaming device, phone or tablet. Sky Glass IPTV offers UK viewers a choice of subscription periods, a 24-hour free trial and help setting up their account through WhatsApp.
+   Standard plans start at £12 for one month, with activation within two hours of payment.
+   View Subscription Plans⁠ · Request a Free Trial⁠
+   24-Hour Free Trial · Activation Within Two Hours · WhatsApp Setup · Manual Renewals
+   What Is Sky Glass IPTV?
+   Sky Glass IPTV supplies access to live channels, films and television series over the internet. You use a compatible player to open your account, browse the available catalogue and choose what to watch.
+   You need a supported device, an internet connection and the login details supplied by our team. A satellite dish or engineer visit is not required.
+   This is an independent IPTV service. It is not affiliated with, endorsed by or operated by Sky. You do not need an official Sky subscription to use it.
+   Standard and Premium Plans
+   Choose a package and subscription period, then tell us how many screens you want to watch at the same time.
+   Standard
+   Subscription period
+   Total price
+   1 month
+   £12
+   3 months
+   £22
+   6 months
+   £30
+   12 months
+   £45
+
+These prices cover one simultaneous connection and are paid upfront for the selected period. Additional connections are available at different prices.
+Compare Standard Packages⁠
+Premium
+Contact us for the current Premium package details and price. Tell us your preferred subscription period and required number of connections so we can explain the available options before you pay.
+Ask About Premium⁠
+Live Channels, Films and Television Series
+Live TV and Sports
+The Standard catalogue includes 22,000+ live channel entries, covering available entertainment, sports, news, documentary, family and international categories.
+If a particular channel or competition matters to you, ask us to check the current package before ordering.
+Films and Series on Demand
+Browse 100,000+ on-demand film and series entries and choose something to watch without waiting for a live broadcast.
+Available titles, seasons, languages and subtitles vary. The catalogue can change, and trial access may differ from the paid package.
+TV Guide, Catch-Up and Picture Quality
+The viewing features available depend on the channel, source and player:
+TV guide: see programme listings where Electronic Programme Guide data is supplied.
+Catch-Up: watch earlier programmes on selected channels that support it.
+Picture quality: available streams include SD, HD, Full HD and selected 4K options.
+Player controls: supported apps may offer search, favourites and category filtering.
+The quality you receive also depends on your device, display and internet connection. A trial lets you check performance using your own setup.
+Watch on Android, Firestick and Smart TVs
+Our supplied app is the preferred option for compatible Android devices and Fire TV devices running Fire OS.
+Your device
+Viewing option
+Android TV, Google TV, Android boxes, phones and tablets
+Our supplied Android app
+Compatible Firestick and Fire TV devices running Fire OS
+Our supplied app
+Supported Samsung, LG and other Smart TVs
+CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV
+Other supported platforms
+A compatible player accepting Xtream account details
+
+Player availability varies by model and operating system. Send us your exact device model if you need help choosing.
+Read the App Installation Guide⁠
+Try Skyglass IPTV Free for 24 Hours
+Use the free trial on the device and internet connection you expect to use after subscribing.
+During the trial, check whether:
+The app opens and responds properly on your device.
+Live streams play consistently on your connection.
+You can find and browse the available categories.
+The player’s navigation suits you.
+The trial catalogue can differ from Standard or Premium access. Ask us about the paid package if you are checking a particular channel, film or series.
+Request Your 24-Hour Trial⁠
+Activate Your Account Through WhatsApp
+Choose your package. Confirm the subscription period, device and number of simultaneous connections.
+Complete payment. Our team will confirm the payment instructions for your order.
+Receive your login. We activate subscriptions within two hours of payment and send your details through WhatsApp.
+Connect your device. Follow the installation guide or ask us for setup assistance.
+Support is available 24 hours a day, and we reply as soon as possible.
+Questions About the Service
+Do I need a Sky Glass television?
+No. You can use a supported television, streaming stick, Android device or another compatible platform. The service is separate from the official Sky Glass television product.
+Can I use a player I already have?
+Yes, if it supports the required Xtream account connection. Our supplied app is preferred, but our team can help you check another player before activation.
+Can I move between two devices?
+Yes. With a one-connection account, log out of the first device before logging in on the second. For simultaneous viewing on multiple screens, request additional connections.
+Does my subscription renew automatically?
+No. Renewals are manual. Message us on WhatsApp when you want to renew your account.
+Choose a Subscription⁠ · Ask a Question⁠
+
+2. INSTALLATION GUIDE
+   SEO title: Sky Glass App Download | Android & Firestick Setup
+   Meta description: Install the Sky Glass app with Downloader code 9557305. Follow Android and Firestick steps, connect your account or set up a Smart TV player.
+   URL and canonical: https://skyglass-iptv.com/install-skyglass-app/⁠
+   Sky Glass App Download and Installation Guide
+   Install the app supplied through Skyglass-iptv.com, connect your account and set up the device you want to watch on.
+   For supported Android and Fire OS devices, our Downloader code is 9557305. The supplied app asks for your username and password only.
+   Your trial or subscription login details and setup assistance are provided through WhatsApp.
+   Get Setup Help⁠
+   Choose the Setup Method for Your Device
+   Device
+   Installation method
+   Android TV, Google TV, Android box, phone or tablet with Google Play
+   Install Downloader by AFTVnews, then enter 9557305
+   Compatible Firestick or Fire TV running Fire OS
+   Install Downloader from the Amazon Appstore, then enter 9557305
+   Supported Samsung, LG or another non-Android Smart TV
+   Install a compatible player from the television’s app store
+   Another Xtream-compatible device
+   Use its supported player and request the required account details
+
+For a Smart TV running Android TV or Google TV, follow the Android instructions below.
+Install Sky Glass for Android
+The same basic process applies to compatible Android televisions, streaming boxes, phones and tablets with access to the Google Play Store.
+Open the Google Play Store on your device.
+Search for Downloader by AFTVnews and install it.
+Open Downloader and select its address or code field.
+Enter 9557305, then select Go.
+Follow the download page to obtain the app installation file.
+If Android asks for installation permission, allow Downloader to install apps from this source.
+Return to the downloaded file and select Install.
+Open the installed app and enter the username and password supplied through WhatsApp.
+Android settings vary between devices. The relevant permission may appear under Install unknown apps, Special app access or a similar setting.
+If your Android device has no Google Play Store, send us its model and operating system so we can check the appropriate installation route.
+View Downloader by AFTVnews on Google Play⁠
+Install the Sky Glass App for Firestick
+These instructions apply to compatible Fire TV devices running Fire OS.
+From the Fire TV home screen, open Find or Search.
+Search for Downloader by AFTVnews and install it from the Amazon Appstore.
+Open Settings → My Fire TV → Developer Options.
+Under Install unknown apps, allow installation through Downloader. Older Fire OS versions may show Apps from Unknown Sources.
+Open Downloader, enter 9557305 and select Go.
+Download the app, select Install, then open it.
+Sign in using the username and password supplied by our team.
+If Developer Options Is Hidden
+Open Settings → My Fire TV → About, highlight your device name and press the remote’s select button seven times. Return to the previous menu to look for Developer Options.
+Menu names can vary by model and software version.
+Check Your Fire TV Operating System
+Some newer Fire TV devices use Vega OS, which requires a different app approach. These Android APK instructions do not apply to those devices.
+If you are unsure which model you own, check Amazon’s Fire TV operating-system list⁠ or send us a photograph of the device information screen.
+Set Up a Smart TV Player
+For supported Smart TVs that do not run Android, check your television’s app store for one of these players:
 CR7 Player
 IBO Player
 SmartOne IPTV
 HOT IPTV
-Setup Steps
-Open the Samsung Smart Hub.
-Search for one of the supported players.
-Install and open the selected application.
-Record the MAC address and device key shown on screen.
-Contact support and send the details privately.
-Support will provide or configure the required account information.
-Restart or refresh the player after configuration.
-CTA: Contact Support for Login Details
-Set Up Sky Glass IPTV on LG Smart TV
-LG Smart TVs normally use an application from the LG Content Store.
-Available players may include:
-CR7 Player
-IBO Player
-SmartOne IPTV
-HOT IPTV
-Setup Steps
-Open the LG Content Store.
-Search for one of the supported IPTV players.
-Install and open the selected player.
-Note the MAC address and device key.
-Contact support with those details.
-Support will provide or configure the playlist information.
-Refresh or restart the application.
-CTA: Contact Support for Login Details
-Set Up on Sony Smart TV
-If the Sony television uses Android TV or Google TV:
-Open Google Play.
-Install Downloader by AFTVnews.
-Enter code 3824652.
-Download and install the Sky Glass IPTV app.
-Open the application.
-Contact support for login details.
-If it does not use Android or Google TV, check its app store for CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-CTA: Contact Support for Login Details
-Set Up on Hisense Smart TV
-Hisense televisions may use Google TV, Android TV, VIDAA or another operating system.
-Android or Google TV Models
-Install Downloader by AFTVnews.
-Enter code 3824652.
-Download and install the application.
-Contact support for login details.
-VIDAA Models
-Open the VIDAA app store.
-Search for CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-Install whichever supported player is available.
-Send its MAC address and device key to support.
-CTA: Contact Support for Login Details
-Set Up on TCL Smart TV
-TCL models may use Android TV, Google TV or Roku TV.
-For Android or Google TV:
-Install Downloader by AFTVnews from Google Play.
-Enter code 3824652.
-Install the application.
-Contact support for login details.
-For Roku TV models, contact support before ordering because app availability varies.
-CTA: Contact Support for Login Details
-Set Up on Philips Smart TV
-For Philips Android or Google TV models:
-Open Google Play.
-Install Downloader by AFTVnews.
-Enter code 3824652.
-Install and open the Sky Glass IPTV application.
-Contact support for the account login.
-For non-Android models, check the television app store for CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-CTA: Contact Support for Login Details
-Set Up on iPhone or iPad
-Apple devices do not install Android APK files.
-Open the Apple App Store.
-Install a compatible IPTV player recommended by support.
-Open the player.
-Select Xtream Codes or M3U login.
-Contact support for the required username, password, server URL or playlist.
-Enter the supplied details.
-Save the profile and allow the catalogue to load.
-CTA: Contact Support for Login Details
-Set Up on Apple TV
-Open the tvOS App Store.
-Install a compatible IPTV player.
-Open the application.
-Choose Xtream Codes or M3U login.
-Contact support for your account information.
-Enter the supplied details.
-Save and refresh the profile.
-CTA: Contact Support for Login Details
-Set Up on Windows
-Install a trusted compatible IPTV application.
-Open the player.
-Choose Xtream Codes or M3U.
-Contact support for your login information.
-Enter the username, password and server URL supplied.
-Save the account.
-Allow the categories and EPG to load.
-CTA: Contact Support for Login Details
-Set Up on Mac
-Install a compatible macOS IPTV player from the App Store or its verified developer website.
-Open the application.
-Select Xtream Codes or M3U login.
-Contact support for the correct account details.
-Enter and save the supplied information.
-Refresh the catalogue.
-CTA: Contact Support for Login Details
-Set Up on MAG Box
-Open the MAG device settings.
-Find the device MAC address.
-Contact support and provide the MAC address privately.
-Support will supply the portal URL or complete the required activation.
-Enter the portal URL if instructed.
-Restart the MAG box.
-CTA: Contact Support for Login Details
-Set Up on Formuler and MYTVOnline
-Open MYTVOnline.
-Choose the portal or Xtream Codes login option recommended by support.
-Note the device ID or MAC address if displayed.
-Contact support with the device information.
-Enter the supplied portal or account details.
-Save and connect.
-CTA: Contact Support for Login Details
-Set Up on Enigma2
-Enigma2 installation varies by image and receiver.
-Send support the full receiver model and installed Enigma2 image.
-Support will confirm whether M3U, Xtream Codes, portal or another supported method is required.
-Follow the supplied configuration instructions.
-Restart the receiver after setup.
-CTA: Contact Support for Login Details
-Set Up on Roku
-Roku app availability varies by model and country.
-Check the Roku Channel Store for a compatible IPTV player.
-Contact support before purchasing a longer plan.
-Provide the Roku model and available player name.
-Follow the login method confirmed by support.
-CTA: Contact Support for Login Details
-Use Sky Glass IPTV on a Sky Glass Television
-A Sky Glass television normally does not allow direct installation of an Android APK.
-Connect a compatible Firestick, Fire TV or Android streaming device through HDMI, then:
-Install Downloader by AFTVnews.
-Enter code 3824652.
-Install the Sky Glass IPTV application.
-Contact support for login details.
-CTA: Contact Support for Login Details
-Xtream Codes, M3U and Portal Login Explained
-Xtream Codes
-Normally requires:
-Username
-Password
-Server URL
-M3U Playlist
-Normally requires one playlist URL supplied by support.
-Portal Login
-Commonly used on MAG, Formuler and other portal devices. It may require:
-Device MAC address
-Portal URL
-Device key
-Support will confirm which method is suitable for your device.
-Troubleshooting
+Availability depends on the television model, operating system and store region.
+Smart TV Setup Steps
+Open your television’s app store.
+Search for a supported player and install it.
+Launch the player and note the MAC address, device ID or device key, if displayed.
+Message us on WhatsApp with your television model, player name and the relevant setup information.
+Follow our instructions to connect your trial or subscription.
+Restart or refresh the player when instructed, then check that the available categories load.
+Some players require a separate licence payment to the app developer. A player licence and an IPTV subscription are separate purchases.
+Sign In to Your Sky Glass Account
+Using Our Supplied App
+Enter the username and password we send through WhatsApp. You do not need to enter a server address in this app.
+Copy the details carefully and check for accidental spaces. Downloading the app alone does not create an active viewing account.
+Using Another Xtream-Compatible Player
+You can use an alternative supported player. Its account screen may ask for:
+A name for the account or playlist.
+Your username.
+Your password.
+A server URL.
+Ask support for the connection details required by that player. The extra server field in a third-party app does not change the username-and-password-only login in our supplied app.
+Apple devices and computers require a player designed for their operating system; the Android APK is not their installation method.
+Switch Between Two Devices
+A one-connection account allows viewing on one device at a time.
+To move from one compatible device to another:
+Stop playback on the first device.
+Log out of the app on that device.
+Open the app on the second device.
+Log in and begin watching.
+For two or more screens playing simultaneously, ask about additional connections.
+Fix Download, Login and Playback Problems
 Problem
-What to Check
-Login rejected
-Re-enter the username, password and server address without spaces
-No categories appear
-Check internet access and allow the initial loading process to finish
-EPG is empty
-Refresh EPG data and wait for the update
-Frequent buffering
-Test internet speed, Wi-Fi signal and another available entry
-App closes
-Restart the device, clear the app cache and check storage
-Connection not allowed
-Confirm that purchased connection limits are not exceeded
-APK will not install
-Confirm the device uses Android and allows installation
-Smart TV player is empty
-Recheck the MAC address and device key sent to support
-Password fails
-Check similar characters such as O/0 and I/l
-Account expired
-Contact support to check renewal options
+What to check
+Downloader cannot open the download
+Check your internet connection and confirm that you entered 9557305 correctly
+Installation is blocked
+Check whether Downloader has permission to install apps
+The app will not install
+Check available storage and send support your device model and software version
+Username or password is rejected
+Re-enter the supplied details without extra spaces and ask support to check account status
+The app opens but categories are empty
+Confirm that your trial or subscription is active, then refresh the player
+Playback stops after using another device
+Log out of the previous device and check your account’s connection allowance
+A stream buffers or fails
+Try another entry, restart the app and tell support whether the issue affects one stream or several
 
-Installation FAQs
-What is the Downloader code?
-The current code is 3824652.
-Where do I receive my login details?
-Install the appropriate app first, then use the Contact Support for Login Details CTA.
-Can I use Downloader on Samsung or LG?
-Samsung and LG generally use compatible television apps such as CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-Can I use code 3824652 on Apple devices?
-No. Apple devices use compatible applications from the Apple App Store.
-What should I send support?
-Send:
-Device brand and model
-Installed app name
-Order information
-MAC address or device key where relevant
-Exact setup problem, if any
-Complete Your Installation
-Install the correct application for your device, then contact support for the account credentials.
-Primary CTA: Contact Support for Login Details
-Secondary CTA: View Subscription Plans
+When requesting help, include the device model, app name, exact error and a screenshot with private credentials hidden.
+Sky Glass App Questions
+What is the Sky Glass APK?
+The APK is the Android installation file used to install our supplied app. Downloader code 9557305 provides the download route for compatible devices.
+Can I use my official Sky account?
+No. This account belongs to the independent IPTV service supplied through this website. Official Sky apps and Sky customer accounts are separate.
+Where do I get my username and password?
+Contact us through WhatsApp for trial access or subscription activation. We send the login details and guide you through setup.
+Contact Installation Support⁠
 
-Meta Title: Sky Glass IPTV Subscription UK – Plans from £12
-Meta Description: Compare Sky Glass IPTV subscription plans for 1, 3, 6 or 12 months. Prices start from £12 with 22,000+ channels, 100,000+ VOD and setup help.
-URL Slug: /sky-glass-iptv-subscription/
-Primary Keyword: Sky Glass IPTV subscription
-Supporting Keywords: IPTV subscription UK, Skyglass IPTV subscription, IPTV plans UK
-Sky Glass IPTV Subscription Plans from £12
-Choose one, three, six or twelve months of access. Every standard Sky Glass IPTV subscription includes the same core live and on-demand catalogue, EPG, selected Catch-Up, supported picture qualities, installation guidance and customer support.
-The subscription duration and total price are the main differences between plans.
-Primary CTA: Choose Your Plan
-Secondary CTA: Request a 24-Hour Trial
-Compare Sky Glass IPTV Plans
-Plan
-Total Price
-Equivalent Monthly Cost
-Best For
-1 Month
-£12
-£12.00
-Shortest paid commitment
-3 Months
-£22
-£7.33
-A medium-length subscription
-6 Months
-£30
-£5.00
-Six months at a lower monthly equivalent
-12 Months
-£45
-£3.75
-Lowest equivalent monthly cost
+3. SUBSCRIPTION PLANS
+   SEO title: Sky Glass Subscription | Prices & Packages from £12
+   Meta description: Compare Sky Glass subscription packages from £12. Check Standard prices, request Premium options and choose extra connections with manual renewal.
+   URL and canonical: https://skyglass-iptv.com/buy-skyglass-subscription/⁠
+   Sky Glass Subscription Packages and Prices
+   Choose your package, subscription period and number of simultaneous connections. Standard subscriptions start at £12, with Premium options and additional connections available through WhatsApp.
+   All prices shown below are in GBP. We activate your subscription within two hours of payment and provide your login details and setup assistance through WhatsApp.
+   Choose a Package⁠ · Request a 24-Hour Free Trial⁠
+   Compare Standard and Premium Packages
+   Standard Subscription Prices
+   Duration
+   Total paid upfront
+   Equivalent monthly cost
+   Simultaneous connections
+   1 month
+   £12
+   £12.00
+   1
+   3 months
+   £22
+   About £7.33
+   1
+   6 months
+   £30
+   £5.00
+   1
+   12 months
+   £45
+   £3.75
+   1
 
-Equivalent monthly prices are for comparison. The full plan price is paid upfront.
-1 Month — £12
-Choose one month if you want the lowest initial payment.
-22,000+ live channel entries
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-4K on selected streams
-Supported-device installation
-Login details from support
-Customer support
-CTA: Get 1 Month
-3 Months — £22
-Choose three months for a longer period without committing to six or twelve months.
-22,000+ live channel entries
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-4K on selected streams
-Supported-device installation
-Login details from support
-Customer support
-CTA: Get 3 Months
-6 Months — £30
-Choose six months for a lower equivalent monthly cost.
-22,000+ live channel entries
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-4K on selected streams
-Supported-device installation
-Login details from support
-Customer support
-CTA: Get 6 Months
-12 Months — £45
-Choose twelve months for the lowest equivalent monthly price.
-22,000+ live channel entries
-100,000+ films and series
-EPG and selected Catch-Up
-SD, HD and Full HD
-4K on selected streams
-Supported-device installation
-Login details from support
-Customer support
-CTA: Get 12 Months
-What Every Subscription Includes
-Live TV and On-Demand Entertainment
-Access the available live television categories and 100,000+ film and television-series entries during your subscription period.
-EPG and Catch-Up
-The Electronic Programme Guide displays schedule information where suitable data is available. Catch-Up is provided on selected channels.
-Supported Picture Qualities
-Available streams can include SD, HD and Full HD. Selected entries may be available in 4K where the source, device and internet connection support it.
-Device Installation Guidance
-Setup instructions are available for Firestick, Fire TV, Android, Google TV, Samsung, LG, Apple devices, Windows, Mac and supported IPTV boxes.
-Login Details from Support
-Once the required application is installed, contact support to receive the username, password, server address, M3U information or portal details required by your device.
-CTA: Contact Support for Login Details
-How Activation Works
+The monthly equivalents help you compare value. They are not monthly instalments: you pay the full price for the selected subscription period.
+Choose one month for the lowest upfront payment. Longer Standard subscriptions reduce the equivalent monthly cost.
+Order a Standard Subscription⁠
+Premium Package Options
+Contact us for the current Premium package information and price.
+Tell us:
+How long you want the subscription to run.
+How many screens you want to watch simultaneously.
+Which device or player you will use.
+Whether a particular category is important to you.
+We will explain the available package and confirm the total price before payment.
+Request a Premium Quote⁠
+What Your Subscription Includes
+The Standard package provides access to:
+22,000+ live channel entries across the available categories.
+100,000+ on-demand film and series entries.
+TV guide information where EPG data is available.
+Catch-Up on selected channels.
+SD, HD, Full HD and selected 4K streams.
+Account login details and device setup assistance.
+Support for account access and service enquiries.
+Standard durations share the same core package features. The subscription length changes how long your account remains active.
+Catalogue availability can change. Ask us to check important channels or titles before ordering, particularly when moving from a trial to a paid package.
+One Connection or Multiple Connections?
+The listed Standard prices include one simultaneous connection.
+You can use your account on two compatible devices, but you must log out of the first device before logging in on the second.
+If two people want to watch on separate screens at the same time, you need an account with enough simultaneous connections. Multiple-connection options have different prices.
+Send us the number of screens you need so we can quote the correct package.
+Player Licences and Other Costs
+Your subscription pays for the selected service period and connection allowance.
+You will also need your own compatible device and internet connection. A paid third-party player licence, where required, is a separate charge from the player’s developer.
+The listed Standard prices do not include additional connections or a VPN subscription.
+Our supplied app is preferred on compatible Android and Fire OS devices. You may also use an appropriate Xtream-compatible player.
+Check Your Device and Installation Method⁠
+Subscription Payment Methods
+We accept:
+Bank transfer in GBP
+Card payment
+Google Pay
+Apple Pay
+Contact us to confirm your package and receive the payment instructions for your order. Keep your payment reference so we can match the transaction to your account.
+Buy and Activate Your Subscription
+Choose Standard or ask about Premium. Select your preferred duration and connection allowance.
+Confirm your device. Tell us the model and player you intend to use.
+Complete payment. Use one of the available payment methods.
+Receive your account details. We activate subscriptions within two hours of payment and send your login through WhatsApp.
+Complete setup. Follow the installation guide or ask our team for assistance.
+In our supplied app, the login screen requires your username and password only.
+Manual Subscription Renewals
+Subscriptions do not renew automatically.
+When you want to continue, message us on WhatsApp with your existing username and the duration you would like to purchase. Tell us if you also want to change your package or connection allowance.
+We will confirm the renewal price and payment instructions, then help you check the updated account expiry date.
+Renew an Existing Account⁠
+Try the Service Before Buying
+We provide a 24-hour free trial so you can test the app, your device and your internet connection before paying for a subscription.
+The trial catalogue can differ from the paid package. Use the trial to check the viewing experience, then confirm any package-specific requirements with our team.
+Request Trial Access⁠
+Refund and Cancellation Information
+Our Refund Policy⁠ explains cancellation requests and the seven-day technical review period for qualifying problems.
+This is not an unconditional seven-day money-back offer. Contact support promptly with your order details and a description of the issue. Your statutory rights are unaffected.
+Subscription Questions
+Is £45 the full price for the 12-month Standard plan?
+Yes. It is the upfront price for 12 months with one simultaneous connection. Extra connections and any separate third-party player licence are priced separately.
+Are Premium prices the same as Standard?
+Premium options are quoted separately. Ask us for the package details and total price before paying.
+Will paying for a Smart TV player activate my subscription?
+No. A player licence activates the player itself. You still need an active trial or subscription account to connect to our service.
+How do I buy access for several screens?
+Message us with the number of screens that will play simultaneously, your preferred package and subscription period. We will quote the appropriate connection allowance.
+Buy a Subscription on WhatsApp⁠
 
-1. Choose a Plan
-   Select one, three, six or twelve months and confirm the number of connections required.
-2. Confirm Your Device
-   Tell support which device you intend to use.
-3. Install the Application
-   Firestick and compatible Android customers should install Downloader by AFTVnews and enter code 3824652.
-   Smart TV customers should install CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV from the relevant television app store.
-4. Contact Support
-   After installation, contact support and provide your device and application details.
-5. Receive Your Login
-   Support will supply or configure the login details needed for the selected player.
-   CTA: Contact Support for Login Details
-   What Is Not Included?
-   A subscription does not include:
-   A television or streaming device
-   Broadband or mobile data
-   A paid third-party player licence
-   A VPN subscription
-   Guaranteed access to every named channel or title
-   4K on every stream
-   Additional simultaneous connections not included in the order
-   Permission to rebroadcast or redistribute access
-   Which Plan Should You Choose?
-   Request a Trial First If:
-   You have not used an IPTV application before
-   You are unsure about device compatibility
-   Your internet performance is inconsistent
-   You want to inspect current categories
-   You want to test the application interface
-   Choose One Month If:
-   You want the shortest paid period
-   You do not want a longer upfront commitment
-   You want additional time after a trial
-   Choose Three or Six Months If:
-   Your device is already compatible
-   You want a lower monthly equivalent
-   You are not ready to choose twelve months
-   Choose Twelve Months If:
-   You have tested compatibility
-   You understand that catalogue availability changes
-   You want the lowest equivalent monthly price
-   Subscription FAQs
-   Are all plans supplied with the same features?
-   Yes. The standard catalogue and features are the same. The subscription duration changes.
-   When does my plan begin?
-   The plan normally begins when active login details are issued.
-   Are Smart TV player fees included?
-   No. CR7 Player, IBO Player, SmartOne IPTV and HOT IPTV may have separate developer fees.
-   Can I upgrade later?
-   Contact support before the existing subscription expires to discuss available renewal or extension options.
-   Can one login be used simultaneously on multiple devices?
-   Only where the order includes enough connections.
-   Can future prices change?
-   Future prices can change, but this does not normally alter a subscription that has already been purchased and activated.
-   Choose Your Subscription
-   Confirm your device, choose your preferred term and install the recommended application.
-   Primary CTA: Choose a Subscription
-   Secondary CTA: Contact Support for Login Details
+4. RESELLER PANEL
+   SEO title: Sky Glass IPTV Reseller Panel | Credits & Packages
+   Meta description: Explore the Sky Glass IPTV reseller panel, non-expiring credits and package options. Get wholesale pricing, trial limits and setup help on WhatsApp.
+   URL and canonical: https://skyglass-iptv.com/skyglass-iptv-reseller-panel/⁠
+   Sky Glass IPTV Reseller Panel and Credit Packages
+   Create customer accounts, manage subscription periods and handle renewals through a reseller panel.
+   Our reseller programme starts from 120 credits. Unused credits do not expire, and available panels support 10–20 customer trials per day, depending on the panel assigned.
+   Contact us for wholesale prices, current panel options and help choosing a package.
+   Request Reseller Prices⁠
+   IPTV Reseller Packages and Prices
+   If you are looking for an IPTV reseller option for UK customers, start by telling us the credit balance and account features you need.
+   Your quote will confirm:
+   The panel available to you.
+   The number of credits included.
+   The total wholesale price.
+   The supported subscription and connection options.
+   Your daily trial allowance.
+   Whether sub-reseller creation is included.
+   Reseller pricing is supplied through support. Contact us for the current package options before purchasing credits.
+   Discuss a Reseller Package⁠
+   How Reseller Credits Work
+   Under the current Standard credit structure, one credit represents one month of service.
+   Customer subscription
+   Standard credits required
+   1 month
+   1
+   3 months
+   3
+   6 months
+   6
+   12 months
+   12
 
-Meta Title: Sky Glass IPTV Supported Devices – Check Compatibility
-Meta Description: Check Sky Glass IPTV compatibility for Firestick, Android TV, Samsung, LG, Apple TV, iPhone, Windows, Mac, MAG, Formuler and other devices.
-URL Slug: /sky-glass-iptv-supported-devices/
-Primary Keyword: Sky Glass IPTV supported devices
-Supporting Keywords: IPTV compatible devices, Skyglass IPTV devices, IPTV for Firestick, Smart TV IPTV
-Devices That Work with Sky Glass IPTV
-Sky Glass IPTV can be installed on many televisions, streaming devices, phones, tablets, computers and IPTV boxes.
-The correct setup method depends on the device operating system.
-Compatibility Overview
-Device
-Installation Method
-Login Details
-Firestick
-Downloader by AFTVnews, code 3824652
-Provided by support
-Fire TV Cube
-Downloader by AFTVnews, code 3824652
-Provided by support
-Android TV
-Google Play Downloader, code 3824652
-Provided by support
-Google TV
-Google Play Downloader, code 3824652
-Provided by support
-Android box
-Downloader code 3824652
-Provided by support
-Android phone/tablet
-Downloader or supported installation link
-Provided by support
-Samsung Smart TV
-CR7, IBO, SmartOne or HOT IPTV
-Support configuration
-LG Smart TV
-CR7, IBO, SmartOne or HOT IPTV
-Support configuration
-Sony Android/Google TV
-Downloader code 3824652
-Provided by support
-Hisense Android/Google TV
-Downloader code 3824652
-Provided by support
-Hisense VIDAA
-Compatible television player
-Support configuration
-TCL Android/Google TV
-Downloader code 3824652
-Provided by support
-Philips Android/Google TV
-Downloader code 3824652
-Provided by support
-iPhone and iPad
-Compatible App Store player
-Provided by support
-Apple TV
-Compatible tvOS player
-Provided by support
-Windows
-Compatible desktop player
-Provided by support
-Mac
-Compatible macOS player
-Provided by support
-MAG
-Portal setup
-Portal from support
-Formuler
-MYTVOnline
-Portal or login from support
-Enigma2
-Device-specific setup
-Provided by support
-Roku
-Compatibility check required
-Method confirmed by support
-Sky Glass TV
-External Firestick or Android device
-Provided by support
+For example, 120 credits could cover ten 12-month Standard subscriptions or a mixture of shorter periods using the same total credit balance.
+Ask us to confirm the credit deduction for the exact package and connection configuration you intend to sell.
+Reseller Credits That Do Not Expire
+Unused credits remain available in your balance without an expiry date. You can use them as you create or renew customer subscriptions.
+Customer subscriptions still have their own expiry dates. A customer who receives three months of access has a three-month subscription; unused reseller credits and active customer time are separate.
+Customer Trials and Daily Limits
+Reseller panels allow 10–20 trials per day, depending on the panel.
+We confirm your panel’s exact allowance before purchase. You can use trials to help prospective customers check their device, player and connection before choosing a paid account.
+Trial access may differ from the paid catalogue. Explain the relevant package details when a customer is ready to subscribe.
+Sub-Reseller Access and Panel Features
+Sub-reseller creation is available on supported panels.
+If you want to manage sub-resellers, tell us before ordering. We will confirm whether the available panel includes the required permissions and explain how those permissions work.
+The account-management tools available through the reseller programme include:
+Creating customer accounts.
+Activating supported subscription periods.
+Renewing existing subscriptions.
+Checking account status and expiry dates.
+Reviewing your credit balance.
+Creating trials within your panel’s allowance.
+Your assigned panel determines the exact options and permissions.
+Open Your Reseller Account
+Contact reseller support. Explain the credit quantity and account features you need.
+Review the available panel. Confirm the trial limit, connection options and any required sub-reseller access.
+Receive your quote. Check the credit balance and wholesale price.
+Complete the agreed purchase. Follow the payment instructions supplied by support.
+Receive your panel login. We guide you through the available account and credit tools.
+Ask About Reseller Access⁠
+Create and Renew Customer Subscriptions
+To create a subscription, choose the customer’s package, duration and connection allowance in the panel. Check the credit deduction before confirming the account.
+Provide the customer with the appropriate login information and direct them to the app installation guide⁠.
+For a renewal, locate the existing account, confirm the requested extension and check the new expiry date after applying it.
+For one-connection accounts, explain that customers must log out of one device before using another. Simultaneous viewing requires the appropriate connection allowance.
+Reseller Panel Support
+Contact us on WhatsApp for help with panel access, credit purchases, trial permissions, account creation or renewals.
+Include your panel username, the relevant account reference and a clear description of the issue. Screenshots are useful when they show the error without exposing passwords.
+Support is available 24 hours a day, and we reply as soon as possible.
+Contact Reseller Support⁠
+Reseller Questions
+Is the reseller login the same as a viewing account?
+No. Your panel login is used to manage accounts and credits. Customer viewing accounts have their own login details.
+Can I choose my customer prices?
+You set your retail prices within the reseller agreement. Ask us for the wholesale credit cost so you can work out the price of each package you offer.
+Can I purchase more credits later?
+Yes. Contact support to request an additional credit purchase and confirm the current price.
+Does every panel include sub-reseller creation?
+No. This depends on the panel. Tell us that you need sub-reseller access when requesting your quote.
+Get Your Reseller Quote⁠
 
-Firestick and Android Installation
-For compatible Android and Firestick devices:
-Install Downloader by AFTVnews.
-Open Downloader.
-Enter code 3824652.
-Download and install the application.
-Contact support for your login details.
-CTA: Contact Support for Login Details
-Smart TV Applications
-For Samsung, LG and supported non-Android Smart TVs, install whichever of these players is available:
-CR7 Player
-IBO Player
-SmartOne IPTV
-HOT IPTV
-Open the player and send the displayed MAC address and device key to support.
-CTA: Contact Support for Login Details
-Important Smart TV Differences
-Televisions from the same manufacturer can use different operating systems.
-Samsung normally uses Tizen
-LG normally uses webOS
-Sony may use Android TV or Google TV
-Hisense may use VIDAA, Android TV or Google TV
-TCL may use Roku TV, Android TV or Google TV
-Philips may use Android TV, Google TV or a proprietary platform
-Send the exact model number to support if you are uncertain.
-Using an External Streaming Device
-An external Firestick or Android device can be used when:
-The television app store lacks a compatible player
-The built-in Smart TV software is slow
-The television does not permit third-party app installation
-You use a Sky Glass television
-The television’s operating system is unsupported
-Internet Requirements
-For reliable playback, use:
-Approximately 25 Mbps for HD
-Around 50 Mbps or more for supported 4K
-5 GHz Wi-Fi or Ethernet where possible
-Current device firmware
-Enough free storage
-A supported application version
-Simultaneous Connections
-Installing an account on several devices is different from watching simultaneously.
-Do not use more simultaneous streams than the number of connections included in your order.
-Device FAQs
-What is the easiest device to install?
-A compatible Firestick, Fire TV or Android TV device can use Downloader code 3824652.
-Which players should I use on Samsung or LG?
-Use CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV, depending on app-store availability.
-Will support provide my login?
-Yes. Install the application first and then contact support.
-Does the subscription include the Smart TV player licence?
-No. Any separate licence charged by the player developer is not included.
-Can I use the service on Sky Glass TV?
-An external compatible Firestick or Android device may be required.
-Can support check my exact model?
-Yes. Send the brand, model number and operating system.
-Check Your Device
-Confirm compatibility before purchasing a longer subscription.
-Primary CTA: Ask About My Device
-Secondary CTA: Contact Support for Login Details
+5. CONTACT AND SUPPORT
+   SEO title: Sky Glass Support | WhatsApp Contact & Account Help
+   Meta description: Contact Sky Glass support on WhatsApp for account access, setup, payments and renewals. Support is available 24 hours a day; we reply as soon as possible.
+   URL and canonical: https://skyglass-iptv.com/contact-skyglass-support/⁠
+   Sky Glass Support and Contact Details
+   Contact our team for trial access, subscription activation, app setup, payment enquiries or account renewals.
+   WhatsApp is where we send your login details and guide you through setup. Support is available 24 hours a day, and we aim to reply as soon as possible.
+   Message Support on WhatsApp⁠
+   SkyGlass Contact Details
+   WhatsApp: +44 7450 620840⁠
+   Email: iptvskyglass745@gmail.com⁠
+   For an existing enquiry, continue in the same conversation so we can see the account details and previous troubleshooting.
+   What to Include in Your Message
+   Your enquiry
+   Details to send
+   Free trial
+   Device model and the app you intend to use
+   New subscription
+   Preferred package, duration and simultaneous connections
+   Payment or activation
+   Payment reference, payment time and chosen plan
+   Login problem
+   Account username, device, app name and exact error
+   Playback problem
+   Affected channel or title, approximate time and whether other streams work
+   Renewal
+   Existing username, preferred duration and any connection changes
+   Reseller enquiry
+   Required credits, panel features and whether you need sub-reseller access
 
-Meta Title: Sky Glass IPTV Reviews UK – Verified Customer Feedback
-Meta Description: Read verified Sky Glass IPTV reviews from UK customers. Compare feedback by device, subscription length, setup experience, streaming and support.
-URL Slug: /sky-glass-iptv-reviews/
-Primary Keyword: Sky Glass IPTV reviews
-Supporting Keywords: Skyglass IPTV reviews, IPTV reviews UK, verified IPTV customer feedback
-Sky Glass IPTV Reviews from Verified UK Customers
-Read customer feedback with useful context about the device, application, subscription length, installation and customer-support experience.
-Reviews should be connected to genuine trials or completed orders.
-Verified Customer Reviews
-Use this format for every genuine review:
-“[Genuine Review Heading]”
-“[Customer’s genuine feedback, published with permission.]”
-Device: Firestick, Smart TV, Android, Apple, Windows or other
-Application: Installed player
-Plan: 1, 3, 6 or 12 months
-Verified Customer: Yes
-Review Date: Date
-Display Name: Customer-approved name
-Do not publish copied testimonials, celebrity names, stock identities or feedback that cannot be verified.
-Read Reviews by Device
-Firestick Reviews
-These reviews should describe installation through Downloader by AFTVnews, code 3824652, app performance and the login process.
-Android TV Reviews
-These reviews should cover Google Play installation, Downloader setup, app navigation and picture quality.
-Samsung and LG Smart TV Reviews
-These reviews should identify whether the customer used CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-Apple Device Reviews
-These reviews should identify the App Store player and Apple device used.
-Windows and Mac Reviews
-These reviews should include the desktop application, login method and general performance.
-How Reviews Are Verified
-Before publishing:
-Confirm that the customer is linked to an order or trial.
-Remove private account and payment information.
-Obtain permission to publish the wording.
-Correct spelling only where the meaning remains unchanged.
-Identify materially edited feedback.
-Allow balanced and critical reviews.
-Do not reward customers only for positive ratings.
-Submit Your Review
-Include:
-Device used
-Application installed
-Subscription period
-Length of use
-Installation experience
-Streaming experience
-Support experience
-What worked well
-What could be improved
-Permission to publish
-CTA: Submit an Honest Review
-Need Help Before Leaving a Review?
-For an active setup problem, send support:
-Device model
-Application name
-Exact error message
-Order information
-Troubleshooting already attempted
-CTA: Contact Support for Login Details
-Review FAQs
-Are reviews verified?
-Reviews should be linked to genuine customer activity before publication.
-Are negative reviews allowed?
-Yes. Genuine criticism should not be removed simply because it is negative.
-Do customers receive payment for positive reviews?
-No. Reviews should represent genuine experiences.
-Can a review be updated?
-Yes. Contact support from the contact method connected to the original order.
-Can personal details be removed?
-Yes. Customers can request a shortened or anonymous display name.
-SEO Note: Use Review or AggregateRating schema only when genuine visible ratings exist.
+Please hide passwords, full card details and unrelated personal information in screenshots.
+Trial and Activation Assistance
+To request a 24-hour free trial, tell us which device you want to use. We will help you choose the correct app and provide the account details through WhatsApp.
+For paid subscriptions, activation takes place within two hours of payment.
+If that time has passed and you have not received your login details, send your payment reference in the same chat so we can check the order.
+App Installation and Playback Support
+If you need help installing the app, start with the installation guide⁠. It includes the current download code, Android and Firestick instructions, and Smart TV player setup.
+When contacting us about an error, tell us what you were trying to do and what appeared on screen.
+For playback issues, mention whether the problem affects one channel, one category or the whole service. This helps us identify the next useful check.
+Renewals, Payments and Reseller Enquiries
+Renewals: message us with your existing username and the subscription period you want. Renewals are manual.
+Payment enquiries: include the transaction reference and amount so we can locate the correct order.
+Refund requests: explain the problem and include your order details. Read the Refund Policy⁠ for the applicable process.
+Reseller enquiries: ask for current prices, credit packages and panel permissions. You can review the reseller panel information⁠ before contacting us.
+Support Questions
+Can I contact you before purchasing?
+Yes. Send us your device model and any package questions so we can help you check suitability before payment.
+Is every message answered immediately?
+We are available 24 hours a day and reply as soon as possible. Response times can vary with the number and complexity of enquiries.
+Can you help with an official Sky account?
+Our team supports the independent IPTV service supplied through Skyglass-iptv.com. For official Sky television, broadband or billing enquiries, contact Sky directly.
+Start a WhatsApp Conversation⁠
 
-Meta Title: Sky Glass IPTV Reseller Panel UK – 120-Credit Entry
-Meta Description: Start with the Sky Glass IPTV reseller panel in the UK. Manage accounts, activations, renewals and credits, with a current minimum of 120 credits.
-URL Slug: /iptv-reseller-panel/
-Primary Keyword: IPTV reseller panel
-Supporting Keywords: Sky Glass IPTV reseller panel, IPTV reseller UK, IPTV supplier UK
-Sky Glass IPTV Reseller Panel for UK Businesses
-Manage customer accounts, subscriptions, activations, credits, renewals and expiry dates through one web-based reseller panel.
-The current reseller programme begins with a minimum purchase of 120 credits. Under the current standard structure, one credit represents one month of service.
-Primary CTA: Request Reseller Information
-Secondary CTA: Ask for a Panel Demonstration
-Reseller Panel Features
-Available tools may include:
-Customer-account creation
-Subscription activation
-Credit management
-Account renewal
-Expiry-date tracking
-Customer status information
-Retail-price management
-Additional credit purchases
-Reseller technical assistance
-Confirm the current panel features before purchasing.
-How Credits Work
-Subscription
-Credits Required
-1 Month
-1 Credit
-3 Months
-3 Credits
-6 Months
-6 Credits
-12 Months
-12 Credits
+Shared footer notice — use on all five pages
+Sky Glass IPTV is provided independently through Skyglass-iptv.com. It is not affiliated with, endorsed by or operated by Sky or the official Sky Glass television service. Third-party names and trademarks belong to their respective owners.
 
-A balance of 120 credits could be used for:
-120 one-month subscriptions
-40 three-month subscriptions
-20 six-month subscriptions
-10 twelve-month subscriptions
-A mixed combination of available durations
-These calculations explain credit usage. They do not guarantee customers, revenue or profit.
-Minimum Reseller Entry
-The current minimum is 120 credits.
-Before paying, confirm:
-Current wholesale price
-Credit-expiry conditions
-Panel-access terms
-Available subscription durations
-Refund conditions for unused credits
-Support arrangements
-Connection options
-White-label availability
-Sub-reseller availability
-Advertising restrictions
-How to Become a Reseller
-
-1. Request Programme Information
-   Ask for current pricing, terms and panel features.
-2. Review the Panel
-   Request an explanation or demonstration of account creation, credits, renewals and expiry tracking.
-3. Purchase Credits
-   Accept the reseller agreement and purchase the minimum available balance.
-4. Receive Panel Login Details
-   Support will provide the account credentials needed to access the reseller panel.
-   CTA: Contact Support for Reseller Login Details
-5. Manage Customers
-   Create subscriptions, monitor expiry dates and manage renewals through the panel.
-   Reseller Responsibilities
-   Resellers remain responsible for:
-   Honest advertising
-   Customer pricing
-   Customer communication
-   Customer-support obligations
-   Payment handling
-   Refunds promised to customers
-   Data-protection compliance
-   Local tax and legal requirements
-   Panel security
-   Lawful use
-   Avoiding misleading earnings claims
-   Revenue Is Not Profit
-   Actual results depend on:
-   Wholesale credit cost
-   Retail pricing
-   Customer-acquisition costs
-   Payment-processing fees
-   Refunds
-   Customer retention
-   Marketing expenses
-   Support workload
-   Taxes
-   Other operating costs
-   No revenue or profit is guaranteed.
-   Reseller Security
-   Use a unique panel password
-   Enable two-factor authentication where available
-   Never publish the panel login
-   Keep customer credentials private
-   Record credit purchases and usage
-   Remove access for former staff
-   Report suspicious activity
-   Reseller FAQs
-   Is one credit equal to one month?
-   That is the current standard structure. Confirm the latest written terms before purchasing.
-   Is there a recurring panel fee?
-   Confirm current panel-access terms in writing before payment.
-   Can I choose my own retail prices?
-   Yes, subject to applicable law and the reseller agreement.
-   Are earnings guaranteed?
-   No.
-   Who supports reseller customers?
-   The reseller is normally the customer’s first point of contact. Supplier support may assist with panel or underlying technical issues.
-   Can unused credits be refunded?
-   Only where the reseller agreement or applicable law allows it.
-   Request Current Reseller Terms
-   Review the credit price, conditions and panel functions before committing funds.
-   Primary CTA: Become a Reseller
-   Secondary CTA: Contact Support for Reseller Login Details
-
-Meta Title: Contact Sky Glass IPTV UK – Free 24-Hour Trial & Support
-Meta Description: Contact Sky Glass IPTV UK for plan questions, device checks, installation support, billing help or an eligible free 24-hour IPTV trial.
-URL Slug: /contact/
-Primary Keyword: Sky Glass IPTV free trial
-Supporting Keywords: Contact Sky Glass IPTV, IPTV trial UK, Skyglass IPTV support
-Contact Sky Glass IPTV and Request a 24-Hour Trial
-Contact us before purchasing, after installing your application or whenever you need reasonable account support.
-WhatsApp/Telephone: +44 7450 620840
-Email: iptvskyglass745@gmail.com
-Contact Support for Login Details
-After installing the correct application, send support:
-Your name
-Device brand and model
-Installed application
-Selected subscription
-Order information
-MAC address or device key where relevant
-Support will provide the username, password, server URL, M3U information or portal details required by your application.
-Primary CTA: Contact Support for Login Details
-Request a 24-Hour Trial
-A trial can help you check:
-Device compatibility
-Broadband performance
-Current categories
-Application navigation
-EPG availability
-Selected Catch-Up
-Available picture quality
-Send:
-Your name
-Country
-Device
-Installed application
-Approximate internet speed
-Required number of connections
-CTA: Request a 24-Hour Trial
-Trial Conditions
-A trial:
-Is subject to eligibility and availability
-May be limited to new customers
-Begins when trial login details are issued
-Is intended for evaluation
-Does not guarantee permanent catalogue availability
-May be limited to one per customer or household
-Cannot be resold or redistributed
-Contact Form
-Name
-Email or WhatsApp Number
-Customer Type:
-New customer
-Existing customer
-Reseller
-Enquiry Type:
-Login details
-Free trial
-Subscription plan
-Device compatibility
+Keyword and intent mapping
+These are targeting groups, not phrases to repeat throughout every section.
+Page
+Primary keyword
+Supporting searches
+Main purpose
+Homepage
+Sky Glass IPTV
+Skyglass IPTV; IPTV Sky Glass
+Explain and evaluate the viewing service
 Installation
-Existing account
-Payment
-Refund
-Reseller panel
-Privacy request
-Copyright notice
-Other
-Device and Application
-Order Reference
-Message
-Consent: I understand that my information will be used to respond in accordance with the Privacy Policy.
-Button: Send Message
-Support FAQs
-When should I request login details?
-Install the recommended application first, then contact support.
-What device information should I send?
-Send the brand, full model and installed player.
-Is the free trial guaranteed?
-No. Trial availability depends on eligibility and service capacity.
-Can support check my device before purchase?
-Yes.
-Can support guarantee a particular channel?
-No. Catalogue availability can change.
-How Can We Help?
-Send enough device and application information for support to identify the correct login method.
-Primary CTA: Contact Support for Login Details
-Secondary CTA: View Subscription Plans
-
-Meta Title: About Sky Glass IPTV UK – Service, Devices & Support
-Meta Description: Learn about Sky Glass IPTV UK, including subscription plans, supported devices, installation guidance, customer support and service standards.
-URL Slug: /about/
-Primary Keyword: About Sky Glass IPTV
-Supporting Keywords: Sky Glass IPTV UK, Skyglass IPTV service, IPTV customer support
-About Sky Glass IPTV
-Sky Glass IPTV helps UK customers choose a subscription, confirm device compatibility, install the correct application and receive the login details needed for activation.
-What We Provide
-The current standard service includes:
-22,000+ live channel entries
-100,000+ films and series
-EPG on supported channels
-Catch-Up on selected channels
-SD, HD and Full HD
-4K where available
-One-, three-, six- and twelve-month plans
-Device installation guidance
-Login details from support
-Customer assistance
-Installation Methods
-Firestick and Android
-Install Downloader by AFTVnews and enter code 3824652.
-Smart TV
-Install CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV from the television app store.
-Apple, Windows and Mac
-Install a compatible player that accepts Xtream Codes or M3U details.
-IPTV Boxes
-Use the portal, MAC address or account method confirmed by support.
-After installing the correct application, contact support for your login details.
-CTA: Contact Support for Login Details
-What Customers Can Expect
-Published Pricing
-Subscription prices and durations are displayed before purchase.
-Device Checks
-Customers can confirm their exact model before ordering.
-Clear Installation Guidance
-The Installation Guide provides instructions for each supported platform.
-Realistic Availability Information
-Individual channels, programmes, events, titles and picture resolutions can change.
-Account Support
-Support can assist with login details, activation and reasonable configuration problems.
-What We Do Not Guarantee
-Uninterrupted playback under every network condition
-Permanent availability of every channel
-Every live event or on-demand title
-4K on every stream
-Compatibility with every television
-Unlimited simultaneous connections
-Repair of a customer’s internet connection or device
-How the Service Works
-Choose a Plan
-Select one, three, six or twelve months.
-Confirm Your Device
-Check which application and login format the device requires.
-Install the Application
-Use Downloader code 3824652 on supported Android and Firestick devices, or a supported Smart TV player.
-Contact Support
-Receive the account credentials needed by the application.
-Sign In
-Enter the supplied details and allow the catalogue to load.
-Responsible Use
-Customers must use the service in accordance with applicable law and the Terms and Conditions.
-Access must not be rebroadcast, publicly displayed, resold or redistributed without a separate authorised agreement.
-Independent Service Notice
-Sky Glass IPTV is an independent service operated through skyglass-iptv.com.
-It is not affiliated with, endorsed by or operated by Sky UK Limited or the manufacturer of the Sky Glass television. Third-party product names and trademarks belong to their respective owners.
-Learn More
-Read the Installation Guide, compare Subscription Plans or contact support.
-Primary CTA: View Subscription Plans
-Secondary CTA: Contact Support for Login Details
-
-Meta Title: Sky Glass IPTV Terms & Conditions – UK Subscription Rules
-Meta Description: Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.
-URL Slug: /terms-and-conditions/
-Terms and Conditions
-Last Updated: 22 August 2026
-Legal Operator: [LEGAL OPERATOR NAME]
-Trading Name: Sky Glass IPTV
-Business Address: [BUSINESS ADDRESS]
-Website: skyglass-iptv.com
-
-1. Acceptance
-   By ordering, requesting immediate activation or using the service, you agree to these Terms, the Privacy Policy and the Refund Policy.
-   Nothing in these Terms removes statutory rights that cannot lawfully be excluded.
-2. Eligibility
-   You must:
-   Be at least 18
-   Have legal capacity to enter a contract
-   Provide accurate information
-   Use an authorised payment method
-   Use the service lawfully
-3. Service Description
-   Sky Glass IPTV supplies time-limited digital access, applicable login details and supported installation guidance.
-   Catalogue size, individual entries, schedules, languages and picture quality can change.
-   We do not guarantee:
-   Every named channel or event
-   Every film or series
-   Permanent availability
-   4K on every stream
-   Uninterrupted service
-   Compatibility with every device
-   Additional connections not purchased
-4. Orders
-   A contract is formed when payment is accepted and an order confirmation or active login is issued.
-5. Subscription Term
-   The subscription normally begins when active login details are supplied unless another start date is confirmed.
-6. Application Installation
-   Compatible Firestick and Android customers may install Downloader by AFTVnews and enter code 3824652.
-   Smart TV customers may use CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-   Login details are provided by support after the correct application is installed.
-7. Prices and Payments
-   Prices are shown in pounds sterling unless stated otherwise.
-   Customers are responsible for:
-   Reviewing the total price
-   Using an authorised payment method
-   Paying separate third-party player fees
-   Checking the selected subscription duration
-   Confirming required connections
-8. Immediate Digital Supply
-   Where applicable, customers may be asked to request immediate supply and acknowledge the effect this can have on statutory cancellation rights.
-   Statutory rights remain unaffected where legally required consent was not obtained.
-9. Trials
-   Trials:
-   Are subject to availability
-   May be restricted to new customers
-   Begin when login details are issued
-   Are intended for evaluation
-   Must not be shared or resold
-   May be ended where abuse is suspected
-10. Account Credentials
-    Customers must protect usernames, passwords, server details, M3U links and portal URLs.
-    Customers must not:
-    Publish credentials
-    Exceed connection limits
-    Resell without authorisation
-    Reverse engineer applications
-    Rebroadcast content without permission
-    Interfere with the service
-    Use access unlawfully
-11. Devices and Internet
-    Customers are responsible for their device, internet connection and third-party applications.
-    We are not responsible for problems caused solely by:
-    Unsupported equipment
-    Weak Wi-Fi
-    Broadband outages
-    Insufficient storage
-    Device updates
-    Third-party app changes
-    Slow VPN connections
-    Incorrectly entered details
-12. Third-Party Players
-    CR7 Player, IBO Player, SmartOne IPTV, HOT IPTV and other third-party applications are controlled by their developers.
-    Their charges, availability and privacy practices are separate from the subscription.
-13. Availability
-    Maintenance, source changes, network incidents and other circumstances can cause temporary interruptions.
-    Catalogue entries may be added, changed or removed.
-14. Support
-    Support can assist with:
-    Login details
-    Activation
-    Supported installation
-    Basic troubleshooting
-    Renewal
-    Billing
-    Eligible refund requests
-    Support does not repair customer devices, broadband or third-party software.
-15. Suspension
-    Access may be suspended for:
-    Non-payment
-    Fraud
-    Credential sharing
-    Connection abuse
-    Unauthorised resale
-    Security threats
-    Unlawful use
-    Material breach
-16. Refunds
-    Refunds are handled under the Refund Policy and applicable law.
-17. Intellectual Property
-    Website material and original branding are protected by applicable intellectual-property law.
-    A subscription provides limited personal access. It does not grant permission to reproduce, distribute, rebroadcast or commercially exploit content.
-18. Liability
-    Nothing excludes liability where doing so would be unlawful.
-    Consumer statutory rights remain unaffected.
-19. Resellers
-    Resellers are also subject to any separate reseller agreement and remain responsible for their customers, pricing, refunds, compliance and data protection.
-    No earnings are guaranteed.
-20. Privacy
-    Personal information is handled under the Privacy Policy.
-21. Changes
-    These Terms may be updated for legal, security or operational reasons. The latest revision date will be displayed.
-22. Governing Law
-    These Terms are governed by the laws of England and Wales, subject to mandatory consumer protections.
-23. Contact
-    Submit questions through the Contact page.
-24. Independence
-    Sky Glass IPTV is not affiliated with, endorsed by or operated by Sky UK Limited or the manufacturer of the Sky Glass television.
-
-Meta Title: Sky Glass IPTV Privacy Policy – Data, Cookies & Rights
-Meta Description: Read the Sky Glass IPTV privacy policy covering personal data, cookies, payment records, lawful processing, retention, security and your UK GDPR rights.
-URL Slug: /privacy-policy/
-Privacy Policy
-Last Updated: 22 August 2026
-Data Controller: [LEGAL OPERATOR NAME], trading as Sky Glass IPTV
-Address: [BUSINESS ADDRESS]
-Website: skyglass-iptv.com
-Information We May Collect
-Contact Information
-Name
-Email address
-Telephone or WhatsApp number
-Country
-Preferred contact method
-Order Information
-Order reference
-Selected plan
-Subscription dates
-Device type
-Installed application
-Connection allowance
-Account status
-Support history
-Technical Information
-IP address
-Browser
-Device
-Operating system
-Pages viewed
-Security logs
-Cookie identifiers
-Payment Information
-Payment providers may supply:
-Payment status
-Transaction reference
-Amount
-Currency
-Date
-Limited fraud information
-We do not require your payment-card PIN or online-banking password.
-How Information Is Used
-Information may be used to:
-Respond to enquiries
-Check trial eligibility
-Process orders
-Supply login details
-Configure supported players
-Manage subscriptions
-Provide installation support
-Investigate problems
-Process renewals
-Prevent fraud
-Handle eligible refunds
-Comply with legal obligations
-Lawful Bases
-Processing may rely on:
-Contract
-Legitimate interests
-Legal obligation
-Consent
-Device and Application Information
-When customers request login details, we may record the device and installed application.
-This can include:
-Downloader installation
-Firestick or Android model
-CR7 Player
-IBO Player
-SmartOne IPTV
-HOT IPTV
-MAC address
-Device key
-Selected login method
-These details are used to configure or support the account.
-Cookies
-The website may use:
-Essential cookies
-Preference cookies
-Analytics cookies
-Marketing cookies where lawful consent is obtained
-Visitors should be able to reject non-essential cookies.
-Information Sharing
-Information may be shared where necessary with:
-Hosting providers
-Security providers
-Payment processors
-Email and messaging services
-Customer-support systems
-Analytics providers
-Professional advisers
-Regulators or courts where required
-We do not ordinarily sell personal information.
-International Transfers
-Where service providers process data outside the UK, legally appropriate safeguards should be used.
-Retention
-Typical periods may include:
-General enquiries: up to 12 months
-Accounting records: up to six years where required
-Subscription records: active term plus a reasonable period
-Support messages: generally up to 24 months
-Security logs: generally up to 12 months
-Marketing information: until opt-out
-Security
-Measures may include:
-Encrypted website connections
-Access controls
-Secure payment processors
-Restricted customer records
-Software updates
-Backups
-Security monitoring
-Customers should protect their login details and report suspected compromise.
-Your Rights
-Depending on the circumstances, you may have rights to:
-Access information
-Correct information
-Request deletion
-Restrict processing
-Object to processing
-Receive portable information
-Withdraw consent
-Complain to the ICO
-Privacy Requests
-Use the Contact page with the subject Privacy Request.
-Include enough information to identify the relevant records.
-Marketing
-Electronic marketing should include a clear unsubscribe method.
-Children
-The paid service is intended for adults. Orders are not knowingly accepted from children under 18.
-Third-Party Applications
-CR7 Player, IBO Player, SmartOne IPTV, HOT IPTV and other third-party applications operate under their own privacy policies.
-Complaints
-You may contact the Information Commissioner’s Office:
-Website: ico.org.uk
-Telephone: 0303 123 1113
-Updates
-This policy may be updated to reflect operational, technical or legal changes.
-
-Meta Title: Sky Glass IPTV Refund Policy – Eligibility & Requests
-Meta Description: Read the Sky Glass IPTV refund policy, including cancellation rights, seven-day technical review eligibility, exclusions and how to submit a request.
-URL Slug: /refund-policy/
-Refund Policy
-Last Updated: 22 August 2026
-This policy explains how cancellation and refund requests are handled for Sky Glass IPTV subscriptions.
-Nothing in this policy removes statutory consumer rights.
-Before Access Begins
-If you cancel before login details are supplied or digital access begins, contact us promptly.
-Where the service has not started, a full refund will normally be considered unless a lawful exception applies.
-After Login Details Are Supplied
-Digital access can begin immediately at the customer’s request.
-Where legally valid consent and acknowledgement have been provided, the statutory right to change your mind may end after digital supply begins.
-Seven-Day Technical Review Period
-A refund request submitted within seven calendar days of activation may be considered where:
-The account cannot be activated
-A verified service-side fault prevents reasonable access
-The supplied service is materially different from its description
-Support cannot resolve the qualifying issue
-A duplicate payment was made
-Payment was accepted but access was not supplied
-Installation Requirement
-Before requesting a technical refund, customers should install the correct application.
-Firestick and Android
-Install Downloader by AFTVnews and enter code 3824652.
-Samsung and LG
-Install CR7 Player, IBO Player, SmartOne IPTV or HOT IPTV.
-Other Devices
-Install the compatible player confirmed by support.
-After installation, contact support for login details and allow reasonable troubleshooting.
-Situations That Normally Do Not Qualify
-Subject to statutory rights, a voluntary refund is not normally provided solely because:
-The customer changed their mind after activation
-One channel or title became unavailable
-Every stream was expected to be 4K
-Catch-Up was expected on every channel
-The customer’s broadband is inadequate
-An unsupported device was used
-A third-party player charged a fee
-Login details were shared
-Connection limits were exceeded
-Reasonable troubleshooting was refused
-A VPN reduced performance
-The account was suspended for misuse
-A reseller did not use or sell credits
-Requesting a Refund
-Provide:
-Name
-Order reference
-Payment date
-Amount
-Plan
-Device
-Application
-Activation date
-Reason
-Exact error
-Troubleshooting attempted
-Relevant screenshots with private credentials hidden
-Use the subject Refund Request.
-Review Process
-We will consider:
-The applicable request period
-Whether access began
-Whether legal consent was obtained
-Whether the problem is service-side
-Whether support attempted a reasonable resolution
-Whether the service matched its description
-Whether misuse contributed
-Approved funds are normally returned to the original payment method.
-Refund FAQs
-Does one unavailable channel qualify?
-Not automatically. Individual catalogue entries can change.
-Are third-party player fees refundable?
-Those payments are controlled by the app developer or app store.
-Does a free trial have a refund?
-A free trial has no subscription price to refund.
-Can unused reseller credits be refunded?
-Only where the reseller agreement or applicable law permits it.
-Submit a Request
-Use the Contact page and choose Refund Request.
-
-Meta Title: Sky Glass IPTV DMCA Policy – Copyright Notices
-Meta Description: Read the Sky Glass IPTV DMCA policy and learn how to submit a valid copyright notice, what information is required and how counter-notices work.
-URL Slug: /dmca-policy/
-DMCA and Copyright Policy
-Last Updated: 22 August 2026
-Sky Glass IPTV respects intellectual-property rights and reviews sufficiently detailed copyright complaints concerning material located on or controlled through skyglass-iptv.com.
-Copyright Contact
-Legal Operator: [LEGAL OPERATOR NAME]
-Copyright Contact: Sky Glass IPTV Copyright Team
-Address: [BUSINESS ADDRESS]
-Email: iptvskyglass745@gmail.com
-Subject: Copyright Notice
-Do not describe this contact as a registered US Copyright Office Designated Agent unless the relevant registration has been completed and maintained.
-Submit a Copyright Notice
-Include:
-A physical or electronic signature.
-Identification of the protected work.
-Identification of the allegedly infringing material.
-The exact URL or location.
-The complainant’s contact information.
-A good-faith statement that the use is not authorised.
-A statement that the information is accurate and the complainant is authorised to act.
-Incomplete general statements may not provide enough information to assess the complaint.
-What Happens Next?
-We may:
-Acknowledge the notice
-Request missing information
-Review the location
-Restrict access where appropriate
-Contact relevant providers
-Notify the affected party
-Remove or disable material
-Preserve records
-Take action against repeat infringers
-Counter-Notification
-A counter-notice should include:
-A physical or electronic signature.
-Identification of the removed material.
-Its former location.
-A statement that removal resulted from mistake or misidentification.
-The sender’s name, address, telephone number and email.
-Any legally required jurisdiction and service-of-process statement.
-Material may be restored where legally appropriate unless qualifying court action is notified.
-Repeat Infringement
-Accounts connected with repeated substantiated infringement may be restricted or terminated.
-Relevant factors may include:
-Number of reliable notices
-Repeated conduct
-Counter-notices
-Evidence of deliberate infringement
-Applicable law
-Severity
-Misrepresentation
-False or materially misleading notices and counter-notices can create legal liability.
-Do not submit:
-Claims for works you do not own or represent
-False authority statements
-Complaints intended only to suppress competition
-Altered evidence
-Notices with no reasonable basis
-Trademark and Other Complaints
-Trademark, impersonation, privacy and other legal complaints should be submitted through the Contact page with supporting evidence.
-No Admission
-Removing, restricting or restoring material does not constitute an admission of infringement, ownership or liability.
-Independent Service Notice
-Sky Glass IPTV is not affiliated with, endorsed by or operated by Sky UK Limited or the manufacturer of the Sky Glass television. Third-party product names and trademarks belong to their respective owners.
-
-check this
-
-Yes. The redirects currently have several redirect chains where an old URL redirects to another URL that itself redirects again. For SEO, you should ideally make every old URL redirect directly to the final canonical URL in one 301 hop.
-
-Here is the aligned structure based on the redirects you provided:
-
-Old URL Current redirect target Final URL Action
-/buy-now-2 /iptv-reseller-panel /iptv-reseller-panel ✅ Keep
-/installation-guide /sky-glass-iptv-installation-guide /sky-glass-iptv-installation-guide ✅ Keep
-/buy-now /sky-glass-iptv-subscription /sky-glass-iptv-subscription-uk 🔧 Change
-/channels /sky-glass-channels-list / 🔧 Change
-/sky-glass-iptv-uk-guide /why-sky-glass-iptv-is-best-choice-in-uk /why-sky-glass-iptv-is-best-choice-in-uk ✅ Keep
-/sky-glass-channels-list / / ✅ Keep
-/sky-glass-iptv-subscription /sky-glass-iptv-subscription-uk /sky-glass-iptv-subscription-uk ✅ Keep
-/for-sky-glass-iptv-contact-us /contact-us /contact-us ✅ Keep
-/sky-glass-iptv-installation-guide-uk /sky-glass-iptv-installation-guide /sky-glass-iptv-installation-guide ✅ Keep
-/iptv-reseller-panel-uk /iptv-reseller-panel /iptv-reseller-panel ✅ Keep
-/subscription-plans-2026 /sky-glass-iptv-subscription-plans-uk /sky-glass-iptv-subscription-plans-uk-2026 🔧 Change
-/sky-glass-iptv-installation-guide-uk-june-2026-7-25 /sky-glass-iptv-installation-guide-uk-2026 /sky-glass-iptv-installation-guide-uk-15-08-2026 🔧 Change
-/sky-glass-iptv-subscription-uk-2026-7-25 /sky-glass-iptv-subscription-plans-uk /sky-glass-iptv-subscription-plans-uk-2026 🔧 Change
-/sky-glass-iptv-subscription-plans-uk /sky-glass-iptv-subscription-plans-uk-2026 /sky-glass-iptv-subscription-plans-uk-2026 ✅ Keep
-/sky-glass-iptv-uk /sky-glass-iptv /sky-glass-iptv-uk-2026 🔧 Change
-/sky-glass-iptv /sky-glass-iptv-uk-2026 /sky-glass-iptv-uk-2026 ✅ Keep
-/sky-glass-iptv-installation-guide-uk-2026 /sky-glass-iptv-installation-guide-uk-15-08-2026 /sky-glass-iptv-installation-guide-uk-15-08-2026 ✅ Keep
-/iptv-reseller-uk-panel-2026 /iptv-reseller-uk-22-08-2026 /iptv-reseller-uk-22-08-2026 ✅ Keep
-
-Final redirect chains you should have
-
+Sky Glass app
+Sky Glass APK; Sky Glass download; Sky Glass for Android; Sky Glass app for Firestick; Sky Glass account
+Download, install and connect
 Subscription
-
-/buy-now
-→ /sky-glass-iptv-subscription-uk
-
-/sky-glass-iptv-subscription
-→ /sky-glass-iptv-subscription-uk
-
-Subscription Plans
-
-/subscription-plans-2026
-→ /sky-glass-iptv-subscription-plans-uk-2026
-
-/sky-glass-iptv-subscription-uk-2026-7-25
-→ /sky-glass-iptv-subscription-plans-uk-2026
-
-/sky-glass-iptv-subscription-plans-uk
-→ /sky-glass-iptv-subscription-plans-uk-2026
-
-Installation Guide
-
-/installation-guide
-→ /sky-glass-iptv-installation-guide
-
-/sky-glass-iptv-installation-guide-uk
-→ /sky-glass-iptv-installation-guide
-
-/sky-glass-iptv-installation-guide-uk-june-2026-7-25
-→ /sky-glass-iptv-installation-guide-uk-15-08-2026
-
-/sky-glass-iptv-installation-guide-uk-2026
-→ /sky-glass-iptv-installation-guide-uk-15-08-2026
-
-Main Sky Glass IPTV page
-
-/sky-glass-iptv-uk
-→ /sky-glass-iptv-uk-2026
-
-/sky-glass-iptv
-→ /sky-glass-iptv-uk-2026
-
+Sky Glass subscription
+Sky Glass package; Sky Glass cost; Sky Glass price
+Compare packages and purchase
 Reseller
+Sky Glass IPTV reseller panel
+Sky Glass IPTV reseller; IPTV reseller UK; IPTV reseller packages
+Evaluate wholesale access and manage customers
+Contact
+Sky Glass support
+SkyGlass contact
+Reach your team and resolve enquiries
 
-/buy-now-2
-→ /iptv-reseller-panel
+“Sky apps” has broader, potentially official-Sky intent. The installation FAQ addresses that distinction naturally. Likewise, the awkward reversed phrase “IPTV Sky Glass” does not need to be inserted verbatim into customer-facing sentences.
+Publishing and URL changes
+The copy above uses your requested new URLs. Changing only the canonical tags would leave the migration incomplete: publish the pages at their new addresses and redirect the previous equivalents.
+Previous URL path
+New destination path
+/sky-glass-iptv-uk-2026/
+skyglass-iptv.com/skyglass-iptv-service/⁠
+/sky-glass-iptv-installation-guide-uk-15-08-2026/
+/install-skyglass-app/
+/sky-glass-iptv-installation-guide/
+/install-skyglass-app/
+/sky-glass-iptv-subscription-plans-uk-2026/
+/buy-skyglass-subscription/
+/sky-glass-iptv-subscription/
+/buy-skyglass-subscription/
+/iptv-reseller-uk-22-08-2026/
+/skyglass-iptv-reseller-programme/
+/iptv-reseller-uk-panel-2026/
+/skyglass-iptv-reseller-programme/
+/sky-glass-iptv-reseller/
+/skyglass-iptv-reseller-panel/
+/sky-glass-iptv-contact-2026/
+/contact-skyglass-support/
+/contact/
+/contact-skyglass-support/
 
-/iptv-reseller-panel-uk
-→ /iptv-reseller-panel
-
-/iptv-reseller-uk-panel-2026
-→ /iptv-reseller-uk-22-08-2026
-Important
-
-The key issue is that you don't want this:
-
-/buy-now
-→ /sky-glass-iptv-subscription
-→ /sky-glass-iptv-subscription-uk
-
-You want:
-
-/buy-now
-→ /sky-glass-iptv-subscription-uk
-
-Likewise:
-
-/subscription-plans-2026
-→ /sky-glass-iptv-subscription-plans-uk
-→ /sky-glass-iptv-subscription-plans-uk-2026
-
-should become:
-
-/subscription-plans-2026
-→ /sky-glass-iptv-subscription-plans-uk-2026
-
-So edit only the 🔧 Change rows. The ✅ rows can remain as they are.
-
-pick the final url of pages beacuse these are redirects so use final url and miss those whoes pages are not in them like channel
+Give your developer these implementation requirements:
+Serve the homepage at the root URL. The root currently redirects to the dated homepage. Remove that redirect before redirecting the dated homepage back to the root, avoiding a loop.
+Use direct permanent redirects. Each previous URL should reach its relevant replacement in one hop. Add any further historical variants found in old sitemaps, Search Console or server logs. Keep the redirects for at least one year. Google’s migration guidance⁠
+Set each page’s own canonical. Use the full canonical address listed above, return HTTP 200 at the destination, and update navigation, breadcrumbs, internal links and the sitemap to those same addresses. Google’s canonical guidance⁠
+Use the heading hierarchy shown. Each page has one H1, followed by descriptive H2s and relevant H3s. Keep the SEO title and description unique to that page.
+Replace outdated service information elsewhere. Update old Downloader codes to 9557305, including remaining device pages and policy references. Align connection limits, payment methods, activation times and renewal wording with these drafts.
+Build the pricing switch accurately. Show the Standard prices and Premium enquiry content in their respective tabs. Any offer markup must match the visible package price; quote-only options should not be marked as £0.
+Keep remaining pages focused. A supported-devices page should explain compatibility and link to the installation guide for detailed steps. Consolidate any substantially duplicate guides into the relevant main page.
+Submit the updated sitemap and request indexing. Google says recrawling can take days to weeks; requests do not guarantee immediate indexing or rankings. Google’s recrawl guidance⁠
+The drafts reduce unnecessary repetition and separate the five visitor tasks. Shared brand mentions are normal; actual cannibalisation should be assessed through UK query-and-page performance after publication. Your .co and .com sites may also continue competing if both target the same audience and offer, even with different wording.

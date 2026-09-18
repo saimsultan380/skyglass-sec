@@ -14,14 +14,16 @@ import {
 } from "lucide-react";
 import { MaskReveal } from "@/components/animation/mask-reveal";
 import { HeroLayout } from "@/components/sections/hero-layout";
-import { WHATSAPP_TRIAL_HREF } from "@/lib/site";
+import {
+  CONTACT_WHATSAPP_HREF,
+} from "@/lib/site";
 import { ROUTES } from "@/lib/seo";
 
 const trustItems = [
-  { label: "Trial Requests", icon: CheckCircle2 },
-  { label: "Account Assistance", icon: Headphones },
-  { label: "Installation Help", icon: Wrench },
-  { label: "Reseller Enquiries", icon: ShieldCheck },
+  { label: "WhatsApp 24/7", icon: CheckCircle2 },
+  { label: "Account Help", icon: Headphones },
+  { label: "Setup Support", icon: Wrench },
+  { label: "Payments & Renewals", icon: ShieldCheck },
 ];
 
 function HeroCopy() {
@@ -33,9 +35,9 @@ function HeroCopy() {
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Contact Sky Glass IPTV –" },
+            { text: "Sky Glass Support and" },
             {
-              text: "Trial, Installation, Renewal & Reseller Support",
+              text: "Contact Details",
               className: "text-brand-gradient font-bold",
             },
           ]}
@@ -45,8 +47,13 @@ function HeroCopy() {
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
         <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Contact us before purchasing, after installing your application or
-            whenever you need reasonable account support.
+            Contact our team for trial access, subscription activation, app
+            setup, payment enquiries or account renewals.
+          </p>
+          <p>
+            WhatsApp is where we send your login details and guide you through
+            setup. Support is available 24 hours a day, and we aim to reply as
+            soon as possible.
           </p>
         </div>
       </FadeIn>
@@ -58,7 +65,7 @@ function HeroCTAs() {
   return (
     <div className="flex w-full max-w-full min-w-0 flex-col items-stretch gap-2 sm:gap-3 lg:flex-col xl:flex-row xl:items-center">
       <a
-        href={WHATSAPP_TRIAL_HREF}
+        href={CONTACT_WHATSAPP_HREF}
         target="_blank"
         rel="noopener noreferrer"
         className="w-full min-w-0 xl:w-auto"
@@ -69,8 +76,8 @@ function HeroCTAs() {
           className="bg-gradient-brand shine-effect w-full rounded-[12px] px-4 py-3 text-xs font-semibold text-white sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
           <MessageSquare className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] sm:mr-2 sm:h-4 sm:w-4" />
-          <span className="hidden xl:inline">Request a 24-Hour Trial</span>
-          <span className="inline xl:hidden">24-Hour Trial</span>
+          <span className="hidden xl:inline">Message Support on WhatsApp</span>
+          <span className="inline xl:hidden">WhatsApp Support</span>
         </Button>
       </a>
 

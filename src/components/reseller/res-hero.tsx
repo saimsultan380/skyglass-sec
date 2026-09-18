@@ -17,10 +17,10 @@ import { ROUTES } from "@/lib/seo";
 import { RESELLER_MINIMUM_CREDITS } from "@/lib/site";
 
 const trustItems = [
-  { label: "Credit-Based Panel", icon: Coins },
-  { label: "Customer Management", icon: Users },
-  { label: "App Resources", icon: Smartphone },
-  { label: "Reseller Assistance", icon: Headphones },
+  { label: "Credits Never Expire", icon: Coins },
+  { label: "10–20 Trials / Day", icon: Users },
+  { label: "Wholesale Pricing", icon: Smartphone },
+  { label: "WhatsApp Support", icon: Headphones },
 ];
 
 function HeroCopy() {
@@ -32,9 +32,9 @@ function HeroCopy() {
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Sky Glass IPTV Reseller UK –" },
+            { text: "Sky Glass IPTV Reseller Panel and" },
             {
-              text: "Panel, Credits & Customer Management",
+              text: "Credit Packages",
               className: "text-brand-gradient font-bold",
             },
           ]}
@@ -44,16 +44,20 @@ function HeroCopy() {
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
         <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Manage customer accounts, subscriptions, activations, credits,
-            renewals and expiry dates through one web-based reseller panel.
+            Create customer accounts, manage subscription periods and handle
+            renewals through a reseller panel.
           </p>
           <p>
-            The current reseller programme begins with a minimum purchase of{" "}
+            Our reseller programme starts from{" "}
             <span className="font-extrabold text-[#E91E8C]">
               {RESELLER_MINIMUM_CREDITS} credits
             </span>
-            . Under the current standard structure, one credit represents one
-            month of service.
+            . Unused credits do not expire, and available panels support 10–20
+            customer trials per day, depending on the panel assigned.
+          </p>
+          <p>
+            Contact us for wholesale prices, current panel options and help
+            choosing a package.
           </p>
         </div>
       </FadeIn>
@@ -74,8 +78,8 @@ function HeroCTAs() {
           className="bg-gradient-brand shine-effect w-full rounded-[12px] px-4 py-3 text-xs font-semibold text-white sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
           <Users className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] sm:mr-2 sm:h-4 sm:w-4" />
-          <span className="hidden xl:inline">Request Reseller Information</span>
-          <span className="inline xl:hidden">Reseller Info</span>
+          <span className="hidden xl:inline">Request Reseller Prices</span>
+          <span className="inline xl:hidden">Reseller Prices</span>
         </Button>
       </Link>
 

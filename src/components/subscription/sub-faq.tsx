@@ -5,32 +5,24 @@ import { FaqSection, type FaqItem } from "@/components/ui/faq-section";
 
 const faqList: readonly FaqItem[] = [
   {
-    question: "Are all plans supplied with the same features?",
+    question: "Is £45 the full price for the 12-month Standard plan?",
     answer:
-      "Yes. The standard catalogue and features are the same. The subscription duration changes.",
+      "Yes. It is the upfront price for 12 months with one simultaneous connection. Extra connections and any separate third-party player licence are priced separately.",
   },
   {
-    question: "When does my plan begin?",
-    answer: "The plan normally begins when active login details are issued.",
-  },
-  {
-    question: "Are Smart TV player fees included?",
+    question: "Are Premium prices the same as Standard?",
     answer:
-      "No. CR7 Player, IBO Player, SmartOne IPTV and HOT IPTV may have separate developer fees.",
+      "Premium options are quoted separately. Ask us for the package details and total price before paying.",
   },
   {
-    question: "Can I upgrade later?",
+    question: "Will paying for a Smart TV player activate my subscription?",
     answer:
-      "Contact support before the existing subscription expires to discuss available renewal or extension options.",
+      "No. A player licence activates the player itself. You still need an active trial or subscription account to connect to our service.",
   },
   {
-    question: "Can one login be used simultaneously on multiple devices?",
-    answer: "Only where the order includes enough connections.",
-  },
-  {
-    question: "Can future prices change?",
+    question: "How do I buy access for several screens?",
     answer:
-      "Future prices can change, but this does not normally alter a subscription that has already been purchased and activated.",
+      "Message us with the number of screens that will play simultaneously, your preferred package and subscription period. We will quote the appropriate connection allowance.",
   },
 ];
 
@@ -39,7 +31,7 @@ export function SubFAQ() {
     <FaqSection
       eyebrow="Subscription Help"
       title="Subscription"
-      highlight="FAQs"
+      highlight="Questions"
       items={faqList}
     />
   );

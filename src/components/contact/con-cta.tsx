@@ -2,24 +2,19 @@
 
 import React from "react";
 import { CtaSection } from "@/components/ui/cta-section";
-import { ROUTES } from "@/lib/seo";
+import { CONTACT_WHATSAPP_HREF } from "@/lib/site";
 
 export function ConCTA() {
   return (
     <CtaSection
       id="cta"
-      title="How Can"
-      highlight="We Help?"
-      body="Send enough device and application information for support to identify the correct login method."
+      title="Start a"
+      highlight="WhatsApp Conversation"
+      body="Contact us for trial access, subscription activation, app setup, payments or renewals. Support is available 24 hours a day; we reply as soon as possible."
       primary={{
-        label: "Contact Support for Login Details",
-        href: `${ROUTES.contact}?enquiry=login`,
-        icon: "headphones",
-      }}
-      secondary={{
-        label: "View Subscription Plans",
-        href: ROUTES.subscription,
-        icon: "creditCard",
+        label: "Message Support on WhatsApp",
+        href: CONTACT_WHATSAPP_HREF,
+        icon: "messageSquare",
       }}
     />
   );

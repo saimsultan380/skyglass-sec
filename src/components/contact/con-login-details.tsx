@@ -1,63 +1,85 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardTitle,
-  Footnote,
-  Section,
-  SectionHeading,
-  TickList,
-} from "@/components/ui/section-bits";
-import { Headphones, KeyRound } from "lucide-react";
-import { ROUTES } from "@/lib/seo";
+import { Section, SectionHeading } from "@/components/ui/section-bits";
 
-const sendToSupport = [
-  "Your name",
-  "Device brand and model",
-  "Installed application",
-  "Selected subscription",
-  "Order information",
-  "MAC address or device key where relevant",
+const messageRows = [
+  {
+    enquiry: "Free trial",
+    details: "Device model and the app you intend to use",
+  },
+  {
+    enquiry: "New subscription",
+    details: "Preferred package, duration and simultaneous connections",
+  },
+  {
+    enquiry: "Payment or activation",
+    details: "Payment reference, payment time and chosen plan",
+  },
+  {
+    enquiry: "Login problem",
+    details: "Account username, device, app name and exact error",
+  },
+  {
+    enquiry: "Playback problem",
+    details:
+      "Affected channel or title, approximate time and whether other streams work",
+  },
+  {
+    enquiry: "Renewal",
+    details: "Existing username, preferred duration and any connection changes",
+  },
+  {
+    enquiry: "Reseller enquiry",
+    details:
+      "Required credits, panel features and whether you need sub-reseller access",
+  },
 ] as const;
 
 export function ConLoginDetails() {
   return (
     <Section id="login-details">
       <SectionHeading
-        title="Contact Support for"
-        highlight="Login Details"
-        intro={["After installing the correct application, send support:"]}
+        title="What to Include in"
+        highlight="Your Message"
+        intro={[
+          "Please hide passwords, full card details and unrelated personal information in screenshots.",
+        ]}
       />
 
       <FadeIn className="w-full">
-        <Card className="p-6 sm:p-7">
-          <CardTitle icon={KeyRound}>What to send</CardTitle>
-          <TickList
-            items={sendToSupport}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 space-y-0"
-          />
-          <div className="border-t border-slate-100 pt-4 mt-6">
-            <Footnote>
-              Support will provide the username, password, server URL, M3U information or portal details required by your application.
-            </Footnote>
+        <div className="rounded-[12px] border border-slate-200 bg-white overflow-hidden w-full">
+          <div className="w-full overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-slate-50 border-b border-slate-200">
+                  <th className="px-6 py-4.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0B0E2C]">
+                    Your enquiry
+                  </th>
+                  <th className="px-6 py-4.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0B0E2C]">
+                    Details to send
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {messageRows.map((row) => (
+                  <tr
+                    key={row.enquiry}
+                    className="hover:bg-slate-50/30 transition-colors"
+                  >
+                    <td className="px-6 py-4.5 text-xs sm:text-sm font-bold text-[#0B0E2C]">
+                      {row.enquiry}
+                    </td>
+                    <td className="px-6 py-4.5 text-xs sm:text-sm font-semibold text-slate-800">
+                      {row.details}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <div className="mt-6">
-            <Link href={`${ROUTES.contact}?enquiry=login`}>
-              <Button
-                variant="primary"
-                size="lg"
-                className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-6 py-3.5 text-xs sm:text-sm font-semibold"
-              >
-                <Headphones className="mr-2 h-4 w-4 shrink-0 stroke-[2.5]" />
-                <span>Contact Support for Login Details</span>
-              </Button>
-            </Link>
-          </div>
-        </Card>
+        </div>
       </FadeIn>
     </Section>
   );

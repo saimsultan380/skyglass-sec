@@ -31,7 +31,13 @@ const balanceUses = [
 export function ResCreditsWork() {
   return (
     <Section id="credits-work">
-      <SectionHeading title="How Credits" highlight="Work" />
+      <SectionHeading
+        title="How Reseller Credits"
+        highlight="Work"
+        intro={[
+          "Under the current Standard credit structure, one credit represents one month of service. Reseller credits that do not expire remain in your balance until you use them.",
+        ]}
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full">
         <FadeIn className="w-full">
@@ -76,7 +82,10 @@ export function ResCreditsWork() {
             <TickList items={balanceUses} />
             <div className="border-t border-slate-100 pt-4 mt-6">
               <Footnote>
-                These calculations explain credit usage. They do not guarantee customers, revenue or profit.
+                Unused credits remain available without an expiry date. Customer
+                subscriptions still have their own expiry dates. Ask us to
+                confirm the credit deduction for the exact package and
+                connection configuration you intend to sell.
               </Footnote>
             </div>
           </Card>

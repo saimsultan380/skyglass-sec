@@ -17,23 +17,21 @@ export function SkyglassHeroContent({
 }: SkyglassHeroContentProps) {
   return (
     <div className="flex w-full flex-col items-start text-left">
-      {/* Hero title — word-by-word skew mask reveal on load */}
       <div className="w-full max-w-none" data-no-reveal>
         <MaskReveal
           trigger="mount"
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Sky Glass IPTV UK –" },
+            { text: "Sky Glass IPTV for" },
             {
-              text: "Premium IPTV Subscription for Live TV, Movies & Sports",
+              text: "Live TV, Sports, Films and Series",
               className: "text-brand-gradient font-bold",
             },
           ]}
         />
       </div>
 
-      {/* Body copy — fade/slide in on load */}
       <FadeIn
         delay={0.22}
         duration={0.45}
@@ -42,22 +40,16 @@ export function SkyglassHeroContent({
       >
         <div className="hero-description-copy mt-2.5 space-y-2 text-[11px] leading-[1.45] font-medium text-slate-800 sm:mt-6 sm:space-y-4 sm:text-sm sm:leading-relaxed lg:text-base">
           <p>
-            Watch live television, sports, films and TV series through a
-            flexible Sky Glass IPTV subscription created for UK viewers. Explore
-            22,000+ live channel entries and 100,000+ on-demand films and series
-            across entertainment, sports, news, family and international
-            categories. EPG information, selected Catch-Up and HD, Full HD and
-            supported 4K streams are available where provided.
+            Watch live television and on-demand entertainment through a
+            compatible app on your television, streaming device, phone or
+            tablet. Sky Glass IPTV offers UK viewers a choice of subscription
+            periods, a 24-hour free trial and help setting up their account
+            through WhatsApp.
           </p>
 
           <p className={showFullBodyCopy ? "block" : "hidden sm:block"}>
-            Choose a plan from £12 and use Sky Glass IPTV on Firestick, Fire TV,
-            Android TV, compatible Smart TVs, Apple devices, Windows, Mac and
-            other supported platforms. Install the recommended application, then
-            contact support to receive your login details and setup guidance. If
-            you found us by searching for Skyglass IPTV or IPTV Sky Glass, you
-            can compare the same UK subscription plans, check device
-            compatibility and request an eligible 24-hour trial.
+            Standard plans start at £12 for one month, with activation within
+            two hours of payment.
           </p>
         </div>
       </FadeIn>
@@ -95,8 +87,8 @@ export function SkyglassHeroCTAs({ className }: { className?: string }) {
             className="border-gradient-brand w-full rounded-[12px] px-3 py-3 text-xs font-semibold whitespace-nowrap sm:px-7 sm:py-3.5 sm:text-sm lg:text-base"
           >
             <Tv className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] text-[#E91E8C] sm:mr-2 sm:h-5 sm:w-5" />
-            <span className="hidden sm:inline">Request a 24-Hour Trial</span>
-            <span className="inline sm:hidden">24-Hour Trial</span>
+            <span className="hidden sm:inline">Request a Free Trial</span>
+            <span className="inline sm:hidden">Free Trial</span>
           </Button>
         </a>
       </div>

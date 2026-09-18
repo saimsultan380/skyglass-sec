@@ -1,13 +1,16 @@
 import React from "react";
 import { SkyglassHeader } from "@/components/sections/skyglass-header";
 import { ResHero } from "@/components/reseller/res-hero";
-import { ResFeatures } from "@/components/reseller/res-features";
 import { ResCreditsWork } from "@/components/reseller/res-credits-work";
-import { ResMinimumEntry } from "@/components/reseller/res-minimum-entry";
-import { ResActivation } from "@/components/reseller/res-activation";
-import { ResResponsibilities } from "@/components/reseller/res-responsibilities";
-import { ResRevenue } from "@/components/reseller/res-revenue";
-import { ResSecurity } from "@/components/reseller/res-security";
+import {
+  ResPackages,
+  ResNeverExpire,
+  ResTrials,
+  ResSubReseller,
+  ResOpenAccount,
+  ResCreateRenew,
+  ResSupportBlock,
+} from "@/components/reseller/res-extra-sections";
 import { ResFAQ } from "@/components/reseller/res-faq";
 import { ResCTA } from "@/components/reseller/res-cta";
 import { SkyglassFooter } from "@/components/sections/footer";
@@ -20,6 +23,7 @@ export const metadata = buildPageMetadata({
   title: page.title,
   description: page.description,
   path: page.path,
+  absoluteTitle: true,
 });
 
 export default function ResellerPanelPage() {
@@ -29,13 +33,14 @@ export default function ResellerPanelPage() {
       <BreadcrumbJsonLd items={[...page.breadcrumbs]} />
 
       <ResHero />
-      <ResFeatures />
+      <ResPackages />
       <ResCreditsWork />
-      <ResMinimumEntry />
-      <ResActivation />
-      <ResResponsibilities />
-      <ResRevenue />
-      <ResSecurity />
+      <ResNeverExpire />
+      <ResTrials />
+      <ResSubReseller />
+      <ResOpenAccount />
+      <ResCreateRenew />
+      <ResSupportBlock />
       <ResFAQ />
       <ResCTA />
       <SkyglassFooter />

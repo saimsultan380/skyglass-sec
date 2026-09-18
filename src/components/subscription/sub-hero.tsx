@@ -17,10 +17,10 @@ import { HeroLayout } from "@/components/sections/hero-layout";
 import { WHATSAPP_TRIAL_HREF } from "@/lib/site";
 
 const trustItems = [
-  { label: "Plans from £12", icon: ShieldCheck },
-  { label: "Guided Installation", icon: Download },
-  { label: "EPG & Catch-Up", icon: CalendarClock },
-  { label: "Customer Support", icon: Headphones },
+  { label: "From £12", icon: ShieldCheck },
+  { label: "2-Hour Activation", icon: Download },
+  { label: "WhatsApp Login", icon: CalendarClock },
+  { label: "Manual Renewals", icon: Headphones },
 ];
 
 function HeroCopy() {
@@ -32,9 +32,9 @@ function HeroCopy() {
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Sky Glass IPTV Subscription Plans –" },
+            { text: "Sky Glass Subscription Packages and" },
             {
-              text: "Prices, Features & 24-Hour Trial",
+              text: "Prices",
               className: "text-brand-gradient font-bold",
             },
           ]}
@@ -44,14 +44,14 @@ function HeroCopy() {
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
         <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Choose one, three, six or twelve months of access. Every standard
-            Sky Glass IPTV subscription includes the same core live and
-            on-demand catalogue, EPG, selected Catch-Up, supported picture
-            qualities, installation guidance and customer support.
+            Choose your package, subscription period and number of simultaneous
+            connections. Standard subscriptions start at £12, with Premium
+            options and additional connections available through WhatsApp.
           </p>
           <p>
-            The subscription duration and total price are the main differences
-            between plans.
+            All prices shown below are in GBP. We activate your subscription
+            within two hours of payment and provide your login details and setup
+            assistance through WhatsApp.
           </p>
         </div>
       </FadeIn>
@@ -69,9 +69,9 @@ function HeroCTAs() {
           className="bg-gradient-brand shine-effect w-full rounded-[12px] px-4 py-3 text-xs font-semibold text-white sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
           <Calendar className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] sm:mr-2 sm:h-4 sm:w-4" />
-          <span className="hidden xl:inline">Choose Your Plan</span>
-          <span className="hidden sm:inline xl:hidden">Choose Plan</span>
-          <span className="inline sm:hidden">Choose Plan</span>
+          <span className="hidden xl:inline">Choose a Package</span>
+          <span className="hidden sm:inline xl:hidden">Choose Package</span>
+          <span className="inline sm:hidden">Choose Package</span>
         </Button>
       </Link>
 
@@ -87,8 +87,8 @@ function HeroCTAs() {
           className="border-gradient-brand w-full rounded-[12px] px-4 py-3 text-xs font-semibold sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
           <Clock className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] text-[#E91E8C] sm:mr-2 sm:h-4 sm:w-4" />
-          <span className="hidden xl:inline">Request a 24-Hour Trial</span>
-          <span className="inline xl:hidden">24-Hour Trial</span>
+          <span className="hidden xl:inline">Request a 24-Hour Free Trial</span>
+          <span className="inline xl:hidden">Free Trial</span>
         </Button>
       </a>
     </div>
