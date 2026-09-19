@@ -9,10 +9,15 @@ import { LEGACY_REDIRECTS } from "./src/lib/redirects";
  */
 function buildLegacyRedirects() {
   return Object.entries(LEGACY_REDIRECTS).flatMap(([source, destination]) => {
-    // Bare `/` has no trailing-slash twin; `${source}/` would become `//`.
-    if (source === "/") {
-      return [{ source, destination, permanent: true }];
-    }
+    // Never emit a self-redirect (loop guard).
+    const srcNorm =
+      source.length > 1 && source.endsWith("/") ? source.slice(0, -1) : source;
+    const destNorm =
+      destination.length > 1 && destination.endsWith("/")
+        ? destination.slice(0, -1)
+        : destination;
+    if (srcNorm === destNorm) return [];
+
     return [
       { source, destination, permanent: true },
       { source: `${source}/`, destination, permanent: true },
@@ -26,20 +31,6 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return buildLegacyRedirects();
-  },
-
-  // Public home URL is /sky-glass-iptv-uk-2026/; serve app/page.tsx underneath.
-  async rewrites() {
-    return [
-      {
-        source: "/sky-glass-iptv-uk-2026",
-        destination: "/",
-      },
-      {
-        source: "/sky-glass-iptv-uk-2026/",
-        destination: "/",
-      },
-    ];
   },
 };
 

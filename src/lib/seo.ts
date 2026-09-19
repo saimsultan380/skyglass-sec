@@ -14,18 +14,17 @@ export const SITE_DESCRIPTION =
 /**
  * Canonical route paths (always trailing slash).
  *
- * Homepage and commercial pages keep the live dated WordPress URLs as finals.
- * Remaining pages use the evergreen slugs from updated-content.md.
- * `/` is rewritten to serve the app root; the public home URL is ROUTES.home.
+ * The five commercial pages use the evergreen slugs from updated-content.md.
+ * Homepage is served at `/` (root). Old dated WordPress URLs 301 to these.
  */
 export const ROUTES = {
-  home: "/sky-glass-iptv-uk-2026/",
-  subscription: "/sky-glass-iptv-subscription-plans-uk-2026/",
-  installation: "/sky-glass-iptv-installation-guide-uk-15-08-2026/",
+  home: "/",
+  subscription: "/buy-skyglass-subscription/",
+  installation: "/install-skyglass-app/",
   devices: "/sky-glass-iptv-supported-devices/",
   reviews: "/sky-glass-iptv-reviews/",
-  reseller: "/iptv-reseller-uk-22-08-2026/",
-  contact: "/sky-glass-iptv-contact-2026/",
+  reseller: "/skyglass-iptv-reseller-panel/",
+  contact: "/contact-skyglass-support/",
   about: "/about/",
   terms: "/terms-and-conditions/",
   privacy: "/privacy-policy/",
@@ -65,7 +64,6 @@ function hasFileExtension(pathname: string): boolean {
 
 /** Ensure path is absolute pathname with trailing slash (except file URLs). */
 export function canonicalPath(path: string): string {
-  // Bare `/` is an internal app route; the public homepage URL is dated.
   if (!path || path === "/") return ROUTES.home;
   const trimmed = path.startsWith("/") ? path : `/${path}`;
   const withoutQuery = trimmed.split("?")[0]?.split("#")[0] ?? trimmed;
