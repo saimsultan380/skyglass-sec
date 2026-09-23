@@ -18,6 +18,11 @@ function buildLegacyRedirects() {
         : destination;
     if (srcNorm === destNorm) return [];
 
+    // Bare `/` has no trailing-slash twin; `${source}/` would become `//`.
+    if (source === "/") {
+      return [{ source, destination, permanent: true }];
+    }
+
     return [
       { source, destination, permanent: true },
       { source: `${source}/`, destination, permanent: true },

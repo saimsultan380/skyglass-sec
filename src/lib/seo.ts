@@ -14,11 +14,11 @@ export const SITE_DESCRIPTION =
 /**
  * Canonical route paths (always trailing slash).
  *
- * The five commercial pages use the evergreen slugs from updated-content.md.
- * Homepage is served at `/` (root). Old dated WordPress URLs 301 to these.
+ * Homepage lives at `/glass-iptv/` (root `/` permanently redirects here).
+ * Commercial pages use evergreen slugs; older dated WordPress URLs 301 here.
  */
 export const ROUTES = {
-  home: "/",
+  home: "/glass-iptv/",
   subscription: "/buy-skyglass-subscription/",
   installation: "/install-skyglass-app/",
   devices: "/sky-glass-iptv-supported-devices/",

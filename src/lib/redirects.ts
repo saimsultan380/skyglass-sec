@@ -12,12 +12,12 @@ export const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
  * Safety rules:
  * - Destinations must return HTTP 200 (never redirect again).
  * - Never list a destination path as a redirect source (avoids loops).
- * - Homepage is served at `/`. Do not redirect `/` elsewhere.
- * - Old dated five-page URLs permanently redirect to the new evergreen paths.
+ * - Homepage is served at `/glass-iptv/`. Root `/` permanently redirects there.
+ * - Old dated URLs permanently redirect to the current evergreen paths.
  */
 export const LEGACY_REDIRECTS: Record<string, string> = {
-  // → Home (final: /)
-  // Do NOT redirect "/" — that caused a loop with the old dated homepage.
+  // → Home (final: /glass-iptv/)
+  "/": ROUTES.home,
   "/sky-glass-iptv-uk-2026": ROUTES.home,
   "/skyglass-iptv-service": ROUTES.home,
   "/channels": ROUTES.home,
@@ -80,10 +80,12 @@ export function resolveLegacyRedirect(pathname: string): string | null {
   const lower = pathname.toLowerCase();
   const normalised =
     lower.length > 1 && lower.endsWith("/") ? lower.slice(0, -1) : lower;
-  // Never redirect the live homepage or other canonical destinations.
-  if (normalised === "/" || normalised === "") return null;
+  // Root normalises to "/" (keep as key); never redirect the live home slug.
+  if (normalised === "/glass-iptv") return null;
+
   const destination = LEGACY_REDIRECTS[normalised] ?? null;
   if (!destination) return null;
+
   const destNorm =
     destination.length > 1 && destination.endsWith("/")
       ? destination.slice(0, -1)
