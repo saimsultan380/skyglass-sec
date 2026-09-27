@@ -32,8 +32,8 @@ const compareData: CompareRow[] = [
   },
   {
     plan: "12 Months",
-    totalPrice: "£45",
-    monthlyCost: "£3.75",
+    totalPrice: "£40",
+    monthlyCost: "£3.33",
     bestFor: "Lowest equivalent monthly cost",
   },
 ];

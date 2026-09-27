@@ -1,19 +1,14 @@
 "use client";
 
 import React from "react";
-import {
-  Clock,
-  MessageSquare,
-  RefreshCw,
-  Zap,
-} from "lucide-react";
+import { Clock, MonitorPlay, PoundSterling, Users } from "lucide-react";
 import { FadeIn } from "@/components/animation/fade-in";
 
 const trustItems = [
-  { label: "24-Hour Free Trial", icon: Clock },
-  { label: "2-Hour Activation", icon: Zap },
-  { label: "WhatsApp Setup", icon: MessageSquare },
-  { label: "Manual Renewals", icon: RefreshCw },
+  { label: "From £12", icon: PoundSterling },
+  { label: "12 months £40", icon: Clock },
+  { label: "One connection", icon: Users },
+  { label: "27,000+ channels", icon: MonitorPlay },
 ];
 
 export function SkyglassTrustRow() {

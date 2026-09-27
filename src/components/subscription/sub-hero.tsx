@@ -44,9 +44,9 @@ function HeroCopy() {
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
         <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Choose your package, subscription period and number of simultaneous
-            connections. Standard subscriptions start at £12, with Premium
-            options and additional connections available through WhatsApp.
+            Choose your Premium term, device and number of simultaneous
+            connections. Premium plans start at £12, with 12 months for £40
+            and additional connections available through WhatsApp.
           </p>
           <p>
             All prices shown below are in GBP. We activate your subscription

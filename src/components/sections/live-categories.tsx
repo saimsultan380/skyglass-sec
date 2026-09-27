@@ -36,7 +36,7 @@ export function LiveCategories() {
           title="Live Channels, Films and"
           highlight="Television Series"
           intro={[
-            "The Standard catalogue includes 22,000+ live channel entries, covering available entertainment, sports, news, documentary, family and international categories.",
+            "The Premium catalogue includes 27,000+ live channel entries, covering available entertainment, sports, news, documentary, family and international categories.",
             "If a particular channel or competition matters to you, ask us to check the current package before ordering.",
           ]}
         />
@@ -63,7 +63,7 @@ export function LiveCategories() {
           title="Films and Series"
           highlight="on Demand"
           intro={[
-            "Browse 100,000+ on-demand film and series entries and choose something to watch without waiting for a live broadcast.",
+            "Browse 120,000+ on-demand film and series entries and choose something to watch without waiting for a live broadcast.",
             "Available titles, seasons, languages and subtitles vary. The catalogue can change, and trial access may differ from the paid package.",
           ]}
         />

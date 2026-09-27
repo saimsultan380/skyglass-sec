@@ -7,24 +7,24 @@ import { ROUTES } from "@/lib/seo";
 export function SkyglassCTABanner() {
   return (
     <CtaSection
-      title="Choose a"
-      highlight="Subscription"
-      body="Compare Standard packages from £12, ask about Premium options, or message us with a question about your device and setup."
+      title="Ready to"
+      highlight="Choose?"
+      body="Tell us which term and device you want. We can confirm your total, answer a package question or help you request a trial first."
       primary={{
-        label: "Choose a Subscription",
-        href: ROUTES.subscription,
+        label: "Choose a Premium plan",
+        href: "#pricing",
         icon: "calendar",
       }}
       secondary={{
-        label: "Ask a Question",
+        label: "Ask a question",
         href: ROUTES.contact,
         icon: "headphones",
       }}
       trustItems={[
         { label: "24-Hour Free Trial", icon: "clock" },
-        { label: "2-Hour Activation", icon: "zap" },
-        { label: "WhatsApp Setup", icon: "messageSquare" },
-        { label: "Manual Renewals", icon: "creditCard" },
+        { label: "From £12", icon: "zap" },
+        { label: "12 months £40", icon: "creditCard" },
+        { label: "Manual Renewals", icon: "messageSquare" },
       ]}
     />
   );

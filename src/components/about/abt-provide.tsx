@@ -16,8 +16,8 @@ import { ROUTES } from "@/lib/seo";
 import { DOWNLOADER_CODE } from "@/lib/site";
 
 const serviceItems = [
-  "22,000+ live channel entries",
-  "100,000+ films and series",
+  "27,000+ live channel entries",
+  "120,000+ films and series",
   "EPG on supported channels",
   "Catch-Up on selected channels",
   "SD, HD and Full HD",

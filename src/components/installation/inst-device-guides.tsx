@@ -44,33 +44,33 @@ const deviceGuidesList: DeviceGuide[] = [
     id: "firestick",
     name: "Firestick",
     icon: Cast,
-    title: "Install Sky Glass IPTV on Firestick",
+    title: "Install the Sky Glass App on Firestick",
     subtitle:
-      "Install Downloader by AFTVnews, allow the installation permission and enter the Downloader code.",
+      "On the Firestick home screen, search for Downloader by AFTVnews and install it from the Amazon Appstore.",
     showDownloaderCode: true,
     steps: [
       {
-        title: "Step 1 ΓÇô Install Downloader by AFTVnews",
+        title: "Install Downloader by AFTVnews",
         description:
-          "Open Find or Search from the Firestick home screen. Search for Downloader by AFTVnews. Select it from the official Amazon Appstore. Choose Download or Get. Open Downloader after installation.",
+          "On the Firestick home screen, search for Downloader by AFTVnews and install it from the Amazon Appstore.",
       },
       {
-        title: "Step 2 ΓÇô Enable Installation Permission",
+        title: "Allow unknown apps",
         description:
-          "Open Settings. Select My Fire TV. Open Developer Options. Select Install Unknown Apps. Allow the permission for Downloader.",
+          "Open Settings → My Fire TV → Developer Options → Install Unknown Apps and allow Downloader to install apps. Fire OS menu names can differ by version.",
       },
       {
-        title: "Step 3 ΓÇô Enter Downloader Code",
-        description: `Open Downloader. Select the code or URL field. Enter ${DOWNLOADER_CODE}. Select Go. Wait for the application file to download. Select Install. Choose Open after installation.`,
+        title: "Enter the Downloader code",
+        description: `Open Downloader, enter ${DOWNLOADER_CODE} in its code or URL field and select Go.`,
       },
       {
-        title: "Step 4 ΓÇô Contact Support",
+        title: "Install and sign in",
         description:
-          "After the Sky Glass IPTV app is installed, contact support on WhatsApp. Sign in with the username and password supplied — you do not need a server address in our supplied app.",
+          "Review the download prompt. Install the supplied Sky Glass App and open it. Sign in with the username and password our team sent you.",
       },
     ],
     notes: [
-      "If Developer Options is hidden: open Settings > My Fire TV > About, highlight your Firestick device name and press the select button repeatedly until the developer message appears, then return to the previous menu.",
+      "If Developer Options is hidden, open Settings → My Fire TV → About, select the device name repeatedly until the developer message appears, then return to the previous menu.",
     ],
   },
   {
@@ -101,28 +101,29 @@ const deviceGuidesList: DeviceGuide[] = [
     id: "android-tv",
     name: "Android TV",
     icon: Tv,
-    title: "Install Sky Glass IPTV on Android TV",
+    title: "Install the Sky Glass App on an Android-Based Device",
     subtitle:
-      "Android TV devices install Downloader from the Google Play Store.",
+      "On a compatible Android TV, Google TV, Android box, phone or tablet, install Downloader by AFTVnews from the available official app store.",
     showDownloaderCode: true,
     steps: [
       {
         title: "Install Downloader",
         description:
-          "Open the Google Play Store. Search for Downloader by AFTVnews. Install and open Downloader.",
+          "On a compatible Android TV, Google TV, Android box, phone or tablet, install Downloader by AFTVnews from the available official app store.",
       },
       {
-        title: "Allow App Installation",
-        description: "Permit app installation for Downloader where required.",
-      },
-      {
-        title: "Download and Install",
-        description: `Enter code ${DOWNLOADER_CODE}. Download the Sky Glass IPTV application. Select Install.`,
-      },
-      {
-        title: "Contact Support",
+        title: "Allow app installation",
         description:
-          "Open the application, then contact support for your username, password and server URL.",
+          "If your device asks, allow Downloader to install apps from this source. Setting names differ between manufacturers.",
+      },
+      {
+        title: "Enter the code",
+        description: `Open Downloader, enter ${DOWNLOADER_CODE} and select Go.`,
+      },
+      {
+        title: "Install and sign in",
+        description:
+          "Review the download prompt, install the supplied app and open it. Enter your supplied username and password. If your device cannot install the APK, tell support its exact model and Android version.",
       },
     ],
   },

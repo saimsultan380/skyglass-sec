@@ -26,7 +26,7 @@ const inclusions: readonly Inclusion[] = [
   {
     title: "Live TV and On-Demand Entertainment",
     icon: MonitorPlay,
-    body: "The Standard package provides access to 22,000+ live channel entries and 100,000+ on-demand film and series entries across the available categories.",
+    body: "The Premium package provides access to 27,000+ live channel entries and 120,000+ on-demand film and series entries across the available categories.",
   },
   {
     title: "TV Guide and Catch-Up",
@@ -62,7 +62,7 @@ export function SubFeatures() {
         title="What Your Subscription"
         highlight="Includes"
         intro={[
-          "Standard durations share the same core package features. The subscription length changes how long your account remains active.",
+          "Premium durations share the same core package features. The subscription length changes how long your account remains active.",
         ]}
       />
 

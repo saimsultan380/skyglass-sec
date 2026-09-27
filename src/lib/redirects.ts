@@ -12,11 +12,13 @@ export const CANONICAL_ORIGIN = `https://${CANONICAL_HOST}`;
  * Safety rules:
  * - Destinations must return HTTP 200 (never redirect again).
  * - Never list a destination path as a redirect source (avoids loops).
- * - Homepage is served at `/glass-iptv/`. Root `/` permanently redirects there.
+ * - Homepage is served at `/sky-glass-iptv-premium/`. Root `/` permanently redirects there.
+ * - `/glass-iptv/` (old homepage) permanently redirects to the new installation guide.
+ * - `/install-skyglass-app/` (old guide) permanently redirects to the new homepage.
  * - Old dated URLs permanently redirect to the current evergreen paths.
  */
 export const LEGACY_REDIRECTS: Record<string, string> = {
-  // → Home (final: /glass-iptv/)
+  // → Home (final: /sky-glass-iptv-premium/)
   "/": ROUTES.home,
   "/sky-glass-iptv-uk-2026": ROUTES.home,
   "/skyglass-iptv-service": ROUTES.home,
@@ -38,7 +40,11 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/subscription-plan": ROUTES.subscription,
   "/compare-plans": ROUTES.subscription,
 
-  // → Installation (final: /install-skyglass-app/)
+  // Swapped evergreen URLs: old homepage → new guide; old guide → new homepage.
+  "/glass-iptv": ROUTES.installation,
+  "/install-skyglass-app": ROUTES.home,
+
+  // → Installation (final: /glass-installation-guide/)
   "/sky-glass-iptv-installation-guide-uk-15-08-2026": ROUTES.installation,
   "/installation-guide": ROUTES.installation,
   "/setup-instructions": ROUTES.installation,
@@ -80,8 +86,13 @@ export function resolveLegacyRedirect(pathname: string): string | null {
   const lower = pathname.toLowerCase();
   const normalised =
     lower.length > 1 && lower.endsWith("/") ? lower.slice(0, -1) : lower;
-  // Root normalises to "/" (keep as key); never redirect the live home slug.
-  if (normalised === "/glass-iptv") return null;
+  // Root normalises to "/" (keep as key); never redirect live canonical slugs.
+  if (
+    normalised === "/sky-glass-iptv-premium" ||
+    normalised === "/glass-installation-guide"
+  ) {
+    return null;
+  }
 
   const destination = LEGACY_REDIRECTS[normalised] ?? null;
   if (!destination) return null;

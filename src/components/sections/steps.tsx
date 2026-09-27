@@ -5,25 +5,26 @@ import Link from "next/link";
 import { FadeIn } from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Card, Section, SectionHeading } from "@/components/ui/section-bits";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { ROUTES } from "@/lib/seo";
+import { DOWNLOADER_CODE, WHATSAPP_SUBSCRIPTION_HREF } from "@/lib/site";
 
 const steps = [
   {
-    title: "Choose your package",
-    body: "Confirm the subscription period, device and number of simultaneous connections.",
+    title: "Choose your term",
+    body: "Tell us your device model and required number of simultaneous connections.",
   },
   {
-    title: "Complete payment",
-    body: "Our team will confirm the payment instructions for your order.",
+    title: "Confirm your order",
+    body: "Our team confirms your order and sends the login details through WhatsApp after activation.",
   },
   {
-    title: "Receive your login",
-    body: "We activate subscriptions within two hours of payment and send your details through WhatsApp.",
+    title: "Install the app",
+    body: `For a compatible Firestick or Android-based device, follow the Sky Glass Installation Guide and enter Downloader code ${DOWNLOADER_CODE}.`,
   },
   {
-    title: "Connect your device",
-    body: "Follow the installation guide or ask us for setup assistance. Support is available 24 hours a day, and we reply as soon as possible.",
+    title: "Sign in and watch",
+    body: "A device with another operating system may need a compatible player from its own app store.",
   },
 ] as const;
 
@@ -31,21 +32,24 @@ export function StartWatchingSteps() {
   return (
     <Section id="how-it-works">
       <SectionHeading
-        title="Activate Your Account Through"
-        highlight="WhatsApp"
+        title="From Order to"
+        highlight="Sign-In"
+        intro={[
+          "Choose your term and tell us your device model and required number of simultaneous connections. Our team confirms your order and sends the login details through WhatsApp after activation.",
+        ]}
       />
 
-      <FadeIn className="w-full mb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch w-full">
+      <FadeIn className="mb-8 w-full">
+        <div className="grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <Card key={step.title} className="p-6 flex flex-col gap-3">
+            <Card key={step.title} className="flex flex-col gap-3 p-6">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] bg-pink-50 text-sm font-bold text-[#E91E8C]">
                 {index + 1}
               </span>
-              <h3 className="text-base sm:text-lg font-bold text-[#0B0E2C] leading-snug">
+              <h3 className="text-base leading-snug font-bold text-[#0B0E2C] sm:text-lg">
                 {step.title}
               </h3>
-              <p className="text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed">
+              <p className="text-xs leading-relaxed font-semibold text-slate-800 sm:text-sm">
                 {step.body}
               </p>
             </Card>
@@ -53,14 +57,28 @@ export function StartWatchingSteps() {
         </div>
       </FadeIn>
 
-      <FadeIn className="w-full">
-        <Link href={ROUTES.installation}>
+      <FadeIn className="flex w-full flex-col gap-3 sm:flex-row">
+        <a
+          href={WHATSAPP_SUBSCRIPTION_HREF}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Button
             variant="primary"
             size="lg"
-            className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-6 py-3.5 text-xs sm:text-sm font-semibold"
+            className="bg-gradient-brand w-full rounded-[12px] px-6 py-3.5 text-xs font-semibold text-white sm:w-auto sm:text-sm"
           >
-            <span>Read the Installation Guide</span>
+            <MessageSquare className="mr-2 h-4 w-4 stroke-[2.5]" />
+            <span>Contact the team</span>
+          </Button>
+        </a>
+        <Link href={ROUTES.installation}>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-gradient-brand w-full rounded-[12px] px-6 py-3.5 text-xs font-semibold sm:w-auto sm:text-sm"
+          >
+            <span>Install the app</span>
             <ArrowRight className="ml-2 h-4 w-4 stroke-[2.5]" />
           </Button>
         </Link>

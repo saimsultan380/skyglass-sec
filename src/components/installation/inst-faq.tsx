@@ -7,7 +7,7 @@ import { DOWNLOADER_CODE } from "@/lib/site";
 const faqList: readonly FaqItem[] = [
   {
     question: "What is the Sky Glass APK?",
-    answer: `The APK is the Android installation file used to install our supplied app. Downloader code ${DOWNLOADER_CODE} provides the download route for compatible devices.`,
+    answer: `The APK is the Android installation file used to install our supplied app. Downloader code ${DOWNLOADER_CODE} provides the app download; it does not activate a trial or subscription.`,
   },
   {
     question: "Can I use my official Sky account?",

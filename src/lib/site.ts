@@ -1,7 +1,26 @@
 /** Shared service facts referenced across multiple pages. */
 
-export const DOWNLOADER_CODE = "9557305";
+export const DOWNLOADER_CODE = "2245820";
 export const DOWNLOADER_APP = "Downloader by AFTVnews";
+
+export const CATALOGUE_LIVE = "27,000+";
+export const CATALOGUE_VOD = "120,000+";
+export const CATALOGUE_LIVE_LABEL = "27,000+ live channel entries";
+export const CATALOGUE_VOD_LABEL = "120,000+ film and series entries";
+
+export const PREMIUM_PRICES = {
+  month1: "£12",
+  month3: "£22",
+  month6: "£30",
+  month12: "£40",
+} as const;
+
+export const PREMIUM_MONTHLY_EQUIVALENTS = {
+  month1: "£12.00",
+  month3: "about £7.33",
+  month6: "£5",
+  month12: "about £3.33",
+} as const;
 
 export const CONTACT_PHONE = "+44 7450 620840";
 export const CONTACT_PHONE_HREF = "tel:+447450620840";
@@ -37,7 +56,12 @@ export const INDEPENDENCE_NOTICE =
 export const RESELLER_MINIMUM_CREDITS = 120;
 
 /** Short WhatsApp prefills used across CTAs. */
-export type WhatsAppIntent = "trial" | "subscription";
+export type WhatsAppIntent =
+  | "trial"
+  | "subscription"
+  | "setup"
+  | "channel"
+  | "install";
 
 /**
  * Build a WhatsApp deep link with a short prefilled message:
@@ -57,6 +81,12 @@ export function buildWhatsAppHref(options?: {
 
   if (intent === "trial") {
     message = "Skyglass-iptv free trial";
+  } else if (intent === "setup") {
+    message = "Skyglass-iptv setup";
+  } else if (intent === "channel") {
+    message = "Skyglass-iptv channel or title check";
+  } else if (intent === "install") {
+    message = `Skyglass-iptv installation help - Downloader code ${DOWNLOADER_CODE}`;
   } else if (options?.plan && options?.price) {
     message = `Skyglass-iptv subscription - ${options.plan} ${options.price}`;
   } else if (options?.plan) {
@@ -72,3 +102,6 @@ export const WHATSAPP_TRIAL_HREF = buildWhatsAppHref({ intent: "trial" });
 export const WHATSAPP_SUBSCRIPTION_HREF = buildWhatsAppHref({
   intent: "subscription",
 });
+export const WHATSAPP_SETUP_HREF = buildWhatsAppHref({ intent: "setup" });
+export const WHATSAPP_CHANNEL_HREF = buildWhatsAppHref({ intent: "channel" });
+export const WHATSAPP_INSTALL_HREF = buildWhatsAppHref({ intent: "install" });

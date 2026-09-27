@@ -25,10 +25,10 @@ export function TrialSection() {
   return (
     <Section id="trial">
       <SectionHeading
-        title="Try Skyglass IPTV Free for"
-        highlight="24 Hours"
+        title="Try It on the Screen You"
+        highlight="Already Own"
         intro={[
-          "Use the free trial on the device and internet connection you expect to use after subscribing.",
+          "Ask for a 24-hour trial and test the service using the device and internet connection you expect to use after subscribing. Check navigation and playback at your usual viewing time.",
         ]}
       />
 
@@ -41,9 +41,9 @@ export function TrialSection() {
           />
           <div className="border-t border-slate-100 pt-4 mt-6">
             <Footnote>
-              The trial catalogue can differ from Standard or Premium access.
-              Ask us about the paid package if you are checking a particular
-              channel, film or series.
+              Trial access may differ from the paid Premium package. If a
+              particular channel or title will determine your decision, ask us
+              to check it in the paid package.
             </Footnote>
           </div>
           <div className="mt-6">
@@ -57,7 +57,7 @@ export function TrialSection() {
                 size="lg"
                 className="w-full sm:w-auto rounded-[12px] bg-gradient-brand text-white px-6 py-3.5 text-xs sm:text-sm font-semibold"
               >
-                Request Your 24-Hour Trial
+                Request my trial
               </Button>
             </a>
           </div>

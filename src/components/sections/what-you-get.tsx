@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FadeIn } from "@/components/animation/fade-in";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardTitle,
@@ -11,38 +12,34 @@ import {
   TickList,
 } from "@/components/ui/section-bits";
 import { PackageCheck } from "lucide-react";
+import { WHATSAPP_CHANNEL_HREF } from "@/lib/site";
 
 const includedInEveryPlan = [
-  "22,000+ live channel entries across available entertainment, sports, news, documentary, family and international categories",
-  "100,000+ on-demand film and series entries",
-  "TV guide information where Electronic Programme Guide data is supplied",
-  "Catch-Up on selected channels that support it",
-  "SD, HD, Full HD and selected 4K streams",
-  "Player controls such as search, favourites and category filtering where supported",
-  "Login details for a supported IPTV application",
-  "Installation guidance for your chosen device",
-  "Help with activation and common setup problems",
+  "27,000+ live channel entries across available entertainment, sports, news, documentary, family and international categories",
+  "120,000+ on-demand film and series entries",
+  "Browse available sections through your compatible player, with search or favourites where the player supports them",
+  "Programme-guide information appears where data is supplied",
+  "Catch-up is available on selected channels",
+  "SD, HD, Full HD or selected 4K streams may be available depending on the source, device and connection",
+  "Login details and setup assistance",
+  "One simultaneous connection at the listed prices",
 ] as const;
 
 export function WhatYouGet() {
   return (
     <Section id="what-you-get">
       <SectionHeading
-        title="What Is"
-        highlight="Sky Glass IPTV?"
+        title="What Premium Access"
+        highlight="Includes"
         intro={[
-          "Sky Glass IPTV supplies access to live channels, films and television series over the internet. You use a compatible player to open your account, browse the available catalogue and choose what to watch.",
-          "You need a supported device, an internet connection and the login details supplied by our team. A satellite dish or engineer visit is not required.",
-          "This is an independent IPTV service. It is not affiliated with, endorsed by or operated by Sky. You do not need an official Sky subscription to use it.",
+          "The advertised Premium catalogue includes 27,000+ live channel entries and 120,000+ on-demand film and series entries.",
         ]}
       />
 
       <FadeIn className="w-full">
         <Card className="p-6 sm:p-7">
           <CardTitle icon={PackageCheck}>
-            Choose a package and subscription period, then tell us how many
-            screens you want to watch at the same time. Standard access
-            includes:
+            The same advertised Premium catalogue appears on every plan
           </CardTitle>
           <TickList
             items={includedInEveryPlan}
@@ -50,10 +47,25 @@ export function WhatYouGet() {
           />
           <div className="mt-6 border-t border-slate-100 pt-4">
             <Footnote>
-              The quality you receive also depends on your device, display and
-              internet connection. A trial lets you check performance using your
-              own setup.
+              Catalogue entries and individual programmes can change. If a
+              particular channel, film, series or language matters to you, ask
+              us to check current availability before ordering.
             </Footnote>
+          </div>
+          <div className="mt-6">
+            <a
+              href={WHATSAPP_CHANNEL_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="primary"
+                size="lg"
+                className="bg-gradient-brand w-full rounded-[12px] px-6 py-3.5 text-xs font-semibold text-white sm:w-auto sm:text-sm"
+              >
+                Check a channel or title
+              </Button>
+            </a>
           </div>
         </Card>
       </FadeIn>

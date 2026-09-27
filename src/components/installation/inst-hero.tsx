@@ -14,11 +14,11 @@ import {
 import { MaskReveal } from "@/components/animation/mask-reveal";
 import { HeroLayout } from "@/components/sections/hero-layout";
 import { ROUTES } from "@/lib/seo";
-import { DOWNLOADER_CODE } from "@/lib/site";
+import { DOWNLOADER_CODE, WHATSAPP_INSTALL_HREF } from "@/lib/site";
 
 const trustItems = [
   { label: `Code ${DOWNLOADER_CODE}`, icon: ShieldCheck },
-  { label: "Android & Firestick", icon: ListOrdered },
+  { label: "Firestick & Android", icon: ListOrdered },
   { label: "Username & Password", icon: KeyRound },
   { label: "WhatsApp Setup Help", icon: Headphones },
 ];
@@ -32,9 +32,9 @@ function HeroCopy() {
           as="h1"
           className="text-h1-skyglass max-w-none leading-[1.15] font-bold tracking-tight"
           parts={[
-            { text: "Sky Glass App Download and" },
+            { text: "Sky Glass Installation Guide for" },
             {
-              text: "Installation Guide",
+              text: "Firestick and Android",
               className: "text-brand-gradient font-bold",
             },
           ]}
@@ -44,19 +44,18 @@ function HeroCopy() {
       <FadeIn delay={0.22} duration={0.45} yOffset={14} className="w-full">
         <div className="mt-4 space-y-3 text-[11px] leading-relaxed text-black sm:mt-6 sm:space-y-4 sm:text-sm lg:text-base">
           <p>
-            Install the app supplied through Skyglass-iptv.com, connect your
-            account and set up the device you want to watch on.
+            Install the app supplied through Skyglass-iptv.com on a compatible
+            Firestick or Android-based device, then sign in with the username
+            and password sent by our team.
           </p>
           <p>
-            For supported Android and Fire OS devices, our Downloader code is{" "}
+            Sky Glass Downloader Code:{" "}
             <span className="font-extrabold text-[#E91E8C]">
               {DOWNLOADER_CODE}
             </span>
-            . The supplied app asks for your username and password only.
-          </p>
-          <p>
-            Your trial or subscription login details and setup assistance are
-            provided through WhatsApp.
+            . Enter {DOWNLOADER_CODE} in Downloader by AFTVnews. This code
+            provides the app download; it does not activate a trial or
+            subscription.
           </p>
         </div>
       </FadeIn>
@@ -67,27 +66,32 @@ function HeroCopy() {
 function HeroCTAs() {
   return (
     <div className="flex w-full max-w-full min-w-0 flex-col items-stretch gap-2 sm:gap-3 lg:flex-col xl:flex-row xl:items-center">
-      <Link href={ROUTES.contact} className="w-full min-w-0 xl:w-auto">
+      <a
+        href={WHATSAPP_INSTALL_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full min-w-0 xl:w-auto"
+      >
         <Button
           variant="primary"
           size="lg"
           className="bg-gradient-brand shine-effect w-full rounded-[12px] px-4 py-3 text-xs font-semibold text-white sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
           <Headphones className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] sm:mr-2 sm:h-4 sm:w-4" />
-          <span className="hidden xl:inline">Get Setup Help</span>
+          <span className="hidden xl:inline">Get installation help</span>
           <span className="inline xl:hidden">Setup Help</span>
         </Button>
-      </Link>
+      </a>
 
-      <Link href="#device-guides" className="w-full min-w-0 xl:w-auto">
+      <Link href={ROUTES.home} className="w-full min-w-0 xl:w-auto">
         <Button
           variant="outline"
           size="lg"
           className="border-gradient-brand w-full rounded-[12px] px-4 py-3 text-xs font-semibold sm:px-5 sm:py-3.5 sm:text-sm lg:px-6 xl:w-auto"
         >
           <Download className="mr-1.5 h-3.5 w-3.5 shrink-0 stroke-[2.5] text-[#E91E8C] sm:mr-2 sm:h-4 sm:w-4" />
-          <span className="hidden xl:inline">Read the Device Instructions</span>
-          <span className="inline xl:hidden">Device Instructions</span>
+          <span className="hidden xl:inline">View Premium plans</span>
+          <span className="inline xl:hidden">Premium plans</span>
         </Button>
       </Link>
     </div>

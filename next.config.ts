@@ -20,12 +20,12 @@ function buildLegacyRedirects() {
 
     // Bare `/` has no trailing-slash twin; `${source}/` would become `//`.
     if (source === "/") {
-      return [{ source, destination, permanent: true }];
+      return [{ source, destination, statusCode: 301 }];
     }
 
     return [
-      { source, destination, permanent: true },
-      { source: `${source}/`, destination, permanent: true },
+      { source, destination, statusCode: 301 },
+      { source: `${source}/`, destination, statusCode: 301 },
     ];
   });
 }

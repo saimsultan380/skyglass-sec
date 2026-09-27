@@ -7,7 +7,7 @@ import { Section, SectionHeading } from "@/components/ui/section-bits";
 const stepsList = [
   {
     number: "01",
-    title: "Choose Standard or ask about Premium",
+    title: "Choose a Premium term",
     body: "Select your preferred duration and connection allowance.",
   },
   {

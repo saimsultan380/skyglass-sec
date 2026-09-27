@@ -6,21 +6,21 @@ export const SITE_ORIGIN = "https://skyglass-iptv.com";
 export const SITE_NAME = "Sky Glass IPTV";
 
 export const SITE_TITLE =
-  "Sky Glass IPTV | 22,000+ Channels & 24-Hour Free Trial";
+  "Sky Glass IPTV Premium UK | 27,000+ Channels, £40/Year";
 
 export const SITE_DESCRIPTION =
-  "Explore Sky Glass IPTV for UK viewers: live TV, films and series, plans from £12, a 24-hour free trial and WhatsApp setup on compatible devices.";
+  "Explore Skyglass IPTV Premium in the UK: 27,000+ live channel entries and 120,000+ films and series on demand. Plans start at £12; 12 months costs £40.";
 
 /**
  * Canonical route paths (always trailing slash).
  *
- * Homepage lives at `/glass-iptv/` (root `/` permanently redirects here).
+ * Homepage lives at `/sky-glass-iptv-premium/` (root `/` permanently redirects here).
  * Commercial pages use evergreen slugs; older dated WordPress URLs 301 here.
  */
 export const ROUTES = {
-  home: "/glass-iptv/",
+  home: "/sky-glass-iptv-premium/",
   subscription: "/buy-skyglass-subscription/",
-  installation: "/install-skyglass-app/",
+  installation: "/glass-installation-guide/",
   devices: "/sky-glass-iptv-supported-devices/",
   reviews: "/sky-glass-iptv-reviews/",
   reseller: "/skyglass-iptv-reseller-panel/",
@@ -169,9 +169,9 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 1,
   },
   {
-    title: "Sky Glass Subscription | Buy 1–12 Month Plans from £12",
+    title: "Sky Glass IPTV Premium | Plans from £12, 12 Months £40",
     description:
-      "Compare Sky Glass subscription packages from £12. Check Standard prices, request Premium options and choose extra connections with manual renewal.",
+      "Compare Sky Glass IPTV Premium plans from £12. 27,000+ live channel entries, 120,000+ films and series, and 12 months for £40 with one simultaneous connection.",
     path: ROUTES.subscription,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },
@@ -181,9 +181,9 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.9,
   },
   {
-    title: "Sky Glass App Download | APK for Firestick & Android",
+    title: "Sky Glass Installation Guide UK | Downloader Code 2245820",
     description:
-      "Install the Sky Glass app with Downloader code 9557305. Follow Android and Firestick steps, connect your account or set up a Smart TV player.",
+      "Install the Sky Glass App on a compatible Firestick or Android-based device. Use Sky Glass Downloader Code 2245820, then sign in with your account details.",
     path: ROUTES.installation,
     breadcrumbs: [
       { name: "Home", path: ROUTES.home },

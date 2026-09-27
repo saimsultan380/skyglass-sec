@@ -35,7 +35,7 @@ export function SubConnections() {
         title="One Connection or"
         highlight="Multiple Connections?"
         intro={[
-          "The listed Standard prices include one simultaneous connection.",
+          "The listed Premium prices include one simultaneous connection.",
           "You can use your account on two compatible devices, but you must log out of the first device before logging in on the second.",
           "If two people want to watch on separate screens at the same time, you need an account with enough simultaneous connections. Multiple-connection options have different prices.",
         ]}
@@ -74,7 +74,7 @@ export function SubPlayerCosts() {
         intro={[
           "Your subscription pays for the selected service period and connection allowance.",
           "You will also need your own compatible device and internet connection. A paid third-party player licence, where required, is a separate charge from the player’s developer.",
-          "The listed Standard prices do not include additional connections or a VPN subscription.",
+          "The listed Premium prices do not include additional connections or a VPN subscription.",
           "Our supplied app is preferred on compatible Android and Fire OS devices. You may also use an appropriate Xtream-compatible player.",
         ]}
       />

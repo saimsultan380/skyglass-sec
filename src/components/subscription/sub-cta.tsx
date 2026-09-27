@@ -10,7 +10,7 @@ export function SubCTA() {
       id="cta"
       title="Buy a Subscription on"
       highlight="WhatsApp"
-      body="Choose Standard or ask about Premium, confirm your device and connections, then complete payment. We activate within two hours and send your login through WhatsApp."
+      body="Choose a Premium term, confirm your device and connections, then complete payment. We activate within two hours and send your login through WhatsApp."
       primary={{
         label: "Buy a Subscription on WhatsApp",
         href: CONTACT_WHATSAPP_HREF,

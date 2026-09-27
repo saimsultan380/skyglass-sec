@@ -5,32 +5,27 @@ import { FaqSection, type FaqItem } from "@/components/ui/faq-section";
 
 const faqList: readonly FaqItem[] = [
   {
-    question: "Do I need a Sky Glass television?",
-    answer:
-      "No. You can use a supported television, streaming stick, Android device or another compatible platform. The service is separate from the official Sky Glass television product.",
+    question: "Will the subscription renew by itself?",
+    answer: "No. Renewals are manual.",
   },
   {
-    question: "Can I use a player I already have?",
+    question: "Can two screens play at once?",
     answer:
-      "Yes, if it supports the required Xtream account connection. Our supplied app is preferred, but our team can help you check another player before activation.",
+      "The listed prices include one simultaneous connection. Ask for an additional-connection quote if you need more.",
   },
   {
-    question: "Can I move between two devices?",
+    question: "Is this the official Sky Glass television service?",
     answer:
-      "Yes. With a one-connection account, log out of the first device before logging in on the second. For simultaneous viewing on multiple screens, request additional connections.",
-  },
-  {
-    question: "Does my subscription renew automatically?",
-    answer:
-      "No. Renewals are manual. Message us on WhatsApp when you want to renew your account.",
+      "No. Skyglass-iptv.com is independent and is not affiliated with, endorsed by or operated by Sky. An official Sky account does not sign you in to this service.",
   },
 ];
 
 export function SkyglassFAQ() {
   return (
     <FaqSection
-      title="Questions About the"
-      highlight="Service"
+      id="before-you-buy"
+      title="Before You"
+      highlight="Buy"
       items={faqList}
     />
   );

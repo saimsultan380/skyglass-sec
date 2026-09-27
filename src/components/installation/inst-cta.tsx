@@ -3,23 +3,23 @@
 import React from "react";
 import { CtaSection } from "@/components/ui/cta-section";
 import { ROUTES } from "@/lib/seo";
-import { CONTACT_WHATSAPP_HREF } from "@/lib/site";
+import { DOWNLOADER_CODE, WHATSAPP_INSTALL_HREF } from "@/lib/site";
 
 export function InstCTA() {
   return (
     <CtaSection
       id="cta"
-      title="Contact"
-      highlight="Installation Support"
-      body="Your trial or subscription login details and setup assistance are provided through WhatsApp."
+      title="Need Help Finishing"
+      highlight="Setup?"
+      body={`Our team can check your device method and account details. Tell us you used Downloader code ${DOWNLOADER_CODE} and where you got stuck.`}
       primary={{
-        label: "Contact Installation Support",
-        href: CONTACT_WHATSAPP_HREF,
+        label: "Get installation help",
+        href: WHATSAPP_INSTALL_HREF,
         icon: "messageSquare",
       }}
       secondary={{
-        label: "View Subscription Plans",
-        href: ROUTES.subscription,
+        label: "View Premium plans",
+        href: ROUTES.home,
         icon: "creditCard",
       }}
     />
