@@ -28,6 +28,7 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/sky-glass-iptv-uk": ROUTES.home,
   "/sky-glass-iptv-uk-guide": ROUTES.home,
   "/why-sky-glass-iptv-is-best-choice-in-uk": ROUTES.home,
+  "/sky-glass-iptv-installation-guide-uk-15-08-2026": ROUTES.home,
 
   // → Subscription (final: /buy-skyglass-subscription/)
   "/sky-glass-iptv-subscription-plans-uk-2026": ROUTES.subscription,
@@ -45,7 +46,6 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/install-skyglass-app": ROUTES.home,
 
   // → Installation (final: /glass-installation-guide/)
-  "/sky-glass-iptv-installation-guide-uk-15-08-2026": ROUTES.installation,
   "/installation-guide": ROUTES.installation,
   "/setup-instructions": ROUTES.installation,
   "/sky-glass-iptv-installation-guide": ROUTES.installation,
