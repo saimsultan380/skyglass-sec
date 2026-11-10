@@ -26,6 +26,7 @@ export const ROUTES = {
   reseller: "/skyglass-iptv-reseller-panel/",
   contact: "/contact-skyglass-support/",
   about: "/about/",
+  blog: "/blog/",
   terms: "/terms-and-conditions/",
   privacy: "/privacy-policy/",
   refunds: "/refund-policy/",
@@ -252,6 +253,50 @@ export const SITE_PAGES: readonly SitePage[] = [
     ],
     changeFrequency: "yearly",
     priority: 0.5,
+  },
+  {
+    title: "Sky Glass IPTV Blog | Guides, Setup Tips & UK Viewing Help",
+    description:
+      "Read Sky Glass IPTV guides on apps, players, setup, buffering fixes and subscription tips for UK viewers.",
+    path: ROUTES.blog,
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+    ],
+    changeFrequency: "weekly",
+    priority: 0.7,
+  },
+  {
+    title: "Sky Glass IPTV UK: Sky Glass App, Setup & Subscription Guide",
+    description:
+      "Explore Sky Glass IPTV in the UK, including apps, compatible players, setup steps, buffering fixes & subscription tips for better viewing at home in the UK.",
+    path: "/sky-glass-iptv-in-the-uk/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Sky Glass IPTV UK Guide",
+        path: "/sky-glass-iptv-in-the-uk/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "Sky Glass IPTV on Fire Stick: Setup & Installation Guide UK",
+    description:
+      "Learn how to set up Sky Glass IPTV on Fire Stick in the UK, choose a compatible player, enter your details, and fix common streaming problems safely at home",
+    path: "/sky-glass-iptv-fire-stick-uk-setup/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Fire Stick Setup Guide",
+        path: "/sky-glass-iptv-fire-stick-uk-setup/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
   },
   {
     title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",

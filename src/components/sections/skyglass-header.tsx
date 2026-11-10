@@ -15,6 +15,7 @@ const navLinks = [
   { name: "Sky Glass IPTV", href: ROUTES.home },
   { name: "Subscription Plans", href: ROUTES.subscription },
   { name: "Installation Guide", href: ROUTES.installation },
+  { name: "Blog", href: ROUTES.blog },
   { name: "Reseller Panel", href: ROUTES.reseller },
   { name: "Contact", href: ROUTES.contact },
 ];

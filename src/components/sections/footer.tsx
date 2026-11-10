@@ -13,6 +13,7 @@ const navigationLinks = [
   { name: "Sky Glass IPTV", href: ROUTES.home },
   { name: "Subscription Plans", href: ROUTES.subscription },
   { name: "Installation Guide", href: ROUTES.installation },
+  { name: "Blog", href: ROUTES.blog },
   { name: "Supported Devices", href: ROUTES.devices },
   { name: "Reseller Panel", href: ROUTES.reseller },
   { name: "Reviews", href: ROUTES.reviews },
