@@ -299,6 +299,54 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
+    title: "Sky Glass Downloader Code: UK Firestick Setup Guide for 2026",
+    description:
+      "Find the Sky Glass downloader code, learn how to use it on Firestick, install the app safely and connect your Premium subscription with this simple UK guide.",
+    path: "/sky-glass-downloader-code/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Downloader Code Guide",
+        path: "/sky-glass-downloader-code/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "Sky Glass IPTV Username and Password: Firestick Setup Guide",
+    description:
+      "Need your Sky Glass IPTV username and password? Learn how to get your login, enter it on Firestick, and fix common sign-in problems with this easy UK guide!",
+    path: "/sky-glass-iptv-username-and-password-guide/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Username & Password Guide",
+        path: "/sky-glass-iptv-username-and-password-guide/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "Sky Glass Android App: Download & Install IPTV on Android TV",
+    description:
+      "Learn how to download the Sky Glass IPTV Android app on phones, tablets, and Android TV, install it with Downloader code 2245820, and sign in safely.",
+    path: "/sky-glass-android-app-download/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Android App Download",
+        path: "/sky-glass-android-app-download/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",
     description:
       "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",

@@ -30,7 +30,7 @@ function BlogImage({
             alt={alt}
             fill
             sizes="(max-width: 768px) 100vw, 720px"
-            className="object-cover"
+            className="object-contain object-center"
             priority
           />
         ) : (
@@ -147,6 +147,49 @@ function renderBlock(block: BlogBlock, key: number) {
               </p>
             </div>
           ))}
+        </div>
+      );
+    case "table":
+      return (
+        <div
+          key={key}
+          className="my-6 overflow-x-auto rounded-[12px] border border-slate-200/80"
+        >
+          <table className="w-full min-w-[280px] border-collapse text-left text-sm">
+            <thead>
+              <tr className="border-b border-slate-200 bg-slate-50/80">
+                {block.headers.map((header) => (
+                  <th
+                    key={header}
+                    className="px-3 py-2.5 font-heading text-xs font-bold tracking-wide text-[#0B0E2C] sm:px-4 sm:text-sm"
+                  >
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, rowIndex) => (
+                <tr
+                  key={row.join("|")}
+                  className={
+                    rowIndex % 2 === 0
+                      ? "bg-white/70"
+                      : "bg-slate-50/40"
+                  }
+                >
+                  {row.map((cell, cellIndex) => (
+                    <td
+                      key={`${rowIndex}-${cellIndex}-${cell}`}
+                      className="px-3 py-2.5 text-xs font-medium leading-relaxed text-slate-700 sm:px-4 sm:text-[15px] sm:leading-[1.7]"
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       );
     case "image":

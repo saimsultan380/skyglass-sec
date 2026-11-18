@@ -1,3 +1,5 @@
+import { EXTRA_BLOG_POSTS } from "@/lib/blog-posts-extra";
+
 export type BlogBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
@@ -6,6 +8,11 @@ export type BlogBlock =
   | { type: "ul"; items: readonly string[] }
   | { type: "steps"; items: readonly { title: string; body: string }[] }
   | { type: "faq"; items: readonly { question: string; answer: string }[] }
+  | {
+      type: "table";
+      headers: readonly string[];
+      rows: readonly (readonly string[])[];
+    }
   | { type: "image"; /** set when you add the file under /public */ src?: string; alt: string };
 
 export type BlogPost = {
@@ -25,6 +32,7 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: readonly BlogPost[] = [
+  ...EXTRA_BLOG_POSTS,
   {
     slug: "sky-glass-iptv-fire-stick-uk-setup",
     path: "/sky-glass-iptv-fire-stick-uk-setup/",

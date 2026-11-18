@@ -26,14 +26,14 @@ export function BlogCard({
       className="iphone-glass-card group flex h-full flex-col overflow-hidden"
     >
       <Link href={post.path} className="flex h-full flex-col">
-        <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100/80">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-white">
           {post.coverImage ? (
             <Image
               src={post.coverImage}
               alt={post.coverImageAlt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              className="object-contain object-center transition-transform duration-300 group-hover:scale-[1.01]"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-100 via-white to-pink-50">
