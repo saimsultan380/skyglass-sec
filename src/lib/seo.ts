@@ -347,6 +347,38 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
+    title: "Buy Sky Glass IPTV Subscription for 12 Months at £3.33 Only",
+    description:
+      "Buy a Sky Glass IPTV subscription with flexible plans from £12. Compare features, check the 12-month deal, and get setup support and a free trial.",
+    path: "/buy-12-month-sky-glass-iptv-subscription/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "12 Month Subscription",
+        path: "/buy-12-month-sky-glass-iptv-subscription/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "Your Sky Glass Keeps Buffering? 9 IPTV Sky Glass Fixes",
+    description:
+      "Is Sky Glass IPTV buffering or freezing? Find the causes, try practical fixes, and get help with your device, connection or subscription from our support team.",
+    path: "/sky-glass-iptv-buffering-issues-and-fixes/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Buffering Fixes",
+        path: "/sky-glass-iptv-buffering-issues-and-fixes/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",
     description:
       "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",

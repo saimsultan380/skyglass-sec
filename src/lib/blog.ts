@@ -1,4 +1,5 @@
 import { EXTRA_BLOG_POSTS } from "@/lib/blog-posts-extra";
+import { NOV19_BLOG_POSTS } from "@/lib/blog-posts-nov19";
 
 export type BlogBlock =
   | { type: "p"; text: string }
@@ -32,6 +33,7 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: readonly BlogPost[] = [
+  ...NOV19_BLOG_POSTS,
   ...EXTRA_BLOG_POSTS,
   {
     slug: "sky-glass-iptv-fire-stick-uk-setup",
