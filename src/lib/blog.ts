@@ -1,5 +1,6 @@
 import { EXTRA_BLOG_POSTS } from "@/lib/blog-posts-extra";
 import { NOV19_BLOG_POSTS } from "@/lib/blog-posts-nov19";
+import { NOV20_BLOG_POSTS } from "@/lib/blog-posts-nov20";
 
 export type BlogBlock =
   | { type: "p"; text: string }
@@ -33,6 +34,7 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: readonly BlogPost[] = [
+  ...NOV20_BLOG_POSTS,
   ...NOV19_BLOG_POSTS,
   ...EXTRA_BLOG_POSTS,
   {

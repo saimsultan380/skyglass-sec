@@ -379,6 +379,22 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
+    title: "Sky Glass IPTV Playlist Not Loading? Common Causes and Fixes",
+    description:
+      "Is your Sky Glass IPTV playlist not loading? Discover common causes and practical fixes for M3U errors, login problems, connection issues, and empty channels.",
+    path: "/sky-glass-iptv-playlist-not-loading/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Playlist Not Loading",
+        path: "/sky-glass-iptv-playlist-not-loading/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",
     description:
       "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",
