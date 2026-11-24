@@ -395,6 +395,38 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
+    title: "How to Become a Sky Glass IPTV Reseller & Grow Your Business",
+    description:
+      "Learn how to become a Sky Glass IPTV reseller, explore partner benefits, understand your role & review key checks before buying Sky Glass IPTV reseller panel",
+    path: "/how-to-become-sky-glass-iptv-reseller/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "IPTV Reseller Guide",
+        path: "/how-to-become-sky-glass-iptv-reseller/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "Sky Glass IPTV Playlist: Setup, Login and Common Fixes Guide",
+    description:
+      "Learn how a Sky Glass IPTV playlist works, how to add M3U or Xtream login details, refresh channels and fix common playlist problems on supported devices UK",
+    path: "/sky-glass-iptv-playlist/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "IPTV Playlist Guide",
+        path: "/sky-glass-iptv-playlist/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",
     description:
       "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",
