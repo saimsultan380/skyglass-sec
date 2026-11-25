@@ -427,6 +427,54 @@ export const SITE_PAGES: readonly SitePage[] = [
     priority: 0.8,
   },
   {
+    title: "Sky Glass IPTV on LG TV: Complete Setup Guide for UK Users",
+    description:
+      "Learn how to get Sky Glass IPTV on LG Smart TV in the UK. Find compatible webOS players, install an app, connect your account and fix setup issues with ease.",
+    path: "/sky-glass-iptv-on-lg-tv/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "LG TV Setup Guide",
+        path: "/sky-glass-iptv-on-lg-tv/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "How to Get Sky Glass IPTV on iPhone: Complete Setup Guide",
+    description:
+      "Learn how to get Sky Glass IPTV on iPhone in the UK. Choose an iOS player, add your login or M3U playlist, and fix common setup issues with simple steps too.",
+    path: "/sky-glass-iptv-on-iphone/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "iPhone Setup Guide",
+        path: "/sky-glass-iptv-on-iphone/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
+    title: "Sky Glass IPTV on Mac & PC: Setup Guide for UK Users in 2026",
+    description:
+      "Find out how to get Sky Glass IPTV on Mac or PC. Install a compatible player, add your subscription details and troubleshoot common Windows and macOS issues.",
+    path: "/sky-glass-iptv-on-mac-pc/",
+    breadcrumbs: [
+      { name: "Home", path: ROUTES.home },
+      { name: "Blog", path: ROUTES.blog },
+      {
+        name: "Mac & PC Setup Guide",
+        path: "/sky-glass-iptv-on-mac-pc/",
+      },
+    ],
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  {
     title: "Sky Glass IPTV Terms & Conditions – Subscription Rules",
     description:
       "Read the Sky Glass IPTV terms and conditions covering UK subscriptions, trials, payments, account use, service availability, refunds and cancellation.",
